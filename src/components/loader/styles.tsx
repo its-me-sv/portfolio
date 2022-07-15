@@ -1,10 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
-  display: grid;
-  place-items: center;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f5f4f9;
   width: 100vw;
-  height: 84vh;
+  height: 100vh;
+  z-index: 999;
 `;
 
 const animeString: string = new Array(11)

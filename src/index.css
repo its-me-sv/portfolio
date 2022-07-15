@@ -35,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f4f9;
-  /* background-color: #1a1a1a; */
+  color: #1a1a1a;
 }
 
 code {
