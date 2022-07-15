@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 
 import { CommonContextProvider } from './contexts/common.context';
+import { MenuContextProvider } from './contexts/menu.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <CommonContextProvider>
-        <App />
+        <MenuContextProvider>
+          <App />
+        </MenuContextProvider>
       </CommonContextProvider>
     </HashRouter>
   </React.StrictMode>

@@ -1,4 +1,5 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
+import { FadeAnim } from "../../utils/animation";
 
 export const Container = styled.div`
   display: flex;
@@ -10,24 +11,33 @@ export const Container = styled.div`
   align-items: flex-end;
   font-family: geomanist;
   font-size: 1.6rem;
+  gap: 0.36rem;
 `;
 
-export const MenuIcon = styled.img.attrs({alt: ""})`
+export const MenuIcon = styled.img.attrs({ alt: "" })`
   width: 1.6rem;
   height: auto;
   cursor: pointer;
+  animation: ${FadeAnim} 1s;
   &:hover {
     opacity: 0.5;
   }
 `;
 
-export const ItemAnim = keyframes`
-  from {opacity: 0;}
-  to {opacity: 0.6;}
-`;
-
-export const MenuItem = styled.span<{chosen: boolean}>`
-  ${(props) => !props.chosen && 'opacity: 0.6;'}
-  ${(props) => props.chosen && 'text-decoration: underline;'}
-  animation: ${ItemAnim} 1s;
+export const MenuItem = styled.p<{ chosen: boolean }>`
+  all: unset;
+  cursor: pointer;
+  ${(props) => !props.chosen && "opacity: 0.6;"}
+  animation: ${FadeAnim} 1s;
+  ${(props) =>
+    props.chosen &&
+    `
+    font-weight: bold;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(135deg,#0e73cc 1.93%,#624bbb 14.86%,
+      #ff455d 48.09%,#f35815 77.82%,#f2b600 97.3%);
+  `}
 `;

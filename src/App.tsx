@@ -8,6 +8,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 
 import { useCommonContext } from "./contexts/common.context";
+import { useMenuContext } from "./contexts/menu.context";
 
 // pages
 const HomePage = lazy(() => import('./pages/home'));
@@ -22,12 +23,17 @@ const QuotesPage = lazy(() => import('./pages/quotes'));
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const {loading, setLoading} = useCommonContext();
+  const { loading, setLoading } = useCommonContext();
+  const { setMenuOpen } = useMenuContext();
   
   useEffect(() => {
     setLoading!(true);
     const timer = setTimeout(() => setLoading!(false), 2100);
-    return () => clearTimeout(timer);
+    const timer1 = setTimeout(() => setMenuOpen!(true), 2800);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer1);
+    }
   }, []);
 
   return (
@@ -52,3 +58,4 @@ const App: React.FC<AppProps> = () => {
 };
 
 export default App;
+
