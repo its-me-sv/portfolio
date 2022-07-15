@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import menuIcon from "../../assets/icons/menu.png";
 
 export const Container = styled.div`
   display: flex;
@@ -27,16 +26,4 @@ export const CurrentPage = styled.span`
   font-family: calibri;
   color: #1a1a1a;
   font-size: 1.8rem;
-`;
-
-export const MenuIcon = styled.img.attrs({
-  src: menuIcon,
-  alt: "menu icon",
-})`
-  width: 1.6rem;
-  height: auto;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
 `;

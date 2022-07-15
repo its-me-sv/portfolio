@@ -1,4 +1,6 @@
-import {Container, Signature, CurrentPage, MenuIcon} from './styles';
+import {Container, Signature, CurrentPage} from './styles';
+
+import Menu from '../menu';
 
 interface HeaderProps {}
 
@@ -7,7 +9,8 @@ const Header: React.FC<HeaderProps> = () => {
     <Container>
       <Signature>Suraj Vijay</Signature>
       <CurrentPage>Page Name</CurrentPage>
-      <MenuIcon />
+      <div />
+      <Menu />
     </Container>
   );
 };
