@@ -1,5 +1,7 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+
+import {useCommonContext} from './common.context';
 
 interface MenuContextInterface {
   menu: number;
@@ -26,9 +28,12 @@ export const useMenuContext = () => useContext(MenuContext);
 
 export const MenuContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
   const navigate = useNavigate();
+  const {language} = useCommonContext();
 
   const [menu, setMenuCode] = useState<number>(defaultState.menu);
   const [menuOpen, setMenuOpen] = useState<boolean>(defaultState.menuOpen);
+
+  useEffect(() => setMenuOpen(true), [language]);
 
   const setMenu = (val: number) => {
     if (val === menu) return;
