@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -21,7 +21,13 @@ export const MenuIcon = styled.img.attrs({alt: ""})`
   }
 `;
 
+export const ItemAnim = keyframes`
+  from {opacity: 0;}
+  to {opacity: 0.6;}
+`;
+
 export const MenuItem = styled.span<{chosen: boolean}>`
   ${(props) => !props.chosen && 'opacity: 0.6;'}
   ${(props) => props.chosen && 'text-decoration: underline;'}
+  animation: ${ItemAnim} 1s;
 `;

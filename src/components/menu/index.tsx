@@ -24,9 +24,12 @@ const Menu: React.FC<MenuProps> = () => {
   return (
     <Container>
       <MenuIcon onClick={toggleMenu} src={menuOpen ? closeIcon : menuIcon} />
-      {menuOpen && pages.map((page, idx) => (
-        <MenuItem key={page} chosen={idx === menu}>{page}</MenuItem>
-      ))}
+      {menuOpen &&
+        pages.map((page, idx) => (
+          <MenuItem key={page} chosen={idx === menu}>
+            {page}
+          </MenuItem>
+        ))}
     </Container>
   );
 };
