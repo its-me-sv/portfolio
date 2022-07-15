@@ -1,8 +1,22 @@
+import { ChangeEvent } from 'react';
+
 import {Container, CreditText, SelectLang} from './styles';
+
+import {useCommonContext} from '../../contexts/common.context';
+
+const languages: Array<string> = [
+  "English", "Español", "Deutsch",
+  "日本", "عربي",
+];
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
+  const {language, setLanguage} = useCommonContext();
+  
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
+  setLanguage!(event.target.value);
+
   return (
     <Container>
       <div></div>
@@ -12,12 +26,10 @@ const Footer: React.FC<FooterProps> = () => {
           Suraj Vijay
         </a>
       </CreditText>
-      <SelectLang>
-        <option>English</option>
-        <option>Spanish</option>
-        <option>German</option>
-        <option>Japan</option>
-        <option>Arabic</option>
+      <SelectLang value={language} onChange={handleChange}>
+        {languages.map((val, idx) => (
+          <option key={val} value={idx}>{val}</option>
+        ))}
       </SelectLang>
     </Container>
   );
