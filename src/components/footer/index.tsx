@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 
 import {Container, CreditText, SelectLang} from './styles';
+import {footerTranslations} from '../../utils/translations.util';
 
 import {useCommonContext} from '../../contexts/common.context';
 
@@ -20,15 +21,18 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <Container>
       <div></div>
-      <CreditText>
-        made with <span>❤</span> by
+      <CreditText key={language}>
+        {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
+        {footerTranslations.by[+language]}
         <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
           Suraj Vijay
         </a>
       </CreditText>
       <SelectLang value={language} onChange={handleChange}>
         {languages.map((val, idx) => (
-          <option key={val} value={idx}>{val}</option>
+          <option key={val} value={idx}>
+            {val}
+          </option>
         ))}
       </SelectLang>
     </Container>

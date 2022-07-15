@@ -1,7 +1,7 @@
 import menuIcon from "../../assets/icons/menu.png";
 import closeIcon from "../../assets/icons/close.png";
 import { Container, MenuIcon, MenuItem } from './styles';
-import {menuTranslations} from '../../utils/translations';
+import {menuTranslations} from '../../utils/translations.util';
 
 import { useMenuContext } from '../../contexts/menu.context';
 import { useCommonContext } from "../../contexts/common.context";
@@ -16,7 +16,7 @@ const Menu: React.FC<MenuProps> = () => {
 
   return (
     <Container>
-      <MenuIcon onClick={toggleMenu} src={menuOpen ? closeIcon : menuIcon} />
+      <MenuIcon key={menuOpen+''} onClick={toggleMenu} src={menuOpen ? closeIcon : menuIcon} />
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
           <MenuItem

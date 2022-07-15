@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FadeAnim1 } from "../../utils/animation.util";
 
 export const Container = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ export const CreditText = styled.div`
   font-family: calibri;
   color: #1a1a1a;
   font-size: 1.4rem;
+  animation: ${FadeAnim1} 1s;
   span {
     color: rgb(254 67 101);
   }

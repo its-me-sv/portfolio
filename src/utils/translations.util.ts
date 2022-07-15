@@ -9,3 +9,8 @@ export const menuTranslations = {
   quotes: ["quotes", "cotizaciones", "zitate", "引用符", "يقتبس"],
   stats: ["stats", "estadísticas", "statistiken", "統計", "احصائيات"]
 };
+
+export const footerTranslations = {
+  madeWidth: ["made with", "hecho con", "gemacht mit", "で作った", "مصنوع من"],
+  by: ["by", "por", "durch", "に", "بواسطة"]
+};
