@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim } from "../../utils/animation.util";
+import { FadeAnim1 } from "../../utils/animation.util";
 
 export const Container = styled.div`
   display: flex;
@@ -27,6 +27,6 @@ export const CurrentPage = styled.span`
   font-family: calibri;
   color: #1a1a1a;
   font-size: 1.8rem;
-  animation: ${FadeAnim} 1s;
+  animation: ${FadeAnim1} 1s;
   text-transform: capitalize;
 `;
