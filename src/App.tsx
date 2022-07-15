@@ -19,12 +19,13 @@ const ProjectsPage = lazy(() => import('./pages/projects'));
 const AchievementsPage = lazy(() => import('./pages/achievements'));
 const BlogsPage = lazy(() => import('./pages/blog'));
 const QuotesPage = lazy(() => import('./pages/quotes'));
+const StatsPage = lazy(() => import('./pages/stats'));
 
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
   const { loading, setLoading } = useCommonContext();
-  const { setMenuOpen } = useMenuContext();
+  const { setMenuOpen, menu } = useMenuContext();
   
   useEffect(() => {
     setLoading!(true);
@@ -33,8 +34,9 @@ const App: React.FC<AppProps> = () => {
     return () => {
       clearTimeout(timer);
       clearTimeout(timer1);
+      setMenuOpen!(false);
     }
-  }, []);
+  }, [menu]);
 
   return (
     <AppContainer>
@@ -50,6 +52,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/quotes" element={<QuotesPage />} />
+          <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </Suspense>
       <Footer />
@@ -58,4 +61,5 @@ const App: React.FC<AppProps> = () => {
 };
 
 export default App;
+
 

@@ -17,7 +17,7 @@ const urls: Array<string> = [
   "", "about-me", "profiles",
   "transcript", "projects",
   "achievements", "blogs",
-  "quotes",
+  "quotes", "stats"
 ];
 
 export const MenuContext = createContext<MenuContextInterface>(defaultState);
