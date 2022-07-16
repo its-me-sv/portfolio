@@ -4,6 +4,7 @@ interface CommonContextInterface {
   loading: boolean;
   language: string;
   isDark: boolean;
+  isMobile: boolean;
   setLoading?: (val: boolean) => void;
   setLanguage?: (val: string) => void;
   toggleTheme?: () => void;
@@ -12,7 +13,8 @@ interface CommonContextInterface {
 const defaultState: CommonContextInterface = {
   loading: true,
   language: '0',
-  isDark: false
+  isDark: false,
+  isMobile: window.innerWidth <= 768
 };
 
 export const CommonContext = createContext<CommonContextInterface>(defaultState);
@@ -28,7 +30,7 @@ export const CommonContextProvider: React.FC<{children: ReactNode}> = ({children
   
   return (
     <CommonContext.Provider value={{
-      loading, language, isDark,
+      loading, language, isDark, isMobile: window.innerWidth <= 768,
       setLoading, setLanguage, toggleTheme
     }}>{children}</CommonContext.Provider>
   );
