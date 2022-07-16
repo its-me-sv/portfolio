@@ -2,6 +2,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { AppContainer } from './app.styles';
+import { menuTranslations } from './utils/translations.util';
 
 import Loader from './components/loader';
 import Header from './components/header';
@@ -24,7 +25,7 @@ const StatsPage = lazy(() => import('./pages/stats'));
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const { loading, setLoading } = useCommonContext();
+  const { loading, setLoading, language } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
   
   useEffect(() => {
@@ -37,6 +38,13 @@ const App: React.FC<AppProps> = () => {
       setMenuOpen!(false);
     }
   }, [menu]);
+
+  useEffect(() => {
+    const pageName: string = Object.values(menuTranslations)[menu][+language];
+    window.document.title = `${
+      pageName[0].toUpperCase() + pageName.slice(1)
+    } | Suraj Vijay`;
+  }, [menu, language]);
 
   return (
     <AppContainer>
@@ -61,5 +69,6 @@ const App: React.FC<AppProps> = () => {
 };
 
 export default App;
+
 
 

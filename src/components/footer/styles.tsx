@@ -13,6 +13,7 @@ export const CreditText = styled.div`
   color: #1a1a1a;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
+  opacity: 0.84;
   span {
     color: rgb(254 67 101);
   }
@@ -21,6 +22,7 @@ export const CreditText = styled.div`
     font-weight: bold;
     color: rgb(42, 143, 189);
     margin-left: 0.5ch;
+    opacity: 1;
   }
   a:hover {
     text-decoration: underline;
@@ -37,4 +39,5 @@ export const SelectLang = styled.select`
   color: #1a1a1a;
   text-align: center;
   cursor: pointer;
+  opacity: 0.84;
 `;
