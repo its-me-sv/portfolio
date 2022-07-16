@@ -10,23 +10,25 @@ interface MenuProps {}
 
 const Menu: React.FC<MenuProps> = () => {
   const { menu, menuOpen, setMenuOpen, setMenu } = useMenuContext();
-  const { language } = useCommonContext();
+  const { language, isDark } = useCommonContext();
 
   const toggleMenu = () => setMenuOpen!(!menuOpen);
 
   return (
     <Container>
       <MenuIcon
-        key={menuOpen + ""}
+        key={menuOpen + "" + (isDark + "")}
         onClick={toggleMenu}
         src={menuOpen ? closeIcon : menuIcon}
+        dark={isDark}
       />
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
           <MenuItem
-            key={page[+language]}
+            key={page[+language] + (isDark + "")}
             chosen={idx === menu}
             onClick={() => setMenu!(idx)}
+            dark={isDark}
           >
             {page[+language]}
           </MenuItem>

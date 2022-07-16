@@ -14,7 +14,7 @@ export const Container = styled.div`
   gap: 0.36rem;
 `;
 
-export const MenuIcon = styled.img.attrs({ alt: "" })`
+export const MenuIcon = styled.img.attrs({ alt: "" })<{dark?: boolean}>`
   width: 1.6rem;
   height: auto;
   cursor: pointer;
@@ -22,13 +22,16 @@ export const MenuIcon = styled.img.attrs({ alt: "" })`
   &:hover {
     opacity: 0.5;
   }
+  ${props => props.dark && `filter: invert(100%);`}
 `;
 
-export const MenuItem = styled.p<{ chosen: boolean }>`
+export const MenuItem = styled.p<{ chosen: boolean, dark?: boolean }>`
   all: unset;
   cursor: pointer;
   ${(props) => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
+  color: #1a1a1a;
+  ${props => props.dark && `color: #f5f4f9;`}
   ${(props) =>
     props.chosen &&
     `
@@ -40,4 +43,7 @@ export const MenuItem = styled.p<{ chosen: boolean }>`
     background-image: linear-gradient(135deg,#0e73cc 1.93%,#624bbb 14.86%,
       #ff455d 48.09%,#f35815 77.82%,#f2b600 97.3%);
   `}
+  &:hover {
+    text-decoration: underline;
+  }
 `;
