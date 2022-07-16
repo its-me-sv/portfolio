@@ -15,12 +15,13 @@ export const Container = styled.div`
   }
 `;
 
-export const CreditText = styled.div`
+export const CreditText = styled.div<{dark?: boolean}>`
   font-family: calibri;
-  color: #1a1a1a;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
+  color: #1a1a1a;
+  ${props => props.dark && `color: #f5f4f9;`}
   span {
     color: rgb(254 67 101);
   }
@@ -36,7 +37,7 @@ export const CreditText = styled.div`
   }
 `;
 
-export const SelectLang = styled.select`
+export const SelectLang = styled.select<{dark?: boolean}>`
   border-radius: 0.21rem;
   font-size: 1rem;
   font-family: bahnschrift;
@@ -44,6 +45,12 @@ export const SelectLang = styled.select`
   outline: none;
   background-color: #f5f4f9;
   color: #1a1a1a;
+  ${props => props.dark && `
+    background-color: #1a1a1a;
+    color: #f5f4f9;
+    border-color: #f5f4f9;
+  `}
+  animation: ${FadeAnim1} 1s;
   text-align: center;
   cursor: pointer;
   opacity: 0.84;
