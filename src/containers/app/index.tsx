@@ -31,7 +31,7 @@ const App: React.FC<AppProps> = () => {
   useEffect(() => {
     setLoading!(true);
     const timer = setTimeout(() => setLoading!(false), 2100);
-    const timer1 = setTimeout(() => setMenuOpen!(true), 2800);
+    const timer1 = setTimeout(() => setMenuOpen!(true), 3000);
     return () => {
       clearTimeout(timer);
       clearTimeout(timer1);
@@ -63,7 +63,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </Suspense>
-      {isMobile ? <div /> : <Footer />}
+      {!isMobile && <Footer />}
     </AppContainer>
   );
 };

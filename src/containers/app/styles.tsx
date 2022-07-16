@@ -3,7 +3,7 @@ import { FadeAnim1 } from "../../utils/animation.util";
 
 export const AppContainer = styled.div<{ dark?: boolean }>`
   display: grid;
-  grid-template-rows: 1fr 20fr 1fr;
+  grid-template-rows: 1fr 20fr;
   width: 100vw;
   height: 100vh;
   grid-column-gap: 0px;

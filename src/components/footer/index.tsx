@@ -1,9 +1,10 @@
 import { ChangeEvent } from 'react';
 
-import { Container, CreditText, SelectLang } from './styles';
+import { Container, CreditText, SelectLang, FooterRight } from './styles';
 import { footerTranslations } from '../../utils/translations.util';
 
 import { useCommonContext } from '../../contexts/common.context';
+import { useMenuContext } from '../../contexts/menu.context';
 
 const languages: Array<string> = [
   "English", "Español", "Deutsch",
@@ -13,22 +14,29 @@ const languages: Array<string> = [
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
-  const {language, setLanguage, toggleTheme, isDark} = useCommonContext();
+  const {language, setLanguage, toggleTheme, isDark, isMobile} = useCommonContext();
+  const {menuOpen} = useMenuContext();
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
   setLanguage!(event.target.value);
 
+  if (isMobile && !menuOpen) return <></>;
+
   return (
-    <Container>
+    <Container mobile={isMobile}>
       <div></div>
-      <CreditText key={language + `${isDark}`} dark={isDark}>
+      <CreditText 
+        key={language + `${isDark}`} 
+        dark={isDark} 
+        mobile={isMobile}
+      >
         {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
         {footerTranslations.by[+language]}
         <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
           Suraj Vijay
         </a>
       </CreditText>
-      <div>
+      <FooterRight>
         <span onClick={toggleTheme!}>{isDark ? "🌜" : "🌞"}</span>
         <SelectLang
           value={language}
@@ -42,7 +50,7 @@ const Footer: React.FC<FooterProps> = () => {
             </option>
           ))}
         </SelectLang>
-      </div>
+      </FooterRight>
     </Container>
   );
 };

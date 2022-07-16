@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { FadeAnim } from "../../utils/animation.util";
 
-export const Container = styled.div`
+export const Container = styled.div<{
+  mobile: boolean;
+  open: boolean;
+  dark?: boolean;
+}>`
   display: flex;
   position: absolute;
   top: 0;
@@ -12,6 +16,21 @@ export const Container = styled.div`
   font-family: geomanist;
   font-size: 1.6rem;
   gap: 0.36rem;
+  ${(props) =>
+    props.mobile &&
+    `
+    margin-right: 0;
+    padding: 0 0.42rem;
+    margin-top: 0;
+    ${
+      props.open &&
+      `
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.1);
+      ${props.dark && `background-color: rgba(256, 256, 256, 0.1);`}
+    `
+    }
+  `}
 `;
 
 export const MenuIcon = styled.img.attrs({ alt: "" })<{dark?: boolean}>`

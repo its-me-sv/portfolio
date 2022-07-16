@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FadeAnim1 } from "../../utils/animation.util";
 
-export const Container = styled.div`
+export const Container = styled.div<{mobile: boolean}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,9 +13,16 @@ export const Container = styled.div`
   span:hover {
     opacity: 0.7;
   }
+  ${props => props.mobile && `
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+  `}
 `;
 
-export const CreditText = styled.div<{dark?: boolean}>`
+export const CreditText = styled.div<{dark?: boolean; mobile: boolean}>`
   font-family: calibri;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
@@ -35,6 +42,11 @@ export const CreditText = styled.div<{dark?: boolean}>`
   a:hover {
     text-decoration: underline;
   }
+  ${props => props.mobile && `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `}
 `;
 
 export const SelectLang = styled.select<{dark?: boolean}>`
@@ -54,4 +66,9 @@ export const SelectLang = styled.select<{dark?: boolean}>`
   text-align: center;
   cursor: pointer;
   opacity: 0.84;
+`;
+
+export const FooterRight = styled.div`
+  display: flex;
+  align-items: center;
 `;
