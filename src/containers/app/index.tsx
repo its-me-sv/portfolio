@@ -25,7 +25,7 @@ const StatsPage = lazy(() => import("../../pages/stats"));
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const { loading, setLoading, language, isDark } = useCommonContext();
+  const { loading, setLoading, language, isDark, isMobile } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </Suspense>
-      <Footer />
+      {isMobile ? <div /> : <Footer />}
     </AppContainer>
   );
 };
