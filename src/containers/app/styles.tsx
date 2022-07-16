@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { FadeAnim1 } from './utils/animation.util';
+import { FadeAnim1 } from "../../utils/animation.util";
 
-export const AppContainer = styled.div<{dark?: boolean}>`
+export const AppContainer = styled.div<{ dark?: boolean }>`
   display: grid;
   grid-template-rows: 1fr 20fr 1fr;
   width: 100vw;
@@ -9,7 +9,9 @@ export const AppContainer = styled.div<{dark?: boolean}>`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background-color: #f5f4f9;
-  ${props => props.dark && `
+  ${(props) =>
+    props.dark &&
+    `
     background-color: #1a1a1a;
   `}
   animation: ${FadeAnim1} 1s;

@@ -1,33 +1,33 @@
-import { useEffect, lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import { AppContainer } from './app.styles';
-import { menuTranslations } from './utils/translations.util';
+import { AppContainer } from "./styles";
+import { menuTranslations } from "../../utils/translations.util";
 
-import Loader from './components/loader';
-import Header from './components/header';
-import Footer from './components/footer';
+import Loader from "../../components/loader";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
-import { useCommonContext } from "./contexts/common.context";
-import { useMenuContext } from "./contexts/menu.context";
+import { useCommonContext } from "../../contexts/common.context";
+import { useMenuContext } from "../../contexts/menu.context";
 
 // pages
-const HomePage = lazy(() => import('./pages/home'));
-const AboutMePage = lazy(() => import('./pages/about-me'));
-const ProfilesPage = lazy(() => import('./pages/profiles'));
-const TranscriptPage = lazy(() => import('./pages/transcript'));
-const ProjectsPage = lazy(() => import('./pages/projects'));
-const AchievementsPage = lazy(() => import('./pages/achievements'));
-const BlogsPage = lazy(() => import('./pages/blog'));
-const QuotesPage = lazy(() => import('./pages/quotes'));
-const StatsPage = lazy(() => import('./pages/stats'));
+const HomePage = lazy(() => import("../../pages/home"));
+const AboutMePage = lazy(() => import("../../pages/about-me"));
+const ProfilesPage = lazy(() => import("../../pages/profiles"));
+const TranscriptPage = lazy(() => import("../../pages/transcript"));
+const ProjectsPage = lazy(() => import("../../pages/projects"));
+const AchievementsPage = lazy(() => import("../../pages/achievements"));
+const BlogsPage = lazy(() => import("../../pages/blog"));
+const QuotesPage = lazy(() => import("../../pages/quotes"));
+const StatsPage = lazy(() => import("../../pages/stats"));
 
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const { loading, setLoading, language, isDark} = useCommonContext();
+  const { loading, setLoading, language, isDark } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
-  
+
   useEffect(() => {
     setLoading!(true);
     const timer = setTimeout(() => setLoading!(false), 2100);
@@ -36,7 +36,7 @@ const App: React.FC<AppProps> = () => {
       clearTimeout(timer);
       clearTimeout(timer1);
       setMenuOpen!(false);
-    }
+    };
   }, [menu]);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const App: React.FC<AppProps> = () => {
   }, [menu, language]);
 
   return (
-    <AppContainer dark={isDark} key={isDark+''}>
+    <AppContainer dark={isDark} key={isDark + ""}>
       {loading && <Loader />}
       <Header />
       <Suspense fallback={<Loader />}>
@@ -69,6 +69,3 @@ const App: React.FC<AppProps> = () => {
 };
 
 export default App;
-
-
-
