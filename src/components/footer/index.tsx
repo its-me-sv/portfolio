@@ -1,9 +1,9 @@
 import { ChangeEvent } from 'react';
 
-import {Container, CreditText, SelectLang} from './styles';
-import {footerTranslations} from '../../utils/translations.util';
+import { Container, CreditText, SelectLang } from './styles';
+import { footerTranslations } from '../../utils/translations.util';
 
-import {useCommonContext} from '../../contexts/common.context';
+import { useCommonContext } from '../../contexts/common.context';
 
 const languages: Array<string> = [
   "English", "Español", "Deutsch",
@@ -13,7 +13,7 @@ const languages: Array<string> = [
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
-  const {language, setLanguage} = useCommonContext();
+  const {language, setLanguage, toggleTheme, isDark} = useCommonContext();
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
   setLanguage!(event.target.value);
@@ -28,13 +28,18 @@ const Footer: React.FC<FooterProps> = () => {
           Suraj Vijay
         </a>
       </CreditText>
-      <SelectLang value={language} onChange={handleChange}>
-        {languages.map((val, idx) => (
-          <option key={val} value={idx}>
-            {val}
-          </option>
-        ))}
-      </SelectLang>
+      <div>
+        <span onClick={toggleTheme!}>
+          {isDark ? '🌜' : '🌞'}
+        </span>
+        <SelectLang value={language} onChange={handleChange}>
+          {languages.map((val, idx) => (
+            <option key={val} value={idx}>
+              {val}
+            </option>
+          ))}
+        </SelectLang>
+      </div>
     </Container>
   );
 };

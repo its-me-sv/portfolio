@@ -16,7 +16,11 @@ const Menu: React.FC<MenuProps> = () => {
 
   return (
     <Container>
-      <MenuIcon key={menuOpen+''} onClick={toggleMenu} src={menuOpen ? closeIcon : menuIcon} />
+      <MenuIcon
+        key={menuOpen + ""}
+        onClick={toggleMenu}
+        src={menuOpen ? closeIcon : menuIcon}
+      />
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
           <MenuItem

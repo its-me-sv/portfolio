@@ -25,7 +25,7 @@ const StatsPage = lazy(() => import('./pages/stats'));
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const { loading, setLoading, language } = useCommonContext();
+  const { loading, setLoading, language, isDark} = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
   
   useEffect(() => {
@@ -47,7 +47,7 @@ const App: React.FC<AppProps> = () => {
   }, [menu, language]);
 
   return (
-    <AppContainer>
+    <AppContainer dark={isDark} key={isDark+''}>
       {loading && <Loader />}
       <Header />
       <Suspense fallback={<Loader />}>

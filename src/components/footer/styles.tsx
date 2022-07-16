@@ -6,6 +6,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0vw 0.49rem 0.1rem 0.49rem;
+  span {
+    cursor: pointer;
+    margin-right: 0.42rem;
+  }
+  span:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const CreditText = styled.div`

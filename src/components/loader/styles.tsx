@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{dark?: boolean}>`
   display: flex;
   position: absolute;
   align-items: center;
@@ -10,6 +10,10 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 999;
+  ${(props) => props.dark && `
+    background-color: #1a1a1a;
+    color: #f5f4f9
+  `}
 `;
 
 const animeString: string = new Array(11)
@@ -26,8 +30,12 @@ const animeString: string = new Array(11)
 
 const showHide = keyframes`${animeString}`;
 
-export const SignatureFont = styled.span`
+export const SignatureFont = styled.span<{ dark?: boolean }>`
   font-family: signature;
   font-size: 12vh;
   animation: ${showHide} 2.1s ease-in-out infinite;
+  color: #1a1a1a;
+  ${(props) => props.dark && `
+    color: #f5f4f9
+  `}
 `;
