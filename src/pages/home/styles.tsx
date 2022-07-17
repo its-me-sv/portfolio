@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FadeAnim1 } from "../../utils/animation.util";
 
 export const Container = styled.div`
   display: flex;
@@ -6,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  animation: ${FadeAnim1} 1s;
 `;
 
 export const MyImage = styled.img.attrs({
@@ -40,7 +42,7 @@ export const TitleText = styled.span`
   font-size: 2.4rem;
 `;
 
-export const BodyTextContainer = styled.div<{mobile: boolean}>`
+export const BodyTextContainer = styled.div<{mobile: boolean; dark?: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,29 +50,32 @@ export const BodyTextContainer = styled.div<{mobile: boolean}>`
   ${props => props.mobile && `
     padding: 0 1%;
   `}
+  color: #1a1a1a;
+  ${props => props.dark && `color: #f5f4f9;`}
 `;
 
 export const BodyTitleText = styled.span`
   font-family: geomanist;
   font-size: 1.8rem;
-  color: #1a1a1a;
 `;
 
-export const SubBody = styled.div`
+export const SubBody = styled.div<{dark?: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.36rem;
 `;
 
-export const SubHeading = styled.span`
+export const SubHeading = styled.span<{dark?: boolean}>`
   font-family: roboto;
   font-size: 1.4rem;
   color: #1a1a1a;
+  ${props => props.dark && `color: #f5f4f9;`}
 `;
 
-export const Content = styled.span`
+export const Content = styled.span<{dark?: boolean}>`
   font-family: geomanist;
   font-size: 1.3rem;
   color: rgba(0, 0, 0, 0.8);
+  ${(props) => props.dark && `color: rgba(255, 255, 255, 0.8);`}
 `;
