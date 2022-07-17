@@ -34,9 +34,9 @@ const HomePage: React.FC<HomePageProps> = () => {
         onMouseEnter={() => setImageHover(true)}
         onMouseLeave={() => setImageHover(false)}
       />
-      <div/>
+      {!isMobile && <div/>}
       <TitleText>I'm a CODER, Bruh.</TitleText>
-      <BodyTextContainer>
+      <BodyTextContainer mobile={isMobile}>
         <BodyTitleText>suraj vijay</BodyTitleText>
         <SubBody>
           <Content>

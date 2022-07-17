@@ -5,11 +5,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  text-align: center;
 `;
 
 export const MyImage = styled.img.attrs({
   alt: "Suraj Vijay"
 })<{mobile: boolean}>`
+  height: 18rem;
+  width: auto;
   ${props => !props.mobile && `
     height: 90vh;
     width: auto;
@@ -37,11 +40,14 @@ export const TitleText = styled.span`
   font-size: 2.4rem;
 `;
 
-export const BodyTextContainer = styled.div`
+export const BodyTextContainer = styled.div<{mobile: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
+  ${props => props.mobile && `
+    padding: 0 1%;
+  `}
 `;
 
 export const BodyTitleText = styled.span`
