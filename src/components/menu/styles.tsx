@@ -26,8 +26,8 @@ export const Container = styled.div<{
       props.open &&
       `
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.1);
-      ${props.dark && `background-color: rgba(256, 256, 256, 0.1);`}
+      background-color: rgba(256, 256, 256, 0.7);
+      ${props.dark && `background-color: rgba(0, 0, 0, 0.7);`}
     `
     }
   `}
