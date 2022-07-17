@@ -11,11 +11,11 @@ export const MyImage = styled.img.attrs({
   alt: "Suraj Vijay"
 })<{mobile: boolean}>`
   ${props => !props.mobile && `
-    width: 24vw;
-    height: auto;
+    height: 90vh;
+    width: auto;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -5%;
   `}
 `;
 
