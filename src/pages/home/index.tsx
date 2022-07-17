@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import {
   Container,
@@ -21,18 +21,14 @@ interface HomePageProps {}
 const HomePage: React.FC<HomePageProps> = () => {
   const {isMobile, isDark} = useCommonContext();
   const {setMenu} = useMenuContext();
-
-  const [imageHover, setImageHover] = useState<boolean>(false);
   
   useEffect(() => setMenu!(0), []);
 
   return (
     <Container key={isDark+''}>
       <MyImage
-        src={imageHover ? gradImg : noGradImg}
+        src={isDark ? gradImg : noGradImg}
         mobile={isMobile}
-        onMouseEnter={() => setImageHover(true)}
-        onMouseLeave={() => setImageHover(false)}
       />
       {!isMobile && <div />}
       <TitleText>I'm a CODER, Bruh.</TitleText>
