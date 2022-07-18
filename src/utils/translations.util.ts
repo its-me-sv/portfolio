@@ -14,3 +14,10 @@ export const footerTranslations = {
   madeWidth: ["made with", "hecho con", "gemacht mit", "で作った", "مصنوع من"],
   by: ["by", "por", "durch", "に", "بواسطة"]
 };
+
+export const homePageTranslations = {
+  student: ['student', 'alumno', 'schüler', '学生', 'طالب علم'],
+  resident: ['resident', 'residente', 'bewohner', '居住者', 'مقيم'],
+  at: ['at', 'a', 'bei', 'で', 'في'],
+  'of': ['of', 'de', 'von', 'の', 'من']
+};

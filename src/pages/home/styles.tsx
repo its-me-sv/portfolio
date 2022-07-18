@@ -64,6 +64,7 @@ export const SubBody = styled.div<{dark?: boolean}>`
   flex-direction: column;
   align-items: center;
   gap: 0.36rem;
+  animation: ${FadeAnim1} 1s;
 `;
 
 export const SubHeading = styled.span<{dark?: boolean}>`
