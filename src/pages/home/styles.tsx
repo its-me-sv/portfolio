@@ -16,11 +16,11 @@ export const MyImage = styled.img.attrs({
   height: 18rem;
   width: auto;
   ${props => !props.mobile && `
-    height: 90vh;
+    height: 60vh;
     width: auto;
     position: absolute;
     bottom: 0;
-    left: -5%;
+    left: 0;
   `}
 `;
 
@@ -71,6 +71,7 @@ export const SubHeading = styled.span<{dark?: boolean}>`
   font-size: 1.4rem;
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
+  text-transform: uppercase;
 `;
 
 export const Content = styled.span<{dark?: boolean}>`

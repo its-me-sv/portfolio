@@ -31,16 +31,16 @@ const HomePage: React.FC<HomePageProps> = () => {
         mobile={isMobile}
       />
       {!isMobile && <div />}
-      <TitleText>I'm a CODER, Bruh.</TitleText>
+      <TitleText>{'<DarkKnight />'}</TitleText>
       <BodyTextContainer mobile={isMobile} dark={isDark}>
-        <BodyTitleText>suraj vijay</BodyTitleText>
+        <BodyTitleText>Suraj Vijay</BodyTitleText>
         <SubBody>
           <Content dark={isDark}>
-            <SubHeading dark={isDark}>STUDENT</SubHeading> at Sri Venkateswara
+            <SubHeading dark={isDark}>student</SubHeading> at Sri Venkateswara
             College of Engineering
           </Content>
           <Content dark={isDark}>
-            <SubHeading dark={isDark}>RESIDENT</SubHeading> of Park Road, Anna
+            <SubHeading dark={isDark}>resident</SubHeading> of Park Road, Anna
             Nagar West Extn, Chennai, TN 600 - 101, India
           </Content>
           <Content dark={isDark}>surajvijay67@gmail.com</Content>
