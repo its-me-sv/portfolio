@@ -58,7 +58,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about-me" element={<AboutMePage />} />
           <Route path="/profiles" element={<ProfilesPage />} />
-          <Route path="/transcript" element={<TranscriptPage />} />
+          <Route path="/transcript/*" element={<TranscriptPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
