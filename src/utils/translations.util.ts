@@ -18,6 +18,12 @@ export const menuTranslations = {
   stats: ["stats", "estadísticas", "statistiken", "統計", "احصائيات"]
 };
 
+export const transcriptMenuTranslations = {
+  certificates: ['Certificates', 'Certificados', 'Zertifikate', '証明書', 'الشهادات'],
+  badges: ['Badges', 'Insignias', 'Abzeichen', 'バッジ', 'شارات'],
+  skills: ['Skills', 'Habilidades', 'Fähigkeiten', 'スキル', 'مهارات']
+};
+
 export const footerTranslations = {
   madeWidth: ["made with", "hecho con", "gemacht mit", "で作った", "مصنوع من"],
   by: ["by", "por", "durch", "に", "بواسطة"]

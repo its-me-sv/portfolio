@@ -6,13 +6,16 @@ import {useCommonContext} from './common.context';
 interface MenuContextInterface {
   menu: number;
   menuOpen: boolean;
+  transMenu: number;
   setMenu?: (val: number) => void;
   setMenuOpen?: (val: boolean) => void;
+  setTransMenu?: (val: number) => void;
 }
 
 const defaultState: MenuContextInterface = {
   menu: 0,
-  menuOpen: false
+  menuOpen: false,
+  transMenu: 1
 };
 
 const urls: Array<string> = [
@@ -20,6 +23,10 @@ const urls: Array<string> = [
   "transcript", "projects",
   "achievements", "blogs",
   "quotes", "stats"
+];
+
+const transcriptUrls: Array<string> = [
+  "certificates", "badges", "skills"
 ];
 
 export const MenuContext = createContext<MenuContextInterface>(defaultState);
@@ -32,6 +39,7 @@ export const MenuContextProvider: React.FC<{children: ReactNode}> = ({children})
 
   const [menu, setMenuCode] = useState<number>(defaultState.menu);
   const [menuOpen, setMenuOpen] = useState<boolean>(defaultState.menuOpen);
+  const [transMenu, setTransMenuCode] = useState<number>(defaultState.transMenu);
 
   useEffect(() => setMenuOpen(true), [language]);
 
@@ -40,11 +48,17 @@ export const MenuContextProvider: React.FC<{children: ReactNode}> = ({children})
     setMenuCode(val);
     navigate(`../${urls[val]}`);
   };
+
+  const setTransMenu = (val: number) => {
+    if (val === transMenu) return;
+    setTransMenuCode(val);
+    navigate(`../transcript/${transcriptUrls[val]}`);
+  };
   
   return (
     <MenuContext.Provider value={{
-      menu, menuOpen,
-      setMenu, setMenuOpen
+      menu, menuOpen, transMenu,
+      setMenu, setMenuOpen, setTransMenu
     }}>{children}</MenuContext.Provider>
   );
 };
