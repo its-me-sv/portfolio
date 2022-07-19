@@ -29,12 +29,15 @@ const App: React.FC<AppProps> = () => {
   const { setMenuOpen, menu } = useMenuContext();
 
   useEffect(() => {
+    const timer = setTimeout(() => setMenuOpen!(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  useEffect(() => {
     setLoading!(true);
     const timer = setTimeout(() => setLoading!(false), 2100);
-    const timer1 = setTimeout(() => setMenuOpen!(true), 3000);
     return () => {
       clearTimeout(timer);
-      clearTimeout(timer1);
       setMenuOpen!(false);
     };
   }, [menu]);

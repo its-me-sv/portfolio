@@ -20,8 +20,8 @@ import { useCommonContext } from '../../contexts/common.context';
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
-  const {isMobile, isDark, language} = useCommonContext();
-  const {setMenu} = useMenuContext();
+  const { isMobile, isDark, language } = useCommonContext();
+  const { setMenu } = useMenuContext();
   
   useEffect(() => setMenu!(0), []);
 
