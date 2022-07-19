@@ -14,8 +14,8 @@ const languages: Array<string> = [
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
-  const {language, setLanguage, toggleTheme, isDark, isMobile} = useCommonContext();
-  const {menuOpen} = useMenuContext();
+  const { language, setLanguage, toggleTheme, isDark, isMobile } = useCommonContext();
+  const { menuOpen } = useMenuContext();
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
   setLanguage!(event.target.value);
@@ -25,10 +25,11 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <Container mobile={isMobile}>
       <div></div>
-      <CreditText 
-        key={language + `${isDark}`} 
-        dark={isDark} 
+      <CreditText
+        key={language + `${isDark}`}
+        dark={isDark}
         mobile={isMobile}
+        open={menuOpen}
       >
         {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
         {footerTranslations.by[+language]}
@@ -43,6 +44,7 @@ const Footer: React.FC<FooterProps> = () => {
           onChange={handleChange}
           key={language + `${isDark}`}
           dark={isDark}
+          mobile={isMobile}
         >
           {languages.map((val, idx) => (
             <option key={val} value={idx}>

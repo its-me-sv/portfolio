@@ -22,13 +22,20 @@ export const Container = styled.div<{mobile: boolean}>`
   `}
 `;
 
-export const CreditText = styled.div<{dark?: boolean; mobile: boolean}>`
+export const CreditText = styled.div<{
+  dark?: boolean; 
+  mobile: boolean;
+  open: boolean;
+}>`
   font-family: calibri;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
+  ${props => (props.mobile && props.open) 
+    && `color: ${props.dark ? '#1a1a1a' : '#f5f4f9'};`
+  }
   span {
     color: rgb(254 67 101);
   }
@@ -49,9 +56,13 @@ export const CreditText = styled.div<{dark?: boolean; mobile: boolean}>`
   `}
 `;
 
-export const SelectLang = styled.select<{dark?: boolean}>`
+export const SelectLang = styled.select<{
+  dark?: boolean;
+  mobile: boolean;
+}>`
   border-radius: 0.21rem;
   font-size: 1rem;
+  ${props => props.mobile && `font-size: 1.4rem;`}
   font-family: bahnschrift;
   border: 1px solid black;
   outline: none;

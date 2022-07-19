@@ -12,8 +12,8 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate();
-  const {language, isDark, isMobile} = useCommonContext();
-  const {menu} = useMenuContext();
+  const { language, isDark, isMobile } = useCommonContext();
+  const { menu } = useMenuContext();
 
   const pageName: string = Object.values(menuTranslations)[menu][+language];
 
@@ -26,9 +26,11 @@ const Header: React.FC<HeaderProps> = () => {
           onClick={() => navigate('../')}
         >Suraj Vijay</Signature>
       )}
-      <CurrentPage key={pageName + `${isDark}`} dark={isDark}>
-        {pageName}
-      </CurrentPage>
+      <CurrentPage 
+        key={pageName + `${isDark}`} 
+        dark={isDark}
+        mobile={isMobile}
+      >{pageName}</CurrentPage>
       <div />
       <Menu />
     </Container>

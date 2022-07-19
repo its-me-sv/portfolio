@@ -10,30 +10,42 @@ export const Container = styled.div<{
   position: absolute;
   top: 0;
   right: 0;
-  margin: 0.21rem 0.49rem 0rem 0rem;
   flex-direction: column;
   align-items: flex-end;
   font-family: geomanist;
   font-size: 1.6rem;
+  padding-left: 1.2rem;
+  padding: 0 0.49rem;
+  ${props => !props.mobile && 'padding-top: 0.28rem;'}
+  z-index: 998;
   gap: 0.36rem;
+  ${(props) =>
+    props.open &&
+    `
+    padding: 0.49rem;
+    border-radius: 0rem 0 0 0.42rem;
+    background-color: #1a1a1a;
+    ${props.dark && `
+      background-color: #f5f4f9;
+    `}
+  `}
   ${(props) =>
     props.mobile &&
     `
     margin-right: 0;
-    padding: 0 0.42rem;
+    padding: 0.42rem;
+    padding-left: 1.2rem;
     margin-top: 0;
-    ${
-      props.open &&
-      `
-      height: 100vh;
-      background-color: rgba(256, 256, 256, 0.7);
-      ${props.dark && `background-color: rgba(0, 0, 0, 0.7);`}
-    `
-    }
+    height: 98.1vh;
+    border-top-left-radius: 0.42rem;
   `}
 `;
 
-export const MenuIcon = styled.img.attrs({ alt: "" })<{dark?: boolean}>`
+export const MenuIcon = styled.img.attrs({ alt: "" })<{
+  dark?: boolean;
+  open: boolean;
+  mobile: boolean;
+}>`
   width: 1.6rem;
   height: auto;
   cursor: pointer;
@@ -41,16 +53,27 @@ export const MenuIcon = styled.img.attrs({ alt: "" })<{dark?: boolean}>`
   &:hover {
     opacity: 0.5;
   }
-  ${props => props.dark && `filter: invert(100%);`}
+  ${(props) => props.dark && `filter: invert(100%);`}
+  ${(props) => props.open && `filter: unset;`}
+  ${(props) => !props.dark && props.open && `filter: invert(100%);`}
+  ${(props) =>
+    props.mobile &&
+    `
+    width: 1.8rem;
+  `}
 `;
 
-export const MenuItem = styled.p<{ chosen: boolean, dark?: boolean }>`
+export const MenuItem = styled.p<{
+  chosen: boolean;
+  dark?: boolean;
+  mobile: boolean;
+}>`
   all: unset;
   cursor: pointer;
   ${(props) => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: #f5f4f9;
+  ${(props) => props.dark && `color: #1a1a1a;`}
   ${(props) =>
     props.chosen &&
     `
@@ -65,4 +88,6 @@ export const MenuItem = styled.p<{ chosen: boolean, dark?: boolean }>`
   &:hover {
     text-decoration: underline;
   }
+  /* font-size: 1.8rem; */
+  ${(props) => props.mobile && "font-size: 2.1rem;"}
 `;
