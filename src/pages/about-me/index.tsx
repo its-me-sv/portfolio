@@ -14,37 +14,67 @@ import { useCommonContext } from '../../contexts/common.context';
 interface AboutMePageProps {}
 
 const AboutMePage: React.FC<AboutMePageProps> = () => {
-  const { language } = useCommonContext();
+  const { language, isDark } = useCommonContext();
   const { setMenu } = useMenuContext();
 
   useEffect(() => setMenu!(1), []);
 
   return (
-    <Container key={language}>
+    <Container key={language + (isDark + '')}>
       <ContentContainer>
-        <SubHeader>{aboutPageTranslations.brief[+language]}</SubHeader>
-        <Content>{aboutPageTranslations.briefContent[+language]}</Content>
+        <SubHeader key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.brief[+language]}
+        </SubHeader>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.briefContent[+language]}
+        </Content>
       </ContentContainer>
       <ContentContainer>
-        <SubHeader>{aboutPageTranslations.iah[+language]}</SubHeader>
-        <Content>{aboutPageTranslations.iahContent[+language]}</Content>
+        <SubHeader key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.iah[+language]}
+        </SubHeader>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.iahContent[+language]}
+        </Content>
       </ContentContainer>
       <ContentContainer>
-        <SubHeader>{aboutPageTranslations.edu[+language]}</SubHeader>
-        <Content>{aboutPageTranslations.ps[+language]} - Don Bosco Nursery and Primary School</Content>
-        <Content>{aboutPageTranslations.hs[+language]} - SBOA School & Junior College</Content>
-        <Content>{aboutPageTranslations.clg[+language]} - Sri Venkateswara College of Engineering</Content>
+        <SubHeader key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.edu[+language]}
+        </SubHeader>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.ps[+language]} - Don Bosco Nursery and Primary School
+        </Content>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.hs[+language]} - SBOA School & Junior College
+        </Content>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.clg[+language]} - Sri Venkateswara College of Engineering
+        </Content>
       </ContentContainer>
       <ContentContainer>
-        <SubHeader>{aboutPageTranslations.langs[+language]}</SubHeader>
-        <Content>Tamil ({aboutPageTranslations.nat[+language]})</Content>
-        <Content>English ({aboutPageTranslations.conv[+language]})</Content>
+        <SubHeader key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.langs[+language]}
+        </SubHeader>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          Tamil ({aboutPageTranslations.nat[+language]})
+        </Content>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          English ({aboutPageTranslations.conv[+language]})
+        </Content>
       </ContentContainer>
       <ContentContainer>
-        <SubHeader>{aboutPageTranslations.etc[+language]}</SubHeader>
-        <Content>{aboutPageTranslations.dob[+language]} - 11th May, 2002</Content>
-        <Content>{aboutPageTranslations.favCol[+language]} - Blue</Content>
-        <Content>{aboutPageTranslations.lovFud[+language]} - Anything edible and tasty</Content>
+        <SubHeader key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.etc[+language]}
+        </SubHeader>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.dob[+language]} - 11th May, 2002
+        </Content>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.favCol[+language]} - Blue
+        </Content>
+        <Content key={language + (isDark + '')} dark={isDark}>
+          {aboutPageTranslations.lovFud[+language]} - Anything edible and tasty
+        </Content>
       </ContentContainer>
     </Container>
   );
