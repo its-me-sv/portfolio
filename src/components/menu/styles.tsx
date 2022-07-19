@@ -16,7 +16,7 @@ export const Container = styled.div<{
   font-size: 1.6rem;
   padding-left: 1.2rem;
   padding: 0 0.49rem;
-  ${props => !props.mobile && 'padding-top: 0.28rem;'}
+  ${(props) => !props.mobile && "padding-top: 0.28rem;"}
   z-index: 998;
   gap: 0.36rem;
   ${(props) =>
@@ -25,9 +25,12 @@ export const Container = styled.div<{
     padding: 0.49rem;
     border-radius: 0rem 0 0 0.42rem;
     background-color: #1a1a1a;
-    ${props.dark && `
+    ${
+      props.dark &&
+      `
       background-color: #f5f4f9;
-    `}
+    `
+    }
   `}
   ${(props) =>
     props.mobile &&
@@ -73,6 +76,7 @@ export const MenuItem = styled.p<{
   ${(props) => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
   color: #f5f4f9;
+  padding-right: 0.36rem;
   ${(props) => props.dark && `color: #1a1a1a;`}
   ${(props) =>
     props.chosen &&
