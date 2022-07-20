@@ -4,8 +4,7 @@ import { FadeAnim1 } from '../../utils/styles.util';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12%;
+  justify-content: space-around;
   margin-top: 1.4%;
   animation: ${FadeAnim1} 1s;
   padding: 0 7%;
