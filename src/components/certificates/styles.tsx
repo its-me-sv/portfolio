@@ -1,21 +1,25 @@
 import styled from 'styled-components';
 import { DarkBoxShadow, LightBoxShadow, FadeAnim1 } from '../../utils/styles.util';
 
-export const Container = styled.div`
+export const Container = styled.div<{mobile: boolean}>`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-row-gap: 1.4rem;
   place-items: center;
   padding: 1.4% 0%;
+  ${props => props.mobile && `
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+  `}
 `;
 
-export const Card = styled.div<{ dark: boolean }>`
+export const Card = styled.div<{ dark: boolean; mobile: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 12rem;
-  height: 16rem;
+  height: 24rem;
   overflow: auto;
   text-align: center;
   border-radius: 0.42rem;
@@ -24,6 +28,13 @@ export const Card = styled.div<{ dark: boolean }>`
   animation: ${FadeAnim1} 1s;
   ${LightBoxShadow}
   ${(props) => props.dark && `${DarkBoxShadow}`}
+  ${props => props.mobile && `
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    width: 10rem;
+    height: 20rem;
+    padding-bottom: 1rem;
+  `}
 `;
 
 export const Provider = styled.img`
