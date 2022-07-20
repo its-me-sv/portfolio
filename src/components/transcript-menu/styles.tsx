@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FadeAnim1 } from '../../utils/animation.util';
+import { FadeAnim1 } from '../../utils/styles.util';
 
 export const Container = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim } from "../../utils/animation.util";
+import { FadeAnim } from "../../utils/styles.util";
 
 export const Container = styled.div<{
   mobile: boolean;
