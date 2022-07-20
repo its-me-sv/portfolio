@@ -15,7 +15,7 @@ interface MenuContextInterface {
 const defaultState: MenuContextInterface = {
   menu: 0,
   menuOpen: false,
-  transMenu: 1
+  transMenu: 0
 };
 
 const urls: Array<string> = [

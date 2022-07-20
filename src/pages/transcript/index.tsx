@@ -15,9 +15,12 @@ interface TranscriptPageProps {}
 
 const TranscriptPage: React.FC<TranscriptPageProps> = () => {
   const { language } = useCommonContext();
-  const { setMenu, transMenu } = useMenuContext();
+  const { setMenu, transMenu, setTransMenu } = useMenuContext();
 
-  useEffect(() => setMenu!(3), []);
+  useEffect(() => {
+    setMenu!(3);
+    setTransMenu!(0);
+  }, []);
 
   useEffect(() => {
     const category: string = Object.values(transcriptMenuTranslations)[
