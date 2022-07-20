@@ -1,4 +1,4 @@
-interface Certificate {
+export interface Certificate {
   provider: string;
   name: string;
   date: string;

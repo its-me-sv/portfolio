@@ -1,5 +1,9 @@
 import { useEffect } from 'react';
 
+import { certificates } from '../../utils/certificates-data.util';
+import { Container } from './styles';
+
+import CertificateCard from './certificate-card.component';
 import { useMenuContext } from '../../contexts/menu.context';
 
 interface CertificatesProps {}
@@ -10,7 +14,14 @@ const Certificates: React.FC<CertificatesProps> = () => {
   useEffect(() => setTransMenu!(0), []);
 
   return (
-    <h1>Certificates</h1>
+    <Container>
+      {certificates.map(certificate => (
+        <CertificateCard 
+          key={certificate.name} 
+          {...certificate} 
+        />
+      ))}
+    </Container>
   );
 };
 
