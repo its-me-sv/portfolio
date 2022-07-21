@@ -99,17 +99,16 @@ export const OverviewContainer = styled.div<{dark: boolean}>`
   ${props => props.dark && `background-color: rgba(256, 256, 256, 0.5);`}
 `;
 
-export const OverviewBox = styled.div<{dark: boolean}>`
+export const OverviewBox = styled.div<{dark: boolean; mobile: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0.5%;
   border-radius: 0.42rem;
   gap: 0.42rem;
-  a {
-    text-decoration: none;
-  }
+  a {text-decoration: none;}
   background-color: #f5f4f9;
   ${props => props.dark && `background-color: #1a1a1a;`}
+  ${props => props.mobile && `padding: 2%;`}
 `;
 
 export const CloseIcon = styled.img.attrs({
@@ -126,7 +125,7 @@ export const CloseIcon = styled.img.attrs({
   ${props => props.dark && `filter: invert(100%);`}
 `;
 
-export const CertImage = styled.img<{dark: boolean}>`
+export const CertImage = styled.img<{dark: boolean; mobile: boolean}>`
   max-width: 50vw;
   max-height: 80vh;
   overflow: auto;
@@ -135,4 +134,8 @@ export const CertImage = styled.img<{dark: boolean}>`
   animation: ${FadeAnim1} 1s;
   border: 2px solid #1a1a1a;
   ${props => props.dark && `border: 2px solid #f5f4f9;`}
+  ${props => props.mobile && `
+    max-width: 90vw;
+    max-height: 80vh;
+  `}
 `;
