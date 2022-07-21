@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Cross from '../../assets/icons/close.png';
 import { DarkBoxShadow, LightBoxShadow, FadeAnim1 } from '../../utils/styles.util';
 
 export const Container = styled.div<{mobile: boolean}>`
@@ -23,7 +24,7 @@ export const Card = styled.div<{ dark: boolean; mobile: boolean }>`
   overflow: auto;
   text-align: center;
   border-radius: 0.42rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
   ${LightBoxShadow}
@@ -59,9 +60,12 @@ export const Issued = styled.span<{dark: boolean}>`
 
 export const CredBtn = styled.div<{dark: boolean}>`
   font-family: geomanist;
-  padding: 0.42% 3% 1.5% 3%;
+  padding: 0.42% 3% 1% 3%;
   border-radius: 0.3rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2.1px solid #1a1a1a;
   background-color: #1a1a1a;
   color: #f5f4f9;
@@ -80,4 +84,55 @@ export const CredBtn = styled.div<{dark: boolean}>`
       font-weight: bold;
     }
   `}
+`;
+
+export const OverviewContainer = styled.div<{dark: boolean}>`
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  ${props => props.dark && `background-color: rgba(256, 256, 256, 0.5);`}
+`;
+
+export const OverviewBox = styled.div<{dark: boolean}>`
+  display: flex;
+  flex-direction: column;
+  padding: 0.5%;
+  border-radius: 0.42rem;
+  gap: 0.42rem;
+  a {
+    text-decoration: none;
+  }
+  background-color: #f5f4f9;
+  ${props => props.dark && `background-color: #1a1a1a;`}
+`;
+
+export const CloseIcon = styled.img.attrs({
+  src: Cross,
+  alt: 'close icon'
+})<{dark: boolean}>`
+  width: 1.2rem;
+  height: auto;
+  align-self: flex-end;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+  ${props => props.dark && `filter: invert(100%);`}
+`;
+
+export const CertImage = styled.img<{dark: boolean}>`
+  max-width: 50vw;
+  max-height: 80vh;
+  overflow: auto;
+  height: auto;
+  border-radius: 0.42rem;
+  animation: ${FadeAnim1} 1s;
+  border: 2px solid #1a1a1a;
+  ${props => props.dark && `border: 2px solid #f5f4f9;`}
 `;
