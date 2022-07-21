@@ -39,7 +39,7 @@ export const Card = styled.div<{dark: boolean; mobile: boolean}>`
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 1rem;
     width: 10rem;
-    height: 16rem;
+    height: 12rem;
     padding-bottom: 1rem;
   `}
 `;
