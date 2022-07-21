@@ -87,11 +87,12 @@ export const aboutPageTranslations = {
   ]
 };
 
-export const certificatesTranslations = {
+export const transcriptTranslations = {
   issuedOn: ['Issued on', 'Emitido el', 'Ausgegeben am', 'の発行', 'الصادر في'],
   showCred: [
     'Show credential', 'Mostrar credencial', 'Ausweis zeigen', 
     'クレデンシャルを表示する', 'إظهار بيانات الاعتماد'
   ],
-  verify: ['Verify', 'Verificar', 'Verifizieren', '確認', 'يؤكد']
+  verify: ['Verify', 'Verificar', 'Verifizieren', '確認', 'يؤكد'],
+  issuedBy: ['Issued by', 'Emitido por', 'Herausgegeben von', 'が発行', 'صادر عن']
 };

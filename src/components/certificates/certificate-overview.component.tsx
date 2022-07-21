@@ -2,7 +2,7 @@ import {
   OverviewContainer, OverviewBox,
   CloseIcon, CertImage, CredBtn
 } from './styles';
-import { certificatesTranslations } from '../../utils/translations.util';
+import { transcriptTranslations } from "../../utils/translations.util";
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useTranscriptContext } from '../../contexts/transcript.context';
@@ -25,11 +25,11 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
           alt={currCertificate.name}
           mobile={isMobile}
         />
-        <a href={currCertificate.url} target="_blank" rel="noreferrer">
-          <CredBtn dark={isDark}>
-            {certificatesTranslations.verify[+language]}
-          </CredBtn>
-        </a>
+        <CredBtn dark={isDark}>
+          <a href={currCertificate.url} target="_blank" rel="noreferrer">
+            {transcriptTranslations.verify[+language]}
+          </a>
+        </CredBtn>
       </OverviewBox>
     </OverviewContainer>
   );

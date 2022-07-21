@@ -105,7 +105,7 @@ export const OverviewBox = styled.div<{dark: boolean; mobile: boolean}>`
   padding: 0.5%;
   border-radius: 0.42rem;
   gap: 0.42rem;
-  a {text-decoration: none;}
+  a {all:unset;}
   background-color: #f5f4f9;
   ${props => props.dark && `background-color: #1a1a1a;`}
   ${props => props.mobile && `padding: 2%;`}
