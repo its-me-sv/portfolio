@@ -126,7 +126,7 @@ export const CloseIcon = styled.img.attrs({
 `;
 
 export const CertImage = styled.img<{dark: boolean; mobile: boolean}>`
-  max-width: 50vw;
+  max-width: 90vw;
   max-height: 80vh;
   overflow: auto;
   height: auto;
