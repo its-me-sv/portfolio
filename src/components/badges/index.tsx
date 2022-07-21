@@ -18,8 +18,8 @@ const Badges: React.FC<BadgesProps> = () => {
 
   return (
     <Container mobile={isMobile}>
-      {badges.map(badge => (
-        <BadgeCard key={badge.url} {...badge} />
+      {badges.map((badge, idx) => (
+        <BadgeCard key={badge.url+(idx+'')} {...badge} />
       ))}
     </Container>
   );
