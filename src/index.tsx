@@ -8,6 +8,7 @@ import App from './containers/app';
 import { CommonContextProvider } from './contexts/common.context';
 import { MenuContextProvider } from './contexts/menu.context';
 import { TranscriptContextProvider } from './contexts/transcript.context';
+import { ProjectContextProvider } from './contexts/project.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -17,7 +18,9 @@ root.render(
       <CommonContextProvider>
         <MenuContextProvider>
           <TranscriptContextProvider>
-            <App />
+            <ProjectContextProvider>
+              <App />
+            </ProjectContextProvider>
           </TranscriptContextProvider>
         </MenuContextProvider>
       </CommonContextProvider>
