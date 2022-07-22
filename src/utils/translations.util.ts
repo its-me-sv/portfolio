@@ -96,3 +96,13 @@ export const transcriptTranslations = {
   verify: ['Verify', 'Verificar', 'Verifizieren', '確認', 'يؤكد'],
   issuedBy: ['Issued by', 'Emitido por', 'Herausgegeben von', 'が発行', 'صادر عن']
 };
+
+export const projectsTranslations = {
+  placeholder: [
+    'project name, description, tech stack',
+    'nombre del proyecto, descripción, pila tecnológica',
+    'projektname, beschreibung, tech-stack',
+    'プロジェクト名、説明、技術スタック',
+    'اسم المشروع والوصف والمكدس الفني'
+  ]
+};

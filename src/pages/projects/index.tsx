@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 
+import { Container } from './styles';
+
+import SearchBar from '../../components/search-bar';
 import { useMenuContext } from "../../contexts/menu.context";
 
 interface ProjectsPageProps {}
@@ -9,7 +12,12 @@ const ProjectsPage: React.FC<ProjectsPageProps> = () => {
 
   useEffect(() => setMenu!(4), []);
 
-  return <h1>Projects</h1>;
+  return (
+    <Container>
+      <SearchBar />
+      <div />
+    </Container>
+  );
 };
 
 export default ProjectsPage;

@@ -17,9 +17,25 @@ export const LightBoxShadow = css`
   }
 `;
 
+export const LightBoxShadowNoHover = css`
+  box-shadow: rgb(0 0 0 / 70%) 1px 1px 6px 1px;
+`;
+
+export const LightBoxShadowHover = css`
+  box-shadow: rgb(0 0 0 / 70%) 0px 0px 3px 1px inset;
+`;
+
 export const DarkBoxShadow = css`
   box-shadow: rgb(245 244 249 / 70%) 1px 1px 6px 1px;
   &:hover {
     box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
   }
+`;
+
+export const DarkBoxShadowNoHover = css`
+  box-shadow: rgb(245 244 249 / 70%) 1px 1px 6px 1px;
+`;
+
+export const DarkBoxShadowHover = css`
+  box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
 `;
