@@ -10,6 +10,7 @@ import {
   HrzntlLn,
   CardBottom
 } from "./styles";
+import { projectsTranslations } from '../../utils/translations.util';
 
 import codeIcon from '../../assets/icons/code.png';
 import openIcon from '../../assets/icons/open.png';
@@ -56,7 +57,7 @@ const skills: Array<string> = [
 interface ProjectCardProps {}
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
-  const { isDark } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
 
@@ -100,7 +101,9 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
         aliquet dictum ante id pharetra. Nulla vulputate dignissim libero
       </Description>
       <HrzntlLn dark={isDark} />
-      <TechStack dark={isDark}>Tech stack: {skills.join(", ")}</TechStack>
+      <TechStack dark={isDark} key={language}>
+        {projectsTranslations.techStack[+language]}: {skills.join(", ")}
+      </TechStack>
       <HrzntlLn dark={isDark} />
       <CardBottom dark={isDark}>
         <div>

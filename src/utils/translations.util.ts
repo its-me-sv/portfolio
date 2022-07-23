@@ -104,5 +104,9 @@ export const projectsTranslations = {
     'projektname, beschreibung, tech-stack',
     'プロジェクト名、説明、技術スタック',
     'اسم المشروع والوصف والمكدس الفني'
+  ],
+  techStack: [
+    'Tech stack', 'Pila de tecnología', 'Tech-Stack', 
+    '技術スタック', 'كومة التقنية'
   ]
 };

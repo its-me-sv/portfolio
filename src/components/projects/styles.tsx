@@ -102,6 +102,7 @@ export const TechStack = styled.span<{dark: boolean}>`
   opacity: 0.9;
   max-height: 7vh;
   overflow: auto;
+  animation: ${FadeAnim1} 1s;
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
 `;
