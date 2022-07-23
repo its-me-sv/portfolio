@@ -5,16 +5,20 @@ import {
   DarkBoxShadow
 } from '../../utils/styles.util';
 
-export const Container = styled.div`
+export const Container = styled.div<{mobile: boolean}>`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 2.4rem;
   place-items: center;
   padding: 1.4% 0%;
+  ${props => props.mobile && `
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1.2rem;
+  `}
 `;
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div<{dark: boolean; mobile: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,6 +29,7 @@ export const Card = styled.div<{dark: boolean}>`
   animation: ${FadeAnim1} 1s;
   ${LightBoxShadow};
   ${props => props.dark && DarkBoxShadow}
+  ${props => props.mobile && `width: 84vw;`}
 `;
 
 export const CardTop = styled.div<{dark: boolean}>`
