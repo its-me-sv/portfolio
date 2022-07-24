@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { Container } from './styles';
-import { profileDetails } from '../../utils/profiles-data.util';
+import { profileDetails } from '../../data/profiles.data';
 import { menuTranslations } from '../../utils/translations.util';
 
 import { useMenuContext } from '../../contexts/menu.context';

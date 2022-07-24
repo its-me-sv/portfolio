@@ -4,7 +4,7 @@ import {
   aboutMeGerman, intrestAndHobbiesGerman,
   aboutMeJapanese, intrestAndHobbiesJapanese,
   aboutMeArabic, intrestAndHobbiesArabic
-} from './about-me-data.util';
+} from '../data/about-me.data';
 
 export const menuTranslations = {
   home: ["home", "hogar", "heimat", "家", "الصفحة الرئيسية"],

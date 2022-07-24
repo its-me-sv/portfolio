@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { Achievement, achievements } from "../utils/achievements-data"
+import { Achievement, achievements } from "../data/achievements.data"
 
 interface AchievementContextInterface {
   achievements: Array<Achievement>;

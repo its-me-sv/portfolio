@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Achievement } from "../../utils/achievements-data";
+import { Achievement } from "../../data/achievements.data";
 
 import { Card, Top, Name, Description, Footer, Interactions } from './styles';
 import { CredBtn, HrzntlLn } from "../../utils/styles.util";

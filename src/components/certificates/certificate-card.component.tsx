@@ -1,4 +1,4 @@
-import { Certificate } from '../../utils/certificates-data.util';
+import { Certificate } from '../../data/certificates.data';
 
 import { Card, Provider, Name, Issued } from './styles';
 import { CredBtn } from "../../utils/styles.util";

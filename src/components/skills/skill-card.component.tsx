@@ -1,4 +1,4 @@
-import { Skill } from "../../utils/skills-data.util";
+import { Skill } from "../../data/skills.data";
 
 import { Card, Name } from "./styles";
 

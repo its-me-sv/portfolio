@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { Certificate, certificates } from '../utils/certificates-data.util';
-import { Badge, badges } from '../utils/badges-data.util';
-import { Skill, skills } from '../utils/skills-data.util';
+import { Certificate, certificates } from '../data/certificates.data';
+import { Badge, badges } from '../data/badges.data';
+import { Skill, skills } from '../data/skills.data';
 
 interface TranscriptContenxtInterface {
   certificates: Array<Certificate>;

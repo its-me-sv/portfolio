@@ -1,4 +1,4 @@
-import { Badge } from '../../utils/badges-data.util';
+import { Badge } from '../../data/badges.data';
 import { transcriptTranslations } from '../../utils/translations.util';
 
 import { Card, Issued, BadgeImg } from './styles';

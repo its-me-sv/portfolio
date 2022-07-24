@@ -1,5 +1,5 @@
 import openIcon from '../../assets/icons/open.png';
-import { blogs } from '../../utils/blog-data.util';
+import { blogs } from '../../data/blog.data';
 
 import { Card, Name } from './styles';
 
