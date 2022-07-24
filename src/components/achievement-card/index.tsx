@@ -13,10 +13,10 @@ interface AchievementCardProps extends Achievement {}
 const AchievementCard: React.FC<AchievementCardProps> = ({
   name, description
 }) => {
-  const { isDark, language } = useCommonContext();
+  const { isDark, language, isMobile } = useCommonContext();
 
   return (
-    <Card dark={isDark}>
+    <Card dark={isDark} mobile={isMobile} >
       <Top>
         <Name dark={isDark}>{name}</Name>
         <HrzntlLn dark={isDark} />
