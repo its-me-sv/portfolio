@@ -1,7 +1,8 @@
 import { 
   OverviewContainer, OverviewBox,
-  CloseIcon, CertImage, CredBtn
+  CloseIcon, CertImage
 } from './styles';
+import { CredBtn } from "../../utils/styles.util";
 import { transcriptTranslations } from "../../utils/translations.util";
 
 import { useCommonContext } from '../../contexts/common.context';

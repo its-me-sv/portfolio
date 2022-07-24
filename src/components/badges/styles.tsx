@@ -58,33 +58,3 @@ export const Issued = styled.span<{ dark: boolean }>`
   color: #1a1a1a;
   ${(props) => props.dark && `color: #f5f4f9;`}
 `;
-
-export const CredBtn = styled.div<{ dark: boolean }>`
-  font-family: geomanist;
-  padding: 0.42% 3% 1% 3%;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2.1px solid #1a1a1a;
-  background-color: #1a1a1a;
-  color: #f5f4f9;
-  &:hover {
-    background-color: #f5f4f9;
-    color: #1a1a1a;
-    font-weight: bold;
-  }
-  ${(props) =>
-    props.dark &&
-    `
-    border: 2.1px solid #f5f4f9;
-    background-color: #f5f4f9;
-    color: #1a1a1a;
-    &:hover {
-      background-color: #1a1a1a;
-      color: #f5f4f9;
-      font-weight: bold;
-    }
-  `}
-`;

@@ -1,6 +1,7 @@
 import { Certificate } from '../../utils/certificates-data.util';
 
-import { Card, Provider, Name, Issued, CredBtn } from './styles';
+import { Card, Provider, Name, Issued } from './styles';
+import { CredBtn } from "../../utils/styles.util";
 import { transcriptTranslations } from "../../utils/translations.util";
 
 import { useCommonContext } from '../../contexts/common.context';

@@ -1,7 +1,8 @@
 import { Badge } from '../../utils/badges-data.util';
 import { transcriptTranslations } from '../../utils/translations.util';
 
-import { Card, Issued, CredBtn, BadgeImg } from './styles';
+import { Card, Issued, BadgeImg } from './styles';
+import { CredBtn } from '../../utils/styles.util';
 
 import { useCommonContext } from '../../contexts/common.context';
 
