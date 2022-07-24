@@ -19,7 +19,7 @@ modeling (Kanitham 2021) by presenting on “Sieve of Eratosthenes”`,
   },
   {
     name: 'AstraDB Buildathon - Month III - 1st runner up',
-    description: '1st runner up of the third month of AstraDB Buildathon conducated by DataStax',
+    description: 'First runner up of the third month of AstraDB Buildathon conducated by DataStax',
     credUrl: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657341872/portfolio/achievements/round_3_ukhovv.jpg'
   },
   {

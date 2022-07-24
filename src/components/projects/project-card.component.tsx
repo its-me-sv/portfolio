@@ -7,9 +7,9 @@ import {
   SliderItem,
   Description,
   TechStack,
-  HrzntlLn,
   CardBottom
 } from "./styles";
+import { HrzntlLn } from '../../utils/styles.util';
 import { projectsTranslations } from '../../utils/translations.util';
 
 import codeIcon from '../../assets/icons/code.png';

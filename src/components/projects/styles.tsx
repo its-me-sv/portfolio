@@ -112,16 +112,6 @@ export const TechStack = styled.span<{dark: boolean}>`
   ${props => props.dark && `color: #f5f4f9;`}
 `;
 
-export const HrzntlLn = styled.span<{dark: boolean}>`
-  height: 0.2rem;
-  width: 100%;
-  align-self: center;
-  border-radius: 0.42rem;
-  opacity: 0.5;
-  background-color: #1a1a1a;
-  ${props => props.dark && `background-color: #f5f4f9;`}
-`;
-
 export const CardBottom = styled.div<{dark: boolean}>`
   display: flex;
   flex-direction: row;

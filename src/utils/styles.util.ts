@@ -40,7 +40,7 @@ export const DarkBoxShadowHover = css`
   box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
 `;
 
-export const CredBtn = styled.div<{ dark: boolean }>`
+export const CredBtn = styled.div<{dark: boolean}>`
   font-family: geomanist;
   padding: 0.42% 3% 1% 3%;
   border-radius: 0.3rem;
@@ -48,6 +48,7 @@ export const CredBtn = styled.div<{ dark: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${FadeAnim1} 0.84s;
   border: 2.1px solid #1a1a1a;
   background-color: #1a1a1a;
   color: #f5f4f9;
@@ -66,4 +67,14 @@ export const CredBtn = styled.div<{ dark: boolean }>`
       font-weight: bold;
     }
   `}
+`;
+
+export const HrzntlLn = styled.span<{dark: boolean}>`
+  height: 0.2rem;
+  width: 100%;
+  align-self: center;
+  border-radius: 0.42rem;
+  opacity: 0.5;
+  background-color: #1a1a1a;
+  ${props => props.dark && `background-color: #f5f4f9;`}
 `;

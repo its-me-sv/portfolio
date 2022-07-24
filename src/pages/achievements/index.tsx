@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
+import { achievements } from '../../utils/achievements-data';
 
+import AchievementCard from "../../components/achievement-card";
 import { useMenuContext } from "../../contexts/menu.context";
 
 interface AchievementsPageProps {}
@@ -13,7 +15,9 @@ const AchievementsPage: React.FC<AchievementsPageProps> = () => {
   
   return (
     <Container>
-      
+      {achievements.map(achievement => (
+        <AchievementCard key={achievement.name} {...achievement} />   
+      ))}
     </Container>
   );
 };
