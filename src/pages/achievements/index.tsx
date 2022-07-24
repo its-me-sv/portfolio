@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 import { Container } from "./styles";
 
-import AchievementCard from "../../components/achievement-card";
+import Achievements from "../../components/achievements";
+import AchievementOverview from "../../components/achievements/achievement-overview.component";
 import { useCommonContext } from '../../contexts/common.context';
 import { useMenuContext } from "../../contexts/menu.context";
 import { useAchievementContext } from '../../contexts/achievement.context';
@@ -12,16 +13,17 @@ interface AchievementsPageProps {}
 const AchievementsPage: React.FC<AchievementsPageProps> = () => {
   const { isMobile } = useCommonContext();
   const { setMenu } = useMenuContext();
-  const { achievements } = useAchievementContext();
+  const { currAchievement } = useAchievementContext();
 
   useEffect(() => setMenu!(5), []);
   
   return (
-    <Container mobile={isMobile}>
-      {achievements.map(achievement => (
-        <AchievementCard key={achievement.name} {...achievement} />
-      ))}
-    </Container>
+    <>
+      {currAchievement && <AchievementOverview />}
+      <Container mobile={isMobile}>
+        <Achievements />
+      </Container>
+    </>
   );
 };
 

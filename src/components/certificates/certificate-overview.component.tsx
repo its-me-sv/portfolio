@@ -1,7 +1,7 @@
 import { 
-  OverviewContainer, OverviewBox,
-  CloseIcon, CertImage
-} from './styles';
+  OverviewContainer, OverviewBox, 
+  CloseIcon, OverviewImage
+} from '../../utils/styles.util';
 import { CredBtn } from "../../utils/styles.util";
 import { transcriptTranslations } from "../../utils/translations.util";
 
@@ -14,13 +14,13 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
   const { isDark, language, isMobile } = useCommonContext();
   const { currCertificate, setCurrCertificate } = useTranscriptContext();
 
-  if (!currCertificate) return <div></div>;
+  if (!currCertificate) return <div />;
   
   return (
     <OverviewContainer dark={isDark}>
       <OverviewBox dark={isDark} mobile={isMobile}>
         <CloseIcon dark={isDark} onClick={() => setCurrCertificate!(null)} />
-        <CertImage
+        <OverviewImage
           dark={isDark}
           src={currCertificate.picture}
           alt={currCertificate.name}

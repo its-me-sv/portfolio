@@ -4,7 +4,7 @@ import { Achievement, achievements } from "../utils/achievements-data"
 interface AchievementContextInterface {
   achievements: Array<Achievement>;
   currAchievement: null|string;
-  setCurrAchievement?: (val: string) => void;
+  setCurrAchievement?: (val: null|string) => void;
 }
 
 const defaultState: AchievementContextInterface = {
