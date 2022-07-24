@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Achievement } from "../../utils/achievements-data";
 
 import { Card, Top, Name, Description, Footer, Interactions } from './styles';
@@ -7,13 +8,17 @@ import likeIcon from "../../assets/icons/like.png";
 import commentIcon from "../../assets/icons/comment.png";
 
 import { useCommonContext } from '../../contexts/common.context';
+import { useAchievementContext } from '../../contexts/achievement.context';
 
 interface AchievementCardProps extends Achievement {}
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
-  name, description
+  name, description, credUrl
 }) => {
   const { isDark, language, isMobile } = useCommonContext();
+  const { setCurrAchievement } = useAchievementContext();
+
+  const handleClick = useCallback(() => setCurrAchievement!(credUrl), [credUrl]);
 
   return (
     <Card dark={isDark} mobile={isMobile} >
@@ -33,7 +38,11 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             <span>34</span>
           </div>
         </Interactions>
-        <CredBtn dark={isDark} key={language}>
+        <CredBtn 
+          dark={isDark} 
+          key={language}
+          onClick={handleClick}
+        >
           {transcriptTranslations.showCred[+language]}
         </CredBtn>
       </Footer>

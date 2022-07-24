@@ -9,6 +9,7 @@ import { CommonContextProvider } from './contexts/common.context';
 import { MenuContextProvider } from './contexts/menu.context';
 import { TranscriptContextProvider } from './contexts/transcript.context';
 import { ProjectContextProvider } from './contexts/project.context';
+import { AchievementContextProvider } from './contexts/achievement.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -19,7 +20,9 @@ root.render(
         <MenuContextProvider>
           <TranscriptContextProvider>
             <ProjectContextProvider>
-              <App />
+              <AchievementContextProvider>
+                <App />
+              </AchievementContextProvider>
             </ProjectContextProvider>
           </TranscriptContextProvider>
         </MenuContextProvider>
