@@ -26,11 +26,13 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
           alt={currCertificate.name}
           mobile={isMobile}
         />
-        <CredBtn dark={isDark}>
-          <a href={currCertificate.url} target="_blank" rel="noreferrer">
-            {transcriptTranslations.verify[+language]}
-          </a>
-        </CredBtn>
+        {currCertificate.url && (
+          <CredBtn dark={isDark}>
+            <a href={currCertificate.url} target="_blank" rel="noreferrer">
+              {transcriptTranslations.verify[+language]}
+            </a>
+          </CredBtn>
+        )}
       </OverviewBox>
     </OverviewContainer>
   );

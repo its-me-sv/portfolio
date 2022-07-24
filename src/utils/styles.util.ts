@@ -46,9 +46,8 @@ export const CredBtn = styled.div<{dark: boolean}>`
   padding: 0.42% 3% 1% 3%;
   border-radius: 0.3rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  text-align: center;
   animation: ${FadeAnim1} 0.84s;
   border: 2.1px solid #1a1a1a;
   background-color: #1a1a1a;
@@ -128,7 +127,7 @@ export const OverviewImage = styled.img<{
   overflow: auto;
   height: auto;
   border-radius: 0.42rem;
-  animation: ${FadeAnim1} 1s;
+  animation: ${FadeAnim1} 0.5s;
   border: 2px solid #1a1a1a;
   ${props => props.dark && `border: 2px solid #f5f4f9;`}
   ${props => props.mobile && `

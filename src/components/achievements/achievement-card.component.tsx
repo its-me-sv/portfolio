@@ -13,12 +13,18 @@ import { useAchievementContext } from '../../contexts/achievement.context';
 interface AchievementCardProps extends Achievement {}
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
-  name, description, credUrl
+  name, description, credUrl, verifyUrl
 }) => {
   const { isDark, language, isMobile } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
 
-  const handleClick = useCallback(() => setCurrAchievement!(credUrl), [credUrl]);
+  const handleClick = useCallback(() => {
+    const achievement: Achievement = {
+      name, description, credUrl,
+      verifyUrl,
+    };
+    setCurrAchievement!(achievement);
+  }, [name, description, credUrl, verifyUrl, credUrl]);
 
   return (
     <Card dark={isDark} mobile={isMobile} >

@@ -3,8 +3,8 @@ import { Achievement, achievements } from "../utils/achievements-data"
 
 interface AchievementContextInterface {
   achievements: Array<Achievement>;
-  currAchievement: null|string;
-  setCurrAchievement?: (val: null|string) => void;
+  currAchievement: null|Achievement;
+  setCurrAchievement?: (val: null|Achievement) => void;
 }
 
 const defaultState: AchievementContextInterface = {
@@ -17,7 +17,9 @@ export const AchievementContext = createContext<AchievementContextInterface>(def
 export const useAchievementContext = () => useContext(AchievementContext);
 
 export const AchievementContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
-  const [currAchievement, setCurrAchievement] = useState<null|string>(defaultState.currAchievement);
+  const [currAchievement, setCurrAchievement] = useState<null | Achievement>(
+    defaultState.currAchievement
+  );
 
   return (
     <AchievementContext.Provider value={{
