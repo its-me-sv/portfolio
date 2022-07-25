@@ -88,7 +88,16 @@ export const aboutPageTranslations = {
 };
 
 export const profilePageTranslations = {
-
+  viewProfile: [
+    'View profile', 'Ver perfil',
+    'Profil anzeigen', 'プロフィールを見る',
+    'عرض الصفحة الشخصية'
+  ],
+  username: [
+    'Username', 'Nombre de usuario',
+    'Nutzername', 'ユーザー名',
+    'اسم المستخدم'
+  ]
 };
 
 export const transcriptPageTranslations = {

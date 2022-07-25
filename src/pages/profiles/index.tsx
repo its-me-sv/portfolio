@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
 import { Container } from './styles';
-import { profileDetails } from '../../data/profiles.data';
-import { menuTranslations } from '../../utils/translations.util';
 
+import Profiles from '../../components/profiles';
 import { useMenuContext } from '../../contexts/menu.context';
 import { useCommonContext } from '../../contexts/common.context';
 
@@ -17,20 +16,7 @@ const ProfilesPage: React.FC<ProfilesPageProps> = () => {
 
   return (
     <Container key={language + (isMobile + "")} mobile={isMobile}>
-      {profileDetails.map(({ name, url, icon }) => (
-        <a
-          href={url}
-          key={url}
-          target="_blank"
-          rel="noreferrer"
-          title={name + ` ${menuTranslations.profiles[+language]}`}
-        >
-          <img
-            src={icon}
-            alt={name + ` ${menuTranslations.profiles[+language]}`}
-          />
-        </a>
-      ))}
+      <Profiles />
     </Container>
   );
 };

@@ -1,11 +1,11 @@
-interface Profile {
+export interface Profile {
   icon: string;
   name: string;
   url: string;
   profile: string;
 }
 
-export const profileDetails: Array<Profile> = [
+export const profiles: Array<Profile> = [
   { 
     name: 'GitHub', 
     url: 'https://github.com/its-me-sv', 
