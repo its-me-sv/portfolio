@@ -1,4 +1,3 @@
-import openIcon from '../../assets/icons/open.png';
 import { blogs } from '../../data/blog.data';
 
 import { Card, Name } from './styles';
@@ -14,12 +13,9 @@ const Blogs: React.FC<BlogsProps> = () => {
     <>
       {blogs.map((blog) => (
         <Card dark={isDark} mobile={isMobile} key={blog.name}>
-          <Name dark={isDark}>{blog.name}</Name>
-          {blog.url && (
-            <a href={blog.url} target="_blank" rel="noreferrer">
-              <img alt="read" src={openIcon} />
-            </a>
-          )}
+          <a href={blog.url} target="_blank" rel="noreferrer">
+            <Name dark={isDark}>{blog.name}</Name>
+          </a>
         </Card>
       ))}
     </>

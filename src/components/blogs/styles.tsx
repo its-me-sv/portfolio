@@ -2,20 +2,15 @@ import styled from "styled-components";
 import { FadeAnim1, LightBoxShadow, DarkBoxShadow } from '../../utils/styles.util';
 
 export const Card = styled.div<{dark: boolean; mobile: boolean}>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   padding: 0.42% 0.84%;
   border-radius: 0.42rem;
   gap: 0.42rem;
-  animation: ${FadeAnim1} 1s;
-  img {
-    width: 2.4rem;
-    height: auto;
-    &:hover {opacity: 0.5};
-    ${props => props.dark && `filter: invert(100%);`}
+  a {
+    all:unset;
+    cursor: pointer;
   }
+  animation: ${FadeAnim1} 1s;
   ${LightBoxShadow}
   ${props => props.dark && DarkBoxShadow}
   ${props => props.mobile && `padding: 0.5% 0.7rem`}
