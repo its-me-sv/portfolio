@@ -3,7 +3,7 @@ import {
   CloseIcon, OverviewImage,
   CredBtn
 } from '../../utils/styles.util';
-import { transcriptTranslations } from '../../utils/translations.util';
+import { transcriptPageTranslations } from '../../utils/translations.util';
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useAchievementContext } from '../../contexts/achievement.context';
@@ -29,7 +29,7 @@ const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
         {currAchievement.verifyUrl && (
           <CredBtn dark={isDark}>
             <a href={currAchievement.verifyUrl} target="_blank" rel="noreferrer">
-              {transcriptTranslations.verify[+language]}
+              {transcriptPageTranslations.verify[+language]}
             </a>
           </CredBtn>
         )}

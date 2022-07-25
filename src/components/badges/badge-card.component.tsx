@@ -1,5 +1,5 @@
 import { Badge } from '../../data/badges.data';
-import { transcriptTranslations } from '../../utils/translations.util';
+import { transcriptPageTranslations } from '../../utils/translations.util';
 
 import { Card, Issued, BadgeImg } from './styles';
 import { CredBtn } from '../../utils/styles.util';
@@ -17,11 +17,11 @@ const BadgeCard: React.FC<BadgeCardProps> = ({
     <Card dark={isDark} mobile={isMobile}>
       <BadgeImg src={picture} alt="badge logo" />
       <Issued dark={isDark}>
-        {transcriptTranslations.issuedBy[+language]}: {issuer}
+        {transcriptPageTranslations.issuedBy[+language]}: {issuer}
       </Issued>
       <CredBtn dark={isDark}>
         <a href={url} target="_blank" rel="noreferrer">
-          {transcriptTranslations.verify[+language]}
+          {transcriptPageTranslations.verify[+language]}
         </a>
       </CredBtn>
     </Card>

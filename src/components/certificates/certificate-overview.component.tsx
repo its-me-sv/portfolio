@@ -3,7 +3,7 @@ import {
   CloseIcon, OverviewImage
 } from '../../utils/styles.util';
 import { CredBtn } from "../../utils/styles.util";
-import { transcriptTranslations } from "../../utils/translations.util";
+import { transcriptPageTranslations } from "../../utils/translations.util";
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useTranscriptContext } from '../../contexts/transcript.context';
@@ -29,7 +29,7 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
         {currCertificate.url && (
           <CredBtn dark={isDark}>
             <a href={currCertificate.url} target="_blank" rel="noreferrer">
-              {transcriptTranslations.verify[+language]}
+              {transcriptPageTranslations.verify[+language]}
             </a>
           </CredBtn>
         )}

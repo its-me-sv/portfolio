@@ -87,7 +87,11 @@ export const aboutPageTranslations = {
   ]
 };
 
-export const transcriptTranslations = {
+export const profilePageTranslations = {
+
+};
+
+export const transcriptPageTranslations = {
   issuedOn: ['Issued on', 'Emitido el', 'Ausgegeben am', 'の発行', 'الصادر في'],
   showCred: [
     'Show credential', 'Mostrar credencial', 'Ausweis zeigen', 
@@ -97,7 +101,7 @@ export const transcriptTranslations = {
   issuedBy: ['Issued by', 'Emitido por', 'Herausgegeben von', 'が発行', 'صادر عن']
 };
 
-export const projectsTranslations = {
+export const projectsPageTranslations = {
   placeholder: [
     'project name, description, tech stack',
     'nombre del proyecto, descripción, pila tecnológica',

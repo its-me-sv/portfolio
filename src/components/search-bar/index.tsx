@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { CloseIcon, SearchContainer, SearchIcon, SearchInput } from './styles';
-import { projectsTranslations } from '../../utils/translations.util';
+import { projectsPageTranslations } from '../../utils/translations.util';
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useProjectContext } from '../../contexts/project.context';
@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = () => {
       <SearchInput
         dark={isDark}
         mobile={isMobile}
-        placeholder={projectsTranslations.placeholder[+language]}
+        placeholder={projectsPageTranslations.placeholder[+language]}
         value={searchField}
         onChange={handleChange}
       />

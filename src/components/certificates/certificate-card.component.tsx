@@ -2,7 +2,7 @@ import { Certificate } from '../../data/certificates.data';
 
 import { Card, Provider, Name, Issued } from './styles';
 import { CredBtn } from "../../utils/styles.util";
-import { transcriptTranslations } from "../../utils/translations.util";
+import { transcriptPageTranslations } from "../../utils/translations.util";
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useTranscriptContext } from '../../contexts/transcript.context';
@@ -29,10 +29,10 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
       <Provider src={provider} alt="issuer logo" />
       <Name dark={isDark}>{name}</Name>
       <Issued dark={isDark}>
-        {transcriptTranslations.issuedOn[+language]}: {date}
+        {transcriptPageTranslations.issuedOn[+language]}: {date}
       </Issued>
       <CredBtn dark={isDark} onClick={handleClick}>
-        {transcriptTranslations.showCred[+language]}
+        {transcriptPageTranslations.showCred[+language]}
       </CredBtn>
     </Card>
   );

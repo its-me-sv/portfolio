@@ -3,7 +3,7 @@ import { Achievement } from "../../data/achievements.data";
 
 import { Card, Top, Name, Description, Footer, Interactions } from './styles';
 import { CredBtn, HrzntlLn } from "../../utils/styles.util";
-import { transcriptTranslations } from '../../utils/translations.util';
+import { transcriptPageTranslations } from '../../utils/translations.util';
 import likeIcon from "../../assets/icons/like.png";
 import commentIcon from "../../assets/icons/comment.png";
 
@@ -49,7 +49,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
           key={language}
           onClick={handleClick}
         >
-          {transcriptTranslations.showCred[+language]}
+          {transcriptPageTranslations.showCred[+language]}
         </CredBtn>
       </Footer>
     </Card>

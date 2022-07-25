@@ -10,7 +10,7 @@ import {
   CardBottom
 } from "./styles";
 import { HrzntlLn } from '../../utils/styles.util';
-import { projectsTranslations } from '../../utils/translations.util';
+import { projectsPageTranslations } from '../../utils/translations.util';
 
 import codeIcon from '../../assets/icons/code.png';
 import openIcon from '../../assets/icons/open.png';
@@ -102,7 +102,7 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
       </Description>
       <HrzntlLn dark={isDark} />
       <TechStack dark={isDark} key={language}>
-        {projectsTranslations.techStack[+language]}: {skills.join(", ")}
+        {projectsPageTranslations.techStack[+language]}: {skills.join(", ")}
       </TechStack>
       <HrzntlLn dark={isDark} />
       <CardBottom dark={isDark}>
