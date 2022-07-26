@@ -8,7 +8,7 @@ export const Card = styled.div<{dark: boolean}>`
   animation: ${FadeAnim1} 1s;
   gap: 0.21rem;
   span {
-    font-family: geomanist;
+    font-family: montserrat;
     font-size: 2.1rem;
     opacity: 0.84;
     color: #1a1a1a;
@@ -26,7 +26,7 @@ export const Card = styled.div<{dark: boolean}>`
     ${(props) => props.dark && `${DarkBoxShadow}`}
     span {
       font-family: arial;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #1a1a1a;
       ${props => props.dark && `color: #f5f4f9;`}
     }
