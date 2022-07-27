@@ -14,8 +14,6 @@ export const Signature = styled.span<{dark?: boolean}>`
   font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
-  letter-spacing: 0.12rem;
-  word-spacing: 0.24rem;
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
   &:hover {
