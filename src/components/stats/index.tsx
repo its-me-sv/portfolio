@@ -5,13 +5,13 @@ import { useCommonContext } from '../../contexts/common.context';
 interface StatsProps {}
 
 const Stats: React.FC<StatsProps> = () => {
-  const { isDark } = useCommonContext();
+  const { isDark, isMobile } = useCommonContext();
 
   return (
-    <Container>
+    <Container mobile={isMobile}>
       <Section dark={isDark}>
         <SectionTitle dark={isDark}>General</SectionTitle>
-        <SubSection>
+        <SubSection mobile={isMobile}>
           <SectionItem dark={isDark}>
             <span>Total views</span>
             <span>32.6k</span>
@@ -40,7 +40,7 @@ const Stats: React.FC<StatsProps> = () => {
       </Section>
       <Section dark={isDark}>
         <SectionTitle dark={isDark}>User</SectionTitle>
-        <SubSection>
+        <SubSection mobile={isMobile}>
           <SectionItem dark={isDark}>
             <span>Total users</span>
             <span>32.6k</span>
@@ -57,7 +57,7 @@ const Stats: React.FC<StatsProps> = () => {
       </Section>
       <Section dark={isDark}>
         <SectionTitle dark={isDark}>Interactions</SectionTitle>
-        <SubSection>
+        <SubSection mobile={isMobile}>
           <SectionItem dark={isDark}>
             <span>Likes</span>
             <span>32.6k</span>
