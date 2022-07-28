@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { transcriptMenuTranslations } from '../../utils/translations.util';
-import { Container } from './styles';
+import { PageContainer } from '../../utils/styles.util';
 
 import TranscriptMenu from '../../components/transcript-menu';
 import Certificates from "../../components/certificates";
@@ -34,7 +34,7 @@ const TranscriptPage: React.FC<TranscriptPageProps> = () => {
   }, [transMenu, language]);
 
   return (
-    <Container>
+    <PageContainer>
       {currCertificate && <CertificateOverview />}
       <TranscriptMenu />
       <Routes>
@@ -42,7 +42,7 @@ const TranscriptPage: React.FC<TranscriptPageProps> = () => {
         <Route path="badges" element={<Badges />} />
         <Route path="skills" element={<Skills />} />
       </Routes>
-    </Container>
+    </PageContainer>
   );
 };
 
