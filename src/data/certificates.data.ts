@@ -8,6 +8,13 @@ export interface Certificate {
 
 export const certificates: Array<Certificate> = [
   { 
+    provider: 'https://res.cloudinary.com/djeteilo6/image/upload/v1659001456/portfolio/profiles/datastax_logo_evldhx.png', 
+    name: 'Apache Cassandra 3 Developer Associate', 
+    date: '28 July, 2022', 
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1659001102/portfolio/certificates/DataStax_-_Apache_Cassandra_3_Developer_Associate_Certification_hp99qg.jpg',
+    url: 'https://certification.mettl.com/datastax/applicant/result/download-certificate?key=CQGo2K0NO6kAOPzSy2ILvw%3D%3D', 
+  },
+  { 
     provider: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342047/portfolio/profiles/freecodecamp_dbmnui.jpg', 
     name: 'Responsive Web Design', 
     date: '20 Nov, 2020', 
