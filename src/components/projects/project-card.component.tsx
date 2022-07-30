@@ -59,14 +59,15 @@ interface ProjectCardProps {}
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
   const { isDark, language, isMobile } = useCommonContext();
-  const { setSection, onUnmount } = useCommentsContext();
+  const { setCommentsMeta, onUnmount } = useCommentsContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
 
   const toggleActive = useCallback(() => setActive(prev => !prev), [setActive]);
 
-  const onCommentClick = useCallback(() => setSection!('Project Title'), [setSection]);
+  const onCommentClick = useCallback(
+    () => setCommentsMeta!('Project', 'Project Title'), [setCommentsMeta]);
 
   useEffect(() => {
     if (!active) return;

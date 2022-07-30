@@ -18,7 +18,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
 }) => {
   const { isDark, language, isMobile } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
-  const { setSection } = useCommentsContext();
+  const { setCommentsMeta } = useCommentsContext();
 
   const handleClick = useCallback(() => {
     const achievement: Achievement = {
@@ -28,7 +28,8 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
     setCurrAchievement!(achievement);
   }, [name, description, credUrl, verifyUrl, credUrl]);
 
-  const showComments = useCallback(() => setSection!(name), [name, setSection]);
+  const showComments = useCallback(
+    () => setCommentsMeta!('Achievement', name), [name, setCommentsMeta]);
 
   return (
     <Card dark={isDark} mobile={isMobile}>
