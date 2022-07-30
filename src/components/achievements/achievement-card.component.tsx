@@ -9,6 +9,7 @@ import commentIcon from "../../assets/icons/comment.png";
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useAchievementContext } from '../../contexts/achievement.context';
+import { useCommentsContext } from '../../contexts/comments.context';
 
 interface AchievementCardProps extends Achievement {}
 
@@ -17,6 +18,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
 }) => {
   const { isDark, language, isMobile } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
+  const { setSection } = useCommentsContext();
 
   const handleClick = useCallback(() => {
     const achievement: Achievement = {
@@ -25,6 +27,8 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
     };
     setCurrAchievement!(achievement);
   }, [name, description, credUrl, verifyUrl, credUrl]);
+
+  const showComments = useCallback(() => setSection!(name), [name, setSection]);
 
   return (
     <Card dark={isDark} mobile={isMobile}>
@@ -39,7 +43,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             <img src={clapIcon} alt="clap" />
             <span>37</span>
           </div>
-          <div>
+          <div onClick={showComments}>
             <img src={commentIcon} alt="comment" />
             <span>34</span>
           </div>

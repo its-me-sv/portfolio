@@ -59,7 +59,7 @@ interface ProjectCardProps {}
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
   const { isDark, language, isMobile } = useCommonContext();
-  const { setSection } = useCommentsContext();
+  const { setSection, onUnmount } = useCommentsContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
@@ -76,11 +76,15 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
     return () => clearInterval(interval);
   }, [active]);
 
+  useEffect(() => {
+    return () => onUnmount!();
+  }, []);
+
   return (
-    <Card 
-      dark={isDark} 
-      mobile={isMobile} 
-      onMouseEnter={toggleActive} 
+    <Card
+      dark={isDark}
+      mobile={isMobile}
+      onMouseEnter={toggleActive}
       onMouseLeave={toggleActive}
     >
       <CardTop dark={isDark}>
@@ -123,8 +127,8 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
           <img src={likeIcon} alt="like" />
           <span>7</span>
         </div>
-        <div>
-          <img onClick={onCommentClick} src={commentIcon} alt="comment" />
+        <div onClick={onCommentClick}>
+          <img src={commentIcon} alt="comment" />
           <span>34</span>
         </div>
         <div>

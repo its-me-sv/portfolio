@@ -45,14 +45,14 @@ export const Interactions = styled.div<{dark: boolean}>`
   div {
     display: flex;
     align-items: center;
+    cursor: pointer;
     gap: 0.3rem;
+    &:hover {opacity: 0.5;}
     img {
       width: 2.1rem;
       height: auto;
       opacity: 0.9;
-      cursor: pointer;
       ${props => props.dark && `filter: invert(100%);`}
-      &:hover {opacity: 0.5;}
     }
     span {
       font-family: arial;

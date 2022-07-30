@@ -6,6 +6,7 @@ interface CommentsContextInterface {
   setSection?: (val: string) => void;
   setComment?: (val: string) => void;
   postComment?: () => void;
+  onUnmount?: () => void;
 }
 
 const defaultState: CommentsContextInterface = {
@@ -27,12 +28,17 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     setComment('');
   };
 
+  const onUnmount = () => {
+    setSection('');
+    setComment('');
+  };
+
   return (
     <CommentsContext.Provider
       value={{
         section, setSection,
         comment, setComment,
-        postComment
+        postComment, onUnmount
       }}
     >{children}</CommentsContext.Provider>
   );
