@@ -4,7 +4,7 @@ import { Achievement } from "../../data/achievements.data";
 import { Card, Top, Name, Description, Footer, Interactions } from './styles';
 import { CredBtn, HrzntlLn } from "../../utils/styles.util";
 import { transcriptPageTranslations } from '../../utils/translations.util';
-import likeIcon from "../../assets/icons/like.png";
+import clapIcon from "../../assets/icons/clap.png";
 import commentIcon from "../../assets/icons/comment.png";
 
 import { useCommonContext } from '../../contexts/common.context';
@@ -27,7 +27,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
   }, [name, description, credUrl, verifyUrl, credUrl]);
 
   return (
-    <Card dark={isDark} mobile={isMobile} >
+    <Card dark={isDark} mobile={isMobile}>
       <Top>
         <Name dark={isDark}>{name}</Name>
         <HrzntlLn dark={isDark} />
@@ -36,7 +36,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       <Footer>
         <Interactions dark={isDark}>
           <div>
-            <img src={likeIcon} alt="clap" />
+            <img src={clapIcon} alt="clap" />
             <span>37</span>
           </div>
           <div>
@@ -44,11 +44,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             <span>34</span>
           </div>
         </Interactions>
-        <CredBtn 
-          dark={isDark} 
-          key={language}
-          onClick={handleClick}
-        >
+        <CredBtn dark={isDark} key={language} onClick={handleClick}>
           {transcriptPageTranslations.showCred[+language]}
         </CredBtn>
       </Footer>
