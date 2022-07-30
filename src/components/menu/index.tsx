@@ -19,7 +19,6 @@ const Menu: React.FC<MenuProps> = () => {
   return (
     <Container mobile={isMobile} open={menuOpen} dark={isDark}>
       <MenuIcon
-        key={menuOpen + "" + (isDark + "")}
         onClick={toggleMenu}
         src={menuOpen ? closeIcon : menuIcon}
         dark={isDark}
@@ -29,7 +28,6 @@ const Menu: React.FC<MenuProps> = () => {
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
           <MenuItem
-            key={page[+language] + (isDark + "")}
             chosen={idx === menu}
             onClick={() => setMenu!(idx)}
             dark={isDark}

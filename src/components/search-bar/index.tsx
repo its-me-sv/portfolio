@@ -19,7 +19,6 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   return (
     <SearchContainer
       dark={isDark}
-      key={language + (isDark + "")}
       mobile={isMobile}
     >
       <SearchIcon dark={isDark} />

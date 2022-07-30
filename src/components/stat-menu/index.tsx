@@ -10,7 +10,7 @@ const StatMenu: React.FC<StatMenuProps> = () => {
   const { years, setCurrYear, currYear } = useStatContext();
 
   return (
-    <MenuContainer key={isDark+''}>
+    <MenuContainer>
       {years.map(option => (
         <MenuItem 
           key={option}

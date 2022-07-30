@@ -26,7 +26,7 @@ const HomePage: React.FC<HomePageProps> = () => {
   useEffect(() => setMenu!(0), []);
 
   return (
-    <Container key={isDark + ""}>
+    <Container>
       <MyImage src={isDark ? gradImg : noGradImg} mobile={isMobile} />
       {!isMobile && <div />}
       <TitleText>{"<DarkKnight />"}</TitleText>

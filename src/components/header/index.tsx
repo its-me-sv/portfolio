@@ -20,14 +20,13 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <Container>
       {!isMobile && (
-        <Signature 
-          key={isDark + ""} 
+        <Signature  
           dark={isDark} 
           onClick={() => navigate('../')}
         >Suraj Vijay</Signature>
       )}
       <CurrentPage 
-        key={pageName + `${isDark}`} 
+        key={pageName} 
         dark={isDark}
         mobile={isMobile}
       >{pageName}</CurrentPage>

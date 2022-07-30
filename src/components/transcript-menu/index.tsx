@@ -11,7 +11,7 @@ const TranscriptMenu: React.FC<TranscriptMenuProps> = () => {
   const { transMenu, setTransMenu } = useMenuContext();
 
   return (
-    <MenuContainer key={language+(isDark+'')}>
+    <MenuContainer>
       {Object.values(transcriptMenuTranslations).map((option, idx) => (
         <MenuItem 
           key={option[+language]}
