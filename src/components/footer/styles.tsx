@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { FadeAnim1 } from "../../utils/styles.util";
+import { DarkBoxShadow, FadeAnim1, LightBoxShadow } from "../../utils/styles.util";
 
 export const Container = styled.div<{mobile: boolean}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0vw 0.49rem 0.1rem 0.49rem;
+  padding: 0.49rem 0.49rem 0.1rem 0.49rem;
   span {
     cursor: pointer;
     margin-right: 0.42rem;
@@ -61,14 +61,17 @@ export const SelectLang = styled.select<{
   mobile: boolean;
 }>`
   border-radius: 0.21rem;
+  z-index: 998;
   font-size: 1rem;
-  ${props => props.mobile && `font-size: 1.4rem;`}
+  ${(props) => props.mobile && `font-size: 1.4rem;`}
   font-family: bahnschrift;
   border: 1px solid black;
   outline: none;
   background-color: #f5f4f9;
   color: #1a1a1a;
-  ${props => props.dark && `
+  ${(props) =>
+    props.dark &&
+    `
     background-color: #1a1a1a;
     color: #f5f4f9;
     border-color: #f5f4f9;
@@ -83,4 +86,14 @@ export const FooterRight = styled.div`
   display: flex;
   align-items: center;
   z-index: 998;
+`;
+
+export const ThemeIcon = styled.div<{dark: boolean}>`
+  cursor: pointer;
+  padding: 0.3rem;
+  padding-top: 0.1rem;
+  border-radius: 0.3rem;
+  z-index: 998;
+  ${LightBoxShadow}
+  ${props => props.dark && DarkBoxShadow}
 `;

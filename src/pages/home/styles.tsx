@@ -7,7 +7,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  overflow: auto;
   animation: ${FadeAnim1} 1s;
 `;
 

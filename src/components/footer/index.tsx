@@ -1,7 +1,8 @@
 import { ChangeEvent } from 'react';
 
-import { Container, CreditText, SelectLang, FooterRight } from './styles';
+import { Container, CreditText, SelectLang, FooterRight, ThemeIcon } from './styles';
 import { footerTranslations } from '../../utils/translations.util';
+import { CredBtn } from '../../utils/styles.util';
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useMenuContext } from '../../contexts/menu.context';
@@ -24,33 +25,28 @@ const Footer: React.FC<FooterProps> = () => {
 
   return (
     <Container mobile={isMobile}>
-      <div></div>
-      <CreditText
+      <SelectLang
+        value={language}
+        onChange={handleChange}
         dark={isDark}
         mobile={isMobile}
-        open={menuOpen}
       >
+        {languages.map((val, idx) => (
+          <option key={val} value={idx}>
+            {val}
+          </option>
+        ))}
+      </SelectLang>
+      <CreditText dark={isDark} mobile={isMobile} open={menuOpen}>
         {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
         {footerTranslations.by[+language]}
         <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
           Suraj Vijay
         </a>
       </CreditText>
-      <FooterRight>
-        <span onClick={toggleTheme!}>{isDark ? "🌜" : "🌞"}</span>
-        <SelectLang
-          value={language}
-          onChange={handleChange}
-          dark={isDark}
-          mobile={isMobile}
-        >
-          {languages.map((val, idx) => (
-            <option key={val} value={idx}>
-              {val}
-            </option>
-          ))}
-        </SelectLang>
-      </FooterRight>
+      <ThemeIcon dark={isDark} onClick={toggleTheme!}>
+        {isDark ? "🌜" : "🌞"}
+      </ThemeIcon>
     </Container>
   );
 };
