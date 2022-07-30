@@ -1,25 +1,27 @@
-import { Body } from "./styles";
+import { commentsTranslations } from "../../utils/translations.util";
+import { Body, LoadMore } from "./styles";
 
+import CommentCard from "./comment-card.component";
+import { useCommonContext } from "../../contexts/common.context";
 import { useCommentsContext } from '../../contexts/comments.context';
-
-const avtrURL: string = 'https://avatars.dicebear.com/api/identicon/';
 
 interface CommentBodyProps {}
 
 const CommentBody: React.FC<CommentBodyProps> = () => {
-  const { comments } = useCommentsContext();
+  const { isDark, language } = useCommonContext();
+  const { comments, fetchComments, page } = useCommentsContext();
 
   return (
     <Body>
       {comments.map((cmt, idx) => (
-        <div key={cmt.id+idx}>
-          <img alt={cmt.sender} src={avtrURL+cmt.sender+'.svg'} />
-          <div>
-            <span>{new Date(cmt.timestamp).toDateString()}</span>
-            <span>{cmt.message}</span>
-          </div>
-        </div>
+        <CommentCard key={cmt.id + idx} {...cmt} />
       ))}
+      {(comments.length > 0 && page !== null) && (
+        <LoadMore 
+          onClick={fetchComments}
+          dark={isDark}
+        >{commentsTranslations.ldCmt[+language]}</LoadMore>
+      )}
     </Body>
   );
 };

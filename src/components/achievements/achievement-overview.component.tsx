@@ -1,7 +1,7 @@
 import { 
   OverviewContainer, OverviewBox, 
   CloseIcon, OverviewImage,
-  CredBtn
+  CredBtn, OverviewHeader, OverviewTitle
 } from '../../utils/styles.util';
 import { transcriptPageTranslations } from '../../utils/translations.util';
 
@@ -19,7 +19,10 @@ const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
   return (
     <OverviewContainer dark={isDark}>
       <OverviewBox dark={isDark} mobile={isMobile}>
-        <CloseIcon dark={isDark} onClick={() => setCurrAchievement!(null)} />
+        <OverviewHeader>
+          <div />
+          <CloseIcon dark={isDark} onClick={() => setCurrAchievement!(null)} />
+        </OverviewHeader>
         <OverviewImage
           dark={isDark}
           mobile={isMobile}
@@ -28,7 +31,11 @@ const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
         />
         {currAchievement.verifyUrl && (
           <CredBtn dark={isDark}>
-            <a href={currAchievement.verifyUrl} target="_blank" rel="noreferrer">
+            <a
+              href={currAchievement.verifyUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               {transcriptPageTranslations.verify[+language]}
             </a>
           </CredBtn>

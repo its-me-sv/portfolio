@@ -98,6 +98,20 @@ export const OverviewContainer = styled.div<{dark: boolean}>`
   ${props => props.dark && `background-color: rgba(256, 256, 256, 0.5);`}
 `;
 
+export const OverviewHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
+export const OverviewTitle = styled.span<{dark: boolean}>`
+  font-family: calibri;
+  font-size: 1.6rem;
+  animation: ${FadeAnim1} 1s;
+  color: #1a1a1a;
+  ${props => props.dark && `color: #f5f4f9;`}
+`;
+
 export const OverviewBox = styled.div<{dark: boolean; mobile: boolean; comments?: boolean}>`
   display: flex;
   flex-direction: column;
@@ -113,6 +127,10 @@ export const OverviewBox = styled.div<{dark: boolean; mobile: boolean; comments?
     height: 77vh;
     overflow: auto;
   `}
+  ${props => (props.mobile && props.comments) && `
+    width: 84vw; 
+    height: 84vh
+  `}
 `;
 
 export const CloseIcon = styled.img.attrs({
@@ -121,11 +139,8 @@ export const CloseIcon = styled.img.attrs({
 })<{dark: boolean}>`
   width: 1.2rem;
   height: auto;
-  align-self: flex-end;
   cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
+  &:hover { opacity: 0.7; }
   ${props => props.dark && `filter: invert(100%);`}
 `;
 

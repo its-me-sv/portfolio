@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { CloseIcon } from '../../utils/styles.util';
+import { CloseIcon, OverviewHeader } from '../../utils/styles.util';
 import { CommentsTitle } from './styles';
 
 import { useCommonContext } from '../../contexts/common.context';
@@ -15,10 +15,10 @@ const CommentHeader: React.FC<CommentHeaderProps> = () => {
   const handleClose = useCallback(() => onUnmount!(), [onUnmount]);
 
   return (
-    <>
-      <CloseIcon dark={isDark} onClick={handleClose} />
+    <OverviewHeader>
       <CommentsTitle dark={isDark}>{section}</CommentsTitle>
-    </>
+      <CloseIcon dark={isDark} onClick={handleClose} />
+    </OverviewHeader>
   );
 };
 

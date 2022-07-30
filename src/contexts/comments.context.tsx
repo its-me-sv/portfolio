@@ -47,9 +47,15 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
 
   const postComment = useCallback(() => {
     if (comment.length < 1) return;
-    window.alert(comment);
+    const newComment: Comment = {
+      id: comments.length + 1 + "",
+      timestamp: `${Date.now()}`,
+      sender: comments.length + 1 + "",
+      message: comment,
+    };
+    setComments(prev => [newComment, ...prev]);
     setComment('');
-  }, [comment]);
+  }, [comment, comments.length]);
 
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);

@@ -213,5 +213,10 @@ export const commentsTranslations = {
   pstCmt: [
     'Post comment', 'Publicar comentario', 'Kommentar hinzufügen',
     'コメントを投稿', 'أضف تعليقا'
+  ],
+  ldCmt: [
+    'Load more comments', 'Cargar más comentarios',
+    'Weitere Kommentare laden', 'コメントをさらに読み込む',
+    'تحميل المزيد من التعليقات'
   ]
 };
