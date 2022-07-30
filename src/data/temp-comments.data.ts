@@ -1,7 +1,7 @@
 import { Comment } from "../contexts/comments.context";
 import { getRandomDateEpoch } from "../utils/date.util";
 
-export const comments: Array<Comment> = [
+export const dummyComments: Array<Comment> = [
   {
     id: '1',
     timestamp: `${getRandomDateEpoch()}`,

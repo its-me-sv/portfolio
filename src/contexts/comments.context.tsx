@@ -1,3 +1,4 @@
+import { dummyComments } from "../data/temp-comments.data";
 import { createContext, ReactNode, useContext, useState, useCallback } from "react";
 
 export interface Comment {
@@ -14,6 +15,7 @@ interface CommentsContextInterface {
   comment: string;
   comments: Array<Comment>;
   type: CommentType;
+  page: null | string;
   setSection?: (val: string) => void;
   setComment?: (val: string) => void;
   setComments?: (val: Array<Comment>) => void;
@@ -21,13 +23,15 @@ interface CommentsContextInterface {
   postComment?: () => void;
   onUnmount?: () => void;
   setCommentsMeta?: (typ: CommentType, sctn: string) => void;
+  fetchComments?: (apiEndPoint: string) => void;
 }
 
 const defaultState: CommentsContextInterface = {
   section: '',
   comment: '',
   comments: [],
-  type: null
+  type: null,
+  page: ''
 };
 
 export const CommentsContext = createContext<CommentsContextInterface>(defaultState);
@@ -39,6 +43,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
   const [comment, setComment] = useState<string>(defaultState.comment);
   const [comments, setComments] = useState<Array<Comment>>(defaultState.comments);
   const [type, setType] = useState<CommentType>(defaultState.type);
+  const [page, setPage] = useState<null|string>(defaultState.page);
 
   const postComment = useCallback(() => {
     if (comment.length < 1) return;
@@ -46,16 +51,26 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     setComment('');
   }, [comment]);
 
-  const onUnmount = useCallback(() => {
-    setSection('');
-    setComment('');
-    setComments([]);
-    setType(null);
-  }, []);
-
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);
     setSection(sctn);
+  }, []);
+
+  const fetchComments = useCallback((apiEndPoint: string) => {
+    if (page === null) return;
+    if (!apiEndPoint.length) return;
+    setTimeout(() => {
+      setComments(prev => [...prev, ...dummyComments]);
+      setPage(Math.random() < 0.5 ? 'page1' : null);
+    }, 1400);
+  }, [page]);
+
+  const onUnmount = useCallback(() => {
+    setSection("");
+    setComment("");
+    setComments([]);
+    setType(null);
+    setPage('');
   }, []);
 
   return (
@@ -64,9 +79,10 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
         section, setSection,
         comment, setComment,
         comments, setComments,
-        type, setType,
+        type, setType, page,
         postComment, onUnmount,
-        setCommentsMeta
+        setCommentsMeta,
+        fetchComments
       }}
     >{children}</CommentsContext.Provider>
   );
