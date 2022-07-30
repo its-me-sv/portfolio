@@ -125,6 +125,18 @@ export const projectsPageTranslations = {
 };
 
 export const statsPageTranslations = {
+  'General': [
+    'General', 'General', 'Allgemein',
+    '全般的', 'عام'
+  ],
+  'User': [
+    'User', 'Usuari', 'Benutzer',
+    'ユーザー', 'المستعمل'
+  ],
+  'Interactions': [
+    'Interactions', 'Interacciones', 'Interaktionen',
+    '相互作用', 'التفاعلات'
+  ],
   'Total views': [
     'Total views', 'Vistas totales', 'Gesamtansichten',
     '総視聴回数', 'عدد المشاهدات'
