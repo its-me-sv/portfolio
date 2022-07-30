@@ -9,10 +9,10 @@ interface CommentBodyProps {}
 
 const CommentBody: React.FC<CommentBodyProps> = () => {
   const { isDark, language } = useCommonContext();
-  const { comments, fetchComments, page } = useCommentsContext();
+  const { comments, fetchComments, page, scrollRef } = useCommentsContext();
 
   return (
-    <Body>
+    <Body ref={scrollRef}>
       {comments.map((cmt, idx) => (
         <CommentCard key={cmt.id + idx} {...cmt} />
       ))}

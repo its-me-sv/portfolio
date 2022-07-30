@@ -1,5 +1,5 @@
 import { dummyComments } from "../data/temp-comments.data";
-import { createContext, ReactNode, useContext, useState, useCallback } from "react";
+import { createContext, ReactNode, useContext, useState, useCallback, useRef, MutableRefObject } from "react";
 
 export interface Comment {
   id: string;
@@ -16,6 +16,7 @@ interface CommentsContextInterface {
   comments: Array<Comment>;
   type: CommentType;
   page: null | string;
+  scrollRef?: MutableRefObject<HTMLDivElement>; 
   setSection?: (val: string) => void;
   setComment?: (val: string) => void;
   setComments?: (val: Array<Comment>) => void;
@@ -31,7 +32,7 @@ const defaultState: CommentsContextInterface = {
   comment: '',
   comments: [],
   type: null,
-  page: ''
+  page: '',
 };
 
 export const CommentsContext = createContext<CommentsContextInterface>(defaultState);
@@ -44,6 +45,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
   const [comments, setComments] = useState<Array<Comment>>(defaultState.comments);
   const [type, setType] = useState<CommentType>(defaultState.type);
   const [page, setPage] = useState<null|string>(defaultState.page);
+  const scrollRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const postComment = useCallback(() => {
     if (comment.length < 1) return;
@@ -55,6 +57,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     };
     setComments(prev => [newComment, ...prev]);
     setComment('');
+    scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
   }, [comment, comments.length]);
 
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
@@ -84,7 +87,8 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
         section, setSection,
         comment, setComment,
         comments, setComments,
-        type, setType, page,
+        type, setType, 
+        page, scrollRef,
         postComment, onUnmount,
         setCommentsMeta,
         fetchComments
