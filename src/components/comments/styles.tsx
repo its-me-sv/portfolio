@@ -22,8 +22,6 @@ export const Footer = styled.div<{dark: boolean}>`
   gap: 0.3rem;
   padding: 0.2rem;
   border-radius: 0.3rem;
-  ${LightBoxShadowNoHover}
-  ${props => props.dark && DarkBoxShadowNoHover}
   textarea, textarea::placeholder {
     resize: none;
     outline: none;
@@ -34,7 +32,7 @@ export const Footer = styled.div<{dark: boolean}>`
     padding-left: 0.28rem;
     color: #1a1a1a;
     background-color: #c5c5c1;
-    ${props => props => props.dark && `
+    ${props => props.dark && `
       color: #f5f4f9;
       background-color: #2c2c2b;
     `}
