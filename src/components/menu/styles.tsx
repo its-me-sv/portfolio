@@ -25,12 +25,9 @@ export const Container = styled.div<{
     padding: 0.49rem;
     border-radius: 0rem 0 0 0.42rem;
     background-color: #1a1a1a;
-    ${
-      props.dark &&
-      `
+    ${props.dark && `
       background-color: #f5f4f9;
-    `
-    }
+    `}
   `}
   ${(props) =>
     props.mobile &&
