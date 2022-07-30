@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import {
   Card,
@@ -60,16 +60,25 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
   const { isDark, language, isMobile } = useCommonContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
+  const [active, setActive] = useState<boolean>(false);
+
+  const toggleActive = useCallback(() => setActive(prev => !prev), [setActive]);
 
   useEffect(() => {
+    if (!active) return;
     const interval = setInterval(() => {
       setCurrImage(prev => (prev + 1) % dummyImages.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [active]);
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card 
+      dark={isDark} 
+      mobile={isMobile} 
+      onMouseEnter={toggleActive} 
+      onMouseLeave={toggleActive}
+    >
       <CardTop dark={isDark}>
         <span>Project Title</span>
         <div>

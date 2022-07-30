@@ -50,7 +50,7 @@ const App: React.FC<AppProps> = () => {
   }, [menu, language]);
 
   return (
-    <AppContainer dark={isDark} key={isDark + ""}>
+    <AppContainer dark={isDark}>
       {loading && <Loader />}
       <Header />
       <Suspense fallback={<Loader />}>
