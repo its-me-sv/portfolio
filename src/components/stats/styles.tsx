@@ -51,6 +51,7 @@ export const SectionItem = styled.div<{dark: boolean}>`
   span {
     font-family: roboto;
     font-size: 1.6rem;
+    text-align: center;
     opacity: 0.8;
     animation: ${FadeAnim1} 1s;
     color: #1a1a1a;

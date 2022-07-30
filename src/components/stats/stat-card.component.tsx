@@ -20,7 +20,7 @@ const StatCard: React.FC<StatCardProps> = ({name, url}) => {
 
   return (
     <Section dark={isDark}>
-      <SectionTitle dark={isDark}>{name}</SectionTitle>
+      <SectionTitle dark={isDark}>{statsPageTranslations[name][+language]}</SectionTitle>
       <SubSection mobile={isMobile}>
         {Object.keys(stats).map((stat) => {
           const propName: string = statsPageTranslations[stat][+language];
