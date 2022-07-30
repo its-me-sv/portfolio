@@ -14,19 +14,24 @@ const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   const [stats, setStats] = useState<StatObject>({});
 
   useEffect(() => {
-    setTimeout(() => setStats(statsTempData[url]), 1400);
-  }, []);
+    const timer = setTimeout(() => setStats(statsTempData[url]), 1400);
+    return () => clearTimeout(timer);
+  }, [url]);
 
   return (
     <Section dark={isDark}>
       <SectionTitle dark={isDark}>{name}</SectionTitle>
       <SubSection mobile={isMobile}>
-        {Object.keys(stats).map((stat) => (
-          <SectionItem dark={isDark} key={language+(stats[stat]+'')}>
-            <span>{statsPageTranslations[stat][+language]}</span>
-            <span>{stats[stat]}</span>
-          </SectionItem>
-        ))}
+        {Object.keys(stats).map((stat) => {
+          const propName: string = statsPageTranslations[stat][+language];
+          const value: string = stats[stat];
+          return (
+            <SectionItem dark={isDark} key={propName+value}>
+              <span>{propName}</span>
+              <span>{value}</span>
+            </SectionItem>
+          );
+        })}
       </SubSection>
     </Section>
   );
