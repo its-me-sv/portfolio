@@ -17,7 +17,7 @@ export const Container = styled.div<{
   padding-left: 1.2rem;
   padding: 0 0.49rem;
   ${(props) => !props.mobile && "padding-top: 0.28rem;"}
-  z-index: 998;
+  z-index: 997;
   gap: 0.36rem;
   ${(props) =>
     props.open &&

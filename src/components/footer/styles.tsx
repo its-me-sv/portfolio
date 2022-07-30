@@ -82,4 +82,5 @@ export const SelectLang = styled.select<{
 export const FooterRight = styled.div`
   display: flex;
   align-items: center;
+  z-index: 998;
 `;

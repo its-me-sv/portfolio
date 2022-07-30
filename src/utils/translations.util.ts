@@ -204,3 +204,14 @@ export const statsPageTranslations: {[key: string]: Array<string>} = {
     'Anerkennung', '感謝', 'تقدير'
   ]
 };
+
+export const commentsTranslations = {
+  cmt: [
+    'Comment', 'Comentario', 'Kommentar',
+    'コメント', 'تعليق'
+  ],
+  pstCmt: [
+    'Post comment', 'Publicar comentario', 'Kommentar hinzufügen',
+    'コメントを投稿', 'أضف تعليقا'
+  ]
+};

@@ -17,7 +17,7 @@ const CommentHeader: React.FC<CommentHeaderProps> = () => {
   return (
     <>
       <CloseIcon dark={isDark} onClick={handleClose} />
-      <CommentsTitle>{section} - Comments</CommentsTitle>
+      <CommentsTitle>{section}</CommentsTitle>
     </>
   );
 };
