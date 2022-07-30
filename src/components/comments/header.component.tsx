@@ -10,9 +10,9 @@ interface CommentHeaderProps {}
 
 const CommentHeader: React.FC<CommentHeaderProps> = () => {
   const { isDark } = useCommonContext();
-  const { setSection, section } = useCommentsContext();
+  const { onUnmount, section } = useCommentsContext();
 
-  const handleClose = useCallback(() => setSection!(''), [setSection]);
+  const handleClose = useCallback(() => onUnmount!(), [onUnmount]);
 
   return (
     <>

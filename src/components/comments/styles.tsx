@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim1, LightBoxShadowNoHover, LightBoxShadowHover, DarkBoxShadowNoHover } from '../../utils/styles.util';
+import { FadeAnim1, LightBoxShadowHover } from '../../utils/styles.util';
 
 export const CommentsTitle = styled.span<{dark: boolean}>`
   position: absolute;
@@ -14,6 +14,7 @@ export const CommentsTitle = styled.span<{dark: boolean}>`
 export const Body = styled.div`
   margin-top: 0.42rem;
   height: 77vh;
+  overflow: auto;
 `;
 
 export const Footer = styled.div<{dark: boolean}>`

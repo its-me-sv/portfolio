@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { Achievement } from "../../data/achievements.data";
 
 import { Card, Top, Name, Description, Footer, Interactions } from './styles';
@@ -18,7 +18,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
 }) => {
   const { isDark, language, isMobile } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
-  const { setCommentsMeta } = useCommentsContext();
+  const { setCommentsMeta, onUnmount } = useCommentsContext();
 
   const handleClick = useCallback(() => {
     const achievement: Achievement = {
@@ -30,6 +30,10 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
 
   const showComments = useCallback(
     () => setCommentsMeta!('Achievement', name), [name, setCommentsMeta]);
+
+  useEffect(() => {
+    return () => onUnmount!()
+  }, []);
 
   return (
     <Card dark={isDark} mobile={isMobile}>

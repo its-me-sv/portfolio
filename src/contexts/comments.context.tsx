@@ -23,7 +23,7 @@ interface CommentsContextInterface {
   postComment?: () => void;
   onUnmount?: () => void;
   setCommentsMeta?: (typ: CommentType, sctn: string) => void;
-  fetchComments?: (apiEndPoint: string) => void;
+  fetchComments?: () => void;
 }
 
 const defaultState: CommentsContextInterface = {
@@ -56,9 +56,8 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     setSection(sctn);
   }, []);
 
-  const fetchComments = useCallback((apiEndPoint: string) => {
+  const fetchComments = useCallback(()=> {
     if (page === null) return;
-    if (!apiEndPoint.length) return;
     setTimeout(() => {
       setComments(prev => [...prev, ...dummyComments]);
       setPage(Math.random() < 0.5 ? 'page1' : null);
