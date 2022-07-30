@@ -4,8 +4,9 @@ import { DarkBoxShadow, FadeAnim1, LightBoxShadow } from "../../utils/styles.uti
 export const Container = styled.div<{mobile: boolean}>`
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 0.49rem 0.49rem 0.1rem 0.49rem;
+  padding: 0.21rem 0.49rem 0.1rem 0.49rem;
   span {
     cursor: pointer;
     margin-right: 0.42rem;
