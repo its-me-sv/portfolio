@@ -1,41 +1,32 @@
+import { useEffect, useState } from 'react';
 import { Section, SectionTitle, SubSection, SectionItem } from './styles';
+import { statsTempData } from './temp-data';
+import { statsPageTranslations } from '../../utils/translations.util';
 
-import { Stat } from '../../data/temp-stats.data';
+import { Stat, StatObject } from '../../data/stats.data';
 import { useCommonContext } from '../../contexts/common.context';
 
 interface StatCardProps extends Stat {}
 
-const StatCard: React.FC<StatCardProps> = ({name}) => {
-  const { isDark, isMobile } = useCommonContext();
+const StatCard: React.FC<StatCardProps> = ({name, url}) => {
+  const { isDark, isMobile, language } = useCommonContext();
+
+  const [stats, setStats] = useState<StatObject>({});
+
+  useEffect(() => {
+    setTimeout(() => setStats(statsTempData[url]), 1400);
+  }, []);
 
   return (
     <Section dark={isDark}>
       <SectionTitle dark={isDark}>{name}</SectionTitle>
       <SubSection mobile={isMobile}>
-        <SectionItem dark={isDark}>
-          <span>Total views</span>
-          <span>32.6k</span>
-        </SectionItem>
-        <SectionItem dark={isDark}>
-          <span>Avg. views per day</span>
-          <span>2.6k</span>
-        </SectionItem>
-        <SectionItem dark={isDark}>
-          <span>Total session time</span>
-          <span>4d 12h</span>
-        </SectionItem>
-        <SectionItem dark={isDark}>
-          <span>Avg. session time</span>
-          <span>12m</span>
-        </SectionItem>
-        <SectionItem dark={isDark}>
-          <span>Last view</span>
-          <span>1m ago</span>
-        </SectionItem>
-        <SectionItem dark={isDark}>
-          <span>Prime time</span>
-          <span>4pm</span>
-        </SectionItem>
+        {Object.keys(stats).map((stat) => (
+          <SectionItem dark={isDark} key={language+(stats[stat]+'')}>
+            <span>{statsPageTranslations[stat][+language]}</span>
+            <span>{stats[stat]}</span>
+          </SectionItem>
+        ))}
       </SubSection>
     </Section>
   );

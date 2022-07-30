@@ -124,7 +124,7 @@ export const projectsPageTranslations = {
   ]
 };
 
-export const statsPageTranslations = {
+export const statsPageTranslations: {[key: string]: Array<string>} = {
   'General': [
     'General', 'General', 'Allgemein',
     '全般的', 'عام'
