@@ -7,9 +7,11 @@ import { menuTranslations } from "../../utils/translations.util";
 import Loader from "../../components/loader";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import Comments from "../../components/comments";
 
 import { useCommonContext } from "../../contexts/common.context";
 import { useMenuContext } from "../../contexts/menu.context";
+import { useCommentsContext } from '../../contexts/comments.context';
 
 // pages
 const HomePage = lazy(() => import("../../pages/home"));
@@ -27,6 +29,7 @@ interface AppProps {}
 const App: React.FC<AppProps> = () => {
   const { loading, setLoading, language, isDark, isMobile } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
+  const { section } = useCommentsContext();
 
   useEffect(() => {
     const timer = setTimeout(() => setMenuOpen!(true), 3000);
@@ -52,6 +55,7 @@ const App: React.FC<AppProps> = () => {
   return (
     <AppContainer dark={isDark}>
       {loading && <Loader />}
+      {section && <Comments />}
       <Header />
       <Suspense fallback={<Loader />}>
         <Routes>

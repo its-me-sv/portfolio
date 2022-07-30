@@ -41,12 +41,14 @@ export const DarkBoxShadowHover = css`
   box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
 `;
 
-export const CredBtn = styled.div<{dark: boolean}>`
+export const CredBtn = styled.div<{dark: boolean; disabled?: boolean}>`
   font-family: geomanist;
   padding: 0.42% 3% 1% 3%;
   border-radius: 0.3rem;
   cursor: pointer;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   animation: ${FadeAnim1} 0.84s;
   border: 2.1px solid #1a1a1a;
@@ -66,6 +68,10 @@ export const CredBtn = styled.div<{dark: boolean}>`
       color: #f5f4f9;
       font-weight: bold;
     }
+  `}
+  ${props => props.disabled && `
+    opacity: 0.5;
+    cursor: not-allowed;
   `}
 `;
 
@@ -92,7 +98,7 @@ export const OverviewContainer = styled.div<{dark: boolean}>`
   ${props => props.dark && `background-color: rgba(256, 256, 256, 0.5);`}
 `;
 
-export const OverviewBox = styled.div<{dark: boolean; mobile: boolean}>`
+export const OverviewBox = styled.div<{dark: boolean; mobile: boolean; comments?: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0.5%;
@@ -102,6 +108,11 @@ export const OverviewBox = styled.div<{dark: boolean; mobile: boolean}>`
   background-color: #f5f4f9;
   ${props => props.dark && `background-color: #1a1a1a;`}
   ${props => props.mobile && `padding: 2%;`}
+  ${props => props.comments && `
+    width: 50vw;
+    height: 77vh;
+    overflow: auto;
+  `}
 `;
 
 export const CloseIcon = styled.img.attrs({

@@ -26,7 +26,6 @@ const Footer: React.FC<FooterProps> = () => {
     <Container mobile={isMobile}>
       <div></div>
       <CreditText
-        key={language + `${isDark}`}
         dark={isDark}
         mobile={isMobile}
         open={menuOpen}
@@ -42,7 +41,6 @@ const Footer: React.FC<FooterProps> = () => {
         <SelectLang
           value={language}
           onChange={handleChange}
-          key={language + `${isDark}`}
           dark={isDark}
           mobile={isMobile}
         >

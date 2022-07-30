@@ -20,6 +20,7 @@ import commentIcon from '../../assets/icons/comment.png';
 import shareIcon from '../../assets/icons/share.png';
 
 import { useCommonContext } from '../../contexts/common.context';
+import { useCommentsContext } from '../../contexts/comments.context';
 
 const dummyImages: Array<string> = [
   "https://res.cloudinary.com/djeteilo6/image/upload/v1657349877/portfolio/projects/%20Stone_Paper_Scissors/p2_m09p2l.png",
@@ -58,11 +59,14 @@ interface ProjectCardProps {}
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
   const { isDark, language, isMobile } = useCommonContext();
+  const { setSection } = useCommentsContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
 
   const toggleActive = useCallback(() => setActive(prev => !prev), [setActive]);
+
+  const onCommentClick = useCallback(() => setSection!('Project Title'), [setSection]);
 
   useEffect(() => {
     if (!active) return;
@@ -120,7 +124,7 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
           <span>7</span>
         </div>
         <div>
-          <img src={commentIcon} alt="comment" />
+          <img onClick={onCommentClick} src={commentIcon} alt="comment" />
           <span>34</span>
         </div>
         <div>
