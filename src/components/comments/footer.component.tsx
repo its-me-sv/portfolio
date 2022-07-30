@@ -19,7 +19,7 @@ const CommentFooter: React.FC<CommentFooterProps> = () => {
   }, [setComment]);
 
   return (
-    <Footer>
+    <Footer dark={isDark}>
       <textarea 
         rows={2} 
         placeholder={commentsTranslations.cmt[+language]} 

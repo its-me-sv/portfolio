@@ -28,6 +28,7 @@ const Menu: React.FC<MenuProps> = () => {
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
           <MenuItem
+            key={page[+language]}
             chosen={idx === menu}
             onClick={() => setMenu!(idx)}
             dark={isDark}
