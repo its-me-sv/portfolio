@@ -34,7 +34,7 @@ const App: React.FC<AppProps> = () => {
   const { section } = useCommentsContext();
 
   useEffect(() => {
-    const timer = setTimeout(() => setMenuOpen!(true), 3000);
+    const timer = setTimeout(() => setMenuOpen!(true), 8400);
     const timer1 = setTimeout(() => {
       toast(toastTranslations.fstInf[+language], {duration: 6000});
     }, 2200);
