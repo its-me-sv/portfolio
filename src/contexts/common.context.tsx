@@ -1,4 +1,7 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+
+import { toastTranslations } from '../utils/translations.util';
 
 interface CommonContextInterface {
   loading: boolean;
@@ -26,7 +29,10 @@ export const CommonContextProvider: React.FC<{children: ReactNode}> = ({children
   const [language, setLanguage] = useState<string>(defaultState.language);
   const [isDark, setIsDark] = useState<boolean>(defaultState.isDark);
 
-  const toggleTheme = () => setIsDark(!isDark);
+  const toggleTheme = useCallback(() => {
+    toast.success(toastTranslations.thmTgl[+language]);
+    setIsDark(prev => !prev);
+  }, [language]);
   
   return (
     <CommonContext.Provider value={{

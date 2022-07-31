@@ -1,8 +1,7 @@
 import { ChangeEvent } from 'react';
 
-import { Container, CreditText, SelectLang, FooterRight, ThemeIcon } from './styles';
+import { Container, CreditText, SelectLang, ThemeIcon } from './styles';
 import { footerTranslations } from '../../utils/translations.util';
-import { CredBtn } from '../../utils/styles.util';
 
 import { useCommonContext } from '../../contexts/common.context';
 import { useMenuContext } from '../../contexts/menu.context';

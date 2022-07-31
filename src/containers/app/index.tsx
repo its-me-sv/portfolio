@@ -1,8 +1,10 @@
 import { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { AppContainer } from "./styles";
-import { menuTranslations } from "../../utils/translations.util";
+import { menuTranslations, toastTranslations } from "../../utils/translations.util";
+import { toastOptions } from "../../utils/config.util";
 
 import Loader from "../../components/loader";
 import Header from "../../components/header";
@@ -33,7 +35,13 @@ const App: React.FC<AppProps> = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => setMenuOpen!(true), 3000);
-    return () => clearTimeout(timer);
+    const timer1 = setTimeout(() => {
+      toast(toastTranslations.fstInf[+language], {duration: 6000});
+    }, 2200);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer1);
+    };
   }, []);
   
   useEffect(() => {
@@ -54,6 +62,7 @@ const App: React.FC<AppProps> = () => {
 
   return (
     <AppContainer dark={isDark}>
+      <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
       {loading && <Loader />}
       {section && <Comments />}
       <Header />

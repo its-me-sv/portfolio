@@ -6,6 +6,28 @@ import {
   aboutMeArabic, intrestAndHobbiesArabic
 } from '../data/about-me.data';
 
+export const toastTranslations = {
+  fstInf: [
+    "Feel free to change the language and theme of the site",
+    "Siéntase libre de cambiar el idioma y el tema del sitio",
+    "Fühlen Sie sich frei, die Sprache und das Thema der Website zu ändern",
+    "サイトの言語とテーマを自由に変更してください",
+    "لا تتردد في تغيير لغة وموضوع الموقع"
+  ],
+  thmTgl: [
+    "Theme toggled", "Tema alternado",
+    "Thema umgeschaltet", "テーマの切り替え",
+    "تم تبديل الموضوع"
+  ],
+  langChg: [
+    "Site language changed to English",
+    "Idioma del sitio cambiado a español",
+    "Seitensprache auf Deutsch geändert",
+    "サイトの言語が日本語に変更されました",
+    "تغيرت لغة الموقع إلى العربية"
+  ]
+};
+
 export const menuTranslations = {
   home: ["home", "hogar", "heimat", "家", "الصفحة الرئيسية"],
   aboutMe: ["about me", "sobre mí", "über mich", "私について", "عني"],
