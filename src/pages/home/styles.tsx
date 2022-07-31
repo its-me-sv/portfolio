@@ -10,6 +10,17 @@ export const Container = styled.div`
   animation: ${FadeAnim1} 1s;
 `;
 
+export const MidHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  span {
+    &:last-child {
+      font-family: montserrat;
+      font-size: 1.2rem;
+    }
+  }
+`;
+
 export const MyImage = styled.img.attrs({
   alt: "Suraj Vijay"
 })<{mobile: boolean}>`

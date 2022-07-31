@@ -8,7 +8,8 @@ import {
   BodyTitleText,
   SubHeading,
   Content,
-  SubBody
+  SubBody,
+  MidHeader
 } from "./styles";
 import noGradImg from '../../assets/images/no_grad.png';
 import gradImg from '../../assets/images/grad.png';
@@ -29,7 +30,10 @@ const HomePage: React.FC<HomePageProps> = () => {
     <Container>
       <MyImage src={isDark ? gradImg : noGradImg} mobile={isMobile} />
       {!isMobile && <div />}
-      <TitleText>{"<DarkKnight />"}</TitleText>
+      <MidHeader>
+        <TitleText>{"<DarkKnight />"}</TitleText>
+        <span>Since 2002</span>
+      </MidHeader>
       <BodyTextContainer mobile={isMobile} dark={isDark}>
         <BodyTitleText>Suraj Vijay</BodyTitleText>
         <SubBody key={language}>
@@ -44,7 +48,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <SubHeading dark={isDark}>
               {homePageTranslations.resident[+language]}
             </SubHeading>{" "}
-            {homePageTranslations['of'][+language]} Park Road, Anna Nagar West
+            {homePageTranslations["of"][+language]} Park Road, Anna Nagar West
             Extn, Chennai, TN 600 - 101, India
           </Content>
           <Content dark={isDark}>surajvijay67@gmail.com</Content>
