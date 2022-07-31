@@ -55,7 +55,7 @@ export const homePageTranslations = {
   student: ['student', 'alumno', 'schüler', '学生', 'طالب علم'],
   resident: ['resident', 'residente', 'bewohner', '居住者', 'مقيم'],
   at: ['at', 'a', 'bei', 'で', 'في'],
-  'of': ['of', 'de', 'von', 'の', 'من']
+  'of': ['of', 'de', 'von', 'の', 'من'],
 };
 
 export const aboutPageTranslations = {
@@ -103,9 +103,10 @@ export const aboutPageTranslations = {
     'Loved food', 'Me encantó la comida', 'Liebte Essen',
     '大好きな食べ物', 'أحب الطعام'
   ],
-  etc: [
-    'Et cetera', 'Etcétera', 'Und so weiter', 
-    'その他', 'إلى آخره'
+  moreAbtMe: [
+    'More about me', 'Más sobre mí',
+    'Mehr über mich', '私についてもっと',
+    'المزيد عني'
   ]
 };
 

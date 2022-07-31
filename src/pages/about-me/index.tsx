@@ -20,7 +20,7 @@ const AboutMePage: React.FC<AboutMePageProps> = () => {
   useEffect(() => setMenu!(1), []);
 
   return (
-    <Container key={language + (isDark + '1')}>
+    <Container>
       <ContentContainer>
         <SubHeader key={language + (isDark + '2')} dark={isDark}>
           {aboutPageTranslations.brief[+language]}
@@ -64,7 +64,7 @@ const AboutMePage: React.FC<AboutMePageProps> = () => {
       </ContentContainer>
       <ContentContainer>
         <SubHeader key={language + (isDark + '13')} dark={isDark}>
-          {aboutPageTranslations.etc[+language]}
+          {aboutPageTranslations.moreAbtMe[+language]}
         </SubHeader>
         <Content key={language + (isDark + '14')} dark={isDark}>
           {aboutPageTranslations.dob[+language]} - 11th May, 2002
