@@ -11,10 +11,10 @@ interface BadgeCardProps extends Badge {}
 const BadgeCard: React.FC<BadgeCardProps> = ({
   picture, url, issuer
 }) => {
-  const { isDark, isMobile, language } = useCommonContext();
+  const { isDark, language } = useCommonContext();
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card dark={isDark}>
       <BadgeImg src={picture} alt="badge logo" />
       <Issued dark={isDark}>
         {transcriptPageTranslations.issuedBy[+language]}: {issuer}

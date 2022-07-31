@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import { FadeAnim } from "../../utils/styles.util";
 
-export const Container = styled.div<{
-  mobile: boolean;
-  open: boolean;
-  dark?: boolean;
-}>`
+export const Container = styled.div<{open: boolean; dark?: boolean;}>`
   display: flex;
   position: absolute;
   top: 0;
@@ -16,35 +12,32 @@ export const Container = styled.div<{
   font-size: 1.6rem;
   padding-left: 1.2rem;
   padding: 0 0.49rem;
-  ${(props) => !props.mobile && "padding-top: 0.28rem;"}
   z-index: 997;
   gap: 0.36rem;
-  ${(props) =>
-    props.open &&
-    `
+  ${props => props.open && `
     padding: 0.49rem;
     border-radius: 0rem 0 0 0.42rem;
     background-color: #1a1a1a;
-    ${props.dark && `
-      background-color: #f5f4f9;
-    `}
+    ${props.dark && `background-color: #f5f4f9;`}
   `}
-  ${(props) =>
-    props.mobile &&
-    `
+  /* desktop styles */
+  @media only screen and (min-width: 768px) {
+    padding-top: 0.28rem;
+  }
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     margin-right: 0;
     padding: 0.42rem;
     padding-left: 1.2rem;
     margin-top: 0;
     height: 98.1vh;
     border-top-left-radius: 0.42rem;
-  `}
+  }
 `;
 
 export const MenuIcon = styled.img.attrs({ alt: "" })<{
   dark?: boolean;
   open: boolean;
-  mobile: boolean;
 }>`
   width: 1.6rem;
   height: auto;
@@ -53,31 +46,27 @@ export const MenuIcon = styled.img.attrs({ alt: "" })<{
   &:hover {
     opacity: 0.5;
   }
-  ${(props) => props.dark && `filter: invert(100%);`}
-  ${(props) => props.open && `filter: unset;`}
-  ${(props) => !props.dark && props.open && `filter: invert(100%);`}
-  ${(props) =>
-    props.mobile &&
-    `
+  ${props => props.dark && `filter: invert(100%);`}
+  ${props => props.open && `filter: unset;`}
+  ${props => !props.dark && props.open && `filter: invert(100%);`}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     width: 1.8rem;
-  `}
+  }
 `;
 
 export const MenuItem = styled.p<{
   chosen: boolean;
   dark?: boolean;
-  mobile: boolean;
 }>`
   all: unset;
   cursor: pointer;
-  ${(props) => !props.chosen && "opacity: 0.6;"}
+  ${props => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
   color: #f5f4f9;
   padding-right: 0.36rem;
-  ${(props) => props.dark && `color: #1a1a1a;`}
-  ${(props) =>
-    props.chosen &&
-    `
+  ${props => props.dark && `color: #1a1a1a;`}
+  ${props => props.chosen && `
     font-weight: bold;
     -webkit-background-clip: text;
     background-clip: text;
@@ -89,6 +78,8 @@ export const MenuItem = styled.p<{
   &:hover {
     text-decoration: underline;
   }
-  /* font-size: 1.8rem; */
-  ${(props) => props.mobile && "font-size: 2.1rem;"}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    font-size: 2.1rem;
+  }
 `;

@@ -11,21 +11,20 @@ import { useAchievementContext } from '../../contexts/achievement.context';
 interface AchievementOverviewProps {}
 
 const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
-  const { isMobile, isDark, language } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { currAchievement, setCurrAchievement } = useAchievementContext();
 
   if (!currAchievement) return <div />;
 
   return (
     <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark} mobile={isMobile}>
+      <OverviewBox dark={isDark}>
         <OverviewHeader>
           <div />
           <CloseIcon dark={isDark} onClick={() => setCurrAchievement!(null)} />
         </OverviewHeader>
         <OverviewImage
           dark={isDark}
-          mobile={isMobile}
           src={currAchievement.credUrl}
           alt="credential"
         />

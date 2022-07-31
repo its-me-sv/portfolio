@@ -17,13 +17,12 @@ const Menu: React.FC<MenuProps> = () => {
   const toggleMenu = () => setMenuOpen!(!menuOpen);
 
   return (
-    <Container mobile={isMobile} open={menuOpen} dark={isDark}>
+    <Container open={menuOpen} dark={isDark}>
       <MenuIcon
         onClick={toggleMenu}
         src={menuOpen ? closeIcon : menuIcon}
         dark={isDark}
         open={menuOpen}
-        mobile={isMobile}
       />
       {menuOpen &&
         Object.values(menuTranslations).map((page, idx) => (
@@ -32,7 +31,6 @@ const Menu: React.FC<MenuProps> = () => {
             chosen={idx === menu}
             onClick={() => setMenu!(idx)}
             dark={isDark}
-            mobile={isMobile}
           >
             {page[+language]}
           </MenuItem>

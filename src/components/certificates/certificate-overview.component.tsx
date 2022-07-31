@@ -11,14 +11,14 @@ import { useTranscriptContext } from '../../contexts/transcript.context';
 interface CertificateOverviewProps {}
 
 const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { currCertificate, setCurrCertificate } = useTranscriptContext();
 
   if (!currCertificate) return <div />;
   
   return (
     <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark} mobile={isMobile}>
+      <OverviewBox dark={isDark}>
         <OverviewHeader>
           <div />
           <CloseIcon dark={isDark} onClick={() => setCurrCertificate!(null)} />
@@ -27,7 +27,6 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
           dark={isDark}
           src={currCertificate.picture}
           alt={currCertificate.name}
-          mobile={isMobile}
         />
         {currCertificate.url && (
           <CredBtn dark={isDark}>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FadeAnim1, LightBoxShadow, DarkBoxShadow } from '../../utils/styles.util';
 
-export const Card = styled.div<{dark: boolean; mobile: boolean}>`
+export const Card = styled.div<{dark: boolean}>`
   display: grid;
   padding: 0.42% 0.84%;
   border-radius: 0.42rem;
@@ -13,7 +13,10 @@ export const Card = styled.div<{dark: boolean; mobile: boolean}>`
   animation: ${FadeAnim1} 1s;
   ${LightBoxShadow}
   ${props => props.dark && DarkBoxShadow}
-  ${props => props.mobile && `padding: 0.5% 0.7rem`}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 0.5% 0.7rem
+  }
 `;
 
 export const Name = styled.span<{dark: boolean}>`

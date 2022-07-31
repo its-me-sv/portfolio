@@ -9,10 +9,10 @@ interface SkillCardProps extends Skill {}
 const SkillCard: React.FC<SkillCardProps> = ({
   name, url
 }) => {
-  const { isDark, isMobile } = useCommonContext();
+  const { isDark } = useCommonContext();
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card dark={isDark}>
       <img src={url} alt={name + " logo"} />
       <Name dark={isDark}>{name}</Name>
     </Card>

@@ -115,7 +115,7 @@ export const OverviewTitle = styled.span<{dark: boolean}>`
   ${props => props.dark && `color: #f5f4f9;`}
 `;
 
-export const OverviewBox = styled.div<{dark: boolean; mobile: boolean; comments?: boolean}>`
+export const OverviewBox = styled.div<{dark: boolean; comments?: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0.5%;
@@ -124,16 +124,19 @@ export const OverviewBox = styled.div<{dark: boolean; mobile: boolean; comments?
   a {all:unset;}
   background-color: #f5f4f9;
   ${props => props.dark && `background-color: #1a1a1a;`}
-  ${props => props.mobile && `padding: 2%;`}
   ${props => props.comments && `
     width: 50vw;
     height: 77vh;
     overflow: auto;
   `}
-  ${props => (props.mobile && props.comments) && `
-    width: 84vw; 
-    height: 84vh
-  `}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 2%;
+    ${props => props.comments && `
+      width: 84vw; 
+      height: 84vh;
+    `}
+  }
 `;
 
 export const CloseIcon = styled.img.attrs({
@@ -147,10 +150,7 @@ export const CloseIcon = styled.img.attrs({
   ${props => props.dark && `filter: invert(100%);`}
 `;
 
-export const OverviewImage = styled.img<{
-  dark: boolean;
-  mobile: boolean;
-}>`
+export const OverviewImage = styled.img<{dark: boolean;}>`
   max-width: 90vw;
   max-height: 80vh;
   overflow: auto;
@@ -159,10 +159,11 @@ export const OverviewImage = styled.img<{
   animation: ${FadeAnim1} 0.5s;
   border: 2px solid #1a1a1a;
   ${props => props.dark && `border: 2px solid #f5f4f9;`}
-  ${props => props.mobile && `
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     max-width: 90vw;
     max-height: 80vh;
-  `}
+  }
 `;
 
 export const PageContainer = styled.div`
@@ -180,7 +181,7 @@ export const MenuContainer = styled.div`
   padding: 0 7%;
 `;
 
-export const MenuItem = styled.span<{ selected: boolean; dark?: boolean }>`
+export const MenuItem = styled.span<{selected: boolean; dark?: boolean}>`
   font-family: geomanist;
   font-size: 1.6rem;
   opacity: 0.7;

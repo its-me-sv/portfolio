@@ -13,7 +13,7 @@ interface CertificateCardProps extends Certificate {}
 const CertificateCard: React.FC<CertificateCardProps> = ({
   provider, name, date, picture, url
 }) => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { setCurrCertificate } = useTranscriptContext();
 
   const handleClick = useCallback(() => {
@@ -25,7 +25,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
   }, [provider, name, date, picture, url]);
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card dark={isDark}>
       <Provider src={provider} alt="issuer logo" />
       <Name dark={isDark}>{name}</Name>
       <Issued dark={isDark}>

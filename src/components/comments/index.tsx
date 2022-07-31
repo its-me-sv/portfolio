@@ -11,7 +11,7 @@ import { useCommentsContext } from '../../contexts/comments.context';
 interface CommentsProps {}
 
 const Comments: React.FC<CommentsProps> = () => {
-  const { isDark, isMobile } = useCommonContext();
+  const { isDark } = useCommonContext();
   const { fetchComments } = useCommentsContext();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Comments: React.FC<CommentsProps> = () => {
 
   return (
     <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark} mobile={isMobile} comments>
+      <OverviewBox dark={isDark} comments>
         <CommentHeader />
         <CommentBody />
         <CommentFooter />

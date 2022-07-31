@@ -28,13 +28,13 @@ const HomePage: React.FC<HomePageProps> = () => {
 
   return (
     <Container>
-      <MyImage src={isDark ? gradImg : noGradImg} mobile={isMobile} />
+      <MyImage src={isDark ? gradImg : noGradImg} />
       {!isMobile && <div />}
       <MidHeader>
         <TitleText>{"<DarkKnight />"}</TitleText>
         <span>Since 2002</span>
       </MidHeader>
-      <BodyTextContainer mobile={isMobile} dark={isDark}>
+      <BodyTextContainer dark={isDark}>
         <BodyTitleText>Suraj Vijay</BodyTitleText>
         <SubBody key={language}>
           <Content dark={isDark}>

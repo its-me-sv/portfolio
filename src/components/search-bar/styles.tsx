@@ -9,7 +9,7 @@ import {
 import searchPng from '../../assets/icons/search.png';
 import closePng from '../../assets/icons/close.png';
 
-export const SearchContainer = styled.div<{dark: boolean; mobile: boolean}>`
+export const SearchContainer = styled.div<{dark: boolean}>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,10 +27,11 @@ export const SearchContainer = styled.div<{dark: boolean; mobile: boolean}>`
     background-color: #1a1a1a;
     ${DarkBoxShadowNoHover}
   `}
-  ${props => props.mobile && `
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     width: 90vw;
     padding: 1%;
-  `}
+  }
 `;
 
 export const SearchIcon = styled.img.attrs({
@@ -43,7 +44,7 @@ export const SearchIcon = styled.img.attrs({
   ${props => props.dark && `filter: invert(100%);`}
 `;
 
-export const SearchInput = styled.input<{dark: boolean; mobile: boolean}>`
+export const SearchInput = styled.input<{dark: boolean}>`
   font-family: geomanist;
   outline: none;
   border: none;
@@ -58,10 +59,11 @@ export const SearchInput = styled.input<{dark: boolean; mobile: boolean}>`
     background-color: rgb(45, 43, 43);
     &:focus {${DarkBoxShadowHover}}
   `}
-  ${props => props.mobile && `
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     font-size: 1rem;
     height: 2.1rem;
-  `}
+  }
 `;
 
 export const CloseIcon = styled.img.attrs({

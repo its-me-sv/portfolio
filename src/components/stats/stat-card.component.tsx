@@ -9,7 +9,7 @@ import { useCommonContext } from '../../contexts/common.context';
 interface StatCardProps extends Stat {}
 
 const StatCard: React.FC<StatCardProps> = ({name, url}) => {
-  const { isDark, isMobile, language } = useCommonContext();
+  const { isDark, language } = useCommonContext();
 
   const [stats, setStats] = useState<StatObject>({});
 
@@ -21,7 +21,7 @@ const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   return (
     <Section dark={isDark}>
       <SectionTitle dark={isDark}>{statsPageTranslations[name][+language]}</SectionTitle>
-      <SubSection mobile={isMobile}>
+      <SubSection>
         {Object.keys(stats).map((stat) => {
           const propName: string = statsPageTranslations[stat][+language];
           const value: string = stats[stat];

@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import { FadeAnim1, LightBoxShadowNoHover, DarkBoxShadowNoHover } from "../../utils/styles.util";
 
-export const Container = styled.div<{mobile: boolean}>`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0 1rem;
-  ${props => props.mobile && `
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     padding: 1rem 2rem;
     gap: 2.1rem;
-  `}
+  }
 `;
 
 export const Section = styled.div<{dark: boolean}>`
@@ -22,15 +23,16 @@ export const Section = styled.div<{dark: boolean}>`
   ${props => props.dark && DarkBoxShadowNoHover}
 `;
 
-export const SubSection = styled.div<{mobile: boolean}>`
+export const SubSection = styled.div`
   padding-top: 0.36rem;
   display: flex;
   align-items: center;
   gap: 2.1rem;
-  ${props => props.mobile && `
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
     gap: 1.1rem;
-  `}
+  }
 `;
 
 export const SectionTitle = styled.span<{dark: boolean}>`

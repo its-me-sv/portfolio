@@ -22,15 +22,15 @@ export const Signature = styled.span<{dark?: boolean}>`
   }
 `;
 
-export const CurrentPage = styled.span<{
-  dark?: boolean;
-  mobile: boolean;
-}>`
+export const CurrentPage = styled.span<{dark?: boolean}>`
   font-family: calibri;
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
   font-size: 1.8rem;
   animation: ${FadeAnim1} 1s;
   text-transform: capitalize;
-  ${props => props.mobile && `padding: 0.3rem 0 0 0.3rem;`}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 0.3rem 0 0 0.3rem;
+  }
 `;

@@ -11,10 +11,10 @@ interface ProfileCardProps extends Profile {}
 const ProfileCard: React.FC<ProfileCardProps> = ({
   icon, name, url, profile
 }) => {
-  const { isMobile, isDark, language } = useCommonContext();
+  const { isDark, language } = useCommonContext();
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card dark={isDark}>
       <Company src={icon} alt={name + " logo"} />
       <Name dark={isDark}>{name}</Name>
       <Username dark={isDark}>

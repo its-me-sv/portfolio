@@ -8,7 +8,7 @@ import { useProjectContext } from '../../contexts/project.context';
 interface SearchBarProps {}
 
 const SearchBar: React.FC<SearchBarProps> = () => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { searchField, setSearchField } = useProjectContext();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(event =>
@@ -17,14 +17,10 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   const clearText = useCallback(() => setSearchField!(''), []);
 
   return (
-    <SearchContainer
-      dark={isDark}
-      mobile={isMobile}
-    >
+    <SearchContainer dark={isDark}>
       <SearchIcon dark={isDark} />
       <SearchInput
         dark={isDark}
-        mobile={isMobile}
         placeholder={projectsPageTranslations.placeholder[+language]}
         value={searchField}
         onChange={handleChange}

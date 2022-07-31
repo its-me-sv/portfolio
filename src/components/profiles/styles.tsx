@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { LightBoxShadow, DarkBoxShadow, FadeAnim1 } from '../../utils/styles.util';
 
-export const Card = styled.div<{dark: boolean; mobile: boolean}>`
+export const Card = styled.div<{dark: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,14 +15,15 @@ export const Card = styled.div<{dark: boolean; mobile: boolean}>`
   a {all: unset;}
   animation: ${FadeAnim1} 1s;
   ${LightBoxShadow}
-  ${(props) => props.dark && `${DarkBoxShadow}`}
-  ${props => props.mobile && `
+  ${props => props.dark && `${DarkBoxShadow}`}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 1rem;
     width: 10rem;
     height: 16rem;
     padding-bottom: 1rem;
-  `}
+  }
 `;
 
 export const Company = styled.img`

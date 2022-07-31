@@ -58,7 +58,7 @@ const skills: Array<string> = [
 interface ProjectCardProps {}
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { setCommentsMeta, onUnmount } = useCommentsContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
@@ -84,7 +84,6 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
   return (
     <Card
       dark={isDark}
-      mobile={isMobile}
       onMouseEnter={toggleActive}
       onMouseLeave={toggleActive}
     >

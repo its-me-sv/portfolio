@@ -16,7 +16,7 @@ interface AchievementCardProps extends Achievement {}
 const AchievementCard: React.FC<AchievementCardProps> = ({
   name, description, credUrl, verifyUrl
 }) => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
   const { setCommentsMeta, onUnmount } = useCommentsContext();
 
@@ -36,7 +36,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
   }, []);
 
   return (
-    <Card dark={isDark} mobile={isMobile}>
+    <Card dark={isDark}>
       <Top>
         <Name dark={isDark}>{name}</Name>
         <HrzntlLn dark={isDark} />

@@ -21,18 +21,17 @@ export const MidHeader = styled.div`
   }
 `;
 
-export const MyImage = styled.img.attrs({
-  alt: "Suraj Vijay"
-})<{mobile: boolean}>`
+export const MyImage = styled.img.attrs({alt: "Suraj Vijay"})`
   height: 18rem;
   width: auto;
-  ${props => !props.mobile && `
+  /* desktop styles */
+  @media only screen and (min-width: 768px) {
     height: 60vh;
     width: auto;
     position: absolute;
     bottom: 0;
     left: 0;
-  `}
+  }
 `;
 
 export const TitleText = styled.span`
@@ -53,16 +52,17 @@ export const TitleText = styled.span`
   font-size: 2.4rem;
 `;
 
-export const BodyTextContainer = styled.div<{mobile: boolean; dark?: boolean}>`
+export const BodyTextContainer = styled.div<{dark?: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.4rem;
-  ${props => props.mobile && `
-    padding: 0 1%;
-  `}
   color: #1a1a1a;
   ${props => props.dark && `color: #f5f4f9;`}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 0 1%;
+  }
 `;
 
 export const BodyTitleText = styled.span`

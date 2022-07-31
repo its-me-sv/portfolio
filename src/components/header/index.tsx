@@ -28,7 +28,6 @@ const Header: React.FC<HeaderProps> = () => {
       <CurrentPage 
         key={pageName} 
         dark={isDark}
-        mobile={isMobile}
       >{pageName}</CurrentPage>
       <div />
       <Menu />
