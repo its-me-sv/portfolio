@@ -7,8 +7,8 @@ interface QuotesProps {}
 const Quotes: React.FC<QuotesProps> = () => {
   return (
     <>
-      {quotes.map((quote, idx) => (
-        <QuoteCard key={idx} {...quote} />
+      {quotes.map(quote => (
+        <QuoteCard key={quote.id} {...quote} />
       ))}
     </>
   );

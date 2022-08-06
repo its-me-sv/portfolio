@@ -1,30 +1,60 @@
-import { createContext, ReactNode, useContext, useState } from "react";
-import { Socket } from "socket.io-client";
+import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { io, Socket } from "socket.io-client";
+
+import { API_URL } from "../utils/constants.util";
 
 interface UserContextInterface {
   userId: string;
   likes: Array<string>;
-  socket: Socket|null;
+  socket: Socket;
+  token: string;
+  addLike?: (val: string) => void;
+  removeLike?: (val: string) => void;
 }
 
 const defaultState: UserContextInterface = {
   userId: '',
   likes: [],
-  socket: null
+  socket: io(API_URL),
+  token: ''
 };
+
+let first = true;
 
 export const UserContext = createContext<UserContextInterface>(defaultState);
 
 export const useUserContext = () => useContext(UserContext);
 
 export const UserContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
-  const [userId, setUserId] = useState<string>(defaultState.userId);
+  const userId = useRef<string>(defaultState.userId);
   const [likes, setLikes] = useState<Array<string>>(defaultState.likes);
-  const [socket, setSocket] = useState<Socket|null>(defaultState.socket);
+  const socket = useRef<Socket>(defaultState.socket);
+  const token = useRef<string>(defaultState.token);
+
+  useEffect(() => {
+    if (!first) return;
+    socket.current.on("registered", data => {
+      socket.current.id = data.id;
+      userId.current = data.id;
+      token.current = data.token;
+    });
+    first = false;
+  }, []);
+
+  const addLike = useCallback((likeId: string) => {
+    setLikes(prev => [...prev, likeId]);
+  }, []);
+
+  const removeLike = useCallback((likeId: string) => {
+    setLikes(prev => prev.filter(val => val !== likeId));
+  }, []);
 
   return (
     <UserContext.Provider value={{
-      userId, likes, socket
+      userId: userId.current, 
+      socket: socket.current, 
+      token: token.current,
+      likes, addLike, removeLike
     }}>{children}</UserContext.Provider>
   );
 };

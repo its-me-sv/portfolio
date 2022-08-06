@@ -7,7 +7,7 @@ import { Card } from './styles';
 
 interface QuoteCardProps extends Quote {}
 
-const QuoteCard: React.FC<QuoteCardProps> = ({content}) => {
+const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
   const { isDark } = useCommonContext();
 
   return (
