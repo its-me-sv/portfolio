@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import heart from "../../assets/icons/heart.png";
+import heartUnfilled from "../../assets/icons/heart-unfilled.png";
 import { LightBoxShadow, FadeAnim1, DarkBoxShadow } from '../../utils/styles.util';
 
 export const Card = styled.div<{dark: boolean}>`
@@ -19,6 +21,7 @@ export const Card = styled.div<{dark: boolean}>`
     align-self: flex-end;
     display: flex;
     align-items: center;
+    cursor: pointer;
     gap: 0.42rem;
     padding: 0.28rem 0.3rem;
     border-radius: 0.3rem;
@@ -30,13 +33,17 @@ export const Card = styled.div<{dark: boolean}>`
       color: #1a1a1a;
       ${props => props.dark && `color: #f5f4f9;`}
     }
-    img {
-      width: 1.4rem;
-      height: auto;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.5;
-      }
-    }
   }
+`;
+
+export const HeartIcon = styled.img.attrs((props: { liked: boolean }) => ({
+  src: props.liked ? heart : heartUnfilled,
+  alt: "like",
+}))<{ dark: boolean; liked: boolean }>`
+  width: 1.4rem;
+  height: auto;
+  &:hover {
+    opacity: 0.5;
+  }
+  ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
 `;
