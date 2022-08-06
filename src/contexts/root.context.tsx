@@ -5,6 +5,7 @@ import { ProjectContextProvider } from "./project.context";
 import { AchievementContextProvider } from "./achievement.context";
 import { StatContextProvider } from "./stat.context";
 import { CommentsContextProvider } from "./comments.context";
+import { UserContextProvider } from "./user.context";
 import React from "react";
 
 const providers: Array<React.FC<{children: React.ReactNode}>> = [
@@ -14,7 +15,8 @@ const providers: Array<React.FC<{children: React.ReactNode}>> = [
   ProjectContextProvider,
   AchievementContextProvider,
   StatContextProvider,
-  CommentsContextProvider
+  CommentsContextProvider,
+  UserContextProvider,
 ];
 
 interface RootContextProps {
