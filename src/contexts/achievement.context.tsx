@@ -1,15 +1,15 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { Achievement, achievements } from "../data/achievements.data"
+import { Achievement, achivementsIds } from "../data/achievements.data";
 
 interface AchievementContextInterface {
-  achievements: Array<Achievement>;
+  achievements: Array<string>;
   currAchievement: null|Achievement;
   setCurrAchievement?: (val: null|Achievement) => void;
 }
 
 const defaultState: AchievementContextInterface = {
-  achievements,
-  currAchievement: null
+  achievements: achivementsIds,
+  currAchievement: null,
 };
 
 export const AchievementContext = createContext<AchievementContextInterface>(defaultState);

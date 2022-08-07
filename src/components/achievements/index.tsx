@@ -8,8 +8,8 @@ const Achievements: React.FC<AchievementsProps> = () => {
   
   return (
     <>
-      {achievements.map(achievement => (
-        <AchievementCard key={achievement.name} {...achievement} />
+      {achievements.map(achievementId => (
+        <AchievementCard key={achievementId} id={achievementId} />
       ))}
     </>
   );

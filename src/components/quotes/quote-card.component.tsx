@@ -47,7 +47,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
       <span>{content}</span>
       <div onClick={toggleLike}>
         <HeartIcon dark={isDark} liked={liked} />
-        <span>{cnt}</span>
+        <span>{cnt > 0 ? cnt : ''}</span>
       </div>
     </Card>
   );

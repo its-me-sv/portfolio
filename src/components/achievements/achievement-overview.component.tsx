@@ -25,13 +25,13 @@ const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
         </OverviewHeader>
         <OverviewImage
           dark={isDark}
-          src={currAchievement.credUrl}
+          src={currAchievement.credential_link}
           alt="credential"
         />
-        {currAchievement.verifyUrl && (
+        {currAchievement.verify_url && (
           <CredBtn dark={isDark}>
             <a
-              href={currAchievement.verifyUrl}
+              href={currAchievement.verify_url}
               target="_blank"
               rel="noreferrer"
             >
