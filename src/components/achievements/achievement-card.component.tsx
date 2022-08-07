@@ -22,7 +22,7 @@ interface AchievementCardProps {
 const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   const { isDark, language } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
-  const { setCommentsMeta, onUnmount } = useCommentsContext();
+  const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
   const { likes, addLike, removeLike } = useUserContext();
 
   const [achievement, setAchievement] = useState<Achievement|null>();
@@ -42,10 +42,24 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
     setCurrAchievement!(achievement as Achievement);
   }, [achievement, setCurrAchievement]);
 
-  const showComments = useCallback(
-    () => setCommentsMeta!("Achievement", achievement?.title as string),
-    [achievement?.title, setCommentsMeta]
-  );
+  const incCmt = () => {
+    setStats(prev => ({
+      comments: `${+(prev?.comments as string) + 1}`,
+      appreciations: prev?.appreciations as string,
+    }));
+  };
+
+  const decCmt = () => {
+    setStats(prev => ({
+      comments: `${+(prev?.comments as string) - 1}`,
+      appreciations: prev?.appreciations as string,
+    }));
+  };
+
+  const showComments = useCallback(() => {
+    setCommentsMeta!("Achievement", achievement?.title as string);
+    setCallbacks!({incCmt, decCmt});
+  },[achievement?.title, setCommentsMeta, setCallbacks]);
 
   const toggleLike = () => {
     if (!liked) {

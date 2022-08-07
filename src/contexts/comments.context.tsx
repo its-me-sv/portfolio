@@ -8,6 +8,11 @@ export interface Comment {
   message: string;
 }
 
+export interface CommentCallbacks {
+  incCmt: () => void;
+  decCmt: () => void;
+}
+
 type CommentType = null | "Project" | "Achievement";
 
 interface CommentsContextInterface {
@@ -17,6 +22,7 @@ interface CommentsContextInterface {
   type: CommentType;
   page: null | string;
   scrollRef?: MutableRefObject<HTMLDivElement>; 
+  callbacks: CommentCallbacks;
   setSection?: (val: string) => void;
   setComment?: (val: string) => void;
   setComments?: (val: Array<Comment>) => void;
@@ -25,6 +31,7 @@ interface CommentsContextInterface {
   onUnmount?: () => void;
   setCommentsMeta?: (typ: CommentType, sctn: string) => void;
   fetchComments?: () => void;
+  setCallbacks?: (val: CommentCallbacks) => void;
 }
 
 const defaultState: CommentsContextInterface = {
@@ -33,6 +40,10 @@ const defaultState: CommentsContextInterface = {
   comments: [],
   type: null,
   page: '',
+  callbacks: {
+    incCmt: () => {},
+    decCmt: () => {}
+  }
 };
 
 export const CommentsContext = createContext<CommentsContextInterface>(defaultState);
@@ -45,6 +56,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
   const [comments, setComments] = useState<Array<Comment>>(defaultState.comments);
   const [type, setType] = useState<CommentType>(defaultState.type);
   const [page, setPage] = useState<null|string>(defaultState.page);
+  const [callbacks, setCallbacks] = useState<CommentCallbacks>(defaultState.callbacks);
   const scrollRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const postComment = useCallback(() => {
@@ -88,6 +100,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
         comment, setComment,
         comments, setComments,
         type, setType, 
+        callbacks, setCallbacks,
         page, scrollRef,
         postComment, onUnmount,
         setCommentsMeta,
