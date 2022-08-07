@@ -47,6 +47,7 @@ export const CardTop = styled.div<{dark: boolean}>`
     color: #1a1a1a;
     ${props => props.dark && `color: #f5f4f9`}
   }
+  a {all:unset;}
   div {
     display: flex;
     flex-direction: row;

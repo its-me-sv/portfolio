@@ -1,14 +1,17 @@
 import { Container } from './styles';
 
 import ProjectCard from './project-card.component';
+import { useProjectContext } from '../../contexts/project.context';
 
 interface ProjectsProps {}
 
 const Projects: React.FC<ProjectsProps> = () => {
+  const { projectIds } = useProjectContext();
+
   return (
     <Container>
-      {new Array(23).fill(7).map((_, idx) => (
-        <ProjectCard key={idx} />
+      {projectIds.map(projectId => (
+        <ProjectCard key={projectId} id={projectId} />
       ))}
     </Container>
   );
