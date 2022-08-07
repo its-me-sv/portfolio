@@ -63,19 +63,25 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
 
   const toggleLike = () => {
     if (!liked) {
-      setStats(prev => ({
-        appreciations: `${(+(prev?.appreciations as string))+1}`, 
-        comments: prev?.comments as string
-      }));
-      addLike!(id);
-      setLiked(true);
+      axios.put(`${API_URL}/api/achievements/like/${id}`)
+      .then(() => {
+        setStats(prev => ({
+          appreciations: `${(+(prev?.appreciations as string))+1}`, 
+          comments: prev?.comments as string
+        }));
+        addLike!(id);
+        setLiked(true);
+      });
     } else {
-      setStats(prev => ({
-        appreciations: `${(+(prev?.appreciations as string))-1}`, 
-        comments: prev?.comments as string
-      }));
-      setLiked(false);
-      removeLike!(id);
+      axios.put(`${API_URL}/api/achievements/dislike/${id}`)
+      .then(() => {
+        setStats(prev => ({
+          appreciations: `${(+(prev?.appreciations as string))-1}`, 
+          comments: prev?.comments as string
+        }));
+        removeLike!(id);
+        setLiked(false);
+      });
     }
   };
 

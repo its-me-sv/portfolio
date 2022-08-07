@@ -91,6 +91,10 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     setComments([]);
     setType(null);
     setPage('');
+    setCallbacks({
+      incCmt: () => {},
+      decCmt: () => {},
+    });
   }, []);
 
   return (
