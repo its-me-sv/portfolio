@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useState, useCallback, useRef, Mu
 import axios from "axios";
 
 import { API_URL } from "../utils/constants.util";
+import { useUserContext } from "./user.context";
 
 export interface Comment {
   id: string;
@@ -53,6 +54,8 @@ export const CommentsContext = createContext<CommentsContextInterface>(defaultSt
 export const useCommentsContext = () => useContext(CommentsContext);
 
 export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
+  const { userId } = useUserContext();
+
   const [section, setSection] = useState<string>(defaultState.section);
   const [comment, setComment] = useState<string>(defaultState.comment);
   const [comments, setComments] = useState<Array<Comment>>(defaultState.comments);
@@ -63,16 +66,15 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
 
   const postComment = useCallback(() => {
     if (comment.length < 1) return;
-    const newComment: Comment = {
-      id: comments.length + 1 + "",
-      timestamp: `${Date.now()}`,
-      sender: comments.length + 1 + "",
-      message: comment,
-    };
-    setComments(prev => [newComment, ...prev]);
-    setComment('');
-    scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
-  }, [comment, comments.length]);
+    axios.post(`${API_URL}/api/${type}/comment/${section.split("||")[0]}`, {
+      comment,
+      sender: userId
+    }).then(({data}) => {
+      setComments(prev => [data, ...prev]);
+      setComment('');
+      scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
+    });
+  }, [comment, section, type, userId]);
 
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);
@@ -88,7 +90,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
       setComments(prev => [...prev, ...data.comments])
       setPage(data.page);
     });
-  }, [page, section]);
+  }, [page, section, type]);
 
   const onUnmount = useCallback(() => {
     setSection("");

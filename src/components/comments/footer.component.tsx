@@ -18,6 +18,10 @@ const CommentFooter: React.FC<CommentFooterProps> = () => {
       setComment!(event?.target.value);
   }, [setComment]);
 
+  const handleKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (e) => {
+    if (e.key === 'Enter') postComment!();
+  };
+
   return (
     <Footer dark={isDark}>
       <textarea 
@@ -25,6 +29,7 @@ const CommentFooter: React.FC<CommentFooterProps> = () => {
         placeholder={commentsTranslations.cmt[+language]} 
         value={comment}
         onChange={handleCommentChange}
+        onKeyDown={handleKeyDown}
       />
       <CredBtn 
         dark={isDark} 

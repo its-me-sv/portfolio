@@ -9,6 +9,7 @@ import { UserContextProvider } from "./user.context";
 import React from "react";
 
 const providers: Array<React.FC<{children: React.ReactNode}>> = [
+  UserContextProvider,
   CommonContextProvider,
   MenuContextProvider,
   TranscriptContextProvider,
@@ -16,7 +17,6 @@ const providers: Array<React.FC<{children: React.ReactNode}>> = [
   AchievementContextProvider,
   StatContextProvider,
   CommentsContextProvider,
-  UserContextProvider,
 ];
 
 interface RootContextProps {
