@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { LightBoxShadow, DarkBoxShadow, FadeAnim1 } from "../../utils/styles.util";
+import clap from '../../assets/icons/clap.png';
+import clapUnfilled from '../../assets/icons/clap-unfilled.png';
+import commentIcon from "../../assets/icons/comment.png";
 
 export const Card = styled.div<{dark: boolean}>`
   display: flex;
@@ -51,12 +54,6 @@ export const Interactions = styled.div<{dark: boolean}>`
     cursor: pointer;
     gap: 0.3rem;
     &:hover {opacity: 0.5;}
-    img {
-      width: 2.1rem;
-      height: auto;
-      opacity: 0.9;
-      ${props => props.dark && `filter: invert(100%);`}
-    }
     span {
       font-family: arial;
       font-size: 1.2rem;
@@ -64,4 +61,26 @@ export const Interactions = styled.div<{dark: boolean}>`
       ${props => props.dark && `color: #f5f4f9;`}
     }
   }
+`;
+
+export const ClapIcon = styled.img.attrs((props: { liked: boolean }) => ({
+  src: props.liked ? clap : clapUnfilled,
+  alt: "clap",
+}))<{ dark: boolean; liked: boolean }>`
+  width: 2.1rem;
+  height: auto;
+  opacity: 0.9;
+  &:hover {opacity: 0.5;}
+  ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
+`;
+
+export const CommentIcon = styled.img.attrs({
+  src: commentIcon,
+  alt: 'commment'
+})<{ dark: boolean }>`
+  width: 2.1rem;
+  height: auto;
+  opacity: 0.9;
+  &:hover {opacity: 0.5;}
+  ${props => props.dark && `filter: invert(100%);`}
 `;
