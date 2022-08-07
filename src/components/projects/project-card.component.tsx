@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = () => {
   const toggleActive = useCallback(() => setActive(prev => !prev), [setActive]);
 
   const onCommentClick = useCallback(
-    () => setCommentsMeta!('Project', 'Project Title'), [setCommentsMeta]);
+    () => setCommentsMeta!("projects", 'Project Title'), [setCommentsMeta]);
 
   useEffect(() => {
     if (!active) return;

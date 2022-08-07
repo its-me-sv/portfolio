@@ -11,7 +11,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
 }) => {
   const { isDark } = useCommonContext();
 
-  const date = new Date(+timestamp);
+  const date = new Date(timestamp);
 
   return (
     <Card dark={isDark}>

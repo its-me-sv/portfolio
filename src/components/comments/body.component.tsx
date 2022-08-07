@@ -13,8 +13,8 @@ const CommentBody: React.FC<CommentBodyProps> = () => {
 
   return (
     <Body ref={scrollRef}>
-      {comments.map((cmt, idx) => (
-        <CommentCard key={cmt.id + idx} {...cmt} />
+      {comments.map(cmt => (
+        <CommentCard key={cmt.id} {...cmt} />
       ))}
       {(comments.length > 0 && page !== null) && (
         <LoadMore 

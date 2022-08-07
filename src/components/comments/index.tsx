@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { OverviewContainer, OverviewBox } from '../../utils/styles.util';
 
@@ -14,8 +14,12 @@ const Comments: React.FC<CommentsProps> = () => {
   const { isDark } = useCommonContext();
   const { fetchComments } = useCommentsContext();
 
+  const fetched = useRef<boolean>(false);
+
   useEffect(() => {
+    if (fetched.current) return;
     fetchComments!();
+    fetched.current = true;
   }, []);
 
   return (

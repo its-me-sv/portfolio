@@ -1,5 +1,7 @@
-import { dummyComments } from "../data/temp-comments.data";
 import { createContext, ReactNode, useContext, useState, useCallback, useRef, MutableRefObject } from "react";
+import axios from "axios";
+
+import { API_URL } from "../utils/constants.util";
 
 export interface Comment {
   id: string;
@@ -13,7 +15,7 @@ export interface CommentCallbacks {
   decCmt: () => void;
 }
 
-type CommentType = null | "Project" | "Achievement";
+type CommentType = null | "projects" | "achievements";
 
 interface CommentsContextInterface {
   section: string;
@@ -79,11 +81,14 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
 
   const fetchComments = useCallback(()=> {
     if (page === null) return;
-    setTimeout(() => {
-      setComments(prev => [...prev, ...dummyComments]);
-      setPage(Math.random() < 0.5 ? 'page1' : null);
-    }, 1400);
-  }, [page]);
+    axios.post(`${API_URL}/api/${type}/get-comments/${section.split('||')[0]}`, {
+      page: page === '' ? null : page
+    })
+    .then(({data}) => {
+      setComments(prev => [...prev, ...data.comments])
+      setPage(data.page);
+    });
+  }, [page, section]);
 
   const onUnmount = useCallback(() => {
     setSection("");

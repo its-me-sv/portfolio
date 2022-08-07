@@ -57,9 +57,9 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   };
 
   const showComments = useCallback(() => {
-    setCommentsMeta!("Achievement", achievement?.title as string);
+    setCommentsMeta!("achievements", id+'||'+achievement?.title as string);
     setCallbacks!({incCmt, decCmt});
-  },[achievement?.title, setCommentsMeta, setCallbacks]);
+  },[id, achievement?.title, setCommentsMeta, setCallbacks]);
 
   const toggleLike = () => {
     if (!liked) {
