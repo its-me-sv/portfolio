@@ -94,3 +94,11 @@ export const LoadMore = styled.span<{dark: boolean}>`
     ${DarkBoxShadow}
   `}
 `;
+
+export const BinIcon = styled.p<{dark: boolean}>`
+  all: unset;
+  align-self: flex-end;
+  cursor: pointer;
+  opacity: 0.7;
+  &:hover {opacity: 1;}
+`;
