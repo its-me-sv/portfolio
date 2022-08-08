@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { toastTranslations } from '../utils/translations.util';
@@ -15,9 +15,9 @@ interface CommonContextInterface {
 
 const defaultState: CommonContextInterface = {
   loading: true,
-  language: '0',
-  isDark: false,
-  isMobile: window.innerWidth <= 768
+  language: "0",
+  isDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
+  isMobile: window.innerWidth <= 768,
 };
 
 export const CommonContext = createContext<CommonContextInterface>(defaultState);
@@ -28,6 +28,12 @@ export const CommonContextProvider: React.FC<{children: ReactNode}> = ({children
   const [loading, setLoading] = useState<boolean>(defaultState.loading);
   const [language, setLanguage] = useState<string>(defaultState.language);
   const [isDark, setIsDark] = useState<boolean>(defaultState.isDark);
+
+  useEffect(() => {
+    const themeHandler: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+    themeHandler.addEventListener("change", e => setIsDark(e.matches));
+    return () => themeHandler.removeEventListener("change", e => setIsDark(e.matches));
+  }, []);
 
   const toggleTheme = useCallback(() => {
     toast.success(toastTranslations.thmTgl[+language]);
