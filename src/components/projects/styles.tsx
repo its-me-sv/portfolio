@@ -75,8 +75,8 @@ export const Gallery = styled.div<{dark: boolean}>`
     height: 24vh;
     border-radius: 0.3rem;
     animation: ${FadeAnim1} 1s;
-    border: 1px solid #1a1a1a;
-    ${(props) => props.dark && `border: 1px solid #f5f4f9;`}
+    /* border: 1px solid #1a1a1a; */
+    /* ${(props) => props.dark && `border: 1px solid #f5f4f9;`} */
   }
   div {
     display: flex;
@@ -149,3 +149,20 @@ export const LikeIcon = styled.img.attrs((props: { liked: boolean }) => ({
   &:hover {opacity: 0.5;}
   ${(props) => props.dark && !props.liked && `filter: invert(100%);`}
 `;
+
+export const LoadMore = styled.span<{dark: boolean}>`
+  align-self: center;
+  margin-bottom: 0.42rem;
+  border-radius: 0.21rem;
+  padding: 0.3rem;
+  padding-top: 0rem;
+  padding-bottom: 0.14rem;
+  cursor: pointer;
+  color: #1a1a1a;
+  ${LightBoxShadow}
+  ${props => props.dark && `
+    color: #f5f4f9;
+    ${DarkBoxShadow}
+  `}
+`;
+

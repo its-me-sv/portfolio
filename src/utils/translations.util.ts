@@ -144,6 +144,12 @@ export const projectsPageTranslations = {
   techStack: [
     'Tech stack', 'Pila de tecnología', 'Tech-Stack', 
     '技術スタック', 'كومة التقنية'
+  ],
+  ldPrj: [
+    'Load more projects', 'Cargar más proyectos',
+    'Laden Sie weitere Projekte', 
+    'さらにプロジェクトを読み込む',
+    'تحميل المزيد من المشاريع'
   ]
 };
 
