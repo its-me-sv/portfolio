@@ -44,6 +44,21 @@ body {
   color: #1a1a1a;
 }
 
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 0.42rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.42rem;
+  background: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
