@@ -31,6 +31,7 @@ interface CommentsContextInterface {
   setComments?: (val: Array<Comment>) => void;
   setType?: (val: CommentType) => void;
   postComment?: () => void;
+  removeComment?: (val: string) => void;
   onUnmount?: () => void;
   setCommentsMeta?: (typ: CommentType, sctn: string) => void;
   fetchComments?: () => void;
@@ -77,6 +78,15 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     });
   }, [comment, section, type, userId, callbacks, socket.id]);
 
+  const removeComment = useCallback((oldId: string) => {
+    axios.delete(`${API_URL}/api/${type}/comment/${section.split("||")[0]}`, {
+      data: {id: oldId}
+    }).then(() => {
+      setComments(prev => prev.filter(cmt => cmt.id !== oldId));
+      callbacks.decCmt();
+    });
+  }, [section, type, callbacks]);
+
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);
     setSection(sctn);
@@ -116,7 +126,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
         page, scrollRef,
         postComment, onUnmount,
         setCommentsMeta,
-        fetchComments
+        fetchComments, removeComment
       }}
     >{children}</CommentsContext.Provider>
   );

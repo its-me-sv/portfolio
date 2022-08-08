@@ -247,5 +247,10 @@ export const commentsTranslations = {
     'Load more comments', 'Cargar más comentarios',
     'Weitere Kommentare laden', 'コメントをさらに読み込む',
     'تحميل المزيد من التعليقات'
+  ],
+  delCmt: [
+    'Delete comment', 
+    'Eliminar comentario', 'Kommentar löschen',
+    'コメントを削除', 'حذف تعليق'
   ]
 };
