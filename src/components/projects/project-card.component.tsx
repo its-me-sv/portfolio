@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
     if (!active) return;
     const interval = setInterval(() => {
       setCurrImage(prev => (prev + 1) % projectDetails.gallery.length);
-    }, 3000);
+    }, 2100);
     return () => clearInterval(interval);
   }, [active, projectDetails]);
 
@@ -129,7 +129,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
       </CardTop>
       <Gallery dark={isDark}>
         <img
-          key={"image " + (currImage + 1 + "")}
           src={projectDetails?.gallery[currImage]}
           alt={"image " + (currImage + 1 + "")}
         />

@@ -25,7 +25,8 @@ export const Card = styled.div<{dark: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 28vw;
+  width: 24vw;
+  height: 60vh;
   gap: 0.42rem;
   padding: 1% 1.6%;
   border-radius: 0.42rem;
@@ -74,7 +75,7 @@ export const Gallery = styled.div<{dark: boolean}>`
     width: 98%;
     height: 24vh;
     border-radius: 0.3rem;
-    animation: ${FadeAnim1} 1s;
+    /* animation: ${FadeAnim1} 1s; */
     /* border: 1px solid #1a1a1a; */
     /* ${(props) => props.dark && `border: 1px solid #f5f4f9;`} */
   }
@@ -110,7 +111,7 @@ export const Description = styled.div<{dark: boolean}>`
 
 export const TechStack = styled.span<{dark: boolean}>`
   font-family: bahnschrift;
-  font-size: 1.2rem;
+  font-size: 1rem;
   opacity: 0.9;
   max-height: 7vh;
   overflow: auto;
