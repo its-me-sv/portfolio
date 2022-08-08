@@ -51,8 +51,8 @@ export const Card = styled.div<{dark: boolean}>`
   img {
     width: 2.1rem;
     border-radius: 50%;
-    border: 0.7px solid #1a1a1a;
-    ${props => props.dark && `border-color: #f5f4f9;`}
+    /* border: 0.7px solid #1a1a1a; */
+    /* ${props => props.dark && `border-color: #f5f4f9;`} */
   }
   div {
     display: flex;
