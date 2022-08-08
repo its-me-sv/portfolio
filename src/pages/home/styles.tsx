@@ -10,13 +10,15 @@ export const Container = styled.div`
   animation: ${FadeAnim1} 1s;
 `;
 
-export const MidHeader = styled.div`
+export const MidHeader = styled.div<{dark?: boolean}>`
   display: flex;
   flex-direction: column;
   span {
     &:last-child {
       font-family: montserrat;
       font-size: 1.2rem;
+      color: #1a1a1a;
+      ${(props) => props.dark && `color: #f5f4f9;`}
     }
   }
 `;

@@ -30,7 +30,7 @@ const HomePage: React.FC<HomePageProps> = () => {
     <Container>
       <MyImage src={isDark ? gradImg : noGradImg} />
       {!isMobile && <div />}
-      <MidHeader>
+      <MidHeader dark={isDark}>
         <TitleText>{"<DarkKnight />"}</TitleText>
         <span>Since 2002</span>
       </MidHeader>
