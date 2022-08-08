@@ -42,6 +42,12 @@ export const profiles: Array<Profile> = [
     icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342046/portfolio/profiles/code_chef_w38bmw.png',
     profile: 'suraj_vijay115'
   },
+  {
+    name: 'CodeGrepper',
+    url: 'https://www.codegrepper.com/profile/suraj--vijay',
+    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1659976794/portfolio/profiles/grepper_pasgsa.png',
+    profile: '<DarkKnight />'
+  },
   { 
     name: 'LinkedIn', 
     url: 'https://www.linkedin.com/in/suraj-vijay-32b679224', 
