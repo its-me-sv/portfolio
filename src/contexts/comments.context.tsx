@@ -54,7 +54,7 @@ export const CommentsContext = createContext<CommentsContextInterface>(defaultSt
 export const useCommentsContext = () => useContext(CommentsContext);
 
 export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
-  const { userId } = useUserContext();
+  const { userId, socket } = useUserContext();
 
   const [section, setSection] = useState<string>(defaultState.section);
   const [comment, setComment] = useState<string>(defaultState.comment);
@@ -68,14 +68,14 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     if (comment.length < 1) return;
     axios.post(`${API_URL}/api/${type}/comment/${section.split("||")[0]}`, {
       comment,
-      sender: userId
+      sender: userId || socket.id
     }).then(({data}) => {
       setComments(prev => [data, ...prev]);
       setComment('');
       callbacks.incCmt();
       scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
     });
-  }, [comment, section, type, userId]);
+  }, [comment, section, type, userId, callbacks, socket.id]);
 
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);
