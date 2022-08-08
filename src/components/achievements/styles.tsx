@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { LightBoxShadow, DarkBoxShadow, FadeAnim1 } from "../../utils/styles.util";
 import clap from '../../assets/icons/clap.png';
 import clapUnfilled from '../../assets/icons/clap-unfilled.png';
-import commentIcon from "../../assets/icons/comment.png";
 
 export const Card = styled.div<{dark: boolean}>`
   display: flex;
@@ -72,15 +71,4 @@ export const ClapIcon = styled.img.attrs((props: { liked: boolean }) => ({
   opacity: 0.9;
   &:hover {opacity: 0.5;}
   ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
-`;
-
-export const CommentIcon = styled.img.attrs({
-  src: commentIcon,
-  alt: 'commment'
-})<{ dark: boolean }>`
-  width: 2.1rem;
-  height: auto;
-  opacity: 0.9;
-  &:hover {opacity: 0.5;}
-  ${props => props.dark && `filter: invert(100%);`}
 `;

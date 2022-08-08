@@ -72,6 +72,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     }).then(({data}) => {
       setComments(prev => [data, ...prev]);
       setComment('');
+      callbacks.incCmt();
       scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
     });
   }, [comment, section, type, userId]);

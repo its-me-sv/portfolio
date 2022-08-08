@@ -4,6 +4,8 @@ import {
   LightBoxShadow,
   DarkBoxShadow
 } from '../../utils/styles.util';
+import likeIcon from '../../assets/icons/like.png';
+import likeIconUnfilled from '../../assets/icons/like-unfilled.png';
 
 export const Container = styled.div`
   overflow: auto;
@@ -54,10 +56,10 @@ export const CardTop = styled.div<{dark: boolean}>`
     align-items: center;
     gap: 0.42rem;
     img {
+      cursor: pointer;
       width: 2.1rem;
       height: auto;
       opacity: 0.8;
-      cursor: pointer;
       &:hover {opacity: 0.5;}
       ${props => props.dark && `filter: invert(100%);`}
     }
@@ -128,12 +130,6 @@ export const CardBottom = styled.div<{dark: boolean}>`
     cursor: pointer;
     gap: 0.3rem;
     &:hover {opacity: 0.5;}
-    img {
-      width: 2.1rem;
-      height: auto;
-      opacity: 0.9;
-      ${props => props.dark && `filter: invert(100%);`}
-    }
     span {
       font-family: arial;
       font-size: 1.2rem;
@@ -141,4 +137,15 @@ export const CardBottom = styled.div<{dark: boolean}>`
       ${props => props.dark && `color: #f5f4f9;`}
     }
   }
+`;
+
+export const LikeIcon = styled.img.attrs((props: { liked: boolean }) => ({
+  src: props.liked ? likeIcon : likeIconUnfilled,
+  alt: "like",
+}))<{ dark: boolean; liked: boolean }>`
+  width: 2.1rem;
+  height: auto;
+  opacity: 0.9;
+  &:hover {opacity: 0.5;}
+  ${(props) => props.dark && !props.liked && `filter: invert(100%);`}
 `;

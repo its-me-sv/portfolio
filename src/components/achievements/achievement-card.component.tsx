@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { Achievement, AchievementStats } from "../../data/achievements.data";
+import commentIcon from '../../assets/icons/comment.png';
 import { API_URL } from "../../utils/constants.util";
 
 import { 
   Card, Top, Name, Description, 
   Footer, Interactions, 
-  ClapIcon, CommentIcon 
+  ClapIcon
 } from './styles';
+import { InteractionIcon } from "../../utils/styles.util";
 import { CredBtn, HrzntlLn } from "../../utils/styles.util";
 import { transcriptPageTranslations } from '../../utils/translations.util';
 import { useCommonContext } from '../../contexts/common.context';
@@ -101,7 +103,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
             </span>
           </div>
           <div onClick={showComments}>
-            <CommentIcon dark={isDark} />
+            <InteractionIcon dark={isDark} src={commentIcon} alt="comment" />
             <span>
               {stats?.comments !== "0" ? stats?.comments : ""}
             </span>

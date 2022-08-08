@@ -193,3 +193,11 @@ export const MenuItem = styled.span<{selected: boolean; dark?: boolean}>`
     opacity: 1;
   `}
 `;
+
+export const InteractionIcon = styled.img<{ dark: boolean }>`
+  width: 2.1rem;
+  height: auto;
+  opacity: 0.9;
+  &:hover {opacity: 0.5;}
+  ${props => props.dark && `filter: invert(100%);`}
+`;
