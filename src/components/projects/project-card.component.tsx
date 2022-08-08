@@ -86,21 +86,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
 
   const toggleLike = () => {
     if (!liked) {
-      setStats((prev) => ({
-        likes: `${+(prev?.likes as string) + 1}`,
-        comments: prev?.comments as string,
-        shares: prev?.shares as string,
-      }));
-      addLike!(id);
-      setLiked(true);
+      axios.put(`${API_URL}/api/projects/like/${id}`)
+      .then(() => {
+        setStats((prev) => ({
+          likes: `${+(prev?.likes as string) + 1}`,
+          comments: prev?.comments as string,
+          shares: prev?.shares as string,
+        }));
+        addLike!(id);
+        setLiked(true);
+      });
     } else {
-      setStats((prev) => ({
-        likes: `${+(prev?.likes as string) - 1}`,
-        comments: prev?.comments as string,
-        shares: prev?.shares as string,
-      }));
-      removeLike!(id);
-      setLiked(false);
+      axios.put(`${API_URL}/api/projects/dislike/${id}`)
+      .then(() => {
+        setStats((prev) => ({
+          likes: `${+(prev?.likes as string) - 1}`,
+          comments: prev?.comments as string,
+          shares: prev?.shares as string,
+        }));
+        removeLike!(id);
+        setLiked(false);
+      })
     }
   };
 
