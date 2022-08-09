@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useCallback, useContext, useState } from "react";
 
 import { 
+  Project,
   projectsIds1, projectsIds2, projectsIds3, projectsIds4 
 } from "../data/projects.data";
 
@@ -14,8 +15,14 @@ const projectIdsCombined: Array<Array<string>> = [
 interface ProjectContextInterface {
   searchField: string;
   projectIds: Array<string>;
-  currPage: number|null;
+  currPage: number | null;
+  dataMapper: { [key: string]: Project };
   setSearchField?: (val: string) => void;
+  setDataMapper?: React.Dispatch<
+    React.SetStateAction<{
+      [key: string]: Project;
+    }>
+  >;
   fetchProjects?: () => void;
   resetProjects?: () => void;
 }
@@ -23,7 +30,8 @@ interface ProjectContextInterface {
 const defaultState: ProjectContextInterface = {
   searchField: '',
   projectIds: [],
-  currPage: 0
+  currPage: 0,
+  dataMapper: {}
 };
 
 export const ProjectContext = createContext<ProjectContextInterface>(defaultState);
@@ -34,6 +42,7 @@ export const ProjectContextProvider: React.FC<{children: ReactNode}> = ({childre
   const [searchField, setSearchField] = useState<string>(defaultState.searchField);
   const [projectIds, setProjectIds] = useState<Array<string>>(defaultState.projectIds);
   const [currPage, setCurrPage] = useState<number|null>(defaultState.currPage);
+  const [dataMapper, setDataMapper] = useState<{[key: string]: Project}>(defaultState.dataMapper);
 
   const fetchProjects = useCallback(() => {
     if (currPage === null) return;
@@ -54,8 +63,9 @@ export const ProjectContextProvider: React.FC<{children: ReactNode}> = ({childre
   return (
     <ProjectContext.Provider value={{
       searchField, setSearchField,
-      projectIds, currPage,
-      fetchProjects, resetProjects, 
+      projectIds, currPage, dataMapper,
+      fetchProjects, resetProjects,
+      setDataMapper
     }}
     >{children}</ProjectContext.Provider>
   );

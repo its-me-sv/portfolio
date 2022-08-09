@@ -11,7 +11,7 @@ interface ProjectsPageProps {}
 
 const ProjectsPage: React.FC<ProjectsPageProps> = () => {
   const { setMenu } = useMenuContext();
-  const { fetchProjects, resetProjects } = useProjectContext();
+  const { fetchProjects, resetProjects, currPage } = useProjectContext();
 
   useEffect(() => {
     setMenu!(4);
@@ -21,6 +21,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = () => {
 
   return (
     <Container>
+      {/* {currPage === null ?  <SearchBar /> : <div />} */}
       <SearchBar />
       <Projects />
     </Container>

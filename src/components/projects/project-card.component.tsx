@@ -27,6 +27,7 @@ import { useCommonContext } from '../../contexts/common.context';
 import { useCommentsContext } from '../../contexts/comments.context';
 import { Project, ProjectStats } from '../../data/projects.data';
 import { useUserContext } from '../../contexts/user.context';
+import { useProjectContext } from '../../contexts/project.context';
 
 interface ProjectCardProps {
   id: string;
@@ -36,6 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const { isDark, language } = useCommonContext();
   const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
   const { likes, addLike, removeLike } = useUserContext();
+  const { setDataMapper } = useProjectContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
@@ -46,10 +48,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   useEffect(() => {
     setLiked(likes.includes(id));
     axios.post(`${API_URL}/api/projects/${id}`)
-    .then(({data}) => setProjectDetails(data));
+    .then(({data}) => {
+      setProjectDetails(data);
+      setDataMapper!(prev => ({...prev, [id]: data}));
+    });
     axios.post(`${API_URL}/api/projects/stats/${id}`)
     .then(({data}) => setStats(data));
-  }, [id]);
+  }, [id, setDataMapper]);
 
   useEffect(() => {
     return () => onUnmount!();
