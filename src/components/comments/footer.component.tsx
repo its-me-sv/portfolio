@@ -10,7 +10,7 @@ import { useCommentsContext } from '../../contexts/comments.context';
 interface CommentFooterProps {}
 
 const CommentFooter: React.FC<CommentFooterProps> = () => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const { comment, setComment, postComment } = useCommentsContext();
 
   const handleCommentChange: React.ChangeEventHandler<HTMLTextAreaElement> = useCallback(

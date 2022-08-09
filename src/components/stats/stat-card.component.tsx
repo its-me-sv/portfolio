@@ -12,7 +12,7 @@ import { useUserContext } from '../../contexts/user.context';
 interface StatCardProps extends Stat {}
 
 const StatCard: React.FC<StatCardProps> = ({name, url}) => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const { currYear } = useStatContext();
   const { token } = useUserContext();
 
