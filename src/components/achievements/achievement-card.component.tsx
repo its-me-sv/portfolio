@@ -46,14 +46,14 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
 
   const incCmt = () => {
     setStats(prev => ({
-      comments: `${+(prev?.comments as string) + 1}`,
+      comments: `${+(prev?.comments as string||0) + 1}`,
       appreciations: prev?.appreciations as string,
     }));
   };
 
   const decCmt = () => {
     setStats(prev => ({
-      comments: `${+(prev?.comments as string) - 1}`,
+      comments: `${+(prev?.comments as string||0) - 1}`,
       appreciations: prev?.appreciations as string,
     }));
   };
@@ -68,7 +68,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
       axios.put(`${API_URL}/api/achievements/like/${id}`)
       .then(() => {
         setStats(prev => ({
-          appreciations: `${(+(prev?.appreciations as string))+1}`, 
+          appreciations: `${(+(prev?.appreciations as string||0))+1}`, 
           comments: prev?.comments as string
         }));
         addLike!(id);
@@ -78,7 +78,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
       axios.put(`${API_URL}/api/achievements/dislike/${id}`)
       .then(() => {
         setStats(prev => ({
-          appreciations: `${(+(prev?.appreciations as string))-1}`, 
+          appreciations: `${(+(prev?.appreciations as string||0))-1}`, 
           comments: prev?.comments as string
         }));
         removeLike!(id);

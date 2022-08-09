@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from "axios";
+import { toast } from 'react-hot-toast';
 
 import {
   Card,
@@ -68,14 +69,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const onCommentClick = useCallback(() => {
     const incCmt = () => {
       setStats((prev) => ({
-        comments: `${+(prev?.comments as string) + 1}`,
+        comments: `${+(prev?.comments as string || 0) + 1}`,
         likes: prev?.likes as string,
         shares: prev?.shares as string,
       }));
     };
     const decCmt = () => {
       setStats((prev) => ({
-        comments: `${+(prev?.comments as string) + 1}`,
+        comments: `${+(prev?.comments as string || 0) + 1}`,
         likes: prev?.likes as string,
         shares: prev?.shares as string,
       }));
@@ -89,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
       axios.put(`${API_URL}/api/projects/like/${id}`)
       .then(() => {
         setStats((prev) => ({
-          likes: `${+(prev?.likes as string) + 1}`,
+          likes: `${+(prev?.likes as string || 0) + 1}`,
           comments: prev?.comments as string,
           shares: prev?.shares as string,
         }));
@@ -100,7 +101,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
       axios.put(`${API_URL}/api/projects/dislike/${id}`)
       .then(() => {
         setStats((prev) => ({
-          likes: `${+(prev?.likes as string) - 1}`,
+          likes: `${+(prev?.likes as string || 0) - 1}`,
           comments: prev?.comments as string,
           shares: prev?.shares as string,
         }));
@@ -108,6 +109,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         setLiked(false);
       })
     }
+  };
+
+  const onShare = () => {
+    axios.put(`${API_URL}/api/projects/share/${id}`)
+    .then(() => {
+      navigator.clipboard.writeText(projectDetails?.src_code_link as string);
+      toast.success("Source code link copied to clipboard");
+      setStats((prev) => ({
+        likes: prev?.likes as string,
+        comments: prev?.comments as string,
+        shares: `${+(prev?.shares as string || 0) + 1}`
+      }));
+    });
   };
 
   return (
@@ -159,7 +173,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
           <InteractionIcon dark={isDark} src={commentIcon} alt="comment" />
           <span>{stats?.comments !== "0" ? stats?.comments : ""}</span>
         </div>
-        <div>
+        <div onClick={onShare}>
           <InteractionIcon dark={isDark} src={shareIcon} alt="share" />
           <span>{stats?.shares !== "0" ? stats?.shares : ""}</span>
         </div>

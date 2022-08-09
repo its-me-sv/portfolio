@@ -9,7 +9,7 @@ import { useCommonContext } from "../../contexts/common.context";
 interface ProjectsProps {}
 
 const Projects: React.FC<ProjectsProps> = () => {
-  const { isDark, language, isMobile } = useCommonContext();
+  const { isDark, language } = useCommonContext();
   const { projectIds, fetchProjects, currPage } = useProjectContext();
 
   const scrollRef = useRef<HTMLDivElement>() as React.RefObject<HTMLDivElement>;
@@ -26,7 +26,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       {projectIds.map((projectId) => (
         <ProjectCard key={projectId} id={projectId} />
       ))}
-      {(isMobile && currPage !== null) && (
+      {(currPage !== null) && (
         <LoadMore onClick={fetchProjects} dark={isDark}>
           {projectsPageTranslations.ldPrj[+language]}
         </LoadMore>
