@@ -21,8 +21,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = () => {
 
   return (
     <Container>
-      {/* {currPage === null ?  <SearchBar /> : <div />} */}
-      <SearchBar />
+      {currPage === null ?  <SearchBar /> : <div />}
       <Projects />
     </Container>
   );

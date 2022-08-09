@@ -20,7 +20,6 @@ export const projectsIds1: Array<string> = [
   '18352dd0-164b-11ed-8623-c5fec4062501',
   '1f8e8480-164d-11ed-8623-c5fec4062501',
   'adadaeb0-140b-11ed-a8c8-6539cc663353',
-  '3c165e80-134a-11ed-8623-c5fec4062501',
   'd18fa1b0-1386-11ed-a8c8-6539cc663353',
   '6d0eb580-1662-11ed-a3c3-d775c5e4f28b',
 ];
@@ -32,7 +31,7 @@ export const projectsIds2: Array<string> = [
   'a8821540-138c-11ed-a8c8-6539cc663353',
   '69f55b70-138c-11ed-a8c8-6539cc663353',
   '67dfe450-140d-11ed-a8c8-6539cc663353',
-  // '3c165e80-134a-11ed-8623-c5fec4062501',
+  '3c165e80-134a-11ed-8623-c5fec4062501',
   'd529a510-1349-11ed-8623-c5fec4062501',
   '8b74d1f0-134a-11ed-8623-c5fec4062501',
 ];
@@ -41,6 +40,7 @@ export const projectsIds3: Array<string> = [
   'eec0bc20-1385-11ed-a8c8-6539cc663353',
   '0fa7ed70-1348-11ed-8623-c5fec4062501',
   'efd42690-1346-11ed-8623-c5fec4062501',
+  'a61b28f0-1661-11ed-a3c3-d775c5e4f28b',
   'c61c4d30-1348-11ed-8623-c5fec4062501',
   '7299c800-1347-11ed-8623-c5fec4062501',
   '4bf7ebb0-140e-11ed-a8c8-6539cc663353',
