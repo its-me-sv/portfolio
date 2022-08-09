@@ -25,6 +25,7 @@ const AchievementsPage = lazy(() => import("../../pages/achievements"));
 const BlogsPage = lazy(() => import("../../pages/blog"));
 const QuotesPage = lazy(() => import("../../pages/quotes"));
 const StatsPage = lazy(() => import("../../pages/stats"));
+const ErrorPage = lazy(() => import("../../pages/error404"));
 
 interface AppProps {}
 
@@ -77,6 +78,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/quotes" element={<QuotesPage />} />
           <Route path="/stats" element={<StatsPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>
       {!isMobile && <Footer />}

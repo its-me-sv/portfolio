@@ -254,3 +254,24 @@ export const commentsTranslations = {
     'コメントを削除', 'حذف تعليق'
   ]
 };
+
+export const error404Translations = {
+  title: [
+    "Error 404", "Error 404", "Fehler 404",
+    "エラー404", "خطأ 404"
+  ],
+  caption1: [
+    "It seems like this page doesn't exist.",
+    "Parece que esta página no existe.",
+    "Anscheinend existiert diese Seite nicht.",
+    "このページは存在しないようです。",
+    "يبدو أن هذه الصفحة غير موجودة."
+  ],
+  caption2: [
+    "Taking you back to the home page in a few moments.",
+    "Regresando a la página de inicio en unos momentos.",
+    "Bringt Sie in wenigen Augenblicken zurück zur Startseite.",
+    "しばらくするとホームページに戻ります。",
+    "نعيدك إلى الصفحة الرئيسية في غضون لحظات قليلة."
+  ]
+};
