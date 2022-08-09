@@ -1,5 +1,38 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { createGlobalStyle, keyframes, css } from "styled-components";
 import cross from '../assets/icons/close.png';
+
+export const GlobalStyle = createGlobalStyle<{ dark: boolean }>`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    background-color: #f5f4f9;
+    color: #1a1a1a;
+  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 0.42rem;
+    background: #1f2937;
+    ${props => !props.dark && `background: #a7abb0`}
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.42rem;
+    background: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
+  }
+`;
 
 export const FadeAnim = keyframes`
   from {opacity: 0;}

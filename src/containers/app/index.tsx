@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AppContainer } from "./styles";
 import { menuTranslations, toastTranslations } from "../../utils/translations.util";
 import { toastOptions } from "../../utils/config.util";
+import { GlobalStyle } from "../../utils/styles.util";
 
 import Loader from "../../components/loader";
 import Header from "../../components/header";
@@ -62,27 +63,30 @@ const App: React.FC<AppProps> = () => {
   }, [menu, language]);
 
   return (
-    <AppContainer dark={isDark}>
-      <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
-      {loading && <Loader />}
-      {section && <Comments />}
-      <Header />
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-me" element={<AboutMePage />} />
-          <Route path="/profiles" element={<ProfilesPage />} />
-          <Route path="/transcript/*" element={<TranscriptPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/achievements" element={<AchievementsPage />} />
-          <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/quotes" element={<QuotesPage />} />
-          <Route path="/stats" element={<StatsPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Suspense>
-      {!isMobile && <Footer />}
-    </AppContainer>
+    <>
+      <GlobalStyle dark={isDark} />
+      <AppContainer dark={isDark}>
+        <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
+        {loading && <Loader />}
+        {section && <Comments />}
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-me" element={<AboutMePage />} />
+            <Route path="/profiles" element={<ProfilesPage />} />
+            <Route path="/transcript/*" element={<TranscriptPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/achievements" element={<AchievementsPage />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/quotes" element={<QuotesPage />} />
+            <Route path="/stats" element={<StatsPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Suspense>
+        {!isMobile && <Footer />}
+      </AppContainer>
+    </>
   );
 };
 
