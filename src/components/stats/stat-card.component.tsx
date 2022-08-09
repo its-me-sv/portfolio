@@ -1,22 +1,25 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import { Section, SectionTitle, SubSection, SectionItem } from './styles';
-import { statsTempData } from './temp-data';
 import { statsPageTranslations } from '../../utils/translations.util';
 
 import { Stat, StatObject } from '../../data/stats.data';
 import { useCommonContext } from '../../contexts/common.context';
+import { useStatContext } from '../../contexts/stat.context';
 
 interface StatCardProps extends Stat {}
 
 const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   const { isDark, language } = useCommonContext();
+  const { currYear } = useStatContext();
 
   const [stats, setStats] = useState<StatObject>({});
 
   useEffect(() => {
-    const timer = setTimeout(() => setStats(statsTempData[url]), 1400);
-    return () => clearTimeout(timer);
-  }, [url]);
+    axios.post(`${url}/${currYear}`)
+    .then(({data}) => setStats(data));
+  }, [url, currYear]);
 
   return (
     <Section dark={isDark}>

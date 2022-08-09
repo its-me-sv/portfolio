@@ -7,7 +7,7 @@ interface StatContextInterface {
 }
 
 const defaultState: StatContextInterface = {
-  years: [2021, 2022, 2023],
+  years: [2022],
   currYear: 2022,
 };
 
