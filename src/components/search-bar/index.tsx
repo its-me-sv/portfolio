@@ -17,10 +17,9 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   const clearText = useCallback(() => setSearchField!(''), []);
 
   return (
-    <SearchContainer dark={isDark}>
+    <SearchContainer>
       <SearchIcon dark={isDark} />
       <SearchInput
-        dark={isDark}
         placeholder={projectsPageTranslations.placeholder[+language]}
         value={searchField}
         onChange={handleChange}

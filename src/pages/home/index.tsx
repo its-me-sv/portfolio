@@ -30,28 +30,28 @@ const HomePage: React.FC<HomePageProps> = () => {
     <Container>
       <MyImage src={isDark ? gradImg : noGradImg} />
       {!isMobile && <div />}
-      <MidHeader dark={isDark}>
+      <MidHeader>
         <TitleText>{"<DarkKnight />"}</TitleText>
         <span>Since 2002</span>
       </MidHeader>
-      <BodyTextContainer dark={isDark}>
+      <BodyTextContainer>
         <BodyTitleText>Suraj Vijay</BodyTitleText>
         <SubBody key={language}>
-          <Content dark={isDark}>
-            <SubHeading dark={isDark}>
+          <Content>
+            <SubHeading>
               {homePageTranslations.student[+language]}
             </SubHeading>{" "}
             {homePageTranslations.at[+language]} Sri Venkateswara College of
             Engineering
           </Content>
-          <Content dark={isDark}>
-            <SubHeading dark={isDark}>
+          <Content>
+            <SubHeading>
               {homePageTranslations.resident[+language]}
             </SubHeading>{" "}
             {homePageTranslations["of"][+language]} Park Road, Anna Nagar West
             Extn, Chennai, TN 600 - 101, India
           </Content>
-          <Content dark={isDark}>surajvijay67@gmail.com</Content>
+          <Content>surajvijay67@gmail.com</Content>
         </SubBody>
       </BodyTextContainer>
     </Container>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim1, LightBoxShadow, DarkBoxShadow } from '../../utils/styles.util';
+import { FadeAnim1 } from '../../utils/styles.util';
 
 export const Container = styled.div`
   overflow: auto;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,14 +28,13 @@ export const Card = styled.div<{dark: boolean}>`
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
   a {all: unset;}
-  ${LightBoxShadow}
+  ${props => props.theme.boxShadow}
   img {
     width: 7rem;
     height: auto;
     border-radius: 0.42rem;
     animation: ${FadeAnim1} 1s;
   }
-  ${(props) => props.dark && `${DarkBoxShadow}`}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);

@@ -10,15 +10,14 @@ export const Container = styled.div`
   animation: ${FadeAnim1} 1s;
 `;
 
-export const MidHeader = styled.div<{dark?: boolean}>`
+export const MidHeader = styled.div`
   display: flex;
   flex-direction: column;
   span {
     &:last-child {
       font-family: montserrat;
       font-size: 1.2rem;
-      color: #1a1a1a;
-      ${(props) => props.dark && `color: #f5f4f9;`}
+      color: ${props => props.theme.fontColor};
     }
   }
 `;
@@ -54,13 +53,12 @@ export const TitleText = styled.span`
   font-size: 2.4rem;
 `;
 
-export const BodyTextContainer = styled.div<{dark?: boolean}>`
+export const BodyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.4rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     padding: 0 1%;
@@ -72,7 +70,7 @@ export const BodyTitleText = styled.span`
   font-size: 1.8rem;
 `;
 
-export const SubBody = styled.div<{dark?: boolean}>`
+export const SubBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,17 +78,15 @@ export const SubBody = styled.div<{dark?: boolean}>`
   animation: ${FadeAnim1} 1s;
 `;
 
-export const SubHeading = styled.span<{dark?: boolean}>`
+export const SubHeading = styled.span`
   font-family: roboto;
   font-size: 1.4rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
   text-transform: uppercase;
 `;
 
-export const Content = styled.span<{dark?: boolean}>`
+export const Content = styled.span`
   font-family: geomanist;
   font-size: 1.3rem;
-  color: rgba(0, 0, 0, 0.8);
-  ${(props) => props.dark && `color: rgba(255, 255, 255, 0.8);`}
+  color: ${props => props.theme.contentColor};
 `;

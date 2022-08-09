@@ -5,10 +5,13 @@ declare module 'styled-components' {
     fontColor: string;
     backgroundColor: string;
     boxShadow: string;
+    boxShadowNoHover: string;
+    boxShadowHover: string;
     cmntsBgClr: string;
     cmntBgClr: string;
     borderColor: string;
     scrollBarBg: string;
     overviewBg: string;
+    contentColor: string;
   }
 }

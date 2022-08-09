@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim1, LightBoxShadowNoHover, DarkBoxShadowNoHover } from "../../utils/styles.util";
+import { FadeAnim1 } from "../../utils/styles.util";
 
 export const Container = styled.div`
   display: flex;
@@ -13,14 +13,13 @@ export const Container = styled.div`
   }
 `;
 
-export const Section = styled.div<{dark: boolean}>`
+export const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0.3rem 1rem;
   border-radius: 0.42rem;
-  ${LightBoxShadowNoHover}
-  ${props => props.dark && DarkBoxShadowNoHover}
+  ${props => props.theme.boxShadowNoHover}
 `;
 
 export const SubSection = styled.div`
@@ -35,17 +34,16 @@ export const SubSection = styled.div`
   }
 `;
 
-export const SectionTitle = styled.span<{dark: boolean}>`
+export const SectionTitle = styled.span`
   font-family: bahnschrift;
   font-size: 1.8rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
-export const SectionItem = styled.div<{dark: boolean}>`
+export const SectionItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,8 +54,7 @@ export const SectionItem = styled.div<{dark: boolean}>`
     text-align: center;
     opacity: 0.8;
     animation: ${FadeAnim1} 1s;
-    color: #1a1a1a;
-    ${props => props.dark && `color: #f5f4f9;`}
+    color: ${props => props.theme.fontColor};
     &:last-child {
       font-family: bahnschrift;
     }

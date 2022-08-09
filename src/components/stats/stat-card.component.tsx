@@ -28,14 +28,14 @@ const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   }, [url, currYear, token]);
 
   return (
-    <Section dark={isDark}>
-      <SectionTitle dark={isDark}>{statsPageTranslations[name][+language]}</SectionTitle>
+    <Section>
+      <SectionTitle>{statsPageTranslations[name][+language]}</SectionTitle>
       <SubSection>
         {Object.keys(stats).map((stat) => {
           const propName: string = statsPageTranslations[stat][+language];
           const value: string = stats[stat];
           return (
-            <SectionItem dark={isDark} key={propName+value}>
+            <SectionItem key={propName+value}>
               <span>{propName}</span>
               <span>{value}</span>
             </SectionItem>

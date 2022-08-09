@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import heart from "../../assets/icons/heart.png";
 import heartUnfilled from "../../assets/icons/heart-unfilled.png";
-import { LightBoxShadow, FadeAnim1, DarkBoxShadow } from '../../utils/styles.util';
+import { FadeAnim1 } from '../../utils/styles.util';
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,8 +13,7 @@ export const Card = styled.div<{dark: boolean}>`
     font-family: montserrat;
     font-size: 2.1rem;
     opacity: 0.84;
-    color: #1a1a1a;
-    ${props => props.dark && `color: #f5f4f9;`}
+    color: ${props => props.theme.fontColor};
   }
   div {
     animation: ${FadeAnim1} 1s;
@@ -25,13 +24,11 @@ export const Card = styled.div<{dark: boolean}>`
     gap: 0.42rem;
     padding: 0.28rem 0.3rem;
     border-radius: 0.3rem;
-    ${LightBoxShadow}
-    ${(props) => props.dark && `${DarkBoxShadow}`}
+    ${props => props.theme.boxShadow}
     span {
       font-family: arial;
       font-size: 1.2rem;
-      color: #1a1a1a;
-      ${props => props.dark && `color: #f5f4f9;`}
+      color: ${props => props.theme.fontColor};
     }
   }
 `;

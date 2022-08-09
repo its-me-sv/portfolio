@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import {
-  LightBoxShadowNoHover,
   LightBoxShadowHover,
   FadeAnim1,
-  DarkBoxShadowNoHover,
   DarkBoxShadowHover,
 } from "../../utils/styles.util";
 import searchPng from '../../assets/icons/search.png';
 import closePng from '../../assets/icons/close.png';
 
-export const SearchContainer = styled.div<{dark: boolean}>`
+export const SearchContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -21,12 +19,8 @@ export const SearchContainer = styled.div<{dark: boolean}>`
   margin: 0 auto;
   padding: 0.36%;
   animation: ${FadeAnim1} 1s;
-  background-color: #f5f4f9;
-  ${LightBoxShadowNoHover}
-  ${props => props.dark && `
-    background-color: #1a1a1a;
-    ${DarkBoxShadowNoHover}
-  `}
+  background-color: ${props => props.theme.backgroundColor};
+  ${props => props.theme.boxShadowNoHover}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     width: 90vw;
@@ -44,7 +38,7 @@ export const SearchIcon = styled.img.attrs({
   ${props => props.dark && `filter: invert(100%);`}
 `;
 
-export const SearchInput = styled.input<{dark: boolean}>`
+export const SearchInput = styled.input`
   font-family: geomanist;
   outline: none;
   border: none;
@@ -52,13 +46,9 @@ export const SearchInput = styled.input<{dark: boolean}>`
   border-radius: 0.42rem;
   font-size: 1.4rem;
   width: 100%;
-  color: #1a1a1a;
-  &:focus {${LightBoxShadowHover}}
-  ${props => props.dark && `
-    color: #f5f4f9;
-    background-color: rgb(45, 43, 43);
-    &:focus {${DarkBoxShadowHover}}
-  `}
+  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.fontColor};
+  &:focus {${props => props.theme.boxShadowHover}}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
