@@ -58,6 +58,7 @@ export const ProjectContextProvider: React.FC<{children: ReactNode}> = ({childre
     setSearchField('');
     setProjectIds([]);
     setCurrPage(0);
+    setDataMapper({});
   }, []);
 
   return (
