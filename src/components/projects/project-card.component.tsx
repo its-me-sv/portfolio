@@ -36,7 +36,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const { isDark, language } = useCommonContext();
   const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
-  const { likes, addLike, removeLike } = useUserContext();
+  const { likes, addLike, removeLike, token } = useUserContext();
   const { setDataMapper } = useProjectContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
@@ -47,14 +47,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
 
   useEffect(() => {
     setLiked(likes.includes(id));
-    axios.post(`${API_URL}/api/projects/${id}`)
-    .then(({data}) => {
+    axios.post(
+      `${API_URL}/api/projects/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => {
       setProjectDetails(data);
       setDataMapper!(prev => ({...prev, [id]: data}));
     });
-    axios.post(`${API_URL}/api/projects/stats/${id}`)
-    .then(({data}) => setStats(data));
-  }, [id, setDataMapper]);
+    axios.post(
+      `${API_URL}/api/projects/stats/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => setStats(data));
+  }, [id, setDataMapper, token]);
 
   useEffect(() => {
     return () => onUnmount!();
@@ -91,17 +97,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   }, [id, projectDetails?.title, setCommentsMeta, setCallbacks]);
 
   const onCodeVisit = () => {
-    axios.put(`${API_URL}/api/stats/visits/${new Date().getFullYear()}`);
+    axios.put(
+      `${API_URL}/api/stats/visits/${new Date().getFullYear()}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    );
   };
 
   const onProjectLaunch = () => {
-    axios.put(`${API_URL}/api/stats/launches/${new Date().getFullYear()}`);
+    axios.put(
+      `${API_URL}/api/stats/launches/${new Date().getFullYear()}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    );
   };
 
   const toggleLike = () => {
     if (!liked) {
-      axios.put(`${API_URL}/api/projects/like/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/projects/like/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         setStats((prev) => ({
           likes: `${+(prev?.likes as string || 0) + 1}`,
           comments: prev?.comments as string,
@@ -111,8 +128,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         setLiked(true);
       });
     } else {
-      axios.put(`${API_URL}/api/projects/dislike/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/projects/dislike/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         setStats((prev) => ({
           likes: `${+(prev?.likes as string || 0) - 1}`,
           comments: prev?.comments as string,
@@ -125,8 +145,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   };
 
   const onShare = () => {
-    axios.put(`${API_URL}/api/projects/share/${id}`)
-    .then(() => {
+    axios.put(
+      `${API_URL}/api/projects/share/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(() => {
       navigator.clipboard.writeText(projectDetails?.src_code_link as string);
       toast.success("Source code link copied to clipboard");
       setStats((prev) => ({

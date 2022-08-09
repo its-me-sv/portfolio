@@ -13,28 +13,37 @@ interface QuoteCardProps extends Quote {}
 
 const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
   const { isDark } = useCommonContext();
-  const { likes, addLike, removeLike } = useUserContext();
+  const { likes, addLike, removeLike, token } = useUserContext();
   
   const [liked, setLiked] = useState<boolean>(false);
   const [cnt, setCnt] = useState<number>(0);
 
   useEffect(() => {
-    axios.post(`${API_URL}/api/quotes/likes/${id}`)
-    .then(({data}) => setCnt(+data.likes));
+    axios.post(
+      `${API_URL}/api/quotes/likes/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => setCnt(+data.likes));
     setLiked(likes.includes("QUOTE"+id));
-  }, [id]);
+  }, [id, token]);
 
   const toggleLike = () => {
     if (!liked) {
-      axios.put(`${API_URL}/api/quotes/like/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/quotes/like/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         addLike!('QUOTE'+id);
         setLiked(true);
         setCnt(prev => prev + 1);
       });
     } else {
-      axios.put(`${API_URL}/api/quotes/dislike/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/quotes/dislike/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         removeLike!('QUOTE'+id);
         setLiked(false);
         setCnt(prev => prev - 1);

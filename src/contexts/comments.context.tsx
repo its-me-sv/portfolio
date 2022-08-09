@@ -55,7 +55,7 @@ export const CommentsContext = createContext<CommentsContextInterface>(defaultSt
 export const useCommentsContext = () => useContext(CommentsContext);
 
 export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
-  const { userId, socket } = useUserContext();
+  const { userId, socket, token } = useUserContext();
 
   const [section, setSection] = useState<string>(defaultState.section);
   const [comment, setComment] = useState<string>(defaultState.comment);
@@ -67,25 +67,30 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
 
   const postComment = useCallback(() => {
     if (comment.length < 1) return;
-    axios.post(`${API_URL}/api/${type}/comment/${section.split("||")[0]}`, {
-      comment,
-      sender: userId || socket.id
-    }).then(({data}) => {
+    axios.post(
+      `${API_URL}/api/${type}/comment/${section.split("||")[0]}`, 
+      {comment, sender: userId || socket.id},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => {
       setComments(prev => [data, ...prev]);
       setComment('');
       callbacks.incCmt();
       scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
     });
-  }, [comment, section, type, userId, callbacks, socket.id]);
+  }, [comment, section, type, userId, token, callbacks, socket.id]);
 
   const removeComment = useCallback((oldId: string) => {
-    axios.delete(`${API_URL}/api/${type}/comment/${section.split("||")[0]}`, {
-      data: {id: oldId}
-    }).then(() => {
+    axios.delete(
+      `${API_URL}/api/${type}/comment/${section.split("||")[0]}`, 
+      {
+        headers: {Authorization: `Bearer ${token}`},
+        data: {id: oldId}
+      }
+    ).then(() => {
       setComments(prev => prev.filter(cmt => cmt.id !== oldId));
       callbacks.decCmt();
     });
-  }, [section, type, callbacks]);
+  }, [section, type, token, callbacks]);
 
   const setCommentsMeta = useCallback((typ: CommentType, sctn: string) => {
     setType(typ);
@@ -94,14 +99,15 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
 
   const fetchComments = useCallback(()=> {
     if (page === null) return;
-    axios.post(`${API_URL}/api/${type}/get-comments/${section.split('||')[0]}`, {
-      page: page === '' ? null : page
-    })
-    .then(({data}) => {
+    axios.post(
+      `${API_URL}/api/${type}/get-comments/${section.split('||')[0]}`, 
+      {page: page === '' ? null : page},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => {
       setComments(prev => [...prev, ...data.comments])
       setPage(data.page);
     });
-  }, [page, section, type]);
+  }, [page, section, type, token]);
 
   const onUnmount = useCallback(() => {
     setSection("");

@@ -25,7 +25,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   const { isDark, language } = useCommonContext();
   const { setCurrAchievement } = useAchievementContext();
   const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
-  const { likes, addLike, removeLike } = useUserContext();
+  const { likes, addLike, removeLike, token } = useUserContext();
 
   const [achievement, setAchievement] = useState<Achievement|null>();
   const [stats, setStats] = useState<AchievementStats|null>();
@@ -33,12 +33,18 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
 
   useEffect(() => {
     setLiked(likes.includes(id));
-    axios.post(`${API_URL}/api/achievements/${id}`)
-    .then(({data}) => setAchievement(data));
-    axios.post(`${API_URL}/api/achievements/stats/${id}`)
-    .then(({data}) => setStats(data));
+    axios.post(
+      `${API_URL}/api/achievements/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => setAchievement(data));
+    axios.post(
+      `${API_URL}/api/achievements/stats/${id}`,
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    ).then(({data}) => setStats(data));
     return () => onUnmount!();
-  }, [id, onUnmount]);
+  }, [id, onUnmount, token]);
 
   const handleClick = useCallback(() => {
     setCurrAchievement!(achievement as Achievement);
@@ -65,8 +71,11 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
 
   const toggleLike = () => {
     if (!liked) {
-      axios.put(`${API_URL}/api/achievements/like/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/achievements/like/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         setStats(prev => ({
           appreciations: `${(+(prev?.appreciations as string||0))+1}`, 
           comments: prev?.comments as string
@@ -75,8 +84,11 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
         setLiked(true);
       });
     } else {
-      axios.put(`${API_URL}/api/achievements/dislike/${id}`)
-      .then(() => {
+      axios.put(
+        `${API_URL}/api/achievements/dislike/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(() => {
         setStats(prev => ({
           appreciations: `${(+(prev?.appreciations as string||0))-1}`, 
           comments: prev?.comments as string

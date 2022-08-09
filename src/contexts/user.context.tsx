@@ -29,14 +29,14 @@ export const UserContextProvider: React.FC<{children: ReactNode}> = ({children})
   const userId = useRef<string>(defaultState.userId);
   const [likes, setLikes] = useState<Array<string>>(defaultState.likes);
   const socket = useRef<Socket>(defaultState.socket);
-  const token = useRef<string>(defaultState.token);
+  const [token, setToken] = useState<string>(defaultState.token);
 
   useEffect(() => {
     if (!first) return;
     socket.current.on("registered", data => {
       socket.current.id = data.id;
       userId.current = data.id;
-      token.current = data.token;
+      setToken(data.token);
     });
     first = false;
   }, []);
@@ -53,7 +53,7 @@ export const UserContextProvider: React.FC<{children: ReactNode}> = ({children})
     <UserContext.Provider value={{
       userId: userId.current, 
       socket: socket.current, 
-      token: token.current,
+      token: token,
       likes, addLike, removeLike
     }}>{children}</UserContext.Provider>
   );

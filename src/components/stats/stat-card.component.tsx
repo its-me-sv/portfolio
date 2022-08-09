@@ -7,19 +7,25 @@ import { statsPageTranslations } from '../../utils/translations.util';
 import { Stat, StatObject } from '../../data/stats.data';
 import { useCommonContext } from '../../contexts/common.context';
 import { useStatContext } from '../../contexts/stat.context';
+import { useUserContext } from '../../contexts/user.context';
 
 interface StatCardProps extends Stat {}
 
 const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   const { isDark, language } = useCommonContext();
   const { currYear } = useStatContext();
+  const { token } = useUserContext();
 
   const [stats, setStats] = useState<StatObject>({});
 
   useEffect(() => {
-    axios.post(`${url}/${currYear}`)
+    axios.post(
+      `${url}/${currYear}`, 
+      {},
+      {headers: {Authorization: `Bearer ${token}`}}
+    )
     .then(({data}) => setStats(data));
-  }, [url, currYear]);
+  }, [url, currYear, token]);
 
   return (
     <Section dark={isDark}>
