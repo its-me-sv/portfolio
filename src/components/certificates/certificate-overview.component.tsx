@@ -17,19 +17,18 @@ const CertificateOverview: React.FC<CertificateOverviewProps> = () => {
   if (!currCertificate) return <div />;
   
   return (
-    <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark}>
+    <OverviewContainer>
+      <OverviewBox>
         <OverviewHeader>
           <div />
           <CloseIcon dark={isDark} onClick={() => setCurrCertificate!(null)} />
         </OverviewHeader>
         <OverviewImage
-          dark={isDark}
           src={currCertificate.picture}
           alt={currCertificate.name}
         />
         {currCertificate.url && (
-          <CredBtn dark={isDark}>
+          <CredBtn>
             <a href={currCertificate.url} target="_blank" rel="noreferrer">
               {transcriptPageTranslations.verify[+language]}
             </a>

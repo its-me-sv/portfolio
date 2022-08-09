@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { FadeAnim1, LightBoxShadowHover, LightBoxShadow, DarkBoxShadow } from '../../utils/styles.util';
+import { FadeAnim1, LightBoxShadowHover } from '../../utils/styles.util';
 
-export const CommentsTitle = styled.span<{dark: boolean}>`
+export const CommentsTitle = styled.span`
   font-family: calibri;
   font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
 export const Body = styled.div`
@@ -19,7 +18,7 @@ export const Body = styled.div`
   overflow: auto;
 `;
 
-export const Footer = styled.div<{dark: boolean}>`
+export const Footer = styled.div`
   display: grid;
   grid-template-columns: 8fr 1fr;
   gap: 0.3rem;
@@ -33,17 +32,13 @@ export const Footer = styled.div<{dark: boolean}>`
     border-radius: 0.3rem;
     font-size: 1rem;
     padding-left: 0.28rem;
-    color: #1a1a1a;
-    background-color: #c5c5c1;
-    ${props => props.dark && `
-      color: #f5f4f9;
-      background-color: #2c2c2b;
-    `}
+    color: ${props => props.theme.fontColor};
+    background-color: ${props => props.theme.cmntsBgClr};
     &:focus {${LightBoxShadowHover}}
   }
 `;
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div`
   display: flex;
   align-items: flex-start;
   animation: ${FadeAnim1} 0.42s;
@@ -51,8 +46,6 @@ export const Card = styled.div<{dark: boolean}>`
   img {
     width: 2.1rem;
     border-radius: 50%;
-    /* border: 0.7px solid #1a1a1a; */
-    /* ${props => props.dark && `border-color: #f5f4f9;`} */
   }
   div {
     display: flex;
@@ -60,16 +53,14 @@ export const Card = styled.div<{dark: boolean}>`
     padding: 0.21rem;
     border-radius: 0.21rem;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    ${props => props.dark && `background-color: rgba(255, 255, 255, 0.1);`}
+    background-color: ${props => props.theme.cmntBgClr};
   }
   span {
     font-family: montserrat;
     font-size: 1.2rem;
     max-height: 14vh;
     overflow: auto;
-    color: #1a1a1a;
-    ${props => props.dark && `color: #f5f4f9;`}
+    color: ${props => props.theme.fontColor};
     &:first-child {
       align-self: flex-end;
       font-family: bahnschrift;
@@ -79,7 +70,7 @@ export const Card = styled.div<{dark: boolean}>`
   }
 `;
 
-export const LoadMore = styled.span<{dark: boolean}>`
+export const LoadMore = styled.span`
   align-self: center;
   margin-bottom: 0.42rem;
   border-radius: 0.21rem;
@@ -87,15 +78,11 @@ export const LoadMore = styled.span<{dark: boolean}>`
   padding-top: 0rem;
   padding-bottom: 0.14rem;
   cursor: pointer;
-  color: #1a1a1a;
-  ${LightBoxShadow}
-  ${props => props.dark && `
-    color: #f5f4f9;
-    ${DarkBoxShadow}
-  `}
+  color: ${props => props.theme.fontColor};
+  ${props => props.theme.boxShadow}
 `;
 
-export const BinIcon = styled.p<{dark: boolean}>`
+export const BinIcon = styled.p`
   all: unset;
   align-self: flex-end;
   cursor: pointer;

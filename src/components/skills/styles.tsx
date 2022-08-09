@@ -46,9 +46,8 @@ export const Card = styled.div<{dark: boolean}>`
   }
 `;
 
-export const Name = styled.span<{dark: boolean}>`
+export const Name = styled.span`
   font-family: roboto;
   font-size: 1.2rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;

@@ -1,7 +1,7 @@
 import { 
   OverviewContainer, OverviewBox, 
   CloseIcon, OverviewImage,
-  CredBtn, OverviewHeader, OverviewTitle
+  CredBtn, OverviewHeader
 } from '../../utils/styles.util';
 import { transcriptPageTranslations } from '../../utils/translations.util';
 
@@ -17,19 +17,18 @@ const AchievementOverview: React.FC<AchievementOverviewProps> = () => {
   if (!currAchievement) return <div />;
 
   return (
-    <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark}>
+    <OverviewContainer>
+      <OverviewBox>
         <OverviewHeader>
           <div />
           <CloseIcon dark={isDark} onClick={() => setCurrAchievement!(null)} />
         </OverviewHeader>
         <OverviewImage
-          dark={isDark}
           src={currAchievement.credential_link}
           alt="credential"
         />
         {currAchievement.verify_url && (
-          <CredBtn dark={isDark}>
+          <CredBtn>
             <a
               href={currAchievement.verify_url}
               target="_blank"

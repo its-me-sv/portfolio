@@ -100,14 +100,14 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   };
 
   return (
-    <Card dark={isDark}>
+    <Card>
       <Top>
-        <Name dark={isDark}>{achievement?.title}</Name>
-        <HrzntlLn dark={isDark} />
+        <Name>{achievement?.title}</Name>
+        <HrzntlLn />
       </Top>
-      <Description dark={isDark}>{achievement?.description}</Description>
+      <Description>{achievement?.description}</Description>
       <Footer>
-        <Interactions dark={isDark}>
+        <Interactions>
           <div onClick={toggleLike}>
             <ClapIcon liked={liked} dark={isDark} />
             <span>
@@ -121,7 +121,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
             </span>
           </div>
         </Interactions>
-        <CredBtn dark={isDark} key={language} onClick={handleClick}>
+        <CredBtn key={language} onClick={handleClick}>
           {transcriptPageTranslations.showCred[+language]}
         </CredBtn>
       </Footer>

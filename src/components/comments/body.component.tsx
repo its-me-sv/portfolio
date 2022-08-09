@@ -9,7 +9,7 @@ import { useCommentsContext } from '../../contexts/comments.context';
 interface CommentBodyProps {}
 
 const CommentBody: React.FC<CommentBodyProps> = () => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const { comments, fetchComments, page, scrollRef } = useCommentsContext();
 
   const onScroll = useCallback(() => {
@@ -24,10 +24,9 @@ const CommentBody: React.FC<CommentBodyProps> = () => {
         <CommentCard key={cmt.id} {...cmt} />
       ))}
       {(comments.length > 0 && page !== null) && (
-        <LoadMore 
-          onClick={fetchComments}
-          dark={isDark}
-        >{commentsTranslations.ldCmt[+language]}</LoadMore>
+        <LoadMore onClick={fetchComments}>
+          {commentsTranslations.ldCmt[+language]}
+        </LoadMore>
       )}
     </Body>
   );

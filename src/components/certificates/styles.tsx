@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DarkBoxShadow, LightBoxShadow, FadeAnim1 } from '../../utils/styles.util';
+import { FadeAnim1 } from '../../utils/styles.util';
 
 export const Container = styled.div`
   overflow: auto;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +27,7 @@ export const Card = styled.div<{dark: boolean}>`
   justify-content: space-around;
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
-  ${LightBoxShadow}
-  ${props => props.dark && `${DarkBoxShadow}`}
+  ${props => props.theme.boxShadow}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -45,16 +44,14 @@ export const Provider = styled.img`
   border-radius: 0.42rem;
 `;
 
-export const Name = styled.span<{dark: boolean}>`
+export const Name = styled.span`
   font-family: roboto;
   font-size: 1.2rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
-export const Issued = styled.span<{dark: boolean}>`
+export const Issued = styled.span`
   font-family: bahnschrift;
   font-size: 1.1rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;

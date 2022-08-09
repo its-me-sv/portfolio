@@ -23,7 +23,7 @@ const CommentFooter: React.FC<CommentFooterProps> = () => {
   };
 
   return (
-    <Footer dark={isDark}>
+    <Footer>
       <textarea 
         rows={2} 
         placeholder={commentsTranslations.cmt[+language]} 
@@ -32,7 +32,6 @@ const CommentFooter: React.FC<CommentFooterProps> = () => {
         onKeyDown={handleKeyDown}
       />
       <CredBtn 
-        dark={isDark} 
         onClick={postComment}
         disabled={comment.length < 1}
       >{commentsTranslations.pstCmt[+language]}</CredBtn>

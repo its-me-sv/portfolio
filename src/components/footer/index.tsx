@@ -27,7 +27,6 @@ const Footer: React.FC<FooterProps> = () => {
       <SelectLang
         value={language}
         onChange={handleChange}
-        dark={isDark}
       >
         {languages.map((val, idx) => (
           <option key={val} value={idx}>
@@ -35,14 +34,14 @@ const Footer: React.FC<FooterProps> = () => {
           </option>
         ))}
       </SelectLang>
-      <CreditText dark={isDark} open={menuOpen}>
+      <CreditText open={menuOpen}>
         {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
         {footerTranslations.by[+language]}
         <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
           Suraj Vijay
         </a>
       </CreditText>
-      <ThemeIcon dark={isDark} onClick={toggleTheme!}>
+      <ThemeIcon onClick={toggleTheme!}>
         {isDark ? "🌜" : "🌞"}
       </ThemeIcon>
     </Container>

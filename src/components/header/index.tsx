@@ -12,7 +12,7 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate();
-  const { language, isDark, isMobile } = useCommonContext();
+  const { language, isMobile } = useCommonContext();
   const { menu } = useMenuContext();
 
   const pageName: string = Object.values(menuTranslations)[menu][+language];
@@ -20,15 +20,13 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <Container>
       {!isMobile && (
-        <Signature  
-          dark={isDark} 
-          onClick={() => navigate('../')}
-        >Suraj Vijay</Signature>
+        <Signature onClick={() => navigate('../')}>
+          Suraj Vijay
+        </Signature>
       )}
-      <CurrentPage 
-        key={pageName} 
-        dark={isDark}
-      >{pageName}</CurrentPage>
+      <CurrentPage key={pageName}>
+        {pageName}
+      </CurrentPage>
       <div />
       <Menu />
     </Container>

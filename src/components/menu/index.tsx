@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = () => {
   const toggleMenu = () => setMenuOpen!(!menuOpen);
 
   return (
-    <Container open={menuOpen} dark={isDark}>
+    <Container open={menuOpen}>
       <MenuIcon
         onClick={toggleMenu}
         src={menuOpen ? closeIcon : menuIcon}
@@ -30,7 +30,6 @@ const Menu: React.FC<MenuProps> = () => {
             key={page[+language]}
             chosen={idx === menu}
             onClick={() => setMenu!(idx)}
-            dark={isDark}
           >
             {page[+language]}
           </MenuItem>

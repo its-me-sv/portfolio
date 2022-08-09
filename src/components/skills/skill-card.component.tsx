@@ -14,7 +14,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
   return (
     <Card dark={isDark}>
       <img src={url} alt={name + " logo"} />
-      <Name dark={isDark}>{name}</Name>
+      <Name>{name}</Name>
     </Card>
   );
 };

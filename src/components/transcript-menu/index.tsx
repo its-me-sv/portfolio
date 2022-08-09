@@ -7,7 +7,7 @@ import { useMenuContext } from '../../contexts/menu.context';
 interface TranscriptMenuProps {}
 
 const TranscriptMenu: React.FC<TranscriptMenuProps> = () => {
-  const { language, isDark } = useCommonContext();
+  const { language } = useCommonContext();
   const { transMenu, setTransMenu } = useMenuContext();
 
   return (
@@ -17,7 +17,6 @@ const TranscriptMenu: React.FC<TranscriptMenuProps> = () => {
           key={option[+language]}
           onClick={() => setTransMenu!(idx)}
           selected={idx === transMenu}
-          dark={isDark}
         >{option[+language]}</MenuItem>
       ))}
     </MenuContainer>

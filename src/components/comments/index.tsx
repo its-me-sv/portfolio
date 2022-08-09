@@ -5,13 +5,11 @@ import { OverviewContainer, OverviewBox } from '../../utils/styles.util';
 import CommentHeader from './header.component';
 import CommentBody from './body.component';
 import CommentFooter from './footer.component';
-import { useCommonContext } from '../../contexts/common.context';
 import { useCommentsContext } from '../../contexts/comments.context';
 
 interface CommentsProps {}
 
 const Comments: React.FC<CommentsProps> = () => {
-  const { isDark } = useCommonContext();
   const { fetchComments } = useCommentsContext();
 
   const fetched = useRef<boolean>(false);
@@ -23,8 +21,8 @@ const Comments: React.FC<CommentsProps> = () => {
   }, []);
 
   return (
-    <OverviewContainer dark={isDark}>
-      <OverviewBox dark={isDark} comments>
+    <OverviewContainer>
+      <OverviewBox comments>
         <CommentHeader />
         <CommentBody />
         <CommentFooter />

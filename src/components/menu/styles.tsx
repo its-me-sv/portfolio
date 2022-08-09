@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FadeAnim } from "../../utils/styles.util";
 
-export const Container = styled.div<{open: boolean; dark?: boolean;}>`
+export const Container = styled.div<{open: boolean;}>`
   display: flex;
   position: absolute;
   top: 0;
@@ -17,8 +17,7 @@ export const Container = styled.div<{open: boolean; dark?: boolean;}>`
   ${props => props.open && `
     padding: 0.49rem;
     border-radius: 0rem 0 0 0.42rem;
-    background-color: #1a1a1a;
-    ${props.dark && `background-color: #f5f4f9;`}
+    background-color: ${props.theme.fontColor};
   `}
   /* desktop styles */
   @media only screen and (min-width: 768px) {
@@ -55,17 +54,13 @@ export const MenuIcon = styled.img.attrs({ alt: "" })<{
   }
 `;
 
-export const MenuItem = styled.p<{
-  chosen: boolean;
-  dark?: boolean;
-}>`
+export const MenuItem = styled.p<{chosen: boolean;}>`
   all: unset;
   cursor: pointer;
   ${props => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
-  color: #f5f4f9;
+  color: ${props => props.theme.backgroundColor};
   padding-right: 0.36rem;
-  ${props => props.dark && `color: #1a1a1a;`}
   ${props => props.chosen && `
     font-weight: bold;
     -webkit-background-clip: text;

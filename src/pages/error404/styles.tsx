@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FadeAnim1 } from "../../utils/styles.util";
 
-export const Container = styled.div<{ dark: boolean }>`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -20,10 +20,6 @@ export const Container = styled.div<{ dark: boolean }>`
       font-size: 2.1rem;
     }
   }
-  background-color: #f5f4f9;
-  color: #1a1a1a;
-  ${(props) => props.dark && `
-    background-color: #1a1a1a;
-    color: #f5f4f9
-  `}
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
 `;

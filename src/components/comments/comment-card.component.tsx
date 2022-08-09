@@ -12,7 +12,7 @@ interface CommentCardProps extends Comment {}
 const CommentCard: React.FC<CommentCardProps> = ({
   sender, timestamp, message, id
 }) => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const { removeComment } = useCommentsContext();
   const { userId, socket } = useUserContext();
 
@@ -24,14 +24,14 @@ const CommentCard: React.FC<CommentCardProps> = ({
   };
 
   return (
-    <Card dark={isDark}>
+    <Card>
       <img alt={sender} src={avtrURL + sender + ".svg"} />
       <div>
         <span>{date.toLocaleTimeString()}, {date.toDateString()}</span>
         <span>{message}</span>
       </div>
       {(sender === (userId || socket.id)) &&
-      <BinIcon dark={isDark} onClick={onDelete}>🗑️</BinIcon>}
+      <BinIcon onClick={onDelete}>🗑️</BinIcon>}
     </Card>
   );
 };

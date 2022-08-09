@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DarkBoxShadow, FadeAnim1, LightBoxShadow } from "../../utils/styles.util";
+import { FadeAnim1 } from "../../utils/styles.util";
 
 export const Container = styled.div`
   display: flex;
@@ -24,13 +24,12 @@ export const Container = styled.div`
   }
 `;
 
-export const CreditText = styled.div<{dark?: boolean; open: boolean;}>`
+export const CreditText = styled.div<{open: boolean;}>`
   font-family: calibri;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
   span {color: rgb(254 67 101);}
   a {
     text-decoration: none;
@@ -45,24 +44,19 @@ export const CreditText = styled.div<{dark?: boolean; open: boolean;}>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    ${props => props.open && `color: ${props.dark ? '#1a1a1a' : '#f5f4f9'};`}
+    ${props => props.open && `color: ${props.theme.fontColor};`}
   }
 `;
 
-export const SelectLang = styled.select<{dark?: boolean;}>`
+export const SelectLang = styled.select`
   border-radius: 0.21rem;
   z-index: 998;
   font-size: 1rem;
   font-family: bahnschrift;
-  border: 1px solid black;
+  border: 1px solid ${props => props.theme.borderColor};
   outline: none;
-  background-color: #f5f4f9;
-  color: #1a1a1a;
-  ${props => props.dark && `
-    background-color: #1a1a1a;
-    color: #f5f4f9;
-    border-color: #f5f4f9;
-  `}
+  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.fontColor};
   animation: ${FadeAnim1} 1s;
   text-align: center;
   cursor: pointer;
@@ -79,12 +73,11 @@ export const FooterRight = styled.div`
   z-index: 998;
 `;
 
-export const ThemeIcon = styled.div<{dark: boolean}>`
+export const ThemeIcon = styled.div`
   cursor: pointer;
   padding: 0.3rem;
   padding-top: 0.1rem;
   border-radius: 0.3rem;
   z-index: 998;
-  ${LightBoxShadow}
-  ${props => props.dark && DarkBoxShadow}
+  ${props => props.theme.boxShadow}
 `;

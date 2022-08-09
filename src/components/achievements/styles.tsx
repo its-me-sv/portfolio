@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import { LightBoxShadow, DarkBoxShadow, FadeAnim1 } from "../../utils/styles.util";
+import { FadeAnim1 } from "../../utils/styles.util";
 import clap from '../../assets/icons/clap.png';
 import clapUnfilled from '../../assets/icons/clap-unfilled.png';
 
-export const Card = styled.div<{dark: boolean}>`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.42% 0.84%;
   border-radius: 0.42rem;
   gap: 0.42rem;
   animation: ${FadeAnim1} 1s;
-  ${LightBoxShadow}
-  ${(props) => props.dark && DarkBoxShadow}
+  ${props => props.theme.boxShadow}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     padding: 0.5% 0.7rem;
@@ -23,18 +22,16 @@ export const Top = styled.div`
   flex-direction: column;
 `;
 
-export const Name = styled.span<{dark: boolean}>`
+export const Name = styled.span`
   font-family: geomanist;
   font-size: 1.8rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
-export const Description = styled.span<{dark: boolean}>`
+export const Description = styled.span`
   font-family: arial;
   font-size: 1.2rem;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
 export const Footer = styled.div`
@@ -43,7 +40,7 @@ export const Footer = styled.div`
   justify-content: space-between;
 `;
 
-export const Interactions = styled.div<{dark: boolean}>`
+export const Interactions = styled.div`
   display: flex;
   align-items: center;
   gap: 0.42rem;
@@ -56,8 +53,7 @@ export const Interactions = styled.div<{dark: boolean}>`
     span {
       font-family: arial;
       font-size: 1.2rem;
-      color: #1a1a1a;
-      ${props => props.dark && `color: #f5f4f9;`}
+      color: ${props => props.theme.fontColor};
     }
   }
 `;

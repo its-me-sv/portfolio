@@ -9,7 +9,7 @@ import { useCommonContext } from '../../contexts/common.context';
 interface ErrorPageProps {}
 
 const ErrorPage: React.FC<ErrorPageProps> = () => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ErrorPage: React.FC<ErrorPageProps> = () => {
   }, [language, navigate]);
 
   return (
-    <Container dark={isDark}>
+    <Container>
       <span>{error404Translations.title[+language]}</span>
       <span>
         {error404Translations.caption1[+language]}<br />

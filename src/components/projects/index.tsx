@@ -10,7 +10,7 @@ import { filteredProjects } from '../../utils/projects.util';
 interface ProjectsProps {}
 
 const Projects: React.FC<ProjectsProps> = () => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
   const { projectIds, fetchProjects, currPage, searchField, dataMapper } = useProjectContext();
 
   const scrollRef = useRef<HTMLDivElement>() as React.RefObject<HTMLDivElement>;
@@ -30,7 +30,7 @@ const Projects: React.FC<ProjectsProps> = () => {
         <ProjectCard key={projectId} id={projectId} />
       ))}
       {(currPage !== null && searchField.length === 0) && (
-        <LoadMore onClick={fetchProjects} dark={isDark}>
+        <LoadMore onClick={fetchProjects}>
           {projectsPageTranslations.ldPrj[+language]}
         </LoadMore>
       )}

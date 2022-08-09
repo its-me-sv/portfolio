@@ -161,7 +161,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   };
 
   return (
-    <Card dark={isDark} onMouseEnter={toggleActive} onMouseLeave={toggleActive}>
+    <Card onMouseEnter={toggleActive} onMouseLeave={toggleActive}>
       <CardTop dark={isDark}>
         <span>{projectDetails?.title}</span>
         <div>
@@ -183,7 +183,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
           </a>
         </div>
       </CardTop>
-      <Gallery dark={isDark}>
+      <Gallery>
         <img
           src={projectDetails?.gallery[currImage]}
           alt={"image " + (currImage + 1 + "")}
@@ -194,19 +194,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
               key={val}
               selected={idx === currImage}
               onClick={() => setCurrImage(idx)}
-              dark={isDark}
             />
           ))}
         </div>
       </Gallery>
-      <Description dark={isDark}>{projectDetails?.description}</Description>
-      <HrzntlLn dark={isDark} />
-      <TechStack dark={isDark} key={language}>
+      <Description>{projectDetails?.description}</Description>
+      <HrzntlLn />
+      <TechStack key={language}>
         {projectsPageTranslations.techStack[+language]}:{" "}
         {projectDetails?.tech_stack.join(", ")}
       </TechStack>
-      <HrzntlLn dark={isDark} />
-      <CardBottom dark={isDark}>
+      <HrzntlLn />
+      <CardBottom>
         <div onClick={toggleLike}>
           <LikeIcon dark={isDark} liked={liked} />
           <span>{stats?.likes !== "0" ? stats?.likes : ""}</span>

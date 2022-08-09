@@ -9,23 +9,21 @@ export const Container = styled.div`
   padding: 0vw 0.49rem 0vw 0.49rem;
 `;
 
-export const Signature = styled.span<{dark?: boolean}>`
+export const Signature = styled.span`
   font-family: signature;
   font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
   &:hover {
     opacity: 0.7;
     font-weight: 100;
   }
 `;
 
-export const CurrentPage = styled.span<{dark?: boolean}>`
+export const CurrentPage = styled.span`
   font-family: calibri;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
   font-size: 1.8rem;
   animation: ${FadeAnim1} 1s;
   text-transform: capitalize;

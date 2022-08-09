@@ -16,7 +16,7 @@ const CommentHeader: React.FC<CommentHeaderProps> = () => {
 
   return (
     <OverviewHeader>
-      <CommentsTitle dark={isDark}>{section.split('||')[1]}</CommentsTitle>
+      <CommentsTitle>{section.split('||')[1]}</CommentsTitle>
       <CloseIcon dark={isDark} onClick={handleClose} />
     </OverviewHeader>
   );

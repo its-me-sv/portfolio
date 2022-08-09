@@ -1,10 +1,12 @@
 import { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
+import { ThemeProvider } from "styled-components";
 
 import { AppContainer } from "./styles";
 import { menuTranslations, toastTranslations } from "../../utils/translations.util";
 import { toastOptions } from "../../utils/config.util";
+import { lightTheme, darkTheme } from "../../utils/themes.util";
 import { GlobalStyle } from "../../utils/styles.util";
 
 import Loader from "../../components/loader";
@@ -63,9 +65,9 @@ const App: React.FC<AppProps> = () => {
   }, [menu, language]);
 
   return (
-    <>
-      <GlobalStyle dark={isDark} />
-      <AppContainer dark={isDark}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+      <GlobalStyle />
+      <AppContainer>
         <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
         {loading && <Loader />}
         {section && <Comments />}
@@ -86,7 +88,7 @@ const App: React.FC<AppProps> = () => {
         </Suspense>
         {!isMobile && <Footer />}
       </AppContainer>
-    </>
+    </ThemeProvider>
   );
 };
 

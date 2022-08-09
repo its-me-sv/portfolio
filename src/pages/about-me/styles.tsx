@@ -17,23 +17,21 @@ export const ContentContainer = styled.div`
   gap: 0.07rem;
 `;
 
-export const SubHeader = styled.span<{dark?: boolean}>`
+export const SubHeader = styled.span`
   font-family: roboto;
   font-size: 1.8rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;
 
-export const Content = styled.span<{dark?: boolean}>`
+export const Content = styled.span`
   max-width: 42rem;
   font-family: geomanist;
   font-size: 1.4rem;
   opacity: 0.9;
   text-align: center;
   animation: ${FadeAnim1} 1s;
-  color: #1a1a1a;
-  ${props => props.dark && `color: #f5f4f9;`}
+  color: ${props => props.theme.fontColor};
 `;

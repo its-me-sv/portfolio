@@ -11,16 +11,16 @@ interface ProfileCardProps extends Profile {}
 const ProfileCard: React.FC<ProfileCardProps> = ({
   icon, name, url, profile
 }) => {
-  const { isDark, language } = useCommonContext();
+  const { language } = useCommonContext();
 
   return (
-    <Card dark={isDark}>
+    <Card>
       <Company src={icon} alt={name + " logo"} />
-      <Name dark={isDark}>{name}</Name>
-      <Username dark={isDark}>
+      <Name>{name}</Name>
+      <Username>
         {profilePageTranslations.username[+language]}: {profile}
       </Username>
-      <CredBtn dark={isDark}>
+      <CredBtn>
         <a href={url} target="_blank" rel="noreferrer">
           {profilePageTranslations.viewProfile[+language]}
         </a>
