@@ -90,6 +90,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
     setCallbacks!({incCmt, decCmt});
   }, [id, projectDetails?.title, setCommentsMeta, setCallbacks]);
 
+  const onCodeVisit = () => {
+    axios.put(`${API_URL}/api/stats/visits/${new Date().getFullYear()}`);
+  };
+
+  const onProjectLaunch = () => {
+    axios.put(`${API_URL}/api/stats/launches/${new Date().getFullYear()}`);
+  };
+
   const toggleLike = () => {
     if (!liked) {
       axios.put(`${API_URL}/api/projects/like/${id}`)
@@ -138,10 +146,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
             target="_blank"
             rel="noreferrer"
             href={projectDetails?.src_code_link}
+            onClick={onCodeVisit}
           >
             <img src={codeIcon} alt="code" />
           </a>
-          <a target="_blank" rel="noreferrer" href={projectDetails?.demo_link}>
+          <a 
+            target="_blank" 
+            rel="noreferrer" 
+            href={projectDetails?.demo_link}
+            onClick={onProjectLaunch}
+          >
             <img src={openIcon} alt="open" />
           </a>
         </div>
