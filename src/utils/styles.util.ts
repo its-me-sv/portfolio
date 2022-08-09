@@ -44,36 +44,6 @@ export const FadeAnim1 = keyframes`
   to {opacity: 0.6;}
 `;
 
-export const LightBoxShadow = css`
-  box-shadow: rgb(0 0 0 / 70%) 1px 1px 6px 1px;
-  &:hover {
-    box-shadow: rgb(0 0 0 / 70%) 0px 0px 3px 1px inset;
-  }
-`;
-
-export const LightBoxShadowNoHover = css`
-  box-shadow: rgb(0 0 0 / 70%) 1px 1px 6px 1px;
-`;
-
-export const LightBoxShadowHover = css`
-  box-shadow: rgb(0 0 0 / 70%) 0px 0px 3px 1px inset;
-`;
-
-export const DarkBoxShadow = css`
-  box-shadow: rgb(245 244 249 / 70%) 1px 1px 6px 1px;
-  &:hover {
-    box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
-  }
-`;
-
-export const DarkBoxShadowNoHover = css`
-  box-shadow: rgb(245 244 249 / 70%) 1px 1px 6px 1px;
-`;
-
-export const DarkBoxShadowHover = css`
-  box-shadow: rgb(245 244 249 / 70%) 0px 0px 3px 1px inset;
-`;
-
 export const CredBtn = styled.div<{disabled?: boolean; comment?: boolean}>`
   font-family: geomanist;
   padding: 0.42% 3% 1% 3%;

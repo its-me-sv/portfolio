@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FadeAnim1, LightBoxShadowHover } from '../../utils/styles.util';
+import { FadeAnim1 } from '../../utils/styles.util';
 
 export const CommentsTitle = styled.span`
   font-family: calibri;
@@ -34,7 +34,7 @@ export const Footer = styled.div`
     padding-left: 0.28rem;
     color: ${props => props.theme.fontColor};
     background-color: ${props => props.theme.cmntsBgClr};
-    &:focus {${LightBoxShadowHover}}
+    &:focus {${props => props.theme.boxShadowHover}}
   }
 `;
 

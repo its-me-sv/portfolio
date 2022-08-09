@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-import {
-  LightBoxShadowHover,
-  FadeAnim1,
-  DarkBoxShadowHover,
-} from "../../utils/styles.util";
+import { FadeAnim1 } from "../../utils/styles.util";
 import searchPng from '../../assets/icons/search.png';
 import closePng from '../../assets/icons/close.png';
 
