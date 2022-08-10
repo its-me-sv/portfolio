@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Achievement, AchievementStats } from "../../data/achievements.data";
 import commentIcon from '../../assets/icons/comment.png';
@@ -30,8 +30,10 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   const [achievement, setAchievement] = useState<Achievement|null>();
   const [stats, setStats] = useState<AchievementStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
+  const fetched = useRef<boolean>(false);
 
   useEffect(() => {
+    if (fetched.current) return;
     setLiked(likes.includes(id));
     axios.post(
       `${API_URL}/api/achievements/${id}`,
@@ -43,6 +45,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
       {},
       {headers: {Authorization: `Bearer ${token}`}}
     ).then(({data}) => setStats(data));
+    fetched.current = true;
     return () => onUnmount!();
   }, [id, onUnmount, token]);
 

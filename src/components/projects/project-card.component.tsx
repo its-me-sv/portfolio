@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import axios from "axios";
 import { toast } from 'react-hot-toast';
 
@@ -37,15 +37,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const { isDark, language } = useCommonContext();
   const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
   const { likes, addLike, removeLike, token } = useUserContext();
-  const { setDataMapper } = useProjectContext();
+  const { setDataMapper, dataMapper } = useProjectContext();
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
   const [projectDetails, setProjectDetails] = useState<Project|null>();
   const [stats, setStats] = useState<ProjectStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
+  const fetched = useRef<boolean>(false);
 
   useEffect(() => {
+    if (fetched.current) return;
+    if (dataMapper[id]) {
+      setProjectDetails(dataMapper[id]);
+      return;
+    }
     setLiked(likes.includes(id));
     axios.post(
       `${API_URL}/api/projects/${id}`,
@@ -60,6 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
       {},
       {headers: {Authorization: `Bearer ${token}`}}
     ).then(({data}) => setStats(data));
+    fetched.current = true;
   }, [id, setDataMapper, token]);
 
   useEffect(() => {
