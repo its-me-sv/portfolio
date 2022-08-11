@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "styled-components";
@@ -17,6 +17,8 @@ import Comments from "../../components/comments";
 import { useCommonContext } from "../../contexts/common.context";
 import { useMenuContext } from "../../contexts/menu.context";
 import { useCommentsContext } from '../../contexts/comments.context';
+import axios from "axios";
+import { API_URL } from "../../utils/constants.util";
 
 // pages
 const HomePage = lazy(() => import("../../pages/home"));
@@ -36,12 +38,15 @@ const App: React.FC<AppProps> = () => {
   const { loading, setLoading, language, isDark, isMobile } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
   const { section } = useCommentsContext();
+  const [load1, setLoad1] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setMenuOpen!(true), 4000);
     const timer1 = setTimeout(() => {
       toast(toastTranslations.fstInf[+language], {duration: 3000});
     }, 2200);
+    axios.get(`${API_URL}/api/validation/server`)
+    .then(() => setLoad1(false));
     return () => {
       clearTimeout(timer);
       clearTimeout(timer1);
@@ -70,6 +75,7 @@ const App: React.FC<AppProps> = () => {
       <AppContainer>
         <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
         {loading && <Loader />}
+        {load1 && <Loader />}
         {section && <Comments />}
         <Header />
         <Suspense fallback={<Loader />}>
