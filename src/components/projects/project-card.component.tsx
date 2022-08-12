@@ -48,6 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
 
   useEffect(() => {
     if (fetched.current) return;
+    if (!token) return;
     if (dataMapper[id]) {
       setProjectDetails(dataMapper[id]);
       return;
@@ -60,14 +61,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
     ).then(({data}) => {
       setProjectDetails(data);
       setDataMapper!(prev => ({...prev, [id]: data}));
+      fetched.current = true;
     });
     axios.post(
       `${API_URL}/api/projects/stats/${id}`,
       {},
       {headers: {Authorization: `Bearer ${token}`}}
     ).then(({data}) => setStats(data));
-    fetched.current = true;
-  }, [id, setDataMapper, token]);
+  }, [id, setDataMapper, token, dataMapper]);
 
   useEffect(() => {
     return () => onUnmount!();
