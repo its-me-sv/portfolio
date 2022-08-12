@@ -19,13 +19,14 @@ const StatCard: React.FC<StatCardProps> = ({name, url}) => {
   const [stats, setStats] = useState<StatObject>({});
 
   useEffect(() => {
+    if (!token) return;
     axios.post(
       `${url}/${currYear}`, 
       {},
       {headers: {Authorization: `Bearer ${token}`}}
     )
     .then(({data}) => setStats(data));
-  }, [url, currYear, token]);
+  }, [currYear, token]);
 
   return (
     <Section>

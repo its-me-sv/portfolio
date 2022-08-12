@@ -17,6 +17,13 @@ import { useAchievementContext } from '../../contexts/achievement.context';
 import { useCommentsContext } from '../../contexts/comments.context';
 import { useUserContext } from "../../contexts/user.context";
 
+const defaultAchievement: Achievement = {
+  title: '-',
+  description: '-',
+  credential_link: '-',
+  verify_url: '-'
+};
+
 interface AchievementCardProps {
   id: string;
 }
@@ -27,27 +34,32 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   const { setCommentsMeta, onUnmount, setCallbacks } = useCommentsContext();
   const { likes, addLike, removeLike, token } = useUserContext();
 
-  const [achievement, setAchievement] = useState<Achievement|null>();
+  const [achievement, setAchievement] = useState<Achievement>(defaultAchievement);
   const [stats, setStats] = useState<AchievementStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
   const fetched = useRef<boolean>(false);
 
   useEffect(() => {
     if (fetched.current) return;
+    if (!token) return;
     setLiked(likes.includes(id));
     axios.post(
       `${API_URL}/api/achievements/${id}`,
       {},
       {headers: {Authorization: `Bearer ${token}`}}
-    ).then(({data}) => setAchievement(data));
-    axios.post(
-      `${API_URL}/api/achievements/stats/${id}`,
-      {},
-      {headers: {Authorization: `Bearer ${token}`}}
-    ).then(({data}) => setStats(data));
-    fetched.current = true;
+    ).then(({data}) => {
+      setAchievement(data);
+      axios.post(
+        `${API_URL}/api/achievements/stats/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(({data: data1}) => {
+        setStats(data1);
+        fetched.current = true;
+      });
+    });
     return () => onUnmount!();
-  }, [id, onUnmount, token]);
+  }, [token]);
 
   const handleClick = useCallback(() => {
     setCurrAchievement!(achievement as Achievement);

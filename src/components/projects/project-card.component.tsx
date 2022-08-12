@@ -29,6 +29,15 @@ import { Project, ProjectStats } from '../../data/projects.data';
 import { useUserContext } from '../../contexts/user.context';
 import { useProjectContext } from '../../contexts/project.context';
 
+const defautProject: Project = {
+  title: '-',
+  src_code_link: '-',
+  demo_link: '-',
+  gallery: [],
+  description: '-',
+  tech_stack: []
+};
+
 interface ProjectCardProps {
   id: string;
 }
@@ -41,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   
   const [currImage, setCurrImage] = useState<number>(0);
   const [active, setActive] = useState<boolean>(false);
-  const [projectDetails, setProjectDetails] = useState<Project|null>();
+  const [projectDetails, setProjectDetails] = useState<Project>(defautProject);
   const [stats, setStats] = useState<ProjectStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
   const fetched = useRef<boolean>(false);
@@ -61,14 +70,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
     ).then(({data}) => {
       setProjectDetails(data);
       setDataMapper!(prev => ({...prev, [id]: data}));
-      fetched.current = true;
+      axios.post(
+        `${API_URL}/api/projects/stats/${id}`,
+        {},
+        {headers: {Authorization: `Bearer ${token}`}}
+      ).then(({data: data1}) => {
+        setStats(data1)
+        fetched.current = true;
+      });
     });
-    axios.post(
-      `${API_URL}/api/projects/stats/${id}`,
-      {},
-      {headers: {Authorization: `Bearer ${token}`}}
-    ).then(({data}) => setStats(data));
-  }, [id, setDataMapper, token, dataMapper]);
+  }, [token]);
 
   useEffect(() => {
     return () => onUnmount!();

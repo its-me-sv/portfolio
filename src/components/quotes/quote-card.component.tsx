@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 import { Quote } from "../../data/quotes.data";
@@ -17,15 +17,21 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
   
   const [liked, setLiked] = useState<boolean>(false);
   const [cnt, setCnt] = useState<number>(0);
+  const fetched = useRef<boolean>(false);
 
   useEffect(() => {
+    if (fetched.current) return;
+    if (!token) return;
     axios.post(
       `${API_URL}/api/quotes/likes/${id}`,
       {},
       {headers: {Authorization: `Bearer ${token}`}}
-    ).then(({data}) => setCnt(+data.likes));
+    ).then(({data}) => {
+      setCnt(+data.likes);
+      fetched.current = true;
+    });
     setLiked(likes.includes("QUOTE"+id));
-  }, [id, token]);
+  }, [token]);
 
   const toggleLike = () => {
     if (!liked) {
