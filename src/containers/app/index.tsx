@@ -43,7 +43,7 @@ const App: React.FC<AppProps> = () => {
   useEffect(() => {
     const timer = setTimeout(() => setMenuOpen!(true), 4000);
     const timer1 = setTimeout(() => {
-      toast(toastTranslations.fstInf[+language], {duration: 2100});
+      toast(toastTranslations.fstInf[+language], {duration: 3000});
     });
     axios.get(`${API_URL}/api/validation/server`)
     .then(() => setLoad1(false));

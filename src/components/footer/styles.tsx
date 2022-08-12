@@ -44,7 +44,7 @@ export const CreditText = styled.div<{open: boolean;}>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    ${props => props.open && `color: ${props.theme.fontColor};`}
+    ${props => props.open && `color: ${props.theme.backgroundColor};`}
   }
 `;
 
