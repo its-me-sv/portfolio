@@ -85,7 +85,7 @@ export const SliderItem = styled.span<{selected: boolean}>`
   cursor: pointer;
   border: 1px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.backgroundColor};
-  ${props => props.selected && `background-color: #1a1a1a;`}
+  ${props => props.selected && `background-color: ${props.theme.borderColor};`}
 `;
 
 export const Description = styled.div`

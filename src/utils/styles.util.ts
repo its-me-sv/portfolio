@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes, css } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import cross from '../assets/icons/close.png';
 
 export const GlobalStyle = createGlobalStyle`
