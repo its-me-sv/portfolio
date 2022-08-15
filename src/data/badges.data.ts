@@ -95,4 +95,14 @@ export const badges: Array<Badge> = [
     issuer: 'DataStax Academy',
     url: 'https://drive.google.com/file/d/1WUw3QK2Sco8Wqg4OvRt3PQn1R2NmT7TA/view?usp=sharing'
   },
+  {
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1660562091/portfolio/badges/DataStax_-_Admin_Learning_Path_aonghi.png',
+    issuer: 'DataStax Academy',
+    url: 'https://drive.google.com/file/d/1WUw3QK2Sco8Wqg4OvRt3PQn1R2NmT7TA/view?usp=sharing'
+  },
+  {
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1660562339/portfolio/badges/DataStax_-_DS210_heolxz.png',
+    issuer: 'DataStax Academy',
+    url: 'https://drive.google.com/file/d/1WUw3QK2Sco8Wqg4OvRt3PQn1R2NmT7TA/view?usp=sharing'
+  },
 ];
