@@ -181,10 +181,11 @@ export const MenuItem = styled.span<{selected: boolean}>`
   `}
 `;
 
-export const InteractionIcon = styled.img<{ dark: boolean }>`
+export const InteractionIcon = styled.img<{ dark: boolean; disabled?: boolean }>`
   width: 2.1rem;
   height: auto;
   opacity: 0.9;
   &:hover {opacity: 0.5;}
   ${props => props.dark && `filter: invert(100%);`}
+  ${(props) => props.disabled && `cursor: not-allowed;`}
 `;

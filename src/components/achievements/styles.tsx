@@ -61,10 +61,11 @@ export const Interactions = styled.div`
 export const ClapIcon = styled.img.attrs((props: { liked: boolean }) => ({
   src: props.liked ? clap : clapUnfilled,
   alt: "clap",
-}))<{ dark: boolean; liked: boolean }>`
+}))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
   width: 2.1rem;
   height: auto;
   opacity: 0.9;
   &:hover {opacity: 0.5;}
   ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
+  ${props => props.disabled && `cursor: not-allowed;`}
 `;

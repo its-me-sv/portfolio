@@ -54,6 +54,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const [stats, setStats] = useState<ProjectStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
   const fetched = useRef<boolean>(false);
+  const [likeDisabled, setLikeDisabled] = useState<boolean>(false);
+  const [shareDisabled, setShareDisabled] = useState<boolean>(false);
 
   useEffect(() => {
     if (fetched.current) return;
@@ -132,6 +134,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   };
 
   const toggleLike = () => {
+    if (likeDisabled) return;
+    setLikeDisabled(true);
     if (!liked) {
       axios.put(
         `${API_URL}/api/projects/like/${id}`,
@@ -145,6 +149,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         }));
         addLike!(id);
         setLiked(true);
+        setLikeDisabled(false);
       });
     } else {
       axios.put(
@@ -159,11 +164,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         }));
         removeLike!(id);
         setLiked(false);
+        setLikeDisabled(false);
       })
     }
   };
 
   const onShare = () => {
+    if (shareDisabled) return;
+    setShareDisabled(true);
     axios.put(
       `${API_URL}/api/projects/share/${id}`,
       {},
@@ -176,6 +184,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         comments: prev?.comments as string,
         shares: `${+(prev?.shares as string || 0) + 1}`
       }));
+      setShareDisabled(false);
     });
   };
 
@@ -192,9 +201,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
           >
             <img src={codeIcon} alt="code" />
           </a>
-          <a 
-            target="_blank" 
-            rel="noreferrer" 
+          <a
+            target="_blank"
+            rel="noreferrer"
             href={projectDetails?.demo_link}
             onClick={onProjectLaunch}
           >
@@ -226,7 +235,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
       <HrzntlLn />
       <CardBottom>
         <div onClick={toggleLike}>
-          <LikeIcon dark={isDark} liked={liked} />
+          <LikeIcon 
+            disabled={likeDisabled} 
+            dark={isDark} 
+            liked={liked} 
+          />
           <span>{stats?.likes !== "0" ? stats?.likes : ""}</span>
         </div>
         <div onClick={onCommentClick}>
@@ -234,7 +247,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
           <span>{stats?.comments !== "0" ? stats?.comments : ""}</span>
         </div>
         <div onClick={onShare}>
-          <InteractionIcon dark={isDark} src={shareIcon} alt="share" />
+          <InteractionIcon
+            disabled={shareDisabled}
+            dark={isDark}
+            src={shareIcon}
+            alt="share"
+          />
           <span>{stats?.shares !== "0" ? stats?.shares : ""}</span>
         </div>
       </CardBottom>

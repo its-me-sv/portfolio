@@ -36,11 +36,12 @@ export const Card = styled.div`
 export const HeartIcon = styled.img.attrs((props: { liked: boolean }) => ({
   src: props.liked ? heart : heartUnfilled,
   alt: "like",
-}))<{ dark: boolean; liked: boolean }>`
+}))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
   width: 1.4rem;
   height: auto;
   &:hover {
     opacity: 0.5;
   }
   ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
+  ${props => props.disabled && `cursor: not-allowed;`}
 `;

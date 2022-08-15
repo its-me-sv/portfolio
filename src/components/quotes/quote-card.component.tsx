@@ -17,6 +17,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
   
   const [liked, setLiked] = useState<boolean>(false);
   const [cnt, setCnt] = useState<number>(0);
+  const [likeDisabled, setLikeDisabled] = useState<boolean>(false);
   const fetched = useRef<boolean>(false);
 
   useEffect(() => {
@@ -34,6 +35,8 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
   }, [token]);
 
   const toggleLike = () => {
+    if (likeDisabled) return;
+    setLikeDisabled(true);
     if (!liked) {
       axios.put(
         `${API_URL}/api/quotes/like/${id}`,
@@ -43,6 +46,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
         addLike!('QUOTE'+id);
         setLiked(true);
         setCnt(prev => prev + 1);
+        setLikeDisabled(false);
       });
     } else {
       axios.put(
@@ -53,6 +57,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
         removeLike!('QUOTE'+id);
         setLiked(false);
         setCnt(prev => prev - 1);
+        setLikeDisabled(false);
       });
     }
   };
@@ -61,7 +66,7 @@ const QuoteCard: React.FC<QuoteCardProps> = ({ content, id }) => {
     <Card>
       <span>{content}</span>
       <div onClick={toggleLike}>
-        <HeartIcon dark={isDark} liked={liked} />
+        <HeartIcon disabled={likeDisabled} dark={isDark} liked={liked} />
         <span>{cnt > 0 ? cnt : ''}</span>
       </div>
     </Card>

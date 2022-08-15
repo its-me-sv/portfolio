@@ -37,6 +37,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   const [achievement, setAchievement] = useState<Achievement>(defaultAchievement);
   const [stats, setStats] = useState<AchievementStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
+  const [disableClap, setDisableClap] = useState<boolean>(false);
   const fetched = useRef<boolean>(false);
 
   useEffect(() => {
@@ -85,6 +86,8 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
   },[id, achievement?.title, setCommentsMeta, setCallbacks]);
 
   const toggleLike = () => {
+    if (disableClap) return;
+    setDisableClap(true);
     if (!liked) {
       axios.put(
         `${API_URL}/api/achievements/like/${id}`,
@@ -97,6 +100,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
         }));
         addLike!(id);
         setLiked(true);
+        setDisableClap(false);
       });
     } else {
       axios.put(
@@ -110,6 +114,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
         }));
         removeLike!(id);
         setLiked(false);
+        setDisableClap(false);
       });
     }
   };
@@ -124,16 +129,14 @@ const AchievementCard: React.FC<AchievementCardProps> = ({id}) => {
       <Footer>
         <Interactions>
           <div onClick={toggleLike}>
-            <ClapIcon liked={liked} dark={isDark} />
+            <ClapIcon disabled={disableClap} liked={liked} dark={isDark} />
             <span>
               {stats?.appreciations !== "0" ? stats?.appreciations : ""}
             </span>
           </div>
           <div onClick={showComments}>
             <InteractionIcon dark={isDark} src={commentIcon} alt="comment" />
-            <span>
-              {stats?.comments !== "0" ? stats?.comments : ""}
-            </span>
+            <span>{stats?.comments !== "0" ? stats?.comments : ""}</span>
           </div>
         </Interactions>
         <CredBtn key={language} onClick={handleClick}>
