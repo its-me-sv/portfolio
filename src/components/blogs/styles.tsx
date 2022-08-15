@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { FadeAnim1 } from '../../utils/styles.util';
 
 export const Card = styled.div`
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.42% 0.84%;
   border-radius: 0.42rem;
   gap: 0.42rem;

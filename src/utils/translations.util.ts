@@ -153,6 +153,13 @@ export const projectsPageTranslations = {
   ]
 };
 
+export const blogsPageTranslations = {
+  read: [
+    "Read", "Leer", "Lesen",
+    "読んだ", "اقرأ"
+  ]
+};
+
 export const statsPageTranslations: {[key: string]: Array<string>} = {
   'General': [
     'General', 'General', 'Allgemein',
