@@ -18,10 +18,10 @@ import { useCommentsContext } from '../../contexts/comments.context';
 import { useUserContext } from "../../contexts/user.context";
 
 const defaultAchievement: Achievement = {
-  title: '-',
-  description: '-',
-  credential_link: '-',
-  verify_url: '-'
+  title: '🟥🟨🟩🟪🟧🟦',
+  description: '🟥🟨🟩🟪🟧🟦',
+  credential_link: '🟥🟨🟩🟪🟧🟦',
+  verify_url: '🟥🟨🟩🟪🟧🟦'
 };
 
 interface AchievementCardProps {
