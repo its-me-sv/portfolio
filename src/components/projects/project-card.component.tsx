@@ -30,14 +30,14 @@ import { useUserContext } from '../../contexts/user.context';
 import { useProjectContext } from '../../contexts/project.context';
 
 const defautProject: Project = {
-  title: "🟥🟨🟩🟪🟧🟦",
-  src_code_link: "🟥🟨🟩🟪🟧🟦",
-  demo_link: "🟥🟨🟩🟪🟧🟦",
+  title: "██████████████",
+  src_code_link: "██████████████",
+  demo_link: "██████████████",
   gallery: [
     "https://sstech.us/wp-content/themes/sstech/assets/images/placeholder.jpg",
   ],
-  description: "🟥🟨🟩🟪🟧🟦",
-  tech_stack: ["🟥🟨🟩🟪🟧🟦"],
+  description: "██████████████",
+  tech_stack: ["██████████████"],
 };
 
 interface ProjectCardProps {
