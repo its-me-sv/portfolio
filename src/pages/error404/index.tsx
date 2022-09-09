@@ -21,7 +21,7 @@ const ErrorPage: React.FC<ErrorPageProps> = () => {
       const pageName: string = menuTranslations.home[+language];
       window.document.title = `${
         pageName[0].toUpperCase() + pageName.slice(1)
-      } | Suraj Vijay`;
+      } | Suraj Vijayan`;
       clearTimeout(timer);
     };
   }, [language, navigate]);

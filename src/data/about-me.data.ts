@@ -1,6 +1,6 @@
 export const aboutMeEnglish = `
 Once a gamer now a self taught programmer who likes creating stuff 
-from the scratch.Myself Suraj Vijay, I like generalising stuff and building 
+from the scratch.Myself Suraj Vijayan, I like generalising stuff and building 
 stuff from scratch.I'm an aspiring CTO, full stack web and app developer, 
 retired competitive programmer and lover of maths.I have developed 
 different sort of applications such as command line applications,
@@ -16,7 +16,7 @@ tennis, reading books, listening to music (mostly OSTs)
 
 export const aboutMeSpanish = `
 Una vez que un jugador ahora es un programador autodidacta al que le gusta crear cosas.
-desde cero. Yo mismo Suraj Vijay, me gusta generalizar cosas y construir
+desde cero. Yo mismo Suraj Vijayan, me gusta generalizar cosas y construir
 cosas desde cero. Soy un aspirante a CTO, desarrollador web y de aplicaciones de pila completa,
 programador competitivo retirado y amante de las matemáticas. He desarrollado
 diferentes tipos de aplicaciones, como aplicaciones de línea de comandos,
@@ -32,7 +32,7 @@ tenis, leer libros, escuchar música (principalmente OST)
 
 export const aboutMeGerman = `
 Einst ein Spieler, jetzt ein autodidaktischer Programmierer, der gerne Dinge erstellt
-von Grund auf neu. Ich selbst, Suraj Vijay, mag es, Dinge zu verallgemeinern und aufzubauen
+von Grund auf neu. Ich selbst, Suraj Vijayan, mag es, Dinge zu verallgemeinern und aufzubauen
 Sachen von Grund auf neu. Ich bin ein aufstrebender CTO, Full-Stack-Web- und App-Entwickler,
 pensionierter kompetitiver Programmierer und Liebhaber der Mathematik. Ich habe mich entwickelt
 verschiedene Arten von Anwendungen wie Befehlszeilenanwendungen,

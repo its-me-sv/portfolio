@@ -66,7 +66,7 @@ const App: React.FC<AppProps> = () => {
     const pageName: string = Object.values(menuTranslations)[menu][+language];
     window.document.title = `${
       pageName[0].toUpperCase() + pageName.slice(1)
-    } | Suraj Vijay`;
+    } | Suraj Vijayan`;
   }, [menu, language]);
 
   return (

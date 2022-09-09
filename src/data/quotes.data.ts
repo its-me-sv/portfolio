@@ -15,4 +15,12 @@ export const quotes: Array<Quote> = [
     id: 1,
     content: `“Tweet less, code more”`,
   },
+  {
+    id: 2,
+    content: `“The longer you wait, the better you get”`,
+  },
+  {
+    id: 3,
+    content: `“There cannot exist a Steve Jobs without a Steve Wozniak”`,
+  },
 ];

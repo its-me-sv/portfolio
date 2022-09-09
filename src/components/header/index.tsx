@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = () => {
     <Container>
       {!isMobile && (
         <Signature onClick={() => navigate('../')}>
-          Suraj Vijay
+          Suraj Vijayan
         </Signature>
       )}
       <CurrentPage key={pageName}>

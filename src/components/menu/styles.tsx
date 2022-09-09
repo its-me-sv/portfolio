@@ -70,6 +70,7 @@ export const MenuItem = styled.p<{chosen: boolean;}>`
     background-image: linear-gradient(135deg,#0e73cc 1.93%,#624bbb 14.86%,
       #ff455d 48.09%,#f35815 77.82%,#f2b600 97.3%);
   `}
+  a {all: unset;}
   &:hover {
     text-decoration: underline;
   }

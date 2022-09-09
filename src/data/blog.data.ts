@@ -5,11 +5,11 @@ interface Blog {
 
 export const blogs: Array<Blog> = [
   {
-    name: 'Everything about Project Payzer',
-    url: 'https://surajvijay.hashnode.dev/everything-about-project-payzer-1'
+    name: 'All about the AstraDB Build-A-Thon',
+    url: 'https://surajvijay.hashnode.dev/all-about-the-astradb-build-a-thon'
   },
   {
-    name: 'All about AstraDB Build-A-Thon 2022',
-    url: ''
+    name: 'Everything about Project Payzer',
+    url: 'https://surajvijay.hashnode.dev/everything-about-project-payzer-1'
   },
 ];

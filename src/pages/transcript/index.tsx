@@ -30,7 +30,7 @@ const TranscriptPage: React.FC<TranscriptPageProps> = () => {
     const category: string = Object.values(transcriptMenuTranslations)[
       transMenu
     ][+language];
-    window.document.title = `${category} | Suraj Vijay`;
+    window.document.title = `${category} | Suraj Vijayan`;
   }, [transMenu, language]);
 
   return (

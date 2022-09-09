@@ -35,7 +35,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         <span>Since 2002</span>
       </MidHeader>
       <BodyTextContainer>
-        <BodyTitleText>Suraj Vijay</BodyTitleText>
+        <BodyTitleText>Suraj Vijayan</BodyTitleText>
         <SubBody key={language}>
           <Content>
             <SubHeading>

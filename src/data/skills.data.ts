@@ -42,7 +42,7 @@ export const skills: Array<Skill> = [
   },
   { 
     url: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657345389/portfolio/skills/Qt-logo_glujqt.png',
-    name: 'QtLogo'
+    name: 'Qt Designer'
   },
   { 
     url: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657345389/portfolio/skills/Python-logo_skcghz.png',

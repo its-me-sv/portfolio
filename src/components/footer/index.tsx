@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = () => {
         {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
         {footerTranslations.by[+language]}
         <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
-          Suraj Vijay
+          Suraj Vijayan
         </a>
       </CreditText>
       <ThemeIcon onClick={toggleTheme!}>

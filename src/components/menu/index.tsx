@@ -1,7 +1,7 @@
 import menuIcon from "../../assets/icons/menu.png";
 import closeIcon from "../../assets/icons/close.png";
 import { Container, MenuIcon, MenuItem } from './styles';
-import { menuTranslations } from '../../utils/translations.util';
+import { menuTranslations, miscTranslations } from '../../utils/translations.util';
 
 import Footer from '../footer';
 
@@ -24,16 +24,28 @@ const Menu: React.FC<MenuProps> = () => {
         dark={isDark}
         open={menuOpen}
       />
-      {menuOpen &&
-        Object.values(menuTranslations).map((page, idx) => (
-          <MenuItem
-            key={page[+language]}
-            chosen={idx === menu}
-            onClick={() => setMenu!(idx)}
-          >
-            {page[+language]}
+      {menuOpen && (
+        <>
+          {Object.values(menuTranslations).map((page, idx) => (
+            <MenuItem
+              key={page[+language]}
+              chosen={idx === menu}
+              onClick={() => setMenu!(idx)}
+            >
+              {page[+language]}
+            </MenuItem>
+          ))}
+          <MenuItem chosen={false}>
+            <a
+              href="https://drive.google.com/file/d/1X3f_rsjxGfOE3uVkHgkjecAWh4CNLuQD/view"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {miscTranslations.resume[+language]}
+            </a>
           </MenuItem>
-        ))}
+        </>
+      )}
       {isMobile && <Footer />}
     </Container>
   );

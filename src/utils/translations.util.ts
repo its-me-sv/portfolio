@@ -37,7 +37,7 @@ export const menuTranslations = {
   achievements: ["achievements", "logros", "erfolge", "実績", "الإنجازات"],
   blogs: ["blogs", "blogs", "blogs", "ブログ", "المدونات"],
   quotes: ["quotes", "cotizaciones", "zitate", "引用符", "يقتبس"],
-  stats: ["stats", "estadísticas", "statistiken", "統計", "احصائيات"]
+  stats: ["stats", "estadísticas", "statistiken", "統計", "احصائيات"],
 };
 
 export const transcriptMenuTranslations = {
@@ -281,4 +281,8 @@ export const error404Translations = {
     "しばらくするとホームページに戻ります。",
     "نعيدك إلى الصفحة الرئيسية في غضون لحظات قليلة."
   ]
+};
+
+export const miscTranslations = {
+  resume: ["resume", "reanudar", "fortsetzen", "履歴書", "سيرة ذاتية"]
 };

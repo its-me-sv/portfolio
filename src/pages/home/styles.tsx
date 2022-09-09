@@ -22,7 +22,7 @@ export const MidHeader = styled.div`
   }
 `;
 
-export const MyImage = styled.img.attrs({alt: "Suraj Vijay"})`
+export const MyImage = styled.img.attrs({alt: "Suraj Vijayan"})`
   height: 18rem;
   width: auto;
   /* desktop styles */

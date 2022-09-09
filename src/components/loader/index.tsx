@@ -5,7 +5,7 @@ interface LoaderProps {}
 const Loader: React.FC<LoaderProps> = () => {
   return (
     <Container>
-      <SignatureFont>Suraj Vijay</SignatureFont>
+      <SignatureFont>Suraj Vijayan</SignatureFont>
     </Container>
   );
 };
