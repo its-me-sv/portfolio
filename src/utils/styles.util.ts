@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     monospace;
   }
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 0.6rem;
   }
 
@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     border-radius: 0.42rem;
     background: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
-  }
+  } */
 `;
 
 export const FadeAnim = keyframes`

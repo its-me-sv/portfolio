@@ -29,8 +29,10 @@ export const Container = styled.div<{open: boolean;}>`
     padding: 0.42rem;
     padding-left: 1.2rem;
     margin-top: 0;
-    height: 90.4vh;
+    /* height: 90.4vh; */
     border-top-left-radius: 0.42rem;
+    /* height: 100%; */
+    /* overflow: auto; */
   }
 `;
 

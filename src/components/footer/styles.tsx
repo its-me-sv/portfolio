@@ -18,9 +18,10 @@ export const Container = styled.div`
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-end;
-    align-self: center;
-    position: absolute;
-    bottom: 0;
+    align-self: flex-end;
+    gap: 0.42rem;
+    /* position: absolute; */
+    /* bottom: 0; */
   }
 `;
 
@@ -73,11 +74,17 @@ export const FooterRight = styled.div`
   z-index: 998;
 `;
 
-export const ThemeIcon = styled.div`
+export const ThemeIcon = styled.div<{dark: boolean}>`
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  padding: 0.3rem;
-  padding-top: 0.1rem;
   border-radius: 0.3rem;
   z-index: 998;
+  padding: 0.1rem 0.42rem;
   ${props => props.theme.boxShadow}
+  img {
+    width: 1.6rem;
+    height: auto;
+    ${props => props.dark && `filter: invert(100%);`}
+  }
 `;

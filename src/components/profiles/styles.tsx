@@ -20,7 +20,7 @@ export const Card = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 1rem;
     width: 10rem;
-    height: 16rem;
+    height: 18rem;
     padding-bottom: 1rem;
   }
 `;

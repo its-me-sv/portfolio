@@ -33,7 +33,7 @@ export const Card = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 1rem;
     width: 10rem;
-    height: 20rem;
+    height: 24rem;
     padding-bottom: 1rem;
   }
 `;

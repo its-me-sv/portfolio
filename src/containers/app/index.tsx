@@ -92,7 +92,7 @@ const App: React.FC<AppProps> = () => {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>
-        {!isMobile && <Footer />}
+        {isMobile ? <div/> : <Footer />}
       </AppContainer>
     </ThemeProvider>
   );

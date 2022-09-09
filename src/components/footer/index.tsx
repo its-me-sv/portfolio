@@ -1,4 +1,6 @@
 import { ChangeEvent } from 'react';
+import darkIcon from '../../assets/icons/dark.png';
+import lightIcon from '../../assets/icons/light.png';
 
 import { Container, CreditText, SelectLang, ThemeIcon } from './styles';
 import { footerTranslations } from '../../utils/translations.util';
@@ -24,25 +26,28 @@ const Footer: React.FC<FooterProps> = () => {
 
   return (
     <Container>
-      <SelectLang
-        value={language}
-        onChange={handleChange}
-      >
+      <SelectLang value={language} onChange={handleChange}>
         {languages.map((val, idx) => (
           <option key={val} value={idx}>
             {val}
           </option>
         ))}
       </SelectLang>
-      <CreditText open={menuOpen}>
-        {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
-        {footerTranslations.by[+language]}
-        <a href="https://github.com/its-me-sv" target="_blank" rel="noreferrer">
-          Suraj Vijayan
-        </a>
-      </CreditText>
-      <ThemeIcon onClick={toggleTheme!}>
-        {isDark ? "🌜" : "🌞"}
+      {!isMobile && (
+        <CreditText open={menuOpen}>
+          {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
+          {footerTranslations.by[+language]}
+          <a
+            href="https://github.com/its-me-sv"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Suraj Vijayan
+          </a>
+        </CreditText>
+      )}
+      <ThemeIcon dark={isDark} onClick={toggleTheme!}>
+        <img src={isDark ? lightIcon : darkIcon} alt="theme" />
       </ThemeIcon>
     </Container>
   );

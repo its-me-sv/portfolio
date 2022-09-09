@@ -72,12 +72,12 @@ export const profiles: Array<Profile> = [
     icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342046/portfolio/profiles/dailydev_zzgrk5.jpg',
     profile: 'dark_knight_67'
   },
-  { 
-    name: 'Instagram account', 
-    url: 'https://www.instagram.com/suraj_vijay_115.py/', 
-    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/instagram_fjnozs.png',
-    profile: 'suraj_vijay_115.py'
-  },
+  // { 
+  //   name: 'Instagram account', 
+  //   url: 'https://www.instagram.com/suraj_vijay_115.py/', 
+  //   icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/instagram_fjnozs.png',
+  //   profile: 'suraj_vijay_115.py'
+  // },
   { 
     name: 'YouTube', 
     url: 'https://www.youtube.com/channel/UCjzb3NLEbS_amCj1mhhiu2w', 
@@ -96,28 +96,28 @@ export const profiles: Array<Profile> = [
     icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/youtube_o424xk.png',
     profile: 'Suraj Vijay'
   },
-  { 
-    name: 'Discord', 
-    url: 'https://discord.com/channels/@me/711266358343762062', 
-    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342047/portfolio/profiles/discord_ipplfb.png',
-    profile: '<Dark Knight />#5784'
-  },
-  { 
-    name: 'FaceBook', 
-    url: 'https://www.facebook.com/vijay.suraj.14/', 
-    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342047/portfolio/profiles/facebook_wlols3.png',
-    profile: 'vijay.suraj.14'
-  },
-  { 
-    name: 'COD - Warzone', 
-    url: 'https://cod.tracker.gg/warzone/profile/battlenet/SurajVijay11%231906/overview', 
-    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/warzone_ml4fev.png',
-    profile: 'SurajVijay11#1906'
-  },
-  { 
-    name: 'GTA V', 
-    url: 'https://socialclub.rockstargames.com/member/gamersuraj115/games/gtav/pc/career/overview/gtaonline', 
-    icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/grand-theft-auto-v-1_q9mq4d.png',
-    profile: 'gamersuraj115'
-  },
+  // { 
+  //   name: 'Discord', 
+  //   url: 'https://discord.com/channels/@me/711266358343762062', 
+  //   icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342047/portfolio/profiles/discord_ipplfb.png',
+  //   profile: '<Dark Knight />#5784'
+  // },
+  // { 
+  //   name: 'FaceBook', 
+  //   url: 'https://www.facebook.com/vijay.suraj.14/', 
+  //   icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342047/portfolio/profiles/facebook_wlols3.png',
+  //   profile: 'vijay.suraj.14'
+  // },
+  // { 
+  //   name: 'COD - Warzone', 
+  //   url: 'https://cod.tracker.gg/warzone/profile/battlenet/SurajVijay11%231906/overview', 
+  //   icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/warzone_ml4fev.png',
+  //   profile: 'SurajVijay11#1906'
+  // },
+  // { 
+  //   name: 'GTA V', 
+  //   url: 'https://socialclub.rockstargames.com/member/gamersuraj115/games/gtav/pc/career/overview/gtaonline', 
+  //   icon: 'https://res.cloudinary.com/djeteilo6/image/upload/v1657342048/portfolio/profiles/grand-theft-auto-v-1_q9mq4d.png',
+  //   profile: 'gamersuraj115'
+  // },
 ];
