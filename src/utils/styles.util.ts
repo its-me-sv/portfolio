@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
-    background-color: #f5f4f9;
-    color: #1a1a1a;
+    background-color: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.fontColor};
     transition: all 0.50s linear;
   }
   code {
