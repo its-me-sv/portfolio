@@ -21,7 +21,7 @@ export const Card = styled.div`
 `;
 
 export const Name = styled.span`
-  font-family: geomanist;
+  font-family: core-sans-g;
   font-size: 2.4rem;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
