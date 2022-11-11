@@ -1,39 +1,9 @@
 @font-face {
-  font-family: 'bahnschrift';
-  src: local('bahnschrift'), url(./assets/fonts/bahnschrift.ttf) format('truetype');
-}
-
-@font-face {
   font-family: 'core-sans-g';
   src: local('core-sans-g'), url(./assets/fonts/core-sans-g.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'calibri';
-  src: local('calibri'), url(./assets/fonts/calibri.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'fredoka-one';
-  src: local('fredoka-one'), url(./assets/fonts/fredoka-one.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'geomanist';
-  src: local('geomanist'), url(./assets/fonts/geomanist.ttf) format('truetype');
-}
-
-@font-face {
   font-family: 'signature';
   src: local('signature'), url(./assets/fonts/signature.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: local('roboto'), url(./assets/fonts/roboto.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'montserrat';
-  src: local('montserrat'), url(./assets/fonts/montserrat.ttf) format('truetype');
 }

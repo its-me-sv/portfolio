@@ -13,7 +13,7 @@ export const Container = styled.div`
   z-index: 999;
   span {
     animation: ${FadeAnim1} 1s;
-    font-family: montserrat;
+    font-family: core-sans-g;
     font-size: 4.2rem;
     text-align: center;
     &:last-child {
