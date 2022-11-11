@@ -16,7 +16,7 @@ export const MidHeader = styled.div`
   span {
     &:last-child {
       font-family: core-sans-g;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -27,7 +27,7 @@ export const MyImage = styled.img.attrs({alt: "Suraj Vijayan"})`
   width: auto;
   /* desktop styles */
   @media only screen and (min-width: 768px) {
-    height: 60vh;
+    height: 42vh;
     width: auto;
     position: absolute;
     bottom: 0;
@@ -37,7 +37,6 @@ export const MyImage = styled.img.attrs({alt: "Suraj Vijayan"})`
 
 export const TitleText = styled.span`
   font-family: core-sans-g;
-  font-weight: bold;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,7 +49,7 @@ export const TitleText = styled.span`
     #f35815 77.82%,
     #f2b600 97.3%
   );
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 `;
 
 export const BodyTextContainer = styled.div`
@@ -67,7 +66,7 @@ export const BodyTextContainer = styled.div`
 
 export const BodyTitleText = styled.span`
   font-family: core-sans-g;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 `;
 
 export const SubBody = styled.div`
@@ -80,13 +79,13 @@ export const SubBody = styled.div`
 
 export const SubHeading = styled.span`
   font-family: core-sans-g;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
   text-transform: uppercase;
 `;
 
 export const Content = styled.span`
   font-family: core-sans-g;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: ${(props) => props.theme.contentColor};
 `;

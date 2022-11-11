@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = () => {
       </SelectLang>
       {!isMobile && (
         <CreditText open={menuOpen}>
-          {footerTranslations.madeWidth[+language]} <span>❤</span>{" "}
+          {footerTranslations.madeWidth[+language]} <span>❤</span>
           {footerTranslations.by[+language]}
           <a
             href="https://github.com/its-me-sv"

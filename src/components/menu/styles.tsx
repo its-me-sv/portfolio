@@ -9,7 +9,7 @@ export const Container = styled.div<{ open: boolean }>`
   flex-direction: column;
   align-items: flex-end;
   font-family: core-sans-g;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding-left: 1.2rem;
   padding: 0 0.49rem;
   z-index: 997;
@@ -38,20 +38,23 @@ export const Container = styled.div<{ open: boolean }>`
   }
 `;
 
-export const MenuIcon = styled.img.attrs({ alt: "" })<{
+export const MenuIcon = styled.img.attrs({ alt: "menu" })<{
   dark?: boolean;
   open: boolean;
 }>`
-  width: 1.6rem;
+  width: 1.2rem;
   height: auto;
   cursor: pointer;
   animation: ${FadeAnim} 1s;
   &:hover {
     opacity: 0.5;
   }
-  ${props => props.dark && `filter: invert(100%);`}
-  ${props => props.open && `filter: unset;`}
-  ${props => !props.dark && props.open && `filter: invert(100%);`}
+  ${(props) => props.dark && `filter: invert(100%);`}
+  ${(props) => props.open && `filter: unset;`}
+  ${(props) => !props.dark && props.open && `filter: invert(100%);`}
+  ${(props) => props.theme.boxShadowNoHover}
+  border-radius: 0.12rem;
+  padding: 0.05rem 0.1rem;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     width: 1.8rem;
@@ -64,7 +67,6 @@ export const MenuItem = styled.p<{chosen: boolean;}>`
   ${props => !props.chosen && "opacity: 0.6;"}
   animation: ${FadeAnim} 1s;
   color: ${props => props.theme.backgroundColor};
-  padding-right: 0.36rem;
   ${props => props.chosen && `
     font-weight: bold;
     -webkit-background-clip: text;

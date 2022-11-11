@@ -27,7 +27,7 @@ export const Container = styled.div`
 
 export const CreditText = styled.div<{ open: boolean }>`
   font-family: core-sans-g;
-  font-size: 1.4rem;
+  font-size: 0.84rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
   color: ${(props) => props.theme.fontColor};
@@ -40,6 +40,9 @@ export const CreditText = styled.div<{ open: boolean }>`
     color: rgb(42, 143, 189);
     margin-left: 0.5ch;
     opacity: 1;
+    ${props => props.theme.boxShadow}
+    border-radius: 0.14rem;
+    padding: 0rem 0.1rem 0.05rem 0.1rem;
   }
   a:hover {
     text-decoration: underline;
@@ -54,12 +57,11 @@ export const CreditText = styled.div<{ open: boolean }>`
 `;
 
 export const SelectLang = styled.select`
-  border-radius: 0.21rem;
+  border-radius: 0.14rem;
+  ${(props) => props.theme.boxShadow}
   z-index: 998;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-family: core-sans-g;
-  border: 1px solid ${(props) => props.theme.borderColor};
-  outline: none;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
   animation: ${FadeAnim1} 1s;
@@ -82,12 +84,12 @@ export const ThemeIcon = styled.div<{dark: boolean}>`
   display: grid;
   place-items: center;
   cursor: pointer;
-  border-radius: 0.3rem;
+  border-radius: 50%;
   z-index: 998;
-  padding: 0.1rem 0.42rem;
+  padding: 0.1rem 0.2rem;
   ${props => props.theme.boxShadow}
   img {
-    width: 1.6rem;
+    width: 1.2rem;
     height: auto;
     ${props => props.dark && `filter: invert(100%);`}
   }
