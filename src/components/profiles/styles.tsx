@@ -5,11 +5,11 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12rem;
+  width: 10rem;
   height: 16rem;
   overflow: auto;
   text-align: center;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
   justify-content: space-around;
   padding: 0.42% 0;
   a {all: unset;}
@@ -26,9 +26,9 @@ export const Card = styled.div`
 `;
 
 export const Company = styled.img`
-  width: 7rem;
+  width: 6rem;
   height: auto;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
 `;
 
 export const Name = styled.span`
@@ -39,6 +39,6 @@ export const Name = styled.span`
 
 export const Username = styled.span`
   font-family: core-sans-g;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: ${(props) => props.theme.fontColor};
 `;

@@ -67,6 +67,7 @@ export const BodyTextContainer = styled.div`
 export const BodyTitleText = styled.span`
   font-family: core-sans-g;
   font-size: 1.2rem;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const SubBody = styled.div`
