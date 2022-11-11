@@ -45,7 +45,7 @@ export const FadeAnim1 = keyframes`
 `;
 
 export const CredBtn = styled.div<{disabled?: boolean; comment?: boolean}>`
-  font-family: geomanist;
+  font-family: core-sans-g;
   padding: 0.42% 3% 1% 3%;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -99,7 +99,7 @@ export const OverviewHeader = styled.div`
 `;
 
 export const OverviewTitle = styled.span`
-  font-family: calibri;
+  font-family: core-sans-g;
   font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;
   color: ${props => props.theme.fontColor};
@@ -170,7 +170,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuItem = styled.span<{selected: boolean}>`
-  font-family: geomanist;
+  font-family: core-sans-g;
   font-size: 1.6rem;
   opacity: 0.7;
   cursor: pointer;

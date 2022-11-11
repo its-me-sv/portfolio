@@ -18,20 +18,20 @@ export const ContentContainer = styled.div`
 `;
 
 export const SubHeader = styled.span`
-  font-family: roboto;
+  font-family: core-sans-g;
   font-size: 1.8rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const Content = styled.span`
   max-width: 42rem;
-  font-family: geomanist;
+  font-family: core-sans-g;
   font-size: 1.4rem;
   opacity: 0.9;
   text-align: center;
   animation: ${FadeAnim1} 1s;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
