@@ -7,6 +7,13 @@ export interface Certificate {
 }
 
 export const certificates: Array<Certificate> = [
+  {
+    provider: 'https://res.cloudinary.com/djeteilo6/image/upload/v1668139795/portfolio/profiles/slu_y7dkxj.jpg',
+    name: 'Project Manager Intern',
+    date: '10 Nov, 2022',
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1668138998/portfolio/certificates/Globalshala_-_Project_Management_Internship_cotnjh.jpg',
+    url: '',
+  },
   { 
     provider: 'https://res.cloudinary.com/djeteilo6/image/upload/v1659001456/portfolio/profiles/datastax_logo_evldhx.png', 
     name: 'Apache Cassandra 3 Developer Associate', 
