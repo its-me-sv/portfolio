@@ -35,12 +35,12 @@ export const SubSection = styled.div`
 `;
 
 export const SectionTitle = styled.span`
-  font-family: bahnschrift;
+  font-family: core-sans-g;
   font-size: 1.8rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const SectionItem = styled.div`
@@ -49,14 +49,14 @@ export const SectionItem = styled.div`
   align-items: center;
   gap: 0.07rem;
   span {
-    font-family: roboto;
+    font-family: core-sans-g;
     font-size: 1.6rem;
     text-align: center;
     opacity: 0.8;
     animation: ${FadeAnim1} 1s;
-    color: ${props => props.theme.fontColor};
+    color: ${(props) => props.theme.fontColor};
     &:last-child {
-      font-family: bahnschrift;
+      font-family: core-sans-g;
     }
   }
 `;

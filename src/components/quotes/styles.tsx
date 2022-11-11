@@ -10,10 +10,10 @@ export const Card = styled.div`
   animation: ${FadeAnim1} 1s;
   gap: 0.21rem;
   span {
-    font-family: montserrat;
+    font-family: core-sans-g;
     font-size: 2.1rem;
     opacity: 0.84;
-    color: ${props => props.theme.fontColor};
+    color: ${(props) => props.theme.fontColor};
   }
   div {
     animation: ${FadeAnim1} 1s;
@@ -24,11 +24,11 @@ export const Card = styled.div`
     gap: 0.42rem;
     padding: 0.28rem 0.3rem;
     border-radius: 0.3rem;
-    ${props => props.theme.boxShadow}
+    ${(props) => props.theme.boxShadow}
     span {
-      font-family: arial;
+      font-family: core-sans-g;
       font-size: 1.2rem;
-      color: ${props => props.theme.fontColor};
+      color: ${(props) => props.theme.fontColor};
     }
   }
 `;
