@@ -25,13 +25,15 @@ export const Container = styled.div`
   }
 `;
 
-export const CreditText = styled.div<{open: boolean;}>`
-  font-family: calibri;
+export const CreditText = styled.div<{ open: boolean }>`
+  font-family: core-sans-g;
   font-size: 1.4rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
-  color: ${props => props.theme.fontColor};
-  span {color: rgb(254 67 101);}
+  color: ${(props) => props.theme.fontColor};
+  span {
+    color: rgb(254 67 101);
+  }
   a {
     text-decoration: none;
     font-weight: bold;
@@ -39,13 +41,15 @@ export const CreditText = styled.div<{open: boolean;}>`
     margin-left: 0.5ch;
     opacity: 1;
   }
-  a:hover {text-decoration: underline;}
+  a:hover {
+    text-decoration: underline;
+  }
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    ${props => props.open && `color: ${props.theme.backgroundColor};`}
+    ${(props) => props.open && `color: ${props.theme.backgroundColor};`}
   }
 `;
 
@@ -53,11 +57,11 @@ export const SelectLang = styled.select`
   border-radius: 0.21rem;
   z-index: 998;
   font-size: 1rem;
-  font-family: bahnschrift;
-  border: 1px solid ${props => props.theme.borderColor};
+  font-family: core-sans-g;
+  border: 1px solid ${(props) => props.theme.borderColor};
   outline: none;
-  background-color: ${props => props.theme.backgroundColor};
-  color: ${props => props.theme.fontColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
   animation: ${FadeAnim1} 1s;
   text-align: center;
   cursor: pointer;

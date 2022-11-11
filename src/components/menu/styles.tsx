@@ -1,20 +1,22 @@
 import styled from "styled-components";
 import { FadeAnim } from "../../utils/styles.util";
 
-export const Container = styled.div<{open: boolean;}>`
+export const Container = styled.div<{ open: boolean }>`
   display: flex;
   position: absolute;
   top: 0;
   right: 0;
   flex-direction: column;
   align-items: flex-end;
-  font-family: geomanist;
+  font-family: core-sans-g;
   font-size: 1.6rem;
   padding-left: 1.2rem;
   padding: 0 0.49rem;
   z-index: 997;
   gap: 0.36rem;
-  ${props => props.open && `
+  ${(props) =>
+    props.open &&
+    `
     padding: 0.49rem;
     border-radius: 0rem 0 0 0.42rem;
     background-color: ${props.theme.fontColor};

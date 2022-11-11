@@ -22,8 +22,8 @@ export const Signature = styled.span`
 `;
 
 export const CurrentPage = styled.span`
-  font-family: calibri;
-  color: ${props => props.theme.fontColor};
+  font-family: core-sans-g;
+  color: ${(props) => props.theme.fontColor};
   font-size: 1.8rem;
   animation: ${FadeAnim1} 1s;
   text-transform: capitalize;
