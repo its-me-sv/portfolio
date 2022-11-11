@@ -48,8 +48,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <SubHeading>
               {homePageTranslations.resident[+language]}
             </SubHeading>{" "}
-            {homePageTranslations["of"][+language]} Park Road, Anna Nagar West
-            Extn, Chennai, TN 600 - 101, India
+            {homePageTranslations["of"][+language]} Chennai, TN, India
           </Content>
           <Content>surajvijay67@gmail.com</Content>
         </SubBody>
