@@ -1,12 +1,11 @@
 export const aboutMeEnglish = `
-Once a gamer now a self taught programmer who likes creating stuff 
-from the scratch.Myself Suraj Vijayan, I like generalising stuff and building 
-stuff from scratch.I'm an aspiring CTO, full stack web and app developer, 
-retired competitive programmer and lover of maths.I have developed 
-different sort of applications such as command line applications,
-monolithic desktop applications, static and dynamic web apps, progressive 
-web apps, cross platform mobile apps and
-servers(socket servers, REST API servers, microservices server)
+Once a gamer now a self taught programmer who likes creating 
+stuff from the scratch. I'm a full-stack web and app developer, 
+a retired competitive programmer, an aspiring CTO and a lover of maths. 
+I've worked on a variety of applications, including command line apps, 
+monolithic desktop apps, static and dynamic web apps, progressive web apps, 
+cross-platform mobile apps, and servers (socket servers, REST API servers, and 
+microservices servers)
 `;
 
 export const intrestAndHobbiesEnglish = `
@@ -15,14 +14,13 @@ tennis, reading books, listening to music (mostly OSTs)
 `;
 
 export const aboutMeSpanish = `
-Una vez que un jugador ahora es un programador autodidacta al que le gusta crear cosas.
-desde cero. Yo mismo Suraj Vijayan, me gusta generalizar cosas y construir
-cosas desde cero. Soy un aspirante a CTO, desarrollador web y de aplicaciones de pila completa,
-programador competitivo retirado y amante de las matemáticas. He desarrollado
-diferentes tipos de aplicaciones, como aplicaciones de línea de comandos,
-aplicaciones de escritorio monolíticas, aplicaciones web estáticas y dinámicas, progresivas
-aplicaciones web, aplicaciones móviles multiplataforma y
-servidores (servidores de socket, servidores API REST, servidor de microservicios)
+Una vez que un jugador ahora es un programador autodidacta al que le gusta crear
+cosas desde cero. Soy un desarrollador web y de aplicaciones full-stack,
+un programador competitivo jubilado, un aspirante a CTO y un amante de las matemáticas.
+He trabajado en una variedad de aplicaciones, incluidas aplicaciones de línea de comandos,
+aplicaciones de escritorio monolíticas, aplicaciones web estáticas y dinámicas, aplicaciones web progresivas,
+aplicaciones móviles multiplataforma y servidores (servidores de socket, servidores API REST y
+servidores de microservicios)
 `;
 
 export const intrestAndHobbiesSpanish = `
@@ -31,14 +29,13 @@ tenis, leer libros, escuchar música (principalmente OST)
 `;
 
 export const aboutMeGerman = `
-Einst ein Spieler, jetzt ein autodidaktischer Programmierer, der gerne Dinge erstellt
-von Grund auf neu. Ich selbst, Suraj Vijayan, mag es, Dinge zu verallgemeinern und aufzubauen
-Sachen von Grund auf neu. Ich bin ein aufstrebender CTO, Full-Stack-Web- und App-Entwickler,
-pensionierter kompetitiver Programmierer und Liebhaber der Mathematik. Ich habe mich entwickelt
-verschiedene Arten von Anwendungen wie Befehlszeilenanwendungen,
-Monolithische Desktop-Anwendungen, statische und dynamische Web-Apps, progressiv
-Web-Apps, plattformübergreifende mobile Apps und
-Server (Socket-Server, REST-API-Server, Microservices-Server)
+Einst ein Spieler, jetzt ein autodidaktischer Programmierer, der gerne kreativ ist
+Sachen von Grund auf neu. Ich bin ein Full-Stack-Web- und App-Entwickler,
+ein pensionierter Wettbewerbsprogrammierer, ein aufstrebender CTO und ein Liebhaber der Mathematik.
+Ich habe an einer Vielzahl von Anwendungen gearbeitet, einschließlich Befehlszeilen-Apps,
+monolithische Desktop-Apps, statische und dynamische Web-Apps, progressive Web-Apps,
+plattformübergreifende mobile Apps und Server (Socket-Server, REST-API-Server und
+Microservices-Server)
 `;
 
 export const intrestAndHobbiesGerman = `
@@ -47,14 +44,13 @@ Tennis, Bücher lesen, Musik hören (meistens OSTs)
 `;
 
 export const aboutMeJapanese = `
-かつてゲーマーは、ものを作るのが好きな独学のプログラマーになりました
-ゼロから。私自身SurajVijay、私はものを一般化して構築するのが好きです
-私は意欲的なCTOであり、フルスタックのWebおよびアプリ開発者です。
-引退した競技プログラマーで数学が好きです。
-コマンドラインアプリケーションなどのさまざまな種類のアプリケーション、
-モノリシックデスクトップアプリケーション、静的および動的Webアプリ、プログレッシブ
-Webアプリ、クロスプラットフォームモバイルアプリ、
-サーバー（ソケットサーバー、REST APIサーバー、マイクロサービスサーバー）
+かつてはゲーマーでしたが、現在は独学で作成するのが好きなプログラマーです
+最初からもの。私はフルスタックの Web およびアプリ開発者です。
+引退した競争力のあるプログラマー、意欲的な CTO、そして数学の愛好家です。
+コマンドラインアプリや
+モノリシック デスクトップ アプリ、静的および動的 Web アプリ、プログレッシブ Web アプリ、
+クロスプラットフォーム モバイル アプリ、およびサーバー (ソケット サーバー、REST API サーバー、および
+マイクロサービス サーバー)
 `;
 
 export const intrestAndHobbiesJapanese = `
@@ -63,14 +59,13 @@ export const intrestAndHobbiesJapanese = `
 `;
 
 export const aboutMeArabic = `
-بمجرد أن أصبح لاعبًا أصبح الآن مبرمجًا علم نفسه بنفسه يحب إنشاء الأشياء
-من الصفر نفسي سوراج فيجاي ، أحب التعميم والبناء
-أشياء من البداية ، أنا مدير عمليات تنفيذي طموح ومطور تطبيقات ويب وتطبيقات متكاملة ،
-مبرمج تنافسي متقاعد وعشق الرياضيات. لقد طورت
-أنواع مختلفة من التطبيقات مثل تطبيقات سطر الأوامر ،
-تطبيقات سطح مكتب متجانسة ، تطبيقات ويب ثابتة وديناميكية ، تقدمية
-تطبيقات الويب وتطبيقات الأجهزة المحمولة عبر الأنظمة الأساسية و
-الخوادم (خوادم المقبس ، خوادم REST API ، خادم الخدمات المصغرة)
+بمجرد أن أصبح لاعبًا أصبح الآن مبرمجًا علم نفسه بنفسه يحب الإبداع
+الاشياء من الصفر. أنا مطور ويب وتطبيقات متكامل ،
+مبرمج منافس متقاعد ، وطموح كبير التكنولوجيا ومحب للرياضيات.
+لقد عملت على مجموعة متنوعة من التطبيقات ، بما في ذلك تطبيقات سطر الأوامر ،
+تطبيقات سطح المكتب المتجانسة ، وتطبيقات الويب الثابتة والديناميكية ، وتطبيقات الويب التقدمية ،
+تطبيقات الأجهزة المحمولة والخوادم عبر الأنظمة الأساسية (خوادم المقابس وخوادم REST API و
+خوادم الخدمات المصغرة)
 `;
 
 export const intrestAndHobbiesArabic = `
