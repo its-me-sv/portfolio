@@ -24,17 +24,20 @@ export const Footer = styled.div`
   gap: 0.3rem;
   padding: 0.2rem;
   border-radius: 0.3rem;
-  textarea, textarea::placeholder {
+  textarea,
+  textarea::placeholder {
     resize: none;
     outline: none;
     border: none;
-    font-family: montserrat;
+    font-family: core-sans-g;
     border-radius: 0.3rem;
     font-size: 1rem;
     padding-left: 0.28rem;
-    color: ${props => props.theme.fontColor};
-    background-color: ${props => props.theme.cmntsBgClr};
-    &:focus {${props => props.theme.boxShadowHover}}
+    color: ${(props) => props.theme.fontColor};
+    background-color: ${(props) => props.theme.cmntsBgClr};
+    &:focus {
+      ${(props) => props.theme.boxShadowHover}
+    }
   }
 `;
 
@@ -53,17 +56,17 @@ export const Card = styled.div`
     padding: 0.21rem;
     border-radius: 0.21rem;
     width: 100%;
-    background-color: ${props => props.theme.cmntBgClr};
+    background-color: ${(props) => props.theme.cmntBgClr};
   }
   span {
-    font-family: montserrat;
+    font-family: core-sans-g;
     font-size: 1.2rem;
     max-height: 14vh;
     overflow: auto;
-    color: ${props => props.theme.fontColor};
+    color: ${(props) => props.theme.fontColor};
     &:first-child {
       align-self: flex-end;
-      font-family: bahnschrift;
+      font-family: core-sans-g;
       opacity: 0.84;
       font-size: 0.84rem;
     }

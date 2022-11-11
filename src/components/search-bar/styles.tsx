@@ -35,16 +35,18 @@ export const SearchIcon = styled.img.attrs({
 `;
 
 export const SearchInput = styled.input`
-  font-family: geomanist;
+  font-family: core-sans-g;
   outline: none;
   border: none;
   text-align: center;
   border-radius: 0.42rem;
   font-size: 1.4rem;
   width: 100%;
-  background-color: ${props => props.theme.backgroundColor};
-  color: ${props => props.theme.fontColor};
-  &:focus {${props => props.theme.boxShadowHover}}
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
+  &:focus {
+    ${(props) => props.theme.boxShadowHover}
+  }
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     font-size: 1rem;

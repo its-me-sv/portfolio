@@ -34,17 +34,19 @@ export const Card = styled.div`
   }
 `;
 
-export const CardTop = styled.div<{dark: boolean}>`
+export const CardTop = styled.div<{ dark: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   span {
-    font-family: geomanist;
+    font-family: core-sans-g;
     font-size: 1.6rem;
-    color: ${props => props.theme.fontColor};
+    color: ${(props) => props.theme.fontColor};
   }
-  a {all:unset;}
+  a {
+    all: unset;
+  }
   div {
     display: flex;
     flex-direction: row;
@@ -55,8 +57,10 @@ export const CardTop = styled.div<{dark: boolean}>`
       width: 2.1rem;
       height: auto;
       opacity: 0.8;
-      &:hover {opacity: 0.5;}
-      ${props => props.dark && `filter: invert(100%);`}
+      &:hover {
+        opacity: 0.5;
+      }
+      ${(props) => props.dark && `filter: invert(100%);`}
     }
   }
 `;
@@ -89,21 +93,21 @@ export const SliderItem = styled.span<{selected: boolean}>`
 `;
 
 export const Description = styled.div`
-  font-family: arial;
+  font-family: core-sans-g;
   font-size: 1.2rem;
   max-height: 24vh;
   overflow: auto;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const TechStack = styled.span`
-  font-family: bahnschrift;
+  font-family: core-sans-g;
   font-size: 1rem;
   opacity: 0.9;
   max-height: 7vh;
   overflow: auto;
   animation: ${FadeAnim1} 1s;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const CardBottom = styled.div`
@@ -116,11 +120,13 @@ export const CardBottom = styled.div`
     align-items: center;
     cursor: pointer;
     gap: 0.3rem;
-    &:hover {opacity: 0.5;}
+    &:hover {
+      opacity: 0.5;
+    }
     span {
-      font-family: arial;
+      font-family: core-sans-g;
       font-size: 1.2rem;
-      color: ${props => props.theme.fontColor};
+      color: ${(props) => props.theme.fontColor};
     }
   }
 `;
