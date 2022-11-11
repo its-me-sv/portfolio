@@ -47,7 +47,7 @@ export const FadeAnim1 = keyframes`
 export const CredBtn = styled.div<{disabled?: boolean; comment?: boolean}>`
   font-family: core-sans-g;
   padding: 0.42% 3% 1% 3%;
-  border-radius: 0.3rem;
+  border-radius: 0.14rem;
   cursor: pointer;
   display: grid;
   text-align: center;
@@ -132,7 +132,7 @@ export const CloseIcon = styled.img.attrs({
   src: cross,
   alt: 'close icon'
 })<{dark: boolean}>`
-  width: 1.2rem;
+  width: 1rem;
   height: auto;
   cursor: pointer;
   &:hover { opacity: 0.7; }
@@ -171,7 +171,7 @@ export const MenuContainer = styled.div`
 
 export const MenuItem = styled.span<{selected: boolean}>`
   font-family: core-sans-g;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   opacity: 0.7;
   cursor: pointer;
   color: ${props => props.theme.fontColor};
@@ -182,7 +182,7 @@ export const MenuItem = styled.span<{selected: boolean}>`
 `;
 
 export const InteractionIcon = styled.img<{ dark: boolean; disabled?: boolean }>`
-  width: 2.1rem;
+  width: 1.4rem;
   height: auto;
   opacity: 0.9;
   &:hover {opacity: 0.5;}

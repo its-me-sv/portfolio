@@ -9,11 +9,11 @@ export const SearchContainer = styled.div`
   align-items: center;
   align-self: center;
   gap: 0.42rem;
-  width: 42vw;
-  border-radius: 0.3rem;
+  width: 36rem;
+  border-radius: 0.14rem;
   padding: 0.21% 0.49%;
   margin: 0 auto;
-  padding: 0.36%;
+  /* padding: 0.36%; */
   animation: ${FadeAnim1} 1s;
   background-color: ${props => props.theme.backgroundColor};
   ${props => props.theme.boxShadowNoHover}
@@ -26,9 +26,9 @@ export const SearchContainer = styled.div`
 
 export const SearchIcon = styled.img.attrs({
   src: searchPng,
-  alt: ''
+  alt: 'search'
 })<{dark: boolean}>`
-  width: 1.6rem;
+  width: 1.2rem;
   height: auto;
   opacity: 0.84;
   ${props => props.dark && `filter: invert(100%);`}
@@ -39,8 +39,8 @@ export const SearchInput = styled.input`
   outline: none;
   border: none;
   text-align: center;
-  border-radius: 0.42rem;
-  font-size: 1.4rem;
+  border-radius: 0.14rem;
+  font-size: 1.2rem;
   width: 100%;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};

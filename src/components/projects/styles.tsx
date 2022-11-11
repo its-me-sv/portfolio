@@ -6,8 +6,8 @@ import likeIconUnfilled from '../../assets/icons/like-unfilled.png';
 export const Container = styled.div`
   overflow: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 2.4rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 1.2rem;
   place-items: center;
   padding: 1.4% 0%;
   /* mobile styles */
@@ -20,14 +20,14 @@ export const Container = styled.div`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24vw;
-  height: 60vh;
+  justify-content: space-evenly;
+  width: 14rem;
+  height: 20rem;
   gap: 0.42rem;
   padding: 1% 1.6%;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
   animation: ${FadeAnim1} 1s;
-  ${props => props.theme.boxShadow}
+  ${props => props.theme.boxShadowNoHover}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     width: 84vw;
@@ -41,7 +41,7 @@ export const CardTop = styled.div<{ dark: boolean }>`
   justify-content: space-between;
   span {
     font-family: core-sans-g;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: ${(props) => props.theme.fontColor};
   }
   a {
@@ -51,10 +51,10 @@ export const CardTop = styled.div<{ dark: boolean }>`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.42rem;
+    gap: 0.14rem;
     img {
       cursor: pointer;
-      width: 2.1rem;
+      width: 1.4rem;
       height: auto;
       opacity: 0.8;
       &:hover {
@@ -68,23 +68,22 @@ export const CardTop = styled.div<{ dark: boolean }>`
 export const Gallery = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.42rem;
+  gap: 0.14rem;
   img {
-    width: 98%;
-    height: 24vh;
-    border-radius: 0.3rem;
+    border-radius: 0.14rem;
+    max-height: 7rem;
   }
   div {
     display: flex;
     align-items: center;
     align-self: center;
-    gap: 0.3rem;
+    gap: 0.14rem;
   }
 `;
 
 export const SliderItem = styled.span<{selected: boolean}>`
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.42rem;
+  height: 0.42rem;
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid ${props => props.theme.borderColor};
@@ -94,17 +93,17 @@ export const SliderItem = styled.span<{selected: boolean}>`
 
 export const Description = styled.div`
   font-family: core-sans-g;
-  font-size: 1.2rem;
-  max-height: 24vh;
+  font-size: 1rem;
+  max-height: 7rem;
   overflow: auto;
   color: ${(props) => props.theme.fontColor};
 `;
 
 export const TechStack = styled.span`
   font-family: core-sans-g;
-  font-size: 1rem;
+  font-size: 0.8rem;
   opacity: 0.9;
-  max-height: 7vh;
+  max-height: 2.8rem;
   overflow: auto;
   animation: ${FadeAnim1} 1s;
   color: ${(props) => props.theme.fontColor};
@@ -119,13 +118,13 @@ export const CardBottom = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 0.3rem;
+    gap: 0.14rem;
     &:hover {
       opacity: 0.5;
     }
     span {
       font-family: core-sans-g;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -137,7 +136,7 @@ export const LikeIcon = styled.img.attrs(
     alt: "like",
   })
 )<{ dark: boolean; liked: boolean; disabled: boolean; }>`
-  width: 2.1rem;
+  width: 1.4rem;
   height: auto;
   opacity: 0.9;
   &:hover {
@@ -150,7 +149,7 @@ export const LikeIcon = styled.img.attrs(
 export const LoadMore = styled.span`
   align-self: center;
   margin-bottom: 0.42rem;
-  border-radius: 0.21rem;
+  border-radius: 0.14rem;
   padding: 0.3rem;
   padding-top: 0rem;
   padding-bottom: 0.14rem;

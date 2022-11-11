@@ -19,11 +19,11 @@ const BadgeCard: React.FC<BadgeCardProps> = ({
       <Issued>
         {transcriptPageTranslations.issuedBy[+language]}: {issuer}
       </Issued>
-      <CredBtn>
+      {url.length > 0 && (<CredBtn>
         <a href={url} target="_blank" rel="noreferrer">
           {transcriptPageTranslations.verify[+language]}
         </a>
-      </CredBtn>
+      </CredBtn>)}
     </Card>
   );
 };

@@ -5,7 +5,7 @@ export const Container = styled.div`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-row-gap: 1.4rem;
+  grid-row-gap: 1.2rem;
   place-items: center;
   padding: 1.4% 0%;
   /* mobile styles */
@@ -23,16 +23,16 @@ export const Card = styled.div`
   height: 12rem;
   overflow: auto;
   text-align: center;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
   justify-content: space-around;
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
   a {all: unset;}
   ${props => props.theme.boxShadow}
   img {
-    width: 7rem;
+    width: 6rem;
     height: auto;
-    border-radius: 0.42rem;
+    border-radius: 0.14rem;
     animation: ${FadeAnim1} 1s;
   }
   /* mobile styles */

@@ -6,6 +6,11 @@ export interface Badge {
 
 export const badges: Array<Badge> = [
   {
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1668148636/portfolio/badges/SLU_-_Project_Management_Internship_zdxqdo.png',
+    issuer: 'Saint Louis University',
+    url: ''
+  },
+  {
     picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1662718743/portfolio/badges/Code_wit_Globalshala_odxeny.png',
     issuer: 'GlobalShala',
     url: ''

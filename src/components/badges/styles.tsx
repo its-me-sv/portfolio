@@ -5,7 +5,7 @@ export const Container = styled.div`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-row-gap: 1.4rem;
+  grid-row-gap: 1.2rem;
   place-items: center;
   padding: 1.4% 0%;
   /* mobile styles */
@@ -19,11 +19,11 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12rem;
+  width: 10rem;
   height: 16rem;
   overflow: auto;
   text-align: center;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
   justify-content: space-around;
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
@@ -40,13 +40,13 @@ export const Card = styled.div`
 `;
 
 export const BadgeImg = styled.img`
-  width: 7rem;
+  width: 6rem;
   height: auto;
-  border-radius: 0.42rem;
+  border-radius: 0.14rem;
 `;
 
 export const Issued = styled.span`
   font-family: core-sans-g;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: ${(props) => props.theme.fontColor};
 `;
