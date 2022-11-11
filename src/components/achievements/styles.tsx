@@ -23,15 +23,15 @@ export const Top = styled.div`
 `;
 
 export const Name = styled.span`
-  font-family: geomanist;
+  font-family: core-sans-g;
   font-size: 1.8rem;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const Description = styled.span`
-  font-family: arial;
+  font-family: core-sans-g;
   font-size: 1.2rem;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const Footer = styled.div`
@@ -49,11 +49,13 @@ export const Interactions = styled.div`
     align-items: center;
     cursor: pointer;
     gap: 0.3rem;
-    &:hover {opacity: 0.5;}
+    &:hover {
+      opacity: 0.5;
+    }
     span {
-      font-family: arial;
+      font-family: core-sans-g;
       font-size: 1.2rem;
-      color: ${props => props.theme.fontColor};
+      color: ${(props) => props.theme.fontColor};
     }
   }
 `;
