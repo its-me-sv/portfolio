@@ -28,7 +28,7 @@ export const SearchIcon = styled.img.attrs({
   src: searchPng,
   alt: 'search'
 })<{dark: boolean}>`
-  width: 1.2rem;
+  width: 1.4rem;
   height: auto;
   opacity: 0.84;
   ${props => props.dark && `filter: invert(100%);`}
@@ -40,7 +40,7 @@ export const SearchInput = styled.input`
   border: none;
   text-align: center;
   border-radius: 0.14rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   width: 100%;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
@@ -49,8 +49,8 @@ export const SearchInput = styled.input`
   }
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    font-size: 1rem;
-    height: 2.1rem;
+    font-size: 1.2rem;
+    height: 2.1.2rem;
   }
 `;
 

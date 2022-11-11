@@ -22,6 +22,6 @@ export const Card = styled.div`
 
 export const Name = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;

@@ -11,7 +11,7 @@ export const Card = styled.div`
   gap: 0.14rem;
   span {
     font-family: core-sans-g;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     opacity: 0.84;
     text-align: center;
     color: ${(props) => props.theme.fontColor};
@@ -27,7 +27,7 @@ export const Card = styled.div`
     border-radius: 0.14rem;
     span {
       font-family: core-sans-g;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -37,7 +37,7 @@ export const HeartIcon = styled.img.attrs((props: { liked: boolean }) => ({
   src: props.liked ? heart : heartUnfilled,
   alt: "like",
 }))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
-  width: 1.4rem;
+  width: 1.6rem;
   height: auto;
   &:hover {
     opacity: 0.5;

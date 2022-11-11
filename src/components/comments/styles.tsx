@@ -3,7 +3,7 @@ import { FadeAnim1 } from '../../utils/styles.util';
 
 export const CommentsTitle = styled.span`
   font-family: core-sans-g;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;
   color: ${props => props.theme.fontColor};
 `;
@@ -31,7 +31,7 @@ export const Footer = styled.div`
     border: none;
     font-family: core-sans-g;
     border-radius: 0.14rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding-left: 0.28rem;
     color: ${(props) => props.theme.fontColor};
     background-color: ${(props) => props.theme.cmntsBgClr};
@@ -47,7 +47,7 @@ export const Card = styled.div`
   animation: ${FadeAnim1} 0.42s;
   gap: 0.3rem;
   img {
-    width: 1.4rem;
+    width: 1.6rem;
     border-radius: 50%;
   }
   div {
@@ -60,7 +60,7 @@ export const Card = styled.div`
   }
   span {
     font-family: core-sans-g;
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-height: 14vh;
     overflow: auto;
     color: ${(props) => props.theme.fontColor};
@@ -68,7 +68,7 @@ export const Card = styled.div`
       align-self: flex-end;
       font-family: core-sans-g;
       opacity: 0.84;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -76,7 +76,7 @@ export const Card = styled.div`
 export const LoadMore = styled.span`
   align-self: center;
   margin-bottom: 0.42rem;
-  border-radius: 0.21rem;
+  border-radius: 0.21.2rem;
   padding: 0.3rem;
   padding-top: 0rem;
   padding-bottom: 0.14rem;
@@ -89,7 +89,7 @@ export const BinIcon = styled.p`
   all: unset;
   align-self: flex-end;
   font-family: core-sans-g;
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
   opacity: 0.7;
   &:hover {opacity: 1;}

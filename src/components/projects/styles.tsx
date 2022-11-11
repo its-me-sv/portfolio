@@ -4,16 +4,18 @@ import likeIcon from '../../assets/icons/like.png';
 import likeIconUnfilled from '../../assets/icons/like-unfilled.png';
 
 export const Container = styled.div`
+  padding: 1.4% 0%;
+  padding-left: auto;
+  padding-right: auto;
   overflow: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 1.2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 3rem;
   place-items: center;
-  padding: 1.4% 0%;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 1.2rem;
+    grid-row-gap: 1.4rem;
   }
 `;
 
@@ -21,8 +23,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 14rem;
-  height: 20rem;
+  width: 24rem;
+  height: 26rem;
   gap: 0.42rem;
   padding: 1% 1.6%;
   border-radius: 0.14rem;
@@ -41,7 +43,7 @@ export const CardTop = styled.div<{ dark: boolean }>`
   justify-content: space-between;
   span {
     font-family: core-sans-g;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: ${(props) => props.theme.fontColor};
   }
   a {
@@ -54,7 +56,7 @@ export const CardTop = styled.div<{ dark: boolean }>`
     gap: 0.14rem;
     img {
       cursor: pointer;
-      width: 1.4rem;
+      width: 1.6rem;
       height: auto;
       opacity: 0.8;
       &:hover {
@@ -71,7 +73,7 @@ export const Gallery = styled.div`
   gap: 0.14rem;
   img {
     border-radius: 0.14rem;
-    max-height: 7rem;
+    max-height: 12rem;
   }
   div {
     display: flex;
@@ -93,7 +95,7 @@ export const SliderItem = styled.span<{selected: boolean}>`
 
 export const Description = styled.div`
   font-family: core-sans-g;
-  font-size: 1rem;
+  font-size: 1.2rem;
   max-height: 7rem;
   overflow: auto;
   color: ${(props) => props.theme.fontColor};
@@ -101,7 +103,7 @@ export const Description = styled.div`
 
 export const TechStack = styled.span`
   font-family: core-sans-g;
-  font-size: 0.8rem;
+  font-size: 1rem;
   opacity: 0.9;
   max-height: 2.8rem;
   overflow: auto;
@@ -124,7 +126,7 @@ export const CardBottom = styled.div`
     }
     span {
       font-family: core-sans-g;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -136,7 +138,7 @@ export const LikeIcon = styled.img.attrs(
     alt: "like",
   })
 )<{ dark: boolean; liked: boolean; disabled: boolean; }>`
-  width: 1.4rem;
+  width: 1.6rem;
   height: auto;
   opacity: 0.9;
   &:hover {

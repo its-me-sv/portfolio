@@ -24,13 +24,13 @@ export const Top = styled.div`
 
 export const Name = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
 export const Description = styled.span`
   font-family: core-sans-g;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
@@ -54,7 +54,7 @@ export const Interactions = styled.div`
     }
     span {
       font-family: core-sans-g;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -64,7 +64,7 @@ export const ClapIcon = styled.img.attrs((props: { liked: boolean }) => ({
   src: props.liked ? clap : clapUnfilled,
   alt: "clap",
 }))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
-  width: 1.4rem;
+  width: 1.6rem;
   height: auto;
   opacity: 0.9;
   &:hover {opacity: 0.5;}

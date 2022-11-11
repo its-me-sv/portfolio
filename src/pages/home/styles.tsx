@@ -16,7 +16,7 @@ export const MidHeader = styled.div`
   span {
     &:last-child {
       font-family: core-sans-g;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }
   }
@@ -56,7 +56,7 @@ export const BodyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.6rem;
   color: ${props => props.theme.fontColor};
   /* mobile styles */
   @media only screen and (max-width: 768px) {
@@ -66,7 +66,7 @@ export const BodyTextContainer = styled.div`
 
 export const BodyTitleText = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
@@ -80,13 +80,13 @@ export const SubBody = styled.div`
 
 export const SubHeading = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
   text-transform: uppercase;
 `;
 
 export const Content = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.contentColor};
 `;

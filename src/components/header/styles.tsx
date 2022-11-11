@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Signature = styled.span`
   font-family: signature;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   color: ${props => props.theme.fontColor};
@@ -24,7 +24,7 @@ export const Signature = styled.span`
 export const CurrentPage = styled.span`
   font-family: core-sans-g;
   color: ${(props) => props.theme.fontColor};
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;
   text-transform: capitalize;
   /* mobile styles */

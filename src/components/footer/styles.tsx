@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 0.21rem 0.49rem 0.1rem 0.49rem;
+  padding: 0.12rem 0.49rem 0.12rem 0.49rem;
   span {
     cursor: pointer;
     margin-right: 0.42rem;
@@ -27,7 +27,7 @@ export const Container = styled.div`
 
 export const CreditText = styled.div<{ open: boolean }>`
   font-family: core-sans-g;
-  font-size: 0.84rem;
+  font-size: 1rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
   color: ${(props) => props.theme.fontColor};
@@ -42,7 +42,7 @@ export const CreditText = styled.div<{ open: boolean }>`
     opacity: 1;
     ${props => props.theme.boxShadow}
     border-radius: 0.14rem;
-    padding: 0rem 0.1rem 0.05rem 0.1rem;
+    padding: 0rem 0.12rem 0.05rem 0.12rem;
   }
   a:hover {
     text-decoration: underline;
@@ -60,7 +60,7 @@ export const SelectLang = styled.select`
   border-radius: 0.14rem;
   ${(props) => props.theme.boxShadow}
   z-index: 998;
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   font-family: core-sans-g;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
@@ -70,7 +70,7 @@ export const SelectLang = styled.select`
   opacity: 0.84;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -86,10 +86,10 @@ export const ThemeIcon = styled.div<{dark: boolean}>`
   cursor: pointer;
   border-radius: 50%;
   z-index: 998;
-  padding: 0.1rem 0.2rem;
+  padding: 0.12rem 0.2rem;
   ${props => props.theme.boxShadow}
   img {
-    width: 1.2rem;
+    width: 1.4rem;
     height: auto;
     ${props => props.dark && `filter: invert(100%);`}
   }

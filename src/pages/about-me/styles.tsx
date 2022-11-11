@@ -4,7 +4,7 @@ import { FadeAnim1 } from '../../utils/styles.util';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
   overflow: auto;
   padding: 2.1% 0 3% 3%;
   animation: ${FadeAnim1} 1s;
@@ -19,7 +19,7 @@ export const ContentContainer = styled.div`
 
 export const SubHeader = styled.span`
   font-family: core-sans-g;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
@@ -29,7 +29,7 @@ export const SubHeader = styled.span`
 export const Content = styled.span`
   max-width: 42rem;
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   opacity: 0.9;
   text-align: center;
   animation: ${FadeAnim1} 1s;

@@ -5,13 +5,13 @@ export const Container = styled.div`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-row-gap: 1.2rem;
+  grid-row-gap: 1.4rem;
   place-items: center;
   padding: 1.4% 0%;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 1rem;
+    grid-row-gap: 1.2rem;
   }
 `;
 
@@ -19,7 +19,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 10rem;
+  width: 12rem;
   height: 12rem;
   overflow: auto;
   text-align: center;
@@ -38,15 +38,15 @@ export const Card = styled.div`
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 1rem;
+    grid-row-gap: 1.2rem;
     width: 10rem;
     height: 12rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.2rem;
   }
 `;
 
 export const Name = styled.span`
   font-family: core-sans-g;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
