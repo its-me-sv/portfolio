@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 1rem;
+  padding: 0rem 1rem;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     padding: 1rem 2rem;
@@ -17,16 +17,17 @@ export const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.3rem 1rem;
-  border-radius: 0.42rem;
+  padding: 0rem 1rem 0.5rem 1rem;
+  border-radius: 0.14rem;
   ${props => props.theme.boxShadowNoHover}
 `;
 
 export const SubSection = styled.div`
   padding-top: 0.36rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 2.1rem;
+  gap: 1.4rem;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -36,7 +37,7 @@ export const SubSection = styled.div`
 
 export const SectionTitle = styled.span`
   font-family: core-sans-g;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   opacity: 0.7;
   text-decoration: underline;
   animation: ${FadeAnim1} 1s;
@@ -50,7 +51,7 @@ export const SectionItem = styled.div`
   gap: 0.07rem;
   span {
     font-family: core-sans-g;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     text-align: center;
     opacity: 0.8;
     animation: ${FadeAnim1} 1s;

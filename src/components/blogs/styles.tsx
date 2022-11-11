@@ -6,8 +6,8 @@ export const Card = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.42% 0.84%;
-  border-radius: 0.42rem;
-  gap: 0.42rem;
+  border-radius: 0.14rem;
+  gap: 0.14rem;
   a {
     all:unset;
     cursor: pointer;
@@ -22,6 +22,6 @@ export const Card = styled.div`
 
 export const Name = styled.span`
   font-family: core-sans-g;
-  font-size: 2.4rem;
+  font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;

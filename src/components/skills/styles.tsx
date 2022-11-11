@@ -28,7 +28,7 @@ export const Card = styled.div`
   padding: 0.42% 0;
   animation: ${FadeAnim1} 1s;
   a {all: unset;}
-  ${props => props.theme.boxShadow}
+  ${props => props.theme.boxShadowNoHover}
   img {
     width: 6rem;
     height: auto;

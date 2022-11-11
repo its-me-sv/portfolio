@@ -8,11 +8,12 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   animation: ${FadeAnim1} 1s;
-  gap: 0.21rem;
+  gap: 0.14rem;
   span {
     font-family: core-sans-g;
-    font-size: 2.1rem;
+    font-size: 1.2rem;
     opacity: 0.84;
+    text-align: center;
     color: ${(props) => props.theme.fontColor};
   }
   div {
@@ -21,13 +22,12 @@ export const Card = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 0.42rem;
-    padding: 0.28rem 0.3rem;
-    border-radius: 0.3rem;
-    ${(props) => props.theme.boxShadow}
+    gap: 0.14rem;
+    padding: 0.15rem 0.2rem;
+    border-radius: 0.14rem;
     span {
       font-family: core-sans-g;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: ${(props) => props.theme.fontColor};
     }
   }

@@ -14,7 +14,7 @@ export const Card = styled.div`
   padding: 0.42% 0;
   a {all: unset;}
   animation: ${FadeAnim1} 1s;
-  ${props => props.theme.boxShadow}
+  ${props => props.theme.boxShadowNoHover}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
