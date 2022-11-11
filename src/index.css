@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'core-sans-g';
+  src: local('core-sans-g'), url(./assets/fonts/core-sans-g.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'calibri';
   src: local('calibri'), url(./assets/fonts/calibri.ttf) format('truetype');
 }
