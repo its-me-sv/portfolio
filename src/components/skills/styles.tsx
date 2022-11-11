@@ -30,7 +30,7 @@ export const Card = styled.div`
   a {all: unset;}
   ${props => props.theme.boxShadowNoHover}
   img {
-    width: 6rem;
+    width: 7rem;
     height: auto;
     border-radius: 0.14rem;
     animation: ${FadeAnim1} 1s;

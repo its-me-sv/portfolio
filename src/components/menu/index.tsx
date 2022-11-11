@@ -2,6 +2,7 @@ import menuIcon from "../../assets/icons/menu.png";
 import closeIcon from "../../assets/icons/close.png";
 import { Container, MenuIcon, MenuItem } from './styles';
 import { menuTranslations, miscTranslations } from '../../utils/translations.util';
+import { API_URL } from "../../utils/constants.util";
 
 import Footer from '../footer';
 
@@ -37,7 +38,7 @@ const Menu: React.FC<MenuProps> = () => {
           ))}
           <MenuItem chosen={false}>
             <a
-              href="https://drive.google.com/file/d/1X3f_rsjxGfOE3uVkHgkjecAWh4CNLuQD/view"
+              href={API_URL + "/files/suraj_vijayan_resume.pdf"}
               target="_blank"
               rel="noreferrer"
             >

@@ -39,7 +39,7 @@ export const Card = styled.div`
 `;
 
 export const Provider = styled.img`
-  width: 6rem;
+  width: 7rem;
   height: auto;
   border-radius: 0.14rem;
 `;

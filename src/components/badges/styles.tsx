@@ -40,7 +40,7 @@ export const Card = styled.div`
 `;
 
 export const BadgeImg = styled.img`
-  width: 6rem;
+  width: 7rem;
   height: auto;
   border-radius: 0.14rem;
 `;

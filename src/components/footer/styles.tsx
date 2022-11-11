@@ -60,7 +60,7 @@ export const SelectLang = styled.select`
   border-radius: 0.14rem;
   ${(props) => props.theme.boxShadow}
   z-index: 998;
-  font-size: 0.84rem;
+  font-size: 1rem;
   font-family: core-sans-g;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};

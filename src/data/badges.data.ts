@@ -6,9 +6,9 @@ export interface Badge {
 
 export const badges: Array<Badge> = [
   {
-    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1668148636/portfolio/badges/SLU_-_Project_Management_Internship_zdxqdo.png',
+    picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1668179052/portfolio/badges/GlobalShala_Learning_-_Project_Management_Virtual_Internship_-_2022-11-05_akbtap.png',
     issuer: 'Saint Louis University',
-    url: ''
+    url: 'https://api.badgr.io/public/assertions/ORURxXWIScyhTXtTUIJafQ?identity__email=2020ad0149%40svce.ac.in'
   },
   {
     picture: 'https://res.cloudinary.com/djeteilo6/image/upload/v1662718743/portfolio/badges/Code_wit_Globalshala_odxeny.png',
