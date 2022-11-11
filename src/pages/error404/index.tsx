@@ -16,7 +16,7 @@ const ErrorPage: React.FC<ErrorPageProps> = () => {
     window.document.title = `${error404Translations.title[+language]} | Suraj Vijay`;
     const timer = setTimeout(() => {
       navigate(`/`);
-    }, 4200);
+    }, 7000);
     return () => {
       const pageName: string = menuTranslations.home[+language];
       window.document.title = `${
