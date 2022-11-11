@@ -1,1 +1,1 @@
-export const API_URL = `https://suraj-vijay.herokuapp.com`;
+export const API_URL = `https://suraj-vijayan-portfolio-backend.onrender.com`;
