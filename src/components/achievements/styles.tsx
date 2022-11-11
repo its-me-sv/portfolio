@@ -13,7 +13,7 @@ export const Card = styled.div`
   ${props => props.theme.boxShadowNoHover}
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    padding: 0.5% 0.7rem;
+    padding: 0.5rem 0.7rem;
   }
 `;
 

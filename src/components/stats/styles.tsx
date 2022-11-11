@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 0rem 1rem;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     gap: 2.1rem;
   }
 `;
@@ -19,7 +19,11 @@ export const Section = styled.div`
   align-items: center;
   padding: 0rem 1rem 0.5rem 1rem;
   border-radius: 0.14rem;
-  ${props => props.theme.boxShadowNoHover}
+  ${(props) => props.theme.boxShadowNoHover}
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 0.5rem 1rem;
+  }
 `;
 
 export const SubSection = styled.div`

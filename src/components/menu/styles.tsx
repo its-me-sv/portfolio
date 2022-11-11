@@ -82,6 +82,6 @@ export const MenuItem = styled.p<{chosen: boolean;}>`
   }
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    font-size: 2.1rem;
+    font-size: 1.4rem;
   }
 `;
