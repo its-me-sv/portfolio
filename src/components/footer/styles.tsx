@@ -70,7 +70,7 @@ export const SelectLang = styled.select`
   opacity: 0.84;
   /* mobile styles */
   @media only screen and (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;
 
