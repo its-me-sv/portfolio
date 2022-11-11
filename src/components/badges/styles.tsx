@@ -46,7 +46,7 @@ export const BadgeImg = styled.img`
 `;
 
 export const Issued = styled.span`
-  font-family: bahnschrift;
+  font-family: core-sans-g;
   font-size: 1.1rem;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;

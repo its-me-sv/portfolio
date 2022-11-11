@@ -46,7 +46,7 @@ export const Card = styled.div`
 `;
 
 export const Name = styled.span`
-  font-family: roboto;
+  font-family: core-sans-g;
   font-size: 1.2rem;
-  color: ${props => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
