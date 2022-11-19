@@ -6,6 +6,16 @@ import {
   aboutMeArabic, intrestAndHobbiesArabic
 } from '../data/about-me.data';
 
+export const loaderTranslations = {
+  info: [
+    "Connecting to the back-end server. This may take a few moments, and yes, this site is full stack.",
+    "Conexión al servidor de fondo. Esto puede tomar unos minutos, y sí, este sitio está lleno.",
+    "Verbindung zum Back-End-Server herstellen. Dies kann einige Augenblicke dauern, und ja, diese Seite ist voll.",
+    "バックエンド サーバーに接続しています。これには少し時間がかかる場合があります。はい、このサイトは完全なスタックです。",
+    "الاتصال بالخادم الخلفي. قد يستغرق هذا بضع لحظات ، ونعم ، هذا الموقع مكدس بالكامل."
+  ]
+};
+
 export const toastTranslations = {
   fstInf: [
     "Feel free to change the language and theme of the site",
