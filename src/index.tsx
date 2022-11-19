@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 import './index.css';
 import App from './containers/app';
 
-import RootContextProvider from './contexts/root.context';
+import RootContextProvider from './contexts';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
