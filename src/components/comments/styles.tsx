@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FadeAnim1 } from '../../utils/styles.util';
 
 export const CommentsTitle = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;
   color: ${props => props.theme.fontColor};
@@ -29,7 +29,7 @@ export const Footer = styled.div`
     resize: none;
     outline: none;
     border: none;
-    font-family: core-sans-g;
+    font-family: ${props => props.theme.fontFamily};;
     border-radius: 0.14rem;
     font-size: 1.2rem;
     padding-left: 0.28rem;
@@ -59,14 +59,14 @@ export const Card = styled.div`
     background-color: ${(props) => props.theme.cmntBgClr};
   }
   span {
-    font-family: core-sans-g;
+    font-family: ${props => props.theme.fontFamily};;
     font-size: 1.2rem;
     max-height: 14vh;
     overflow: auto;
     color: ${(props) => props.theme.fontColor};
     &:first-child {
       align-self: flex-end;
-      font-family: core-sans-g;
+      font-family: ${props => props.theme.fontFamily};;
       opacity: 0.84;
       font-size: 1rem;
     }
@@ -88,7 +88,7 @@ export const LoadMore = styled.span`
 export const BinIcon = styled.p`
   all: unset;
   align-self: flex-end;
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1rem;
   cursor: pointer;
   opacity: 0.7;

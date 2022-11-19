@@ -36,7 +36,7 @@ export const SignatureFont = styled.span`
 `;
 
 export const InfoText = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   text-align: center;
   font-size: 1.2rem;
   opacity: 0.8;

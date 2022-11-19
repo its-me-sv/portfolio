@@ -15,7 +15,7 @@ export const MidHeader = styled.div`
   flex-direction: column;
   span {
     &:last-child {
-      font-family: core-sans-g;
+      font-family: ${props => props.theme.fontFamily};;
       font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }
@@ -36,7 +36,7 @@ export const MyImage = styled.img.attrs({alt: "Suraj Vijayan"})`
 `;
 
 export const TitleText = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +65,7 @@ export const BodyTextContainer = styled.div`
 `;
 
 export const BodyTitleText = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
@@ -79,14 +79,14 @@ export const SubBody = styled.div`
 `;
 
 export const SubHeading = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
   text-transform: uppercase;
 `;
 
 export const Content = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.contentColor};
 `;

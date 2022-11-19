@@ -45,13 +45,13 @@ export const Provider = styled.img`
 `;
 
 export const Name = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
 export const Issued = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;

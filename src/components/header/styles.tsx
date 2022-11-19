@@ -22,7 +22,7 @@ export const Signature = styled.span`
 `;
 
 export const CurrentPage = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   color: ${(props) => props.theme.fontColor};
   font-size: 1.6rem;
   animation: ${FadeAnim1} 1s;

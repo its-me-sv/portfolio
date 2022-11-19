@@ -8,7 +8,7 @@ export const Container = styled.div<{ open: boolean }>`
   right: 0;
   flex-direction: column;
   align-items: flex-end;
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.6rem;
   padding-left: 1.4rem;
   padding: 0 0.49rem;

@@ -32,13 +32,13 @@ export const Company = styled.img`
 `;
 
 export const Name = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
 export const Username = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;

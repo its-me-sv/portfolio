@@ -23,13 +23,13 @@ export const Top = styled.div`
 `;
 
 export const Name = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   color: ${(props) => props.theme.fontColor};
 `;
 
 export const Description = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;
@@ -53,7 +53,7 @@ export const Interactions = styled.div`
       opacity: 0.5;
     }
     span {
-      font-family: core-sans-g;
+      font-family: ${props => props.theme.fontFamily};;
       font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }

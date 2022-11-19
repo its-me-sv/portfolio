@@ -1,6 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
 export const lightTheme: DefaultTheme = {
+  fontFamily: 'core-sans-g',
   fontColor: '#1a1a1a',
   backgroundColor: '#f5f4f9',
   boxShadow: `
@@ -25,6 +26,7 @@ export const lightTheme: DefaultTheme = {
 };
 
 export const darkTheme: DefaultTheme = {
+  fontFamily: 'core-sans-g',
   fontColor: '#f5f4f9',
   backgroundColor: '#1a1a1a',
   boxShadow: `

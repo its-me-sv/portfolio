@@ -26,7 +26,7 @@ export const Container = styled.div`
 `;
 
 export const CreditText = styled.div<{ open: boolean }>`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1rem;
   animation: ${FadeAnim1} 1s;
   opacity: 0.84;
@@ -61,7 +61,7 @@ export const SelectLang = styled.select`
   ${(props) => props.theme.boxShadow}
   z-index: 998;
   font-size: 1rem;
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
   animation: ${FadeAnim1} 1s;

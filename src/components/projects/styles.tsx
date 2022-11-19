@@ -42,7 +42,7 @@ export const CardTop = styled.div<{ dark: boolean }>`
   align-items: center;
   justify-content: space-between;
   span {
-    font-family: core-sans-g;
+    font-family: ${props => props.theme.fontFamily};;
     font-size: 1.4rem;
     color: ${(props) => props.theme.fontColor};
   }
@@ -94,7 +94,7 @@ export const SliderItem = styled.span<{selected: boolean}>`
 `;
 
 export const Description = styled.div`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.2rem;
   max-height: 7rem;
   overflow: auto;
@@ -102,7 +102,7 @@ export const Description = styled.div`
 `;
 
 export const TechStack = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1rem;
   opacity: 0.9;
   max-height: 2.8rem;
@@ -125,7 +125,7 @@ export const CardBottom = styled.div`
       opacity: 0.5;
     }
     span {
-      font-family: core-sans-g;
+      font-family: ${props => props.theme.fontFamily};;
       font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }

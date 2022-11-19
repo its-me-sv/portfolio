@@ -10,7 +10,7 @@ export const Card = styled.div`
   animation: ${FadeAnim1} 1s;
   gap: 0.14rem;
   span {
-    font-family: core-sans-g;
+    font-family: ${props => props.theme.fontFamily};;
     font-size: 1.4rem;
     opacity: 0.84;
     text-align: center;
@@ -26,7 +26,7 @@ export const Card = styled.div`
     padding: 0.15rem 0.2rem;
     border-radius: 0.14rem;
     span {
-      font-family: core-sans-g;
+      font-family: ${props => props.theme.fontFamily};;
       font-size: 1.2rem;
       color: ${(props) => props.theme.fontColor};
     }

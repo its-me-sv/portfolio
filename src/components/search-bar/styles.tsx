@@ -35,7 +35,7 @@ export const SearchIcon = styled.img.attrs({
 `;
 
 export const SearchInput = styled.input`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   outline: none;
   border: none;
   text-align: center;

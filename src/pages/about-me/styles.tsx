@@ -18,7 +18,7 @@ export const ContentContainer = styled.div`
 `;
 
 export const SubHeader = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.6rem;
   opacity: 0.7;
   text-decoration: underline;
@@ -28,7 +28,7 @@ export const SubHeader = styled.span`
 
 export const Content = styled.span`
   max-width: 42rem;
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.4rem;
   opacity: 0.9;
   text-align: center;

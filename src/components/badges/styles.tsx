@@ -46,7 +46,7 @@ export const BadgeImg = styled.img`
 `;
 
 export const Issued = styled.span`
-  font-family: core-sans-g;
+  font-family: ${props => props.theme.fontFamily};;
   font-size: 1.2rem;
   color: ${(props) => props.theme.fontColor};
 `;
