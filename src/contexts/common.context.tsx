@@ -13,10 +13,19 @@ interface CommonContextInterface {
   toggleTheme?: () => void;
 }
 
+// fetching state from local storage
+const commonStoragePrefix: string = "suraj-portfolio:common";
+const loadingState: string|null = localStorage.getItem(`${commonStoragePrefix}:loading`);
+const languageState: string|null = localStorage.getItem(`${commonStoragePrefix}:language`);
+const themeState: string|null = localStorage.getItem(`${commonStoragePrefix}:theme`);
+
 const defaultState: CommonContextInterface = {
-  loading: true,
-  language: "0",
-  isDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
+  loading: loadingState === null ? true : loadingState === "true",
+  language: languageState === null ? "0" : languageState,
+  isDark:
+    themeState === null
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : themeState === "true",
   isMobile: window.innerWidth <= 768,
 };
 
@@ -34,6 +43,13 @@ export const CommonContextProvider: React.FC<{children: ReactNode}> = ({children
     themeHandler.addEventListener("change", e => setIsDark(e.matches));
     return () => themeHandler.removeEventListener("change", e => setIsDark(e.matches));
   }, []);
+
+  // persisting state
+  useEffect(() => {
+    localStorage.setItem(`${commonStoragePrefix}:loading`, `${loading}`);
+    localStorage.setItem(`${commonStoragePrefix}:language`, language);
+    localStorage.setItem(`${commonStoragePrefix}:theme`, `${isDark}`);
+  }, [loading, language, isDark]);
 
   const toggleTheme = useCallback(() => {
     toast.success(toastTranslations.thmTgl[+language]);
