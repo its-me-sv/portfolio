@@ -74,8 +74,8 @@ const App: React.FC<AppProps> = () => {
       <GlobalStyle />
       <AppContainer>
         <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
+        {load1 && <Loader initial={true} />}
         {loading && <Loader />}
-        {load1 && <Loader />}
         {section && <Comments />}
         <Header />
         <Suspense fallback={<Loader />}>

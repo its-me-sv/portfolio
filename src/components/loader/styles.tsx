@@ -4,8 +4,9 @@ export const Container = styled.div`
   display: flex;
   position: absolute;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   width: 100vw;
   height: 100vh;
   z-index: 999;
@@ -32,4 +33,17 @@ export const SignatureFont = styled.span`
   font-size: 12vh;
   animation: ${showHide} 2.1s ease-in-out infinite;
   color: ${(props) => props.theme.fontColor};
+`;
+
+export const InfoText = styled.span`
+  font-family: core-sans-g;
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  color: ${(props) => props.theme.fontColor};
+  
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 0.5rem 0.7rem;
+  }
 `;
