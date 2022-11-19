@@ -17,7 +17,7 @@ export const lightTheme: DefaultTheme = {
   boxShadowHover: `
     box-shadow: rgb(0 0 0 / 70%) 1px 1px 4.2px 1px inset;
   `,
-  cmntsBgClr: '#f5f4f9',
+  cmntsBgClr: '#e9e8ed',
   cmntBgClr: 'rgba(0, 0, 0, 0.1)',
   borderColor: '#1a1a1a',
   scrollBarBg: '#a7abb0',

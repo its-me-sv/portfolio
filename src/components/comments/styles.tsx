@@ -94,3 +94,9 @@ export const BinIcon = styled.p`
   opacity: 0.7;
   &:hover {opacity: 1;}
 `;
+
+export const EmptyCmt = styled.span`
+  font-family: ${props => props.theme.fontFamily};
+  color: ${props => props.theme.fontColor};
+  font-size: 1.2rem; 
+`;

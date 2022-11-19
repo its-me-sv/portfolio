@@ -269,6 +269,13 @@ export const commentsTranslations = {
     'Delete comment', 
     'Eliminar comentario', 'Kommentar löschen',
     'コメントを削除', 'حذف تعليق'
+  ],
+  empty: [
+    'No comments yet', 
+    'Sin comentarios aún',
+    'Noch keine Kommentare',
+    'コメントはまだありません', 
+    'لا توجد تعليقات حتى الآن'
   ]
 };
 

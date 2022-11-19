@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { commentsTranslations } from "../../utils/translations.util";
-import { Body, LoadMore } from "./styles";
+import { Body, LoadMore, EmptyCmt } from "./styles";
 
 import CommentCard from "./comment-card.component";
 import { useCommonContext } from "../../contexts/common.context";
@@ -20,6 +20,7 @@ const CommentBody: React.FC<CommentBodyProps> = () => {
 
   return (
     <Body ref={scrollRef} onScroll={onScroll}>
+      {comments.length === 0 && <EmptyCmt>{commentsTranslations.empty[+language]}</EmptyCmt>}
       {comments.map(cmt => (
         <CommentCard key={cmt.id} {...cmt} />
       ))}
