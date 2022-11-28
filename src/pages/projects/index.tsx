@@ -14,7 +14,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = () => {
   const { fetchProjects, resetProjects, currPage } = useProjectContext();
 
   useEffect(() => {
-    setMenu!(4);
+    setMenu!(5);
     fetchProjects!();
     return () => resetProjects!();
   }, []);

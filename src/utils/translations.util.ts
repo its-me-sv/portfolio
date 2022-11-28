@@ -43,6 +43,7 @@ export const menuTranslations = {
   aboutMe: ["about me", "sobre mí", "über mich", "私について", "عني"],
   profiles: ["profiles", "perfiles", "profile", "プロファイル", "مظهر"],
   transcript: ["transcript", "transcripción", "abschrift", "トランスクリプト", "نسخة طبق الأصل"],
+  experiences: ["experiences", "experiencias", "erfahrungen", "経験", "خبرة"],
   projects: ["projects", "proyectos", "projekte", "プロジェクト", "المشاريع"],
   achievements: ["achievements", "logros", "erfolge", "実績", "الإنجازات"],
   blogs: ["blogs", "blogs", "blogs", "ブログ", "المدونات"],

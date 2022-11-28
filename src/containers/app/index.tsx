@@ -25,6 +25,7 @@ const HomePage = lazy(() => import("../../pages/home"));
 const AboutMePage = lazy(() => import("../../pages/about-me"));
 const ProfilesPage = lazy(() => import("../../pages/profiles"));
 const TranscriptPage = lazy(() => import("../../pages/transcript"));
+const ExperiencesPage = lazy(() => import("../../pages/experiences"));
 const ProjectsPage = lazy(() => import("../../pages/projects"));
 const AchievementsPage = lazy(() => import("../../pages/achievements"));
 const BlogsPage = lazy(() => import("../../pages/blog"));
@@ -84,6 +85,7 @@ const App: React.FC<AppProps> = () => {
             <Route path="/about-me" element={<AboutMePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
             <Route path="/transcript/*" element={<TranscriptPage />} />
+            <Route path="/experiences" element={<ExperiencesPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="/blogs" element={<BlogsPage />} />

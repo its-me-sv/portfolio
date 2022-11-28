@@ -19,10 +19,16 @@ const defaultState: MenuContextInterface = {
 };
 
 const urls: Array<string> = [
-  "", "about-me", "profiles",
-  "transcript/certificates", "projects",
-  "achievements", "blogs",
-  "quotes", "stats"
+  "",
+  "about-me",
+  "profiles",
+  "transcript/certificates",
+  "experiences",
+  "projects",
+  "achievements",
+  "blogs",
+  "quotes",
+  "stats",
 ];
 
 const transcriptUrls: Array<string> = [

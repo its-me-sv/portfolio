@@ -10,7 +10,7 @@ interface BlogsPageProps {}
 const BlogsPage: React.FC<BlogsPageProps> = () => {
   const { setMenu } = useMenuContext();
 
-  useEffect(() => setMenu!(6), []);
+  useEffect(() => setMenu!(7), []);
   
   return (
     <Container>

@@ -11,7 +11,7 @@ interface StatsPageProps {}
 const StatsPage: React.FC<StatsPageProps> = () => {
   const { setMenu } = useMenuContext();
 
-  useEffect(() => setMenu!(8), []);
+  useEffect(() => setMenu!(9), []);
   
   return (
     <PageContainer>

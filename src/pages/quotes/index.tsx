@@ -10,7 +10,7 @@ interface QuotesPageProps {}
 const QuotesPage: React.FC<QuotesPageProps> = () => {
   const { setMenu } = useMenuContext();
 
-  useEffect(() => setMenu!(7), []);
+  useEffect(() => setMenu!(8), []);
   
   return (
     <Container>

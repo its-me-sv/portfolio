@@ -13,7 +13,7 @@ const AchievementsPage: React.FC<AchievementsPageProps> = () => {
   const { setMenu } = useMenuContext();
   const { currAchievement } = useAchievementContext();
 
-  useEffect(() => setMenu!(5), []);
+  useEffect(() => setMenu!(6), []);
   
   return (
     <>
