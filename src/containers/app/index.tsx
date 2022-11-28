@@ -8,6 +8,7 @@ import { menuTranslations, toastTranslations } from "../../utils/translations.ut
 import { toastOptions } from "../../utils/config.util";
 import { lightTheme, darkTheme } from "../../utils/themes.util";
 import { GlobalStyle } from "../../utils/styles.util";
+import { celeberate } from "../../utils/confetti.util";
 
 import Loader from "../../components/loader";
 import Header from "../../components/header";
@@ -47,7 +48,10 @@ const App: React.FC<AppProps> = () => {
       toast(toastTranslations.fstInf[+language], {duration: 3000});
     });
     axios.get(`${API_URL}/api/validation/server`)
-    .then(() => setLoad1(false));
+    .then(() => {
+      setLoad1(false);
+      celeberate();
+    });
     return () => {
       clearTimeout(timer);
       clearTimeout(timer1);
