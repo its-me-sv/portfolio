@@ -9,7 +9,7 @@ export const Container = styled.div`
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     padding: 1.4rem 2rem;
-    gap: 2.1.2rem;
+    gap: 1.2rem;
   }
 `;
 

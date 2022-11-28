@@ -302,5 +302,6 @@ export const error404Translations = {
 };
 
 export const miscTranslations = {
-  resume: ["resume", "reanudar", "fortsetzen", "履歴書", "سيرة ذاتية"]
+  resume: ["resume", "reanudar", "fortsetzen", "履歴書", "سيرة ذاتية"],
+  skills: ["Skills", "Habilidades", "Fähigkeiten", "スキル", "مهارات"]
 };

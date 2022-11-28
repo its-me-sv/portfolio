@@ -8,6 +8,10 @@ export const Container = styled.div`
   overflow: auto;
   padding: 2.1% 0 3% 3%;
   animation: ${FadeAnim1} 1s;
+  /* mobile styles */
+  @media only screen and (max-width: 768px) {
+    padding: 7%;
+  }
 `;
 
 export const ContentContainer = styled.div`
