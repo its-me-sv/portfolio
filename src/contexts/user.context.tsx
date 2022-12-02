@@ -46,9 +46,9 @@ export const UserContextProvider: React.FC<{children: ReactNode}> = ({children})
   };
 
   useEffect(() => {
-    window.addEventListener("unload", onTabClose);
+    window.addEventListener("beforeunload", onTabClose);
     return () => {
-      window.removeEventListener("unload", onTabClose);
+      window.removeEventListener("beforeunload", onTabClose);
     }
   }, []);
 
