@@ -1,12 +1,11 @@
+import axios from "axios";
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { io, Socket } from "socket.io-client";
 
 import { API_URL } from "../utils/constants.util";
 
 interface UserContextInterface {
   userId: string;
   likes: Array<string>;
-  socket: Socket;
   token: string;
   addLike?: (val: string) => void;
   removeLike?: (val: string) => void;
@@ -15,7 +14,6 @@ interface UserContextInterface {
 const defaultState: UserContextInterface = {
   userId: '',
   likes: [],
-  socket: io(API_URL),
   token: ''
 };
 
@@ -28,17 +26,30 @@ export const useUserContext = () => useContext(UserContext);
 export const UserContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
   const userId = useRef<string>(defaultState.userId);
   const [likes, setLikes] = useState<Array<string>>(defaultState.likes);
-  const socket = useRef<Socket>(defaultState.socket);
   const [token, setToken] = useState<string>(defaultState.token);
 
   useEffect(() => {
     if (!first) return;
-    socket.current.on("registered", data => {
-      socket.current.id = data.id;
+    axios.get(`${API_URL}/api/auth/register`)
+    .then(({data}) => {
       userId.current = data.id;
       setToken(data.token);
     });
     first = false;
+  }, []);
+
+  const onTabClose = () => {
+    axios.delete(
+      `${API_URL}/api/auth/unregister`, 
+      {data: {userId: userId.current }}
+    );
+  };
+
+  useEffect(() => {
+    window.addEventListener("unload", onTabClose);
+    return () => {
+      window.removeEventListener("unload", onTabClose);
+    }
   }, []);
 
   const addLike = useCallback((likeId: string) => {
@@ -52,7 +63,6 @@ export const UserContextProvider: React.FC<{children: ReactNode}> = ({children})
   return (
     <UserContext.Provider value={{
       userId: userId.current, 
-      socket: socket.current, 
       token: token,
       likes, addLike, removeLike
     }}>{children}</UserContext.Provider>

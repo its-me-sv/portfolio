@@ -14,7 +14,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
 }) => {
   const { language } = useCommonContext();
   const { removeComment } = useCommentsContext();
-  const { userId, socket } = useUserContext();
+  const { userId } = useUserContext();
 
   const date = new Date(timestamp);
 
@@ -30,7 +30,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
         <span>{date.toLocaleTimeString()}, {date.toDateString()}</span>
         <span>{message}</span>
       </div>
-      {(sender === (userId || socket.id)) &&
+      {(sender === userId) &&
       <BinIcon onClick={onDelete}>🗑️</BinIcon>}
     </Card>
   );

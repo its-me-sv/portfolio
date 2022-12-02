@@ -55,7 +55,7 @@ export const CommentsContext = createContext<CommentsContextInterface>(defaultSt
 export const useCommentsContext = () => useContext(CommentsContext);
 
 export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
-  const { userId, socket, token } = useUserContext();
+  const { userId, token } = useUserContext();
 
   const [section, setSection] = useState<string>(defaultState.section);
   const [comment, setComment] = useState<string>(defaultState.comment);
@@ -69,7 +69,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
     if (comment.length < 1) return;
     axios.post(
       `${API_URL}/api/${type}/comment/${section.split("||")[0]}`, 
-      {comment, sender: userId || socket.id},
+      {comment, sender: userId},
       {headers: {Authorization: `Bearer ${token}`}}
     ).then(({data}) => {
       setComments(prev => [data, ...prev]);
@@ -77,7 +77,7 @@ export const CommentsContextProvider: React.FC<{children: ReactNode}> = ({childr
       callbacks.incCmt();
       scrollRef.current.scrollTo({top:0, behavior: 'smooth'});
     });
-  }, [comment, section, type, userId, token, callbacks, socket.id]);
+  }, [comment, section, type, userId, token, callbacks]);
 
   const removeComment = useCallback((oldId: string) => {
     axios.delete(
