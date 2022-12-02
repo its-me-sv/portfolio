@@ -67,6 +67,12 @@ export const homePageTranslations = {
   resident: ['resident', 'residente', 'bewohner', '居住者', 'مقيم'],
   at: ['at', 'a', 'bei', 'で', 'في'],
   'of': ['of', 'de', 'von', 'の', 'من'],
+  since: ['Since 2002', 'Desde 2002', 'Seit 2002', '2002 年以降', 'منذ عام 2002'],
+  fsd: [
+    "Full Stack Developer", "Desarrollador de pila completa", 
+    "Full-Stack-Entwickler", "フルスタック開発者",
+    "مطور كامل المكدس"
+  ]
 };
 
 export const aboutPageTranslations = {

@@ -31,12 +31,12 @@ const HomePage: React.FC<HomePageProps> = () => {
       <MyImage src={isDark ? gradImg : noGradImg} />
       {!isMobile && <div />}
       <MidHeader>
-        <TitleText>{"<DarkKnight />"}</TitleText>
-        <span>Since 2002</span>
+        <TitleText>Suraj Vijayan</TitleText>
+        <span>{homePageTranslations.since[+language]}</span>
       </MidHeader>
       <BodyTextContainer>
-        <BodyTitleText>Suraj Vijayan</BodyTitleText>
-        <SubBody key={language}>
+        <BodyTitleText>{homePageTranslations.fsd[+language]}</BodyTitleText>
+        <SubBody>
           <Content>
             <SubHeading>
               {homePageTranslations.student[+language]}
