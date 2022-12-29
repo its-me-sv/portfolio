@@ -37,7 +37,7 @@ const Menu: React.FC<MenuProps> = () => {
           ))}
           <MenuItem chosen={false}>
             <a
-              href="https://bit.ly/sv-resume-pdf"
+              href="https://bit.ly/resume-sv-pdf"
               target="_blank"
               rel="noreferrer"
             >
