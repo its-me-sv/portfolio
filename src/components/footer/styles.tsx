@@ -94,3 +94,10 @@ export const ThemeIcon = styled.div<{dark: boolean}>`
     ${props => props.dark && `filter: invert(100%);`}
   }
 `;
+
+export const Settings = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.14rem;
+`;
