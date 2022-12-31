@@ -7,8 +7,8 @@ interface StatContextInterface {
 }
 
 const defaultState: StatContextInterface = {
-  years: [2022],
-  currYear: 2022,
+  years: [2022, 2023],
+  currYear: new Date().getFullYear(),
 };
 
 export const StatContext = createContext<StatContextInterface>(defaultState);
