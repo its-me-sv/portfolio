@@ -146,7 +146,7 @@ export const OverviewImage = styled.img`
   height: auto;
   border-radius: 0.42rem;
   animation: ${FadeAnim1} 0.5s;
-  border: 2px solid ${props => props.theme.borderColor};
+  /* border: 2px solid ${props => props.theme.borderColor}; */
   /* mobile styles */
   @media only screen and (max-width: 768px) {
     max-width: 90vw;

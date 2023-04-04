@@ -5,17 +5,18 @@ export const lightTheme: DefaultTheme = {
   fontColor: '#1a1a1a',
   backgroundColor: '#f5f4f9',
   boxShadow: `
-    box-shadow: rgb(0 0 0 / 70%) 1px 1px 4.2px 1px;
-    background-color: #f5f4f9;
+    box-shadow: 0 0 20px #e2e8f0;
+    background-color: #ffffff;
     &:hover {
-      box-shadow: rgb(0 0 0 / 70%) 1px 1px 4.2px 1px inset;
+      box-shadow: 0 0 20px #e2e8f0 inset;
     }
   `,
   boxShadowNoHover: `
-    box-shadow: rgb(0 0 0 / 70%) 1px 1px 4.2px 1px;
+    box-shadow: 0 0 20px #e2e8f0;
+    background-color: #ffffff;
   `,
   boxShadowHover: `
-    box-shadow: rgb(0 0 0 / 70%) 1px 1px 4.2px 1px inset;
+    box-shadow: 0 0 20px #e2e8f0 inset;
   `,
   cmntsBgClr: '#e9e8ed',
   cmntBgClr: 'rgba(0, 0, 0, 0.1)',
