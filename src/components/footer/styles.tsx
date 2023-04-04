@@ -58,11 +58,13 @@ export const CreditText = styled.div<{ open: boolean }>`
 
 export const SelectLang = styled.select`
   border-radius: 0.14rem;
+  border: none;
   ${(props) => props.theme.boxShadow}
   z-index: 998;
   font-size: 1rem;
   font-family: ${props => props.theme.fontFamily};;
   background-color: ${(props) => props.theme.backgroundColor};
+  ${props => props.theme.boxShadow}
   color: ${(props) => props.theme.fontColor};
   animation: ${FadeAnim1} 1s;
   text-align: center;

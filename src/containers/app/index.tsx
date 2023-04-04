@@ -65,7 +65,7 @@ const App: React.FC<AppProps> = () => {
       clearTimeout(timer);
       setMenuOpen!(false);
     };
-  }, [menu]);
+  }, []);
 
   useEffect(() => {
     const pageName: string = Object.values(menuTranslations)[menu][+language];

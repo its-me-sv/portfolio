@@ -14,6 +14,7 @@ export interface ProjectStats {
 }
 
 export const projectsIds1: Array<string> = [
+  '900c92c0-d2da-11ed-b0a5-3183f48e9d68',
   '58421a90-6ed5-11ed-a643-f150f197dd10',
   '138c1b90-133f-11ed-8623-c5fec4062501',
   '50c8ca30-1349-11ed-8623-c5fec4062501',
@@ -22,10 +23,10 @@ export const projectsIds1: Array<string> = [
   '1f8e8480-164d-11ed-8623-c5fec4062501',
   'adadaeb0-140b-11ed-a8c8-6539cc663353',
   'd18fa1b0-1386-11ed-a8c8-6539cc663353',
-  '6d0eb580-1662-11ed-a3c3-d775c5e4f28b',
 ];
 
 export const projectsIds2: Array<string> = [
+  '6d0eb580-1662-11ed-a3c3-d775c5e4f28b',
   '05b4bb50-1662-11ed-a3c3-d775c5e4f28b',
   'e6686c90-1663-11ed-a3c3-d775c5e4f28b',
   '20299f20-1665-11ed-a3c3-d775c5e4f28b',
@@ -34,10 +35,10 @@ export const projectsIds2: Array<string> = [
   '67dfe450-140d-11ed-a8c8-6539cc663353',
   '3c165e80-134a-11ed-8623-c5fec4062501',
   'd529a510-1349-11ed-8623-c5fec4062501',
-  '8b74d1f0-134a-11ed-8623-c5fec4062501',
 ];
 
 export const projectsIds3: Array<string> = [
+  '8b74d1f0-134a-11ed-8623-c5fec4062501',
   'eec0bc20-1385-11ed-a8c8-6539cc663353',
   '0fa7ed70-1348-11ed-8623-c5fec4062501',
   'efd42690-1346-11ed-8623-c5fec4062501',
@@ -46,10 +47,10 @@ export const projectsIds3: Array<string> = [
   '7299c800-1347-11ed-8623-c5fec4062501',
   '4bf7ebb0-140e-11ed-a8c8-6539cc663353',
   '5a633570-1386-11ed-a8c8-6539cc663353',
-  '7985be40-1346-11ed-8623-c5fec4062501'
 ];
 
 export const projectsIds4: Array<string> = [
+  '7985be40-1346-11ed-8623-c5fec4062501',
   'c24ecf00-138b-11ed-a8c8-6539cc663353',
   'afd68330-133c-11ed-8623-c5fec4062501',
   'a9e97140-133b-11ed-8623-c5fec4062501',

@@ -15,6 +15,7 @@ import {
 import { InteractionIcon } from '../../utils/styles.util';
 import { HrzntlLn } from '../../utils/styles.util';
 import { projectsPageTranslations } from '../../utils/translations.util';
+import LoaderGif from '../../assets/loader.gif';
 
 import codeIcon from '../../assets/icons/code.png';
 import openIcon from '../../assets/icons/open.png';
@@ -192,72 +193,77 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
 
   return (
     <Card onMouseEnter={toggleActive} onMouseLeave={toggleActive}>
-      <CardTop dark={isDark}>
-        <span>{projectDetails?.title}</span>
-        <div>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={projectDetails?.src_code_link}
-            onClick={onCodeVisit}
-          >
-            <img src={codeIcon} alt="code" />
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={projectDetails?.demo_link}
-            onClick={onProjectLaunch}
-          >
-            <img src={openIcon} alt="open" />
-          </a>
-        </div>
-      </CardTop>
-      <Gallery>
+      {!fetched.current ? (
         <img
-          src={projectDetails?.gallery[currImage]}
-          alt={"image " + (currImage + 1 + "")}
+          src={LoaderGif}
+          alt="loading"
         />
-        <div>
-          {projectDetails?.gallery.slice(0, 5).map((val, idx) => (
-            <SliderItem
-              key={val}
-              selected={idx === currImage}
-              onClick={() => setCurrImage(idx)}
+      ) : (
+        <>
+          <CardTop dark={isDark}>
+            <span>{projectDetails?.title}</span>
+            <div>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={projectDetails?.src_code_link}
+                onClick={onCodeVisit}
+              >
+                <img src={codeIcon} alt="code" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={projectDetails?.demo_link}
+                onClick={onProjectLaunch}
+              >
+                <img src={openIcon} alt="open" />
+              </a>
+            </div>
+          </CardTop>
+          <Gallery>
+            <img
+              src={projectDetails?.gallery[currImage]}
+              alt={"image " + (currImage + 1 + "")}
             />
-          ))}
-        </div>
-      </Gallery>
-      <Description>{projectDetails?.description}</Description>
-      <HrzntlLn />
-      <TechStack key={language}>
-        {projectsPageTranslations.techStack[+language]}:{" "}
-        {projectDetails?.tech_stack.join(", ")}
-      </TechStack>
-      <HrzntlLn />
-      <CardBottom>
-        <div onClick={toggleLike}>
-          <LikeIcon 
-            disabled={likeDisabled} 
-            dark={isDark} 
-            liked={liked} 
-          />
-          <span>{stats?.likes !== "0" ? stats?.likes : ""}</span>
-        </div>
-        <div onClick={onCommentClick}>
-          <InteractionIcon dark={isDark} src={commentIcon} alt="comment" />
-          <span>{stats?.comments !== "0" ? stats?.comments : ""}</span>
-        </div>
-        <div onClick={onShare}>
-          <InteractionIcon
-            disabled={shareDisabled}
-            dark={isDark}
-            src={shareIcon}
-            alt="share"
-          />
-          <span>{stats?.shares !== "0" ? stats?.shares : ""}</span>
-        </div>
-      </CardBottom>
+            <div>
+              {projectDetails?.gallery.slice(0, 5).map((val, idx) => (
+                <SliderItem
+                  key={val}
+                  selected={idx === currImage}
+                  onClick={() => setCurrImage(idx)}
+                />
+              ))}
+            </div>
+          </Gallery>
+          <Description>{projectDetails?.description}</Description>
+          <HrzntlLn />
+          <TechStack key={language}>
+            {projectsPageTranslations.techStack[+language]}:{" "}
+            {projectDetails?.tech_stack.join(", ")}
+          </TechStack>
+          <HrzntlLn />
+          <CardBottom>
+            <div onClick={toggleLike}>
+              <LikeIcon disabled={likeDisabled} dark={isDark} liked={liked} />
+              <span>{stats?.likes !== "0" ? stats?.likes : ""}</span>
+            </div>
+            <div onClick={onCommentClick}>
+              <InteractionIcon dark={isDark} src={commentIcon} alt="comment" />
+              <span>{stats?.comments !== "0" ? stats?.comments : ""}</span>
+            </div>
+            <div onClick={onShare}>
+              <InteractionIcon
+                disabled={shareDisabled}
+                dark={isDark}
+                src={shareIcon}
+                alt="share"
+              />
+              <span>{stats?.shares !== "0" ? stats?.shares : ""}</span>
+            </div>
+          </CardBottom>
+        </>
+      )}
     </Card>
   );
 };
