@@ -56,15 +56,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
   const [projectDetails, setProjectDetails] = useState<Project>(defautProject);
   const [stats, setStats] = useState<ProjectStats|null>();
   const [liked, setLiked] = useState<boolean>(false);
-  const fetched = useRef<boolean>(false);
+  const [fetched, setFetched] = useState<boolean>(false);
   const [likeDisabled, setLikeDisabled] = useState<boolean>(false);
   const [shareDisabled, setShareDisabled] = useState<boolean>(false);
 
   useEffect(() => {
-    if (fetched.current) return;
+    if (fetched) return;
     if (!token) return;
     if (dataMapper[id]) {
       setProjectDetails(dataMapper[id]);
+      setFetched(true);
       return;
     }
     setLiked(likes.includes(id));
@@ -81,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
         {headers: {Authorization: `Bearer ${token}`}}
       ).then(({data: data1}) => {
         setStats(data1)
-        fetched.current = true;
+        setFetched(true);
       });
     });
   }, [token]);
@@ -193,7 +194,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({id}) => {
 
   return (
     <Card onMouseEnter={toggleActive} onMouseLeave={toggleActive}>
-      {!fetched.current ? (
+      {!fetched ? (
         <img
           src={LoaderGif}
           alt="loading"

@@ -24,7 +24,10 @@ const SearchBar: React.FC<SearchBarProps> = () => {
         value={searchField}
         onChange={handleChange}
       />
-      <CloseIcon dark={isDark} onClick={clearText} />
+      {
+        searchField.length > 0 
+        && <CloseIcon dark={isDark} onClick={clearText} />
+      }
     </SearchContainer>
   );
 };
