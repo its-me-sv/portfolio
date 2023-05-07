@@ -35,15 +35,6 @@ const Menu: React.FC<MenuProps> = () => {
               {page[+language]}
             </MenuItem>
           ))}
-          <MenuItem chosen={false}>
-            <a
-              href="https://bit.ly/resume-sv-pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {miscTranslations.resume[+language]}
-            </a>
-          </MenuItem>
         </>
       )}
       {isMobile && <Footer />}
