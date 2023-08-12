@@ -49,8 +49,10 @@ const App: React.FC<AppProps> = () => {
     });
     axios.get(`${API_URL}/api/validation/server`)
     .then(() => {
-      setLoad1(false);
-      celeberate();
+      setTimeout(() => {
+        setLoad1(false);
+        celeberate();
+      }, 2000);
     });
     return () => {
       clearTimeout(timer);
