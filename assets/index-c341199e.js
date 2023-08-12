@@ -1,4 +1,4 @@
-import{u as m,a as u,b as t,M as x,t as w,e as v,s as i,F as h,f as c,r as l,j as o,g as d,C as p,O as b,i as $,k as M,l as k,m as j,P as T,R as O,n as f}from"./index-4b7d6552.js";const B=()=>{const{language:e}=m(),{transMenu:n,setTransMenu:r}=u();return t(x,{children:Object.values(w).map((a,s)=>t(v,{onClick:()=>r(s),selected:s===n,children:a[+e]},a[+e]))})},E=i.div`
+import{u as m,a as u,b as t,M as x,t as w,e as v,s as i,F as h,f as c,r as l,j as o,g as d,C as p,O as b,i as $,k as M,l as k,m as j,P as T,R as O,n as f}from"./index-a0fe0577.js";const B=()=>{const{language:e}=m(),{transMenu:n,setTransMenu:r}=u();return t(x,{children:Object.values(w).map((a,s)=>t(v,{onClick:()=>r(s),selected:s===n,children:a[+e]},a[+e]))})},E=i.div`
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
