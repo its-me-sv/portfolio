@@ -16,5 +16,6 @@ export const achivementsIds: Array<string> = [
   '69ed3b70-1297-11ed-a3c3-d775c5e4f28b',
   '9d98c570-1297-11ed-a3c3-d775c5e4f28b',
   '21432350-306d-11ed-b356-5d17a02705fd',
-  '3b6bb400-d2d3-11ed-896c-3bdd1b6c2888'
+  '3b6bb400-d2d3-11ed-896c-3bdd1b6c2888',
+  '09ec88a0-5956-11ee-a8b5-c70f896cee53'
 ].reverse();
