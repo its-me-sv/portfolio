@@ -7,7 +7,7 @@ interface StatContextInterface {
 }
 
 const defaultState: StatContextInterface = {
-  years: [2022, 2023],
+  years: [2022, 2023, 2024],
   currYear: new Date().getFullYear(),
 };
 
@@ -15,13 +15,20 @@ export const StatContext = createContext<StatContextInterface>(defaultState);
 
 export const useStatContext = () => useContext(StatContext);
 
-export const StatContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
+export const StatContextProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [currYear, setCurrYear] = useState<number>(defaultState.currYear);
 
   return (
-    <StatContext.Provider value={{
-      years: defaultState.years,
-      currYear, setCurrYear
-    }}>{children}</StatContext.Provider>
+    <StatContext.Provider
+      value={{
+        years: defaultState.years,
+        currYear,
+        setCurrYear,
+      }}
+    >
+      {children}
+    </StatContext.Provider>
   );
 };
