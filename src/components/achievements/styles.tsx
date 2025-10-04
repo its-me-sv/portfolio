@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { FadeAnim1 } from "../../utils/styles.util";
-import clap from '../../assets/icons/clap.png';
-import clapUnfilled from '../../assets/icons/clap-unfilled.png';
 
 export const Card = styled.div`
   display: flex;
@@ -58,16 +56,4 @@ export const Interactions = styled.div`
       color: ${(props) => props.theme.fontColor};
     }
   }
-`;
-
-export const ClapIcon = styled.img.attrs((props: { liked: boolean }) => ({
-  src: props.liked ? clap : clapUnfilled,
-  alt: "clap",
-}))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
-  width: 1.6rem;
-  height: auto;
-  opacity: 0.9;
-  &:hover {opacity: 0.5;}
-  ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
-  ${props => props.disabled && `cursor: not-allowed;`}
 `;

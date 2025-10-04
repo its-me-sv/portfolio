@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import heart from "../../assets/icons/heart.png";
-import heartUnfilled from "../../assets/icons/heart-unfilled.png";
 import { FadeAnim1 } from '../../utils/styles.util';
 
 export const Card = styled.div`
@@ -31,17 +29,4 @@ export const Card = styled.div`
       color: ${(props) => props.theme.fontColor};
     }
   }
-`;
-
-export const HeartIcon = styled.img.attrs((props: { liked: boolean }) => ({
-  src: props.liked ? heart : heartUnfilled,
-  alt: "like",
-}))<{ dark: boolean; liked: boolean; disabled?: boolean }>`
-  width: 1.6rem;
-  height: auto;
-  &:hover {
-    opacity: 0.5;
-  }
-  ${props => (props.dark && !props.liked) && `filter: invert(100%);`}
-  ${props => props.disabled && `cursor: not-allowed;`}
 `;

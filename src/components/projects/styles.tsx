@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { FadeAnim1 } from '../../utils/styles.util';
-import likeIcon from '../../assets/icons/like.png';
-import likeIconUnfilled from '../../assets/icons/like-unfilled.png';
 
 export const Container = styled.div`
   padding: 1.4% 0%;
@@ -130,22 +128,6 @@ export const CardBottom = styled.div`
       color: ${(props) => props.theme.fontColor};
     }
   }
-`;
-
-export const LikeIcon = styled.img.attrs(
-  (props: { liked: boolean; disabled: boolean }) => ({
-    src: props.liked ? likeIcon : likeIconUnfilled,
-    alt: "like",
-  })
-)<{ dark: boolean; liked: boolean; disabled: boolean; }>`
-  width: 1.6rem;
-  height: auto;
-  opacity: 0.9;
-  &:hover {
-    opacity: 0.5;
-  }
-  ${(props) => props.dark && !props.liked && `filter: invert(100%);`}
-  ${(props) => props.disabled && `cursor: not-allowed;`}
 `;
 
 export const LoadMore = styled.span`

@@ -1,7 +1,7 @@
 import menuIcon from "../../assets/icons/menu.png";
 import closeIcon from "../../assets/icons/close.png";
 import { Container, MenuIcon, MenuItem } from './styles';
-import { menuTranslations, miscTranslations } from '../../utils/translations.util';
+import { menuTranslations } from '../../utils/translations.util';
 
 import Footer from '../footer';
 
