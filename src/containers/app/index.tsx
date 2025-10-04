@@ -1,25 +1,20 @@
-import { useEffect, lazy, Suspense, useState } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "styled-components";
 
 import { AppContainer } from "./styles";
-import { menuTranslations, toastTranslations } from "../../utils/translations.util";
+import { menuTranslations } from "../../utils/translations.util";
 import { toastOptions } from "../../utils/config.util";
 import { lightTheme, darkTheme } from "../../utils/themes.util";
 import { GlobalStyle } from "../../utils/styles.util";
-import { celeberate } from "../../utils/confetti.util";
 
 import Loader from "../../components/loader";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import Comments from "../../components/comments";
 
 import { useCommonContext } from "../../contexts/common.context";
 import { useMenuContext } from "../../contexts/menu.context";
-import { useCommentsContext } from '../../contexts/comments.context';
-import axios from "axios";
-import { API_URL } from "../../utils/constants.util";
 
 // pages
 const HomePage = lazy(() => import("../../pages/home"));
@@ -31,7 +26,6 @@ const ProjectsPage = lazy(() => import("../../pages/projects"));
 const AchievementsPage = lazy(() => import("../../pages/achievements"));
 const BlogsPage = lazy(() => import("../../pages/blog"));
 const QuotesPage = lazy(() => import("../../pages/quotes"));
-const StatsPage = lazy(() => import("../../pages/stats"));
 const ErrorPage = lazy(() => import("../../pages/error404"));
 
 interface AppProps {}
@@ -39,26 +33,6 @@ interface AppProps {}
 const App: React.FC<AppProps> = () => {
   const { loading, setLoading, language, isDark, isMobile } = useCommonContext();
   const { setMenuOpen, menu } = useMenuContext();
-  const { section } = useCommentsContext();
-  const [load1, setLoad1] = useState<boolean>(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setMenuOpen!(true), 4000);
-    const timer1 = setTimeout(() => {
-      toast(toastTranslations.fstInf[+language], {duration: 3000});
-    });
-    axios.get(`${API_URL}/api/validation/server`)
-    .then(() => {
-      setTimeout(() => {
-        setLoad1(false);
-        celeberate();
-      }, 2000);
-    });
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(timer1);
-    };
-  }, []);
   
   useEffect(() => {
     setLoading!(true);
@@ -81,9 +55,7 @@ const App: React.FC<AppProps> = () => {
       <GlobalStyle />
       <AppContainer>
         <Toaster position="top-right" toastOptions={toastOptions(isDark)} />
-        {load1 && <Loader initial={true} />}
         {loading && <Loader />}
-        {section && <Comments />}
         <Header />
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -96,7 +68,6 @@ const App: React.FC<AppProps> = () => {
             <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/quotes" element={<QuotesPage />} />
-            <Route path="/stats" element={<StatsPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>

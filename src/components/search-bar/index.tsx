@@ -3,13 +3,14 @@ import { CloseIcon, SearchContainer, SearchIcon, SearchInput } from './styles';
 import { projectsPageTranslations } from '../../utils/translations.util';
 
 import { useCommonContext } from '../../contexts/common.context';
-import { useProjectContext } from '../../contexts/project.context';
 
-interface SearchBarProps {}
+interface SearchBarProps {
+  searchField: string;
+  setSearchField: React.Dispatch<React.SetStateAction<string>>
+}
 
-const SearchBar: React.FC<SearchBarProps> = () => {
+const SearchBar: React.FC<SearchBarProps> = ({ searchField, setSearchField }) => {
   const { isDark, language } = useCommonContext();
-  const { searchField, setSearchField } = useProjectContext();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(event =>
     setSearchField!(event.target.value), []);

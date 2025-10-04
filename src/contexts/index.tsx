@@ -1,22 +1,14 @@
 import { CommonContextProvider } from "./common.context";
 import { MenuContextProvider } from "./menu.context";
 import { TranscriptContextProvider } from "./transcript.context";
-import { ProjectContextProvider } from "./project.context";
 import { AchievementContextProvider } from "./achievement.context";
-import { StatContextProvider } from "./stat.context";
-import { CommentsContextProvider } from "./comments.context";
-import { UserContextProvider } from "./user.context";
 import React from "react";
 
 const providers: Array<React.FC<{children: React.ReactNode}>> = [
-  UserContextProvider,
   CommonContextProvider,
   MenuContextProvider,
   TranscriptContextProvider,
-  ProjectContextProvider,
   AchievementContextProvider,
-  StatContextProvider,
-  CommentsContextProvider,
 ];
 
 interface RootContextProps {

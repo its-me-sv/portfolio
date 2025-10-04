@@ -1,39 +1,18 @@
-import { useCallback, useRef } from 'react';
-import { Container, LoadMore } from './styles';
-import { projectsPageTranslations } from "../../utils/translations.util";
+import { Container } from "./styles";
 
-import ProjectCard from './project-card.component';
-import { useProjectContext } from '../../contexts/project.context';
-import { useCommonContext } from "../../contexts/common.context";
-import { filteredProjects } from '../../utils/projects.util';
+import ProjectCard from "./project-card.component";
+import { PROJECTS } from "../../data/projects.data";
 
-interface ProjectsProps {}
+interface ProjectsProps {
+  searchField: string;
+}
 
-const Projects: React.FC<ProjectsProps> = () => {
-  const { language } = useCommonContext();
-  const { projectIds, fetchProjects, currPage, searchField, dataMapper } = useProjectContext();
-
-  const scrollRef = useRef<HTMLDivElement>() as React.RefObject<HTMLDivElement>;
-
-  const onScroll = useCallback(() => {
-    if (!scrollRef.current) return;
-    if (searchField.length > 0) return;
-    const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-    if ((scrollTop + clientHeight) >= scrollHeight)
-    fetchProjects!();
-  }, [fetchProjects, searchField.length]);
-
+const Projects: React.FC<ProjectsProps> = ({ searchField }) => {
   return (
-    <Container ref={scrollRef} onScroll={onScroll}>
-      {projectIds.filter(projId => filteredProjects(dataMapper, projId, searchField))
-      .map(projectId => (
-        <ProjectCard key={projectId} id={projectId} />
+    <Container>
+      {PROJECTS.filter((project) => project.title.toLowerCase().includes(searchField) || project.description.toLowerCase().includes(searchField) || project.tech_stack.some((tech) => tech.toLowerCase().includes(searchField))).map((project) => (
+        <ProjectCard key={project.id} project={project} />
       ))}
-      {(currPage !== null && searchField.length === 0) && (
-        <LoadMore onClick={fetchProjects}>
-          {projectsPageTranslations.ldPrj[+language]}
-        </LoadMore>
-      )}
     </Container>
   );
 };
