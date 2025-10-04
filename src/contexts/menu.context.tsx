@@ -28,7 +28,6 @@ const urls: Array<string> = [
   "achievements",
   "blogs",
   "quotes",
-  "stats",
 ];
 
 const transcriptUrls: Array<string> = [
