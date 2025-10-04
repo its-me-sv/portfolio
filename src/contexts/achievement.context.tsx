@@ -1,14 +1,12 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { Achievement, achivementsIds } from "../data/achievements.data";
+import { Achievement } from "../data/achievements.data";
 
 interface AchievementContextInterface {
-  achievements: Array<string>;
   currAchievement: null|Achievement;
   setCurrAchievement?: (val: null|Achievement) => void;
 }
 
 const defaultState: AchievementContextInterface = {
-  achievements: achivementsIds,
   currAchievement: null,
 };
 
@@ -23,7 +21,6 @@ export const AchievementContextProvider: React.FC<{children: ReactNode}> = ({chi
 
   return (
     <AchievementContext.Provider value={{
-      achievements: defaultState.achievements,
       currAchievement, setCurrAchievement
     }}>{children}</AchievementContext.Provider>
   );
