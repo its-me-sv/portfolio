@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'core-sans-g';
-  src: local('core-sans-g'), url(./assets/fonts/core-sans-g.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'signature';
-  src: local('signature'), url(./assets/fonts/signature.ttf) format('truetype');
-}

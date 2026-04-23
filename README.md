@@ -1,6 +1,0 @@
-## Portfolio
-### This is my full stack portfolio site. Check it out here - [surajvijayan.me](https://surajvijayan.me/)
-### ✨ Features:
-#### 1. Supports light theme and dark theme (defaults to user's prefered theme)
-#### 2. Switch between multiple languages including English, Spanish, German, Japanese, and Arabic (defaults to English)
-#### 3. Deleting posted comments
