@@ -1,0 +1,1 @@
+type LanguageCode = "en" | "es" | "nl" | "zh" | "ta" | "ar";
