@@ -7,5 +7,11 @@
     "language": "语言",
     "density": "密度",
     "texture": "质地"
+  },
+  "header": {
+    "left-issue": "卷。一·第01期",
+    "center-sub-title": "两列的投资组合",
+    "right-location": "印度钦奈",
+    "right-location-subtitle": "开放搬迁"
   }
 }

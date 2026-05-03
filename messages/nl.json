@@ -7,5 +7,11 @@
     "language": "Taal",
     "density": "Dikte",
     "texture": "Textuur"
+  },
+  "header": {
+    "left-issue": "Vol. I · Nummer 01",
+    "center-sub-title": "Een portefeuille in twee kolommen",
+    "right-location": "Chennai, India",
+    "right-location-subtitle": "Open voor verhuizing"
   }
 }

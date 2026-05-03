@@ -7,5 +7,11 @@
     "language": "لغة",
     "density": "كثافة",
     "texture": "نَسِيج"
+  },
+  "header": {
+    "left-issue": "المجلد.\nأنا · العدد 01",
+    "center-sub-title": "محفظة في عمودين",
+    "right-location": "تشيناي، الهند",
+    "right-location-subtitle": "مفتوح للترحيل"
   }
 }

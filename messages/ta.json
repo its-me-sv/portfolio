@@ -7,5 +7,11 @@
     "language": "மொழி",
     "density": "அடர்த்தி",
     "texture": "அமைப்பு"
+  },
+  "header": {
+    "left-issue": "தொகுதி. I · வெளியீடு 01",
+    "center-sub-title": "இரண்டு நெடுவரிசைகளில் ஒரு போர்ட்ஃபோலியோ",
+    "right-location": "சென்னை, இந்தியா",
+    "right-location-subtitle": "இடமாற்றத்திற்கு திறந்திருக்கும்"
   }
 }

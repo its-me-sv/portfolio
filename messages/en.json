@@ -7,5 +7,11 @@
     "language": "Language",
     "density": "Density",
     "texture": "Texture"
+  },
+  "header": {
+    "left-issue": "Vol. I · Issue 01",
+    "center-sub-title": "A Portfolio in Two Columns",
+    "right-location": "Chennai, India",
+    "right-location-subtitle": "Open to relocation"
   }
 }

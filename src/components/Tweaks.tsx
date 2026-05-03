@@ -89,8 +89,8 @@ const Tweaks: React.FC<TweaksProps> = ({
   return (
     <div
       className={cn(
-        "fixed bottom-4 right-4 w-64 bg-(--paper-2) border border-(--rule) shadow-[4px_4px_0_var(--rule)] z-90 font-mono text-[11px] transition-transform duration-240 translate-y-5 opacity-0 pointer-events-none",
-        open && "transform-none opacity-[1] pointer-events-auto",
+        "fixed bottom-4 right-4 w-64 bg-(--paper-2) border border-(--rule) shadow-[4px_4px_0_var(--rule)] z-90 font-mono text-[11px] transition-[transform,opacity] duration-240 translate-y-5 opacity-0 pointer-events-none",
+        open && "transform-none translate-none opacity-[1] pointer-events-auto",
       )}
     >
       {/* header */}

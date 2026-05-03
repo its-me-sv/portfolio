@@ -19,10 +19,12 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
   // server actions
+  const messages = await getMessages();
+
+  // cookies
   const theme = (await getCookie<App.Theme>(COOKIES_NAMES.theme)) ?? "sepia";
   const font = (await getCookie<App.Font>(COOKIES_NAMES.font)) ?? "editorial";
   const locale = ((await getLocale()) ?? "en") as App.LanguageCode;
-  const messages = await getMessages();
   const density =
     (await getCookie<App.Density>(COOKIES_NAMES.density)) ?? "airy";
   const texture = (await getCookie<App.Texture>(COOKIES_NAMES.texture)) ?? "on";
