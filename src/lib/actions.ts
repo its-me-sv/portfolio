@@ -3,19 +3,21 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-// custom
-import { COOKIES_NAMES } from "@/data/app";
-
 // navigating on client side using
 // server side redirect
 export const navigate = async (path: string) => redirect(path);
 
-// getting locale per user from their cookies
-export const getUserLocale = async () => {
-  return (await cookies()).get(COOKIES_NAMES.language)?.value || "en";
+// reading a cookie value by name
+export const getCookie = async <T extends string = string>(
+  name: string,
+): Promise<T | undefined> => {
+  return (await cookies()).get(name)?.value as T | undefined;
 };
 
-// setting user locale on to their device cookies
-export const setUserLocale = async (locale: LanguageCode) => {
-  (await cookies()).set(COOKIES_NAMES.language, locale);
+// writing a cookie value by name
+export const setCookie = async <T extends string = string>(
+  name: string,
+  value: T,
+) => {
+  (await cookies()).set(name, value);
 };

@@ -1,5 +1,5 @@
 const HomePage: React.FC = () => {
-  return <></>;
+  return <><span>Hello world!</span></>;
 };
 
 export default HomePage;

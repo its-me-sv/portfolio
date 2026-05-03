@@ -1,11 +1,12 @@
 import deepmerge from "deepmerge";
 
 // custom
-import { getUserLocale } from "@/lib/actions";
+import { getCookie } from "@/lib/actions";
+import { COOKIES_NAMES } from "@/data/app";
 
 const getRequestConfig = async () => {
   // actions
-  const locale = await getUserLocale();
+  const locale = (await getCookie<App.LanguageCode>(COOKIES_NAMES.language)) ?? "en";
 
   // local variables
   const localeMessages = (await import(`../../messages/${locale}.json`))
