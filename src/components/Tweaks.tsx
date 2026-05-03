@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 // custom
 import { cn } from "@/lib/utils";
 import { setCookie } from "@/lib/actions";
-import { COOKIES_NAMES, THEMES } from "@/data/app";
-import { FONT_PAIRINGS, FONT_PAIRS, LOCALES } from "@/data/components";
+import { COOKIES_NAMES } from "@/data/app";
+import { DENSITY, FONT_PAIRINGS, FONT_PAIRS, LOCALES, THEMES } from "@/data/components";
 
 const Tweaks: React.FC<TweaksProps> = ({
   font: initialFont,
   theme: initialTheme,
   locale: initialLocale,
+  density: initialDensity,
 }) => {
   // hooks
   const t = useTranslations("tweaks");
@@ -22,6 +23,13 @@ const Tweaks: React.FC<TweaksProps> = ({
   const [font, setFont] = useState<App.Font>(initialFont);
   const [theme, setTheme] = useState<App.Theme>(initialTheme);
   const [locale, setLocale] = useState<App.LanguageCode>(initialLocale);
+  const [density, setDensity] = useState<App.Density>(initialDensity);
+
+  // update theme
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    setCookie(COOKIES_NAMES.theme, theme);
+  }, [theme]);
 
   // update fonts
   useEffect(() => {
@@ -34,12 +42,6 @@ const Tweaks: React.FC<TweaksProps> = ({
     setCookie(COOKIES_NAMES.font, font);
   }, [font]);
 
-  // update theme
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    setCookie(COOKIES_NAMES.theme, theme);
-  }, [theme]);
-
   // update locale
   useEffect(() => {
     document.documentElement.setAttribute("lang", locale);
@@ -49,6 +51,13 @@ const Tweaks: React.FC<TweaksProps> = ({
     );
     setCookie(COOKIES_NAMES.language, locale);
   }, [locale]);
+
+  // update density
+  useEffect(() => {
+    const html = document.documentElement;
+    html.style.setProperty("--density", density === "compact" ? "0.7" : "1");
+    setCookie(COOKIES_NAMES.density, density);
+  }, [density]);
 
   if (!open) {
     return (
@@ -83,11 +92,11 @@ const Tweaks: React.FC<TweaksProps> = ({
           <div className="flex flex-wrap gap-1">
             {THEMES.map((th) => (
               <TweakOption
-                key={th}
-                value={th}
-                label={th}
+                key={th.code}
+                value={th.code}
+                label={th.label}
                 setValue={setTheme}
-                isActive={th === theme}
+                isActive={th.code === theme}
               />
             ))}
           </div>
@@ -122,6 +131,21 @@ const Tweaks: React.FC<TweaksProps> = ({
             ))}
           </div>
         </div>
+        {/* density */}
+        <div className="grid gap-1">
+          <TweakTitle title={t("density")} />
+          <div className="flex flex-wrap gap-1">
+            {DENSITY.map((d) => (
+              <TweakOption
+                key={d.code}
+                value={d.code}
+                label={d.label}
+                setValue={setDensity}
+                isActive={d.code === density}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -133,6 +157,7 @@ interface TweaksProps {
   font: App.Font;
   theme: App.Theme;
   locale: App.LanguageCode;
+  density: App.Density;
 }
 
 const TweakTitle: React.FC<TweakTitleProps> = ({ title }) => (

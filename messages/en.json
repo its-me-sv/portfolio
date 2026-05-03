@@ -4,6 +4,7 @@
     "title": "Tweaks",
     "theme": "Theme",
     "type-pairing": "Type Pairing",
-    "language": "Language"
+    "language": "Language",
+    "density": "Density"
   }
 }

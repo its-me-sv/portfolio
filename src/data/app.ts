@@ -6,6 +6,5 @@ export const COOKIES_NAMES = {
   language: `${APP_NAME}:languageCode`,
   font: `${APP_NAME}:font`,
   theme: `${APP_NAME}:theme`,
+  density: `${APP_NAME}:density`,
 };
-
-export const THEMES: App.Theme[] = ["light", "sepia", "dark"] as const;

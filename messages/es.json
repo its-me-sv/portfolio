@@ -4,6 +4,7 @@
     "title": "Ajustes",
     "theme": "Tema",
     "type-pairing": "Tipo de emparejamiento",
-    "language": "Idioma"
+    "language": "Idioma",
+    "density": "Densidad"
   }
 }

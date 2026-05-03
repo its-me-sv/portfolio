@@ -4,6 +4,7 @@
     "title": "القرص",
     "theme": "سمة",
     "type-pairing": "نوع الاقتران",
-    "language": "لغة"
+    "language": "لغة",
+    "density": "كثافة"
   }
 }

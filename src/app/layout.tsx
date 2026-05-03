@@ -19,10 +19,11 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
   // server actions
-  const locale = await getLocale() as App.LanguageCode;
-  const messages = await getMessages();
-  const font = (await getCookie<App.Font>(COOKIES_NAMES.font)) ?? "editorial";
   const theme = (await getCookie<App.Theme>(COOKIES_NAMES.theme)) ?? "sepia";
+  const font = (await getCookie<App.Font>(COOKIES_NAMES.font)) ?? "editorial";
+  const locale = (await getLocale() ?? "en") as App.LanguageCode;
+  const messages = await getMessages();
+  const density = (await getCookie<App.Density>(COOKIES_NAMES.density)) ?? "airy";
 
   return (
     <html
@@ -38,7 +39,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
           <Highlighter />
           <Watermark />
           {children}
-          <Tweaks {...{font, theme, locale}} />
+          <Tweaks {...{font, theme, locale, density}} />
         </NextIntlClientProvider>
       </body>
     </html>
