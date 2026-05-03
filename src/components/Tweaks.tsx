@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { setCookie } from "@/lib/actions";
 import { COOKIES_NAMES, THEMES } from "@/data/app";
-import { FONT_PAIRINGS, FONT_PAIRS } from "@/data/components";
+import { FONT_PAIRINGS, FONT_PAIRS, LOCALES } from "@/data/components";
 
-const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme }) => {
+const Tweaks: React.FC<TweaksProps> = ({
+  font: initialFont,
+  theme: initialTheme,
+  locale: initialLocale,
+}) => {
   // hooks
   const t = useTranslations("tweaks");
 
@@ -17,6 +21,7 @@ const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme 
   const [open, setOpen] = useState(true);
   const [font, setFont] = useState<App.Font>(initialFont);
   const [theme, setTheme] = useState<App.Theme>(initialTheme);
+  const [locale, setLocale] = useState<App.LanguageCode>(initialLocale);
 
   // update fonts
   useEffect(() => {
@@ -34,6 +39,16 @@ const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme 
     document.documentElement.setAttribute("data-theme", theme);
     setCookie(COOKIES_NAMES.theme, theme);
   }, [theme]);
+
+  // update locale
+  useEffect(() => {
+    document.documentElement.setAttribute("lang", locale);
+    document.documentElement.setAttribute(
+      "dir",
+      LOCALES.find((l) => l.code === locale)?.dir ?? "ltr",
+    );
+    setCookie(COOKIES_NAMES.language, locale);
+  }, [locale]);
 
   if (!open) {
     return (
@@ -57,7 +72,7 @@ const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme 
       <div className="py-2 px-3 border-b border-(--rule) flex justify-between items-center tracking-[0.18em] uppercase text-[10px]">
         <span>{t("title")}</span>
         <span className="cursor-pointer" onClick={() => setOpen(false)}>
-          ×
+          X
         </span>
       </div>
       {/* tweaks */}
@@ -71,7 +86,7 @@ const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme 
                 key={th}
                 value={th}
                 label={th}
-                setValue={(v) => setTheme(v as App.Theme)}
+                setValue={setTheme}
                 isActive={th === theme}
               />
             ))}
@@ -86,8 +101,23 @@ const Tweaks: React.FC<TweaksProps> = ({ font: initialFont, theme: initialTheme 
                 key={value}
                 value={value}
                 label={label}
-                setValue={(v) => setFont(v as App.Font)}
+                setValue={setFont}
                 isActive={value === font}
+              />
+            ))}
+          </div>
+        </div>
+        {/* language */}
+        <div className="grid gap-1">
+          <TweakTitle title={t("language")} />
+          <div className="flex flex-wrap gap-1">
+            {LOCALES.map((l) => (
+              <TweakOption
+                key={l.code}
+                value={l.code}
+                label={l.name}
+                isActive={l.code === locale}
+                setValue={setLocale}
               />
             ))}
           </div>
@@ -102,6 +132,7 @@ export default Tweaks;
 interface TweaksProps {
   font: App.Font;
   theme: App.Theme;
+  locale: App.LanguageCode;
 }
 
 const TweakTitle: React.FC<TweakTitleProps> = ({ title }) => (
@@ -114,12 +145,12 @@ interface TweakTitleProps {
   title: string;
 }
 
-const TweakOption: React.FC<TweakOptionProps> = ({
+const TweakOption = <T,>({
   value,
   label,
   setValue,
   isActive,
-}) => (
+}: TweakOptionProps<T>) => (
   <button
     className={cn(
       "py-0.75 px-2 border border-(--rule-soft) bg-transparent color-(--ink-2) font-mono text-[10px] cursor-pointer tracking-[0.04em]",
@@ -131,9 +162,9 @@ const TweakOption: React.FC<TweakOptionProps> = ({
   </button>
 );
 
-interface TweakOptionProps {
-  value: string;
+interface TweakOptionProps<T> {
+  value: T;
   label: string;
-  setValue: (value: string) => void;
+  setValue: ((value: T) => void) | React.Dispatch<React.SetStateAction<T>>;
   isActive: boolean;
 }

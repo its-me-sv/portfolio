@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
+
+import type { Metadata } from "next";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+
+// custom
 import Highlighter from "@/components/Highlighter";
 import Watermark from "@/components/Watermark";
 import fonts from "@/lib/fonts";
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
   // server actions
-  const locale = await getLocale();
+  const locale = await getLocale() as App.LanguageCode;
   const messages = await getMessages();
   const font = (await getCookie<App.Font>(COOKIES_NAMES.font)) ?? "editorial";
   const theme = (await getCookie<App.Theme>(COOKIES_NAMES.theme)) ?? "sepia";
@@ -35,7 +38,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
           <Highlighter />
           <Watermark />
           {children}
-          <Tweaks font={font} theme={theme} />
+          <Tweaks {...{font, theme, locale}} />
         </NextIntlClientProvider>
       </body>
     </html>
