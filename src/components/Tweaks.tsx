@@ -7,13 +7,21 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { setCookie } from "@/lib/actions";
 import { COOKIES_NAMES } from "@/data/app";
-import { DENSITY, FONT_PAIRINGS, FONT_PAIRS, LOCALES, THEMES } from "@/data/components";
+import {
+  DENSITY,
+  FONT_PAIRINGS,
+  FONT_PAIRS,
+  LOCALES,
+  TEXTURE,
+  THEMES,
+} from "@/data/components";
 
 const Tweaks: React.FC<TweaksProps> = ({
   font: initialFont,
   theme: initialTheme,
   locale: initialLocale,
   density: initialDensity,
+  texture: initialTexture,
 }) => {
   // hooks
   const t = useTranslations("tweaks");
@@ -24,6 +32,7 @@ const Tweaks: React.FC<TweaksProps> = ({
   const [theme, setTheme] = useState<App.Theme>(initialTheme);
   const [locale, setLocale] = useState<App.LanguageCode>(initialLocale);
   const [density, setDensity] = useState<App.Density>(initialDensity);
+  const [texture, setTexture] = useState<App.Texture>(initialTexture);
 
   // update theme
   useEffect(() => {
@@ -58,6 +67,13 @@ const Tweaks: React.FC<TweaksProps> = ({
     html.style.setProperty("--density", density === "compact" ? "0.7" : "1");
     setCookie(COOKIES_NAMES.density, density);
   }, [density]);
+
+  // update texture
+  useEffect(() => {
+    const html = document.documentElement;
+    html.setAttribute("data-texture", texture);
+    setCookie(COOKIES_NAMES.texture, texture);
+  }, [texture]);
 
   if (!open) {
     return (
@@ -146,6 +162,21 @@ const Tweaks: React.FC<TweaksProps> = ({
             ))}
           </div>
         </div>
+        {/* texture */}
+        <div className="grid gap-1">
+          <TweakTitle title={t("texture")} />
+          <div className="flex flex-wrap gap-1">
+            {TEXTURE.map((t) => (
+              <TweakOption
+                key={t.code}
+                value={t.code}
+                label={t.label}
+                setValue={setTexture}
+                isActive={t.code === texture}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -158,6 +189,7 @@ interface TweaksProps {
   theme: App.Theme;
   locale: App.LanguageCode;
   density: App.Density;
+  texture: App.Texture;
 }
 
 const TweakTitle: React.FC<TweakTitleProps> = ({ title }) => (

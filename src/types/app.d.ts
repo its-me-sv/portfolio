@@ -7,5 +7,6 @@ declare global {
     type LanguageCode = "en" | "es" | "nl" | "zh" | "ta" | "ar";
     type Language = { code: LanguageCode; name: string; dir: "ltr" | "rtl" };
     type Density = "airy" | "compact";
+    type Texture = "on" | "off";
   }
 }

@@ -21,14 +21,16 @@ const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
   // server actions
   const theme = (await getCookie<App.Theme>(COOKIES_NAMES.theme)) ?? "sepia";
   const font = (await getCookie<App.Font>(COOKIES_NAMES.font)) ?? "editorial";
-  const locale = (await getLocale() ?? "en") as App.LanguageCode;
+  const locale = ((await getLocale()) ?? "en") as App.LanguageCode;
   const messages = await getMessages();
-  const density = (await getCookie<App.Density>(COOKIES_NAMES.density)) ?? "airy";
+  const density =
+    (await getCookie<App.Density>(COOKIES_NAMES.density)) ?? "airy";
+  const texture = (await getCookie<App.Texture>(COOKIES_NAMES.texture)) ?? "on";
 
   return (
     <html
       lang={locale}
-      data-texture="on"
+      data-texture={texture}
       data-font={font}
       data-theme={theme}
       className={`${fonts.newsreader.variable} ${fonts.newsreaderItalic.variable} ${fonts.interTight.variable} ${fonts.jetbrainsMono.variable} ${fonts.cormorant.variable} ${fonts.spaceGrotesk.variable} antialiased`}
@@ -39,7 +41,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = async ({ children }) => {
           <Highlighter />
           <Watermark />
           {children}
-          <Tweaks {...{font, theme, locale, density}} />
+          <Tweaks {...{ font, theme, locale, density, texture }} />
         </NextIntlClientProvider>
       </body>
     </html>

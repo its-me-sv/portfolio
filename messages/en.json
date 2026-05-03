@@ -5,6 +5,7 @@
     "theme": "Theme",
     "type-pairing": "Type Pairing",
     "language": "Language",
-    "density": "Density"
+    "density": "Density",
+    "texture": "Texture"
   }
 }

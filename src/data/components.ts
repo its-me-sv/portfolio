@@ -19,3 +19,5 @@ export const LOCALES: App.Language[] = [
 ];
 
 export const DENSITY: { code: App.Density, label: string }[] = [{ code: "airy", label: "Airy" }, { code: "compact", label: "Compact" }];
+
+export const TEXTURE: { code: App.Texture, label: string }[] = [{ code: "on", label: "On" }, { code: "off", label: "Off" }];

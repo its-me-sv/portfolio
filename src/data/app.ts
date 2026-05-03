@@ -7,4 +7,5 @@ export const COOKIES_NAMES = {
   font: `${APP_NAME}:font`,
   theme: `${APP_NAME}:theme`,
   density: `${APP_NAME}:density`,
+  texture: `${APP_NAME}:texture`,
 };
