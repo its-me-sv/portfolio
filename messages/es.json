@@ -6,7 +6,14 @@
     "type-pairing": "Tipo de emparejamiento",
     "language": "Idioma",
     "density": "Densidad",
-    "texture": "Textura"
+    "texture": "Textura",
+    "on": "En",
+    "off": "Apagado",
+    "airy": "Aireado",
+    "compact": "Compacto",
+    "light": "Luz",
+    "dark": "Oscuro",
+    "sepia": "Sepia"
   },
   "header": {
     "left-issue": "vol. I · Número 01",

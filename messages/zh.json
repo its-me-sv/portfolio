@@ -6,7 +6,14 @@
     "type-pairing": "类型配对",
     "language": "语言",
     "density": "密度",
-    "texture": "质地"
+    "texture": "质地",
+    "on": "在",
+    "off": "离开",
+    "airy": "艾里",
+    "compact": "袖珍的",
+    "light": "光",
+    "dark": "黑暗的",
+    "sepia": "棕褐色"
   },
   "header": {
     "left-issue": "卷。一·第01期",

@@ -6,7 +6,14 @@
     "type-pairing": "Typ Koppelen",
     "language": "Taal",
     "density": "Dikte",
-    "texture": "Textuur"
+    "texture": "Textuur",
+    "on": "Op",
+    "off": "Uit",
+    "airy": "Luchtig",
+    "compact": "Compact",
+    "light": "Licht",
+    "dark": "Donker",
+    "sepia": "Sepia"
   },
   "header": {
     "left-issue": "Vol. I · Nummer 01",

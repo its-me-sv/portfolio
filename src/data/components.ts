@@ -1,36 +1,36 @@
-export const THEMES: { code: App.Theme, label: string }[] = [
-    { code: "light", label: "Light" }, 
-    { code: "dark", label: "Dark" }, 
-    { code: "sepia", label: "Sepia" }
+export const THEMES: App.Theme[] = [
+    "light",
+    "dark",
+    "sepia",
 ];
 
 export const FONT_PAIRINGS: [App.Font, string][] = [
-    ["editorial", "Editorial"], 
-    ["classical", "Classical"], 
-    ["brutal", "Brutal"], 
+    ["editorial", "Editorial"],
+    ["classical", "Classical"],
+    ["brutal", "Brutal"],
     ["mono", "Mono"]
 ];
 
 export const FONT_PAIRS: Record<App.Font, { serif: string; sans: string; mono: string }> = {
-    editorial: { 
-        serif: 'var(--font-newsreader), "Source Serif 4", Georgia, serif', 
-        sans: 'var(--font-inter-tight), system-ui, sans-serif', 
-        mono: 'var(--font-jetbrains-mono), ui-monospace, monospace' 
+    editorial: {
+        serif: 'var(--font-newsreader), "Source Serif 4", Georgia, serif',
+        sans: 'var(--font-inter-tight), system-ui, sans-serif',
+        mono: 'var(--font-jetbrains-mono), ui-monospace, monospace'
     },
-    classical: { 
-        serif: 'var(--font-cormorant), Georgia, serif', 
-        sans: 'var(--font-inter-tight), system-ui, sans-serif', 
-        mono: 'var(--font-jetbrains-mono), ui-monospace, monospace' 
+    classical: {
+        serif: 'var(--font-cormorant), Georgia, serif',
+        sans: 'var(--font-inter-tight), system-ui, sans-serif',
+        mono: 'var(--font-jetbrains-mono), ui-monospace, monospace'
     },
-    brutal: { 
-        serif: 'var(--font-newsreader), Georgia, serif', 
-        sans: 'var(--font-space-grotesk), system-ui, sans-serif', 
-        mono: 'var(--font-jetbrains-mono), monospace' 
+    brutal: {
+        serif: 'var(--font-newsreader), Georgia, serif',
+        sans: 'var(--font-space-grotesk), system-ui, sans-serif',
+        mono: 'var(--font-jetbrains-mono), monospace'
     },
-    mono: { 
-        serif: 'var(--font-jetbrains-mono), monospace', 
-        sans: 'var(--font-jetbrains-mono), monospace', 
-        mono: 'var(--font-jetbrains-mono), monospace' 
+    mono: {
+        serif: 'var(--font-jetbrains-mono), monospace',
+        sans: 'var(--font-jetbrains-mono), monospace',
+        mono: 'var(--font-jetbrains-mono), monospace'
     },
 };
 
@@ -43,12 +43,6 @@ export const LOCALES: App.Language[] = [
     { code: "ar", name: "العربية", dir: "rtl" },
 ];
 
-export const DENSITY: { code: App.Density, label: string }[] = [
-    { code: "airy", label: "Airy" }, 
-    { code: "compact", label: "Compact" }
-];
+export const DENSITY: App.Density[] = ["airy", "compact"];
 
-export const TEXTURE: { code: App.Texture, label: string }[] = [
-    { code: "on", label: "On" }, 
-    { code: "off", label: "Off" }
-];
+export const TEXTURE: App.Texture[] = ["on", "off"];

@@ -6,7 +6,14 @@
     "type-pairing": "Type Pairing",
     "language": "Language",
     "density": "Density",
-    "texture": "Texture"
+    "texture": "Texture",
+    "on": "On",
+    "off": "Off",
+    "airy": "Airy",
+    "compact": "Compact",
+    "light": "Light",
+    "dark": "Dark",
+    "sepia": "Sepia"
   },
   "header": {
     "left-issue": "Vol. I · Issue 01",

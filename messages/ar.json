@@ -6,7 +6,14 @@
     "type-pairing": "نوع الاقتران",
     "language": "لغة",
     "density": "كثافة",
-    "texture": "نَسِيج"
+    "texture": "نَسِيج",
+    "on": "على",
+    "off": "عن",
+    "airy": "متجدد الهواء",
+    "compact": "مدمج",
+    "light": "ضوء",
+    "dark": "مظلم",
+    "sepia": "بني داكن"
   },
   "header": {
     "left-issue": "المجلد.\nأنا · العدد 01",

@@ -102,11 +102,11 @@ const Tweaks: React.FC<TweaksProps> = ({
           <div className="flex flex-wrap gap-1">
             {THEMES.map((th) => (
               <TweakOption
-                key={th.code}
-                value={th.code}
-                label={th.label}
+                key={th}
+                value={th}
+                label={t(th)}
                 setValue={setTheme}
-                isActive={th.code === theme}
+                isActive={th === theme}
               />
             ))}
           </div>
@@ -147,11 +147,11 @@ const Tweaks: React.FC<TweaksProps> = ({
           <div className="flex flex-wrap gap-1">
             {DENSITY.map((d) => (
               <TweakOption
-                key={d.code}
-                value={d.code}
-                label={d.label}
+                key={d}
+                value={d}
+                label={t(d)}
                 setValue={setDensity}
-                isActive={d.code === density}
+                isActive={d === density}
               />
             ))}
           </div>
@@ -160,13 +160,13 @@ const Tweaks: React.FC<TweaksProps> = ({
         <div className="grid gap-1">
           <TweakTitle title={t("texture")} />
           <div className="flex flex-wrap gap-1">
-            {TEXTURE.map((t) => (
+            {TEXTURE.map((txt) => (
               <TweakOption
-                key={t.code}
-                value={t.code}
-                label={t.label}
+                key={txt}
+                value={txt}
+                label={t(txt as "on")}
                 setValue={setTexture}
-                isActive={t.code === texture}
+                isActive={txt === texture}
               />
             ))}
           </div>
