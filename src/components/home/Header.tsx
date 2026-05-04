@@ -16,7 +16,7 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({ locale }) => {
   return (
     <header className="grid grid-cols-[1fr_auto_1fr] items-end gap-6 pb-5.5 border-b-2 border-(--rule) relative after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1.5 after:border-b after:border-(--rule)">
       {/* left */}
-      <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-(--ink-3)">
+      <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-(--ink-3) rtl:text-right">
         <div>{t("left-issue")}</div>
         <div>{today}</div>
       </div>
@@ -30,7 +30,7 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({ locale }) => {
         </div>
       </div>
       {/* right */}
-      <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-(--ink-3) text-right">
+      <div className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-(--ink-3) text-right rtl:text-left">
         <div>{t('right-location')}</div>
         <div>{t('right-location-subtitle')}</div>
       </div>

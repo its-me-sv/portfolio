@@ -10,7 +10,6 @@ import { COOKIES_NAMES } from "@/data/app";
 import {
   DENSITY,
   FONT_PAIRINGS,
-  FONT_PAIRS,
   LOCALES,
   TEXTURE,
   THEMES,
@@ -42,12 +41,7 @@ const Tweaks: React.FC<TweaksProps> = ({
 
   // update fonts
   useEffect(() => {
-    const html = document.documentElement;
-    html.setAttribute("data-font", font);
-    const f = FONT_PAIRS[font] ?? FONT_PAIRS.editorial;
-    html.style.setProperty("--serif", f.serif);
-    html.style.setProperty("--sans", f.sans);
-    html.style.setProperty("--mono", f.mono);
+    document.documentElement.setAttribute("data-font", font);
     setCookie(COOKIES_NAMES.font, font);
   }, [font]);
 
