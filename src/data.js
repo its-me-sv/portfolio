@@ -7,7 +7,7 @@ export const resume = {
     email: "surajvijay67@gmail.com",
     linkedin: "suraj-vijay-32b679224",
     instagram: "suraj_vijay_115.py",
-    site: "surajvijayan.me",
+    site: "surajvijayan.dev",
   },
   experience: [
     {
