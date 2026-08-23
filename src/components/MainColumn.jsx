@@ -137,7 +137,7 @@ function Achievements({ data, t }) {
   return (
     <div className="sec reveal" id="achievements">
       <div className="sec-head">
-        <span className="num">§ 07</span>
+        <span className="num">§ 10</span>
         <h2>{t("achievements")}</h2>
         <span className="tag">{t("selected")}</span>
       </div>
@@ -150,6 +150,29 @@ function Achievements({ data, t }) {
               <div className="detail">{a.detail}</div>
             </div>
           </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Testimonials({ data, t }) {
+  if (!data?.length) return null;
+  return (
+    <div className="sec reveal" id="testimonials">
+      <div className="sec-head">
+        <span className="num">§ 08</span>
+        <h2>{t("testimonials")}</h2>
+      </div>
+      <div className="testimonials">
+        {data.map((tm, i) => (
+          <figure className="testimonial" key={i}>
+            <blockquote className="testimonial-quote">{tm.quote}</blockquote>
+            <figcaption className="testimonial-byline">
+              <span className="testimonial-name">{tm.name}</span>
+              <span className="testimonial-title">{tm.title}</span>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </div>
@@ -184,7 +207,7 @@ export function MainColumn({ data, t, activeSkills }) {
     <main className="col-main">
       <div className="sec reveal" id="experience">
         <div className="sec-head">
-          <span className="num">§ 05</span>
+          <span className="num">§ 07</span>
           <h2>{t("experience")}</h2>
           <span className="tag">{hasFilter ? `${affectedExp.size} ${t("match")}` : t("chronological")}</span>
         </div>
@@ -201,9 +224,11 @@ export function MainColumn({ data, t, activeSkills }) {
         ))}
       </div>
 
+      <Testimonials data={data.testimonials} t={t} />
+
       <div className="sec reveal" id="projects">
         <div className="sec-head">
-          <span className="num">§ 06</span>
+          <span className="num">§ 09</span>
           <h2>{t("selected_projects")}</h2>
           {hasFilter && <span className="tag">{affectedProj.size} {t("match")}</span>}
         </div>

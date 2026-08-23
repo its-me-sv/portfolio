@@ -120,6 +120,47 @@ export function Sidebar({ data, t, activeSkills, toggleSkill, clearSkills }) {
         </ul>
       </div>
 
+      {data.volunteering?.length > 0 && (
+        <div className="sec reveal">
+          <div className="sec-head">
+            <span className="num">§ 05</span>
+            <h2>{t("volunteering")}</h2>
+          </div>
+          {data.volunteering.map((v, i) => (
+            <div className="edu-item" key={i}>
+              <div className="edu-degree">{v.org}</div>
+              <div className="edu-school">{v.role} · {v.period}</div>
+              <ul className="cert-list" style={{ marginTop: 8 }}>
+                {v.bullets.map((b, j) => (
+                  <li key={j} className="cert-item">
+                    <span className="cert-title">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {data.interests?.length > 0 && (
+        <div className="sec reveal">
+          <div className="sec-head">
+            <span className="num">§ 06</span>
+            <h2>{t("interests")}</h2>
+          </div>
+          <ul className="cert-list">
+            {data.interests.map((it, i) => (
+              <li key={i} className="cert-item">
+                <span className="cert-title">{it.label}</span>
+                <div className="cert-card">
+                  <div className="cert-card-detail">{it.detail}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <WaxSeal t={t} />
     </aside>
   );

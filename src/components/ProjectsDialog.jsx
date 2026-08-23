@@ -43,7 +43,7 @@ export function ProjectsDialog({ open, onClose, projects, t }) {
       <div className="pdlg" onClick={e => e.stopPropagation()}>
         <div className="pdlg-head">
           <div>
-            <div className="pdlg-num">§ 06·A</div>
+            <div className="pdlg-num">§ 09·A</div>
             <h2 className="pdlg-title">{t("more_projects")}</h2>
           </div>
           <button className="pdlg-close" onClick={onClose} aria-label="close">×</button>

@@ -9,6 +9,7 @@ export function CmdK({ data, t, onJump }) {
   const items = useMemo(() => {
     const list = [
       { tag: t("cmdk_section"), label: t("experience"), act: () => onJump("experience") },
+      { tag: t("cmdk_section"), label: t("testimonials"), act: () => onJump("testimonials") },
       { tag: t("cmdk_section"), label: t("selected_projects"), act: () => onJump("projects") },
       { tag: t("cmdk_section"), label: t("achievements"), act: () => onJump("achievements") },
       { tag: t("cmdk_action"), label: t("cmdk_print"), act: () => window.print() },
