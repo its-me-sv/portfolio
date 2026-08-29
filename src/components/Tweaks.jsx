@@ -100,12 +100,6 @@ export function Tweaks({ locale }) {
             ))}
           </div>
         </div>
-        <div className="row">
-          <span className="lbl">{t("tweaks_shortcuts")}</span>
-          <div style={{ fontSize: 10, color: "var(--ink-3)", letterSpacing: "0.04em" }}>
-            {t("shortcuts_detail")}
-          </div>
-        </div>
       </div>
     </div>
   );

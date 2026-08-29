@@ -5,7 +5,6 @@ import { Highlighter } from "./components/Highlighter.jsx";
 import { Sidebar } from "./components/Sidebar.jsx";
 import { MainColumn } from "./components/MainColumn.jsx";
 import { Tweaks } from "./components/Tweaks.jsx";
-import { CmdK } from "./components/CmdK.jsx";
 
 export default function App() {
   const [activeSkills, setActiveSkills] = useState(new Set());
@@ -50,11 +49,6 @@ export default function App() {
     return () => io.disconnect();
   }, [locale]);
 
-  const jump = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 40, behavior: "smooth" });
-  };
-
   const today = new Date().toLocaleDateString(locale === "en" ? "en-US" : locale, {
     year: "numeric", month: "short", day: "numeric",
   }).toUpperCase();
@@ -77,7 +71,6 @@ export default function App() {
           </div>
           <div className="mast-right">
             <div>{t("masthead_location")}</div>
-            <div>{t("masthead_shortcut")}</div>
           </div>
         </header>
 
@@ -105,7 +98,6 @@ export default function App() {
         </footer>
       </div>
 
-      <CmdK data={data} t={t} onJump={jump} />
       <Tweaks locale={locale} />
     </>
   );

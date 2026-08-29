@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { ProjectsDialog } from "./ProjectsDialog.jsx";
 
 function ProjectPreview({ kind }) {
   const common = { width: "100%", height: "100%", display: "block" };
@@ -181,11 +180,8 @@ function Testimonials({ data, t }) {
 
 export function MainColumn({ data, t, activeSkills }) {
   const [peek, setPeek] = useState(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [openEntry, setOpenEntry] = useState(data.experience[0]?.id ?? null);
   const peekRef = useRef(null);
-
-  const allProjects = [...data.projects, ...(data.moreProjects || [])];
 
   const onPeek = (p, ev) => {
     const x = ev.clientX + 20;
@@ -245,10 +241,15 @@ export function MainColumn({ data, t, activeSkills }) {
           ))}
         </div>
         <div className="project-more">
-          <button className="view-more" onClick={() => setDialogOpen(true)}>
+          <a
+            className="view-more"
+            href="https://github.com/its-me-sv?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>{t("view_more")}</span>
             <span className="arr">→</span>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -262,13 +263,6 @@ export function MainColumn({ data, t, activeSkills }) {
         {peek && <ProjectPreview kind={peek.p.preview} />}
         {peek && <div className="peek-label">{peek.p.name}</div>}
       </div>
-
-      <ProjectsDialog
-        open={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        projects={allProjects}
-        t={t}
-      />
     </main>
   );
 }

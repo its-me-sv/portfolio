@@ -148,13 +148,11 @@ export function Sidebar({ data, t, activeSkills, toggleSkill, clearSkills }) {
             <span className="num">§ 06</span>
             <h2>{t("interests")}</h2>
           </div>
-          <ul className="cert-list">
+          <ul className="interest-list">
             {data.interests.map((it, i) => (
-              <li key={i} className="cert-item">
-                <span className="cert-title">{it.label}</span>
-                <div className="cert-card">
-                  <div className="cert-card-detail">{it.detail}</div>
-                </div>
+              <li key={i} className="interest-item">
+                <span className="interest-title">{it.label}</span>
+                <div className="interest-detail">{it.detail}</div>
               </li>
             ))}
           </ul>
